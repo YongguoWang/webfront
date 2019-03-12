@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+// this is 注释
+
+@mixin padding($y ,$x){
+    padding:$y $x;
+}
+
+@mixin border($val) {
+    border-bottom:$val solid pink;
+    font : {
+      size:10px;
+      family:"microsoft yahei";
+    }
+}
+
+ul {
+    li {
+        @include padding(20px , 10px );  /* 上下20px  左右10px*/
+        @include border(10px);
+        width: 300px;
+        height: 20px;
+    }
+}

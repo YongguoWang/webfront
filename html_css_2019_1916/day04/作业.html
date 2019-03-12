@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		html,body{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			background-color: #f4f6f9;
+		}
+		select,option{
+
+    border: none;
+    outline: none;
+
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    background:#fff;
+
+    padding-right: .14rem;
+}
+input{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: none;
+}
+
+select::-ms-expand {display: none;}
+		ul,li{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.left{
+			float: left;
+		}
+		.box{
+		background-color: #fff;
+		}
+		.box-center{
+			width: 1000px;
+			margin: 0 auto;
+		}
+			/*top begin*/
+		.top{
+			height: 50px;
+			line-height: 50px;
+		}
+		.top .item{
+			float: right;
+		}
+		.top .item li{
+			float: left;
+			color: #1787fb;
+			font-size: 12px;
+			margin-left: 20px;
+			cursor: pointer;
+		}
+		.top .item li:last-child{
+			color: #666;
+		}
+		.top .item li:nth-child(odd){
+			margin-left: 50px;
+			position: relative;
+		}
+		.top .item li:nth-child(odd)::before{
+			content: '';
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			left: -20px;
+			top: -1px;
+			bottom: 0;
+			margin: auto 0;
+		}
+			.top .item li:nth-child(1)::before{
+				background: url(./公文包.png) no-repeat center center;
+				background-size: 100%;
+			}
+			.top .item li:nth-child(3)::before{
+				background: url(./头像.png) no-repeat center center;
+				background-size: 100%;
+			}
+			.top .item li:nth-child(5)::before{
+				background: url(./电话.png) no-repeat center center;
+				background-size: 100%;
+			}
+			/*top end*/
+
+			/*center  begin*/
+			.center{
+
+				height: 70px;
+				display: flex;
+				justify-content: space-between;
+			}
+			.center .logo{
+				width: 125px;
+				height: 54px;
+			}
+			 .ipt{
+				height: 38px;
+				
+			}
+			 .ipt .icon{
+				position:relative;
+			}
+			 .ipt .select{
+				height: 38px;
+				border: 1px solid #ddd;
+				padding: 0 25px 0 10px;
+				box-sizing: border-box;
+				font-size: 12px;
+				color: #555;
+				position: relative;
+			}
+			 .ipt .icon:before{
+				content: '';
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				right: 5px;
+				top: 3px;
+				bottom: 0;
+				margin: auto 0;
+				background: url(./下箭头.png) no-repeat center center;
+				background-size: 100%;
+				z-index: 5;
+			}
+			 .ipt .ipt-box{
+				width: 448px;
+				height:38px;
+				border: 1px solid #ddd;
+				box-sizing: border-box;
+				margin-left: -6px;
+				padding:0 20px;
+			}
+			.qr{
+
+				width: 80px;
+				height: 38px;
+				background: #1787fb url(./放大镜.png) no-repeat center center;
+				background-size: 35%;
+				cursor: pointer;
+			}
+			/*qr-code*/
+			.center .qr-code{
+				width: 160px;
+				height:55px;
+				padding: calc((55px - 50px)/2);
+				box-sizing: border-box;
+				position: relative;
+
+			}
+			.center .qr-code:before{
+				content: "扫码下载APP";
+				font-size: 10px;/*min-size:12px;*/
+				position: absolute;
+				left: 10px;
+				top: 10px;
+				color:#1787fb;
+			}.center .qr-code:after{
+				content: "扫码下载小程序";
+				font-size: 10px;
+				position: absolute;
+				left: 10px;
+				top:35px;
+				color:#555;
+			}
+			.center .qr-code .img{
+				width: 53px;
+				height: 53px;
+				float: right;
+					padding: 3px;
+					box-sizing: border-box;
+					border: 1px solid #ddd;
+			}
+
+			.bottom{
+				height: 40px;
+				display: flex;
+				justify-content: space-around;
+			}
+			.bottom li{
+				float: left;
+				line-height: 40px;
+				text-align: center;
+				font-size: 15px;
+				font-weight: bold;
+				color: #333;
+			}
+			.bottom li:hover{
+				cursor: pointer;
+				color: #666;
+			}
+		
+	</style>
+</head>
+<body>
+		<div class="box">
+			<div class="box-center">
+				<!-- top begin -->
+				<div class="top">
+					<ul class="item">
+						<li>免费发布职业</li>
+						<li>企业登录</li>
+						<li>求职者登录</li>
+						<li>求职者注册</li>
+						<li>123-456-7879</li>
+					</ul>
+				</div>
+				<!-- top end -->
+
+				<!-- center begin -->
+				<!-- center begin -->
+				<div class="center">
+					<div class="logo"><img src="./zhaopin_logo.465947.png"></div>
+					<div class="ipt">
+						<span class="left icon"><select class="select"><option>职位</option><option>公司</option></select></span>
+						<input class="left ipt-box" type="" name="" placeholder="请输入公司关键词">
+						<span class="left qr"></span>
+					</div>
+					<div class="qr-code">
+						<img class="img" src="./qrcode.png" alt="">
+					</div>
+				</div>
+				<!-- center end -->
+				
+					<ul class="bottom">
+						<li>首页</li>
+						<li>广州站</li>
+						<li>校园招聘</li>
+						<li>高端职位</li>
+						<li>海外招聘</li>
+						<li>智联教育</li>
+						<li>智联测评</li>
+						<li>职Q</li>
+					</ul>
+			
+			</div>
+		</div>	
+</body>
+</html>	

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+         // 调用者  ： ，  参数：， 返回值：，功能：;
+        //1. push
+
+        // 2.pop
+
+         // 3.shift 
+         var res3 = ["aaa","bbb","ccc"];
+        var arr3  =   res3.shift();//  返回值:第一个元素 (被删除的)，返回值不是数组
+        console.log(res3);//  打印的是原来的数组，(这不是返回值) 输出的结果： ["bbb", "ccc"]
+
+        //  4.unshift
+        var res4= ["aaa","bbb","ccc"];
+        var arr4  =   res4.unshift("ddd");// 参数：要添加的元素 ，返回值：是该元素的索引值 功能：往数组第一个位置添加元素
+        console.log(res4);// 打印原来数组名 ，即可看到新的结果 ["ddd", "aaa", "bbb", "ccc"]
+
+        // 5.splice  (重点关注)
+        var res5 = ["aaa","bbb","ccc"];
+        var arr5 =  res5.splice(1,2); //参数：0  ，返回值: 数组，保留索引值开始的元素，以及要保留多少个元素。
+        console.log(arr5)// 这是返回值
+        console.log(res5)// 这是原来的数组，剩下第一个元素（splice(1,2)：把索引值1开始的元素删除2个）
+
+        // 6.slice
+        var arrColor = ["red","green","blue"];
+        var res6 = arrColor.slice(0,2) ; //    参数：开始的位置 ，结束的位置 ，返回值：截取数组指定的元素，功能：获取数组的指定的元素
+        console.log(res6)// 打印的是返回值  ，截取数组指定的元素
+        console.log(arrColor)// 打印原来的数组
+
+        var arr7 = ['a','b','c'];
+        var res7 = arr7.slice(-1); 
+        console.log(res7)
+
+
+        // 7.concat  合并 连接
+        var  arr8 = ['a','b','c'];
+        var arr9 = [11,22,33];
+
+        var result = arr8.concat(arr9);// 1. 数组 ， 2.参数：要合并的数组 ，3.返回值： 合并之后的数组 ，功能：把两个数组合并在一起 
+        console.log(result);
+
+
+
+        // 8.join 
+        var arr10 = ["g","o","o","g","l","e"];
+        console.log(arr10)
+        // var result2 = arr10.join(",");
+        var result2 = arr10.join(""); // 1.  , 2参数：" " 、","；返回值：就是把数组每一元素串起来，功能：把数组转成字符串
+        console.log(result2)//google 
+
+    </script>
+    
+</body>
+</html>

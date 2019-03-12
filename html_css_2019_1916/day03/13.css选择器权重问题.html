@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            font-size:50px;
+        }
+
+        #bigId #smallId { /* 2 0 0  */
+            color: orange;
+        }
+
+        #bigId .small {    /* 1 1 0  */
+            color: red;
+        }
+
+        .big #smallId  {   /* 1 1 0  */
+            color: green;
+        }
+
+        .big .small {    /* 0 2 0  */
+            color: blue;
+        }
+
+        .big div {      /* 0 1 1  */
+            color: purple;
+        }
+
+        #bigId div {    /* 1 0 1  */
+            color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- div.big>div.small  按tab按键 -->
+    <div class="big" id="bigId">
+        <div class="small" id="smallId">  google </div>
+    </div>
+
+</body>
+</html>

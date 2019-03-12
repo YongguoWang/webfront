@@ -1,0 +1,23 @@
+@w:800px;
+
+.header {
+  width:1000px;
+  height: 100px;
+  background-color:#f0f0f0;
+  margin:0 auto;
+  .logo {
+    width:200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: pink;
+    float: left;
+  }
+  .word {
+    //width:~'@w'  不编译此处变量 ;
+    width:~'calc(1000px - 200px)';
+    height: 100px;
+    background-color: skyblue;
+    float: left;
+  }
+}

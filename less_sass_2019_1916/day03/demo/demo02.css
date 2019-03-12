@@ -1,0 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+.banner {
+  width: 730px;
+  margin: 0 auto;
+
+}

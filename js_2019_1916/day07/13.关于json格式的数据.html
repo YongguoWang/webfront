@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div class="pname"></div>
+
+  
+    <div class="price"></div>
+
+
+    <script>
+        
+        // json 格式的数据  {key : value}   key:键   value:值
+        var data = {
+              "product_name":" 土豆",
+              "product_price":"10元/斤"
+        }
+
+        // 获取元素
+        var pname = document.querySelector(".pname");
+        var price = document.querySelector(".price");
+
+        // 数据显示页面上
+        pname.innerHTML = "  产品名称："+data.product_name;
+        price.innerHTML = "  产品价格："+data.product_price;
+
+
+
+        // 定义一个对象
+
+        var ele = {
+            "width":"100px",
+            "height":"200px",
+            "background":"red",
+            "color":"#fff"
+        }
+
+        console.log(ele)
+        // 能不能像数组一个遍历？？ 不使用   for(var i =0 ; i < obj.length ; i++){}
+        for(var k in ele ){
+            console.log(k) // key 
+            console.log(ele[k])  //value
+
+            console.log("----------------------")
+        }
+
+
+        
+    </script>
+</body>
+</html>

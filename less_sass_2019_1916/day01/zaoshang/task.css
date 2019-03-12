@@ -1,0 +1,13 @@
+.nav {
+  width: 1000px;
+}
+.nav .list {
+  width: 1000px;
+  height: 50px;
+  background-color: #ccc;
+}
+.nav .list li {
+  width: 90px;
+  height: 40px;
+  border: 1px solid #000;
+}

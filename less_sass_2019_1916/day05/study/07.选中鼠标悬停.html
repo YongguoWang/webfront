@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            .banner {
+                width: 1000px;
+                height: 200px;
+                border:1px solid #ccc;
+                margin: 0 auto;
+
+                position: relative;/* 相对定位*/
+            }
+
+            .banner .btn {
+                width: 22px;
+                height: 60px;
+                background-color: pink;
+                position: absolute;
+                top:50%;
+                margin-top: -30px;
+            }
+            .banner .btn.left {
+                left: 0;
+            }
+            .banner .btn.right {
+                right: 0;
+            }
+            .banner:hover .btn {
+                background-color: deeppink;
+            }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="btn left"></div>
+        <div class="btn right"></div>
+    </div>
+</body>
+</html>

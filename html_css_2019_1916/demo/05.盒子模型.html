@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box  {
+            width:100px;
+            height: 100px;
+            background-color: red;
+        }
+        .box1 {
+            /*margin:100px;*/
+            margin:100px 50px 30px 70px ;/* 上 右 下 左 */
+        }
+        .box2 {
+            border:10px solid #ccc; /* 线宽度  线样式（solid dashed dotted）  线颜色 */
+        }
+        .box3 {
+            padding:20px 20px 20px 20px ;/* 上 右 下 左 */
+
+            /*padding-left:;*/
+            /*padding-top:;*/
+            /*padding-right:;*/
+            /*padding-bottom:;*/
+        }
+
+    </style>
+</head>
+<body>
+        <div class="box"></div>
+        <!-- 外边距： 设置盒子与盒子之间间距。-->
+        <div class="box box1"></div>
+        <!--边框：会撑开盒子的大小。-->
+        <div class="box box1 box2"></div>
+        <!--内边距 ： 设置内容与边框之间的间距。会撑开盒子大小。-->
+        <div class="box box1 box2 box3"></div>
+
+
+        <!---->
+</body>
+</html>

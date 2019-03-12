@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./base.css">
+</head>
+<body>
+        <!-- a 是行内元素 img 是行内块元素 ， 行内元素包裹行内块元素会出现下间隙的问题-->
+        <!--1.0 把a元素设置成块元素display:block ，把font-size:0; -->
+        <!--2.0 把a行内元素转成块元素display:block；把img成块元素display:block-->
+        <div class="banner">
+            <!--图片-->
+            <!--ul>li>a>img-->
+            <ul class="clearfix">
+
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture2.jpeg" alt="">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture3.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture4.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture5.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture1.jpeg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <!--小圆点-->
+            <ol>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            
+
+            <!--左右按钮-->
+
+        </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <script>
+                var arr = ["red","green","blue"] ;//数组存放三个颜色
+                var lis = document.querySelectorAll("ul li") ;
+                // 遍历  （循环）
+                for(var i =0; i < lis.length ; i++){
+                    lis[i].style.width=((i+1)*100)+"px";
+                    lis[i].style.height="38px";
+                    lis[i].style.backgroundColor=arr[i]; //把数组的每个元素赋值给页面的li标签
+                }
+
+
+        
+        </script>
+
+</body>
+</html>

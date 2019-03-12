@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .nav {
+            width: 1200px;
+            height: 60px;
+            background-color: #ccc;
+            margin: 0 auto;
+        }
+        .nav ul {
+            list-style: none;
+            width:640px;
+            margin: 0 auto;
+        }
+        .nav ul li {
+            float: left;
+            width: 120px;
+            height: 58px;
+            margin-right:10px;
+            
+            text-align: center;
+            line-height: 58px;
+            color: #fff;
+        }
+        .nav ul li.mr_0 {
+            margin-right: 0;
+        }
+        .nav ul li.p1 {/* 交集选择器*/
+            background-image: url("./images/bg1.png");
+        }
+        .nav ul li.p2 {/* 交集选择器*/
+            background-image: url("./images/bg2.png");
+        }
+        .nav ul li.p3 {/* 交集选择器*/
+            background-image: url("./images/bg3.png");
+        }
+        .nav ul li.p4 {/* 交集选择器*/
+            background-image: url("./images/bg4.png");
+        }
+        .nav ul li.p5 {/* 交集选择器*/
+            background-image: url("./images/bg5.png");
+        }
+
+
+        span {
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+        <div class="nav">
+            <ul>
+                <li class="p1"><span>页面导航</span></li>
+                <li class="p2"><span>页面导航</span></li>
+                <li class="p3"><span>页面导航</span></li>
+                <li class="p4"><span>页面导航</span></li>
+                <li class="p5 mr_0"><span>页面导航</span></li>
+
+                <span></span>
+            </ul>
+        </div>
+</body>
+</html>

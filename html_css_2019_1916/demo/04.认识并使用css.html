@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 选择器的优先级： !important > id选择器  > 类名选择器 > 标签选择器 */
+        #boxId { /* id 选择器*/
+            background-color: green;
+        }
+        div { /* 标签选择器*/
+            width: 100px;
+            height: 100px;
+            background-color: red!important;
+        }
+        .box {/* 类名选择器*/
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="box" id="boxId"></div>
+</body>
+</html>

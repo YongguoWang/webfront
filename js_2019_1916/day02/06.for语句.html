@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            div {
+                width: 100px;
+                height: 100px;
+                float: left;
+                background-color:rgba(201,21,85,0.3);
+            }
+    </style>
+</head>
+<body>
+    <!-- length 长度（数量） -->
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+    // for(var i =  0 ; i <= 5 ; i++){
+    //         console.log("这是第"+i+"次循环");
+    // }
+    // var index = 0 ;
+    // index++;  // ++  自增一
+    // console.log(index)
+    // 步骤
+        // 1.0 获取所有的div
+       var aDiv = document.querySelectorAll("div");//集合
+        console.log(aDiv)
+       for(var i = 0 ; i < aDiv.length;i++){
+        //    ???
+            aDiv[i].style.backgroundColor="rgba(201,21,85,0."+ (i+1)*2 +")";
+       }
+    </script>
+</body>
+</html>

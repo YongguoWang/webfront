@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            .icon {
+                display: block;
+                width: 6px;
+                height: 6px;
+                border-right: 1px solid #333;
+                border-bottom: 1px solid #333;
+                transform: rotate(-45deg)
+            }
+
+            .icon_saojiao {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background-color: #fff;
+                margin: 0 auto;
+            }
+            .icon_saojiao::before {
+                content: "";
+                width: 0;
+                height: 0;
+                border-top:10px solid transparent;
+                border-right:10px solid transparent;
+                border-bottom:10px solid transparent;
+                border-left:10px solid red;
+
+                position: absolute;
+                top: 0;
+                left:0px;
+                z-index:1;
+            }
+
+            .icon_saojiao::after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-top:10px solid transparent;
+                border-right:10px solid transparent;
+                border-bottom:10px solid transparent;
+                border-left:10px solid #fff;
+                position: absolute;
+                top: 0;
+                left: -4px;
+                z-index: 2;
+            }
+    </style>
+</head>
+<body>
+
+        <span class="icon"></span>
+        <div class="icon_saojiao"></div>
+</body>
+</html>

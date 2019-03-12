@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        input::placeholder {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" placeholder="tips"> <span></span>
+    
+    <script>
+    // oninput 事件   一旦输入框的值发生变化，就触发函数
+    var inp = document.querySelector("input");
+    var span = document.querySelector("span");
+    if(inp.value.length == 0 ){ //输入现在没有值
+        span.innerHTML = "请输入..";
+    }
+    // 绑定事件
+    inp.oninput = txt.onpropertychange = function(){
+        // 获取输入框的值
+        var inpVal = this.value;//this ?事件的调用者
+        console.log(inpVal)
+        span.innerHTML = inpVal;//把输入框的值赋给span元素
+
+        if(inpVal.length == 0 ){ //输入现在没有值
+            span.innerHTML = "请输入..";
+        }
+
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            html,
+            body,
+            .layout {
+                width: 100%;
+                height: 100%;
+            }
+            #selectId {
+                position: fixed;
+                right: 100px;
+                top: 80px;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="layout">
+        <select  id="selectId">
+                <option value="orange">春天的颜色</option>
+                <option value="darkred">夏天的颜色</option>
+                <option value="yellow">秋天的颜色</option>
+                <option value="pink">冬天的颜色</option>
+        </select>
+    </div>
+
+    <script>
+        // 步骤
+        // 1.0 获取元素
+       var box =  document.querySelector(".layout");
+       var selectEle = document.getElementById("selectId");
+
+      //  2.0 绑定事件
+      selectEle.onchange = function(){
+            // 3.0 获取option对应的值 
+           var val =  this.value;
+           console.log(val)
+             //4.0 把颜色赋值给
+             box.style.backgroundColor = val;
+      }   
+
+    </script>
+</body>
+</html>

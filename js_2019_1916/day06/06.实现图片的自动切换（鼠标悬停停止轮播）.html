@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+         .banner {
+            width: 200px;
+            height: 135px;
+            /* padding: 20px 20px; */
+            border:20px solid #af9;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        ul {
+            width: 1000px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0;    /*  解决img元素下间隙问题 */
+        }
+        ul li {
+            width: 200px;
+            float: left;    
+            background-color: #000;
+        }
+        ul li img {
+            width:200px;
+            height: 135px;
+        }
+       
+    </style>
+
+    <script>
+            // 步骤：
+            window.onload = function(){
+                    // 1.0 获取元素
+                    var banner = document.querySelector(".banner");
+                    var  ul = document.querySelector(".banner ul");
+                    var lis = document.querySelectorAll(".banner ul li");
+                    // 2.0 定义宽度
+                    var width = 200;
+                    // 3.0 定义定时器
+                    var timer = null ;
+                    // 4.0 索引值
+                    var index = 0;
+                    // 5.0 处理逻辑
+                    // timer = setInterval(function(){
+                    //     index++; //每一秒加一
+                    //     if(index > (lis.length-1)){ // 最大的索引值 ： lis.length-1
+                    //         index = 0;
+                    //     }
+                    //     console.log("索引值："+index)
+                    //     // 6.0 改变ul的水平位置  负数     正数
+                    //     ul.style.marginLeft = (-index*width)+"px";
+
+                    // },1000)
+
+
+                    // 5.0.1 setInteval(函数 , 时间) 函数的参数 ：
+                    timer = setInterval(changeImage,1000);
+
+                    function changeImage(){
+                        index++; //每一秒加一
+                        if(index > (lis.length-1)){ // 最大的索引值 ： lis.length-1
+                            index = 0;
+                        }
+                        console.log("索引值："+index)
+                        // 6.0 改变ul的水平位置  负数     正数
+                        ul.style.marginLeft = (-index*width)+"px";
+                    }
+
+
+                    // 7.0 鼠标悬停
+                    banner.onmouseenter = function(){
+                        console.log("onmouseenter")
+                        // 8.0 停止执行定时器
+                        clearInterval(timer);
+                    }
+
+                     // 9.0 鼠标移开
+                     banner.onmouseleave = function(){
+                         console.log("onmouseleave")
+                        // 10.0 继续执行定时器
+                        clearInterval(timer);// 严谨的做法
+                    //     timer = setInterval(function(){
+                    //     index++; //每一秒加一
+                    //     if(index > (lis.length-1)){ // 最大的索引值 ： lis.length-1
+                    //         index = 0;
+                    //     }
+                    //     console.log("索引值："+index)
+                    //     // 6.0 改变ul的水平位置  负数     正数
+                    //     ul.style.marginLeft = (-index*width)+"px";
+
+                    // },1000)
+                    
+                    timer = setInterval(changeImage,1000);
+
+
+                    }
+
+        }
+
+
+    
+    
+    </script>
+</head>
+<body>
+            <div class="banner">
+                <ul>
+                    <li><img src="./images/img_1.jpg" alt=""></li>
+                    <li><img src="./images/img_2.jpg" alt=""></li>
+                    <li><img src="./images/img_3.jpg" alt=""></li>
+                    <li><img src="./images/img_4.jpg" alt=""></li>
+                </ul>
+            </div>
+
+
+</body>
+</html>
+
+

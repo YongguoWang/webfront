@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .nav {
+                width: 960px;
+                margin: 0 auto;
+                height: 60px;
+                background-color: #ccc;
+            }
+
+            .nav ul {
+                list-style: none;
+            }
+            .nav ul::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .nav ul li {
+                float: left;
+                width: 120px;
+                height: 26px;
+                border:1px solid #f40;
+                text-align: center;
+                line-height: 26px;
+                margin: 17px  5px 17px 5px; /* 外边距 上右下左*/
+            }
+
+            .list {
+                width: 960px;
+                height: 80px;
+                background-color: pink;
+                margin: 20px auto;
+            }
+
+            .list ol {
+                width: 960px;
+                list-style: none;
+            }
+            .list ol li {
+                width: 930px;
+                height: 26px;
+                line-height: 26px;
+                line-height: 26px;
+                background-color: skyblue;
+                margin-bottom: 10px;
+
+                padding-left: 33px; /*左内边距*/
+                position: relative;
+            }
+
+            .list ol li span {
+                display: block;
+                width: 3px;
+                height: 12px;
+                background-color: red;
+
+                position: absolute;
+                left: 15px;
+                top: 7px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <ul>
+            <li>首页</li>
+            <li>文化介绍</li>
+            <li>合作案例</li>
+            <li>联系方式</li>
+        </ul>
+    </div>
+
+
+    <div class="list">
+        <ol>
+            <li> <span></span> 彼岸花开开彼岸，</li>
+            <li> <span></span> 断肠草愁愁断肠。</li>
+        </ol>
+    </div>
+    
+</body>
+</html>

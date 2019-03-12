@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nav {
+            width: 960px;
+            height: 100px;
+            line-height: 100px;/* 行高 */
+            background-color:#ccc;
+            margin:0 auto; /* 上下为0  左右居中*/
+        }
+
+        .nav ul {
+            list-style: none;
+            padding:0;
+            font-size: 0;
+            text-align: center;/* 设置当前盒子的行内块元素水平居中 */
+        }
+
+        .nav ul li {
+            vertical-align: middle;/* 设置行内块元素垂直方向位置*/
+            display: inline-block;/* 把块转行内块元素*/
+            background: deepskyblue;
+            margin:0 5px;/* 外边距  上下 0 左右为5px */
+        }
+        .nav ul li span {
+            font-size:14px;
+            display: block;/* 把行内元素转块元素*/
+            /*width:120px;*/
+            height:30px;
+
+            line-height: 30px;
+            text-align: center;/* 设置当前盒子的文本水平居中 */
+            padding:0 15px; /*内边距上下 0  左右15px*/
+        }
+    </style>
+</head>
+<body>
+        <div class="nav">
+            <ul>
+                <li><span>首页</span></li>
+                <li><span>企业文化</span></li>
+                <li><span>产品展示</span></li>
+                <li><span>合作伙伴</span></li>
+                <li><span>联系方式</span></li>
+            </ul>
+        </div>
+</body>
+</html>

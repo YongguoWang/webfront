@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: #ccc;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+    <script>
+    // 步骤
+        // 1.0 获取页面盒子
+        var box = document.querySelector(".box");
+        // 2.0 事件的绑定
+        box.onclick = function(){
+            // 3.0 处理逻辑
+            // 步长 
+            var speed = 5;
+            // 定时器
+            var timer = setInterval(function(){
+                // 设置盒子目标位置 =  盒子的当前位置 + 步长
+                box.style.marginLeft=box.offsetLeft + speed+ "px";
+                console.log("盒子当前的位置是："+box.offsetLeft)
+                console.log("步长："+speed)
+                if(box.offsetLeft >= 1000){
+                        console.log("盒子到达指定的位置")
+                        // 停止执行定时器函数
+                        clearInterval(timer);
+                }
+            },30)
+        }
+    </script>
+</body>
+</html>

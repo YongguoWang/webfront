@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.box {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 10px solid pink; }
+  .box .box1 {
+    position: absolute;
+    /* 绝对定位*/
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background-color: red; }
+
+/*# sourceMappingURL=fff.css.map */

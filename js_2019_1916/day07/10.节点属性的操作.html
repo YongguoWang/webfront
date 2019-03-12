@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!--  src  标签属性 （节点属性） -->
+    <img src="./images//img_1.jpg" alt="提示...">
+
+    <script>
+        // 1.0 调用者   2.0 参数   3.0 返回值   4.0 功能
+
+        // 获取节点
+        var imgEle = document.querySelector("img");
+        // getAttribute()  
+        // 调用者 ：  imgEle
+        // 参数 ： src
+        // 返回值: ./images//img_1.jpg
+         var res1 = imgEle.getAttribute("src");
+         console.log(res1)
+
+        //  事件
+        imgEle.onclick = function(){
+            // 设置src的值
+            this.setAttribute("src","./images//img_2.jpg");
+        }
+
+        // 删除节点属性
+        imgEle.removeAttribute("alt");
+
+
+
+    
+    </script>
+
+</body>
+</html>

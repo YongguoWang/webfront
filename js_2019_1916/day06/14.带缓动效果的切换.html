@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .banner {
+            width: 500px;
+            height: 335px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;/* 相对定位*/
+        }
+        .banner ul {
+            width: 1500px;
+            list-style: none;
+        }
+        .banner ul li {
+            width: 500px;
+            height: 335px;
+            float: left;
+        }
+        .banner ul li img {
+            display: block;
+            width: 500px;
+            height: 335px;
+        }
+        .banner .btn {
+            clear: both;
+            width: 28px;
+            height: 90px;
+            /* background-color: rgba(255, 255, 255, 0.7); */
+
+            background-color: rgba(218, 12, 108, 0.7);
+            text-align: center;
+            line-height: 90px;
+            color: #fff;
+
+            position: absolute;/* 绝对定位*/
+            top:50%;
+            margin-top: -45px;
+
+            cursor: pointer;/*鼠标变小手*/
+            z-index: 1000;
+        }
+        .prev_btn {
+            left: 0;
+        }
+        .next_btn {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <ul>
+            <li><img src="./images/img_1.jpg" alt=""></li>
+            <li><img src="./images/img_2.jpg" alt=""></li>
+            <li><img src="./images/img_3.jpg" alt=""></li>
+        </ul>
+        <div class="btn prev_btn">&lt;</div>
+        <div class="btn next_btn">&gt;</div>
+    </div>
+
+    
+</body>
+</html>
+<script src="./tool.js"></script>
+<script>
+    // 需求：
+        // 点击左右按钮，实现图片切换（轮播图效果 
+        // 步骤：
+        // 1.获取相关元素
+        var ul = document.querySelector(".banner ul ");
+        var prevBtn = document.querySelector(".banner  .prev_btn");
+        var nextBtn = document.querySelector(".banner .next_btn ");
+        // 定义一个常量 （值不会改变的变量）
+        var width = 500;
+        // 定义索引值
+        var index = 0;
+        // 2.0 事件绑定
+        prevBtn.onclick = function(){    
+            // 3.0 处理逻辑
+            index++;
+            if(index>2){//index不能大于最大的索引值
+                index = 2 ;// 如果大于，就设置index = 2; 不能再点击了
+            }
+            // 调用封装好的函数
+            animate(ul,(-index*width), 30)
+        }
+
+        nextBtn.onclick = function(){    
+            // 3.0 处理逻辑
+            index--;
+            if(index<0){//index不能大于最大的索引值
+                index = 0 ;// 如果大于，就设置index = 0;不能再点击了
+            }
+            // 调用封装好的函数
+            animate(ul,(-index*width), 30)
+        }
+        
+
+
+
+</script>

@@ -1,0 +1,64 @@
+html , body , div , ul ,li ,ol , form , input ,p , h1 ,h2,h3 {
+    padding: 0;
+    margin: 0;
+}
+
+ul , ol {
+    list-style: none;
+}
+
+input ,textarea {
+    border:0;
+    outline: none;
+}
+a ,
+a:link ,
+a:visited ,
+a:hover ,
+a:active {
+    color: #333;
+    text-decoration: none;
+}
+
+/* 公共类名  */
+ .f_left {
+     float: left;
+ }
+.f_right {
+    float: right;
+}
+.clearfix::after {
+    content:"";
+    display: block;
+    clear: both;
+
+    height: 0;
+    visibility: hidden; /*& 隐藏 */
+    opacity: 0;
+}
+
+.mt_14 {
+    margin-top: 14px;
+}
+.borderNone {
+    border:0!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

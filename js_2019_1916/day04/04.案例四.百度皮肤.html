@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>换皮肤</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            html , body {
+                width: 100%;
+                height: 100%;
+            }
+            .bd_layout {
+                width: 100%;
+                height: 100%;
+                background-image: url("./images/baidupifu/1.jpg");
+
+                position: relative;
+            }
+
+            .bd_layout p.title {
+                width: 120px;
+                height: 40px;
+                background-color: #f0f0f0;
+                position: absolute;
+                right: 80px;
+                top: 100px;
+                /* tac */
+                text-align: center;
+                /* lh40px */
+                line-height: 40px;
+                color: #666;
+            }
+            .bd_layout ul {
+                width: 120px;
+                position: absolute;
+                right: 80px;
+                top: 140px;
+                background-color: #ccc;
+                list-style: none;
+            }
+            .bd_layout ul li {
+                height: 40px;
+                line-height: 40px;
+                padding-left: 20px;
+                background: #ccc;
+                cursor: pointer;
+            }
+            .bd_layout ul li:hover {
+                background-color: #f2f2f2;
+            }
+
+
+    </style>
+</head>
+<body>
+    <div class="bd_layout">
+            <p class="title">选择背景</p>
+            <ul>
+                <li>背景一</li>
+                <li>背景二</li>
+                <li>背景三</li>
+                <li>背景四</li>
+            </ul>
+    </div>
+
+    <script>
+        // 步骤
+            // 1.0 事件源
+           var lis =  document.querySelectorAll(".bd_layout ul li ");
+           var bd = document.querySelector(".bd_layout");
+            //2.0 循环 给每个li  添加属性     绑定事件
+            for(var i = 0 ; i < lis.length ;i++){
+                //  i = 0 , 1, 2 ,3 ...
+                //给每一个li标签添加一个叫做aaa的属性，然后把索引值赋给指定的li 
+                lis[i].aaa =(i+1); //记录索引值
+                // console.dir(lis[i])
+                lis[i].onclick  = function(){
+                    // 3.0 处理程序
+                    var num = this.aaa;//变量
+                    bd.style.backgroundImage="url('./images/baidupifu/"+num+".jpg')"; //单双引号结合 怎么插入变量  常量  
+                }
+            }
+
+    </script>
+
+
+</body>
+</html>

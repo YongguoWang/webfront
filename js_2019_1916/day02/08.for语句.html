@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            div {
+                width: 90px;
+                height: 90px;
+                background-color: #ccc;
+                margin: 5px 0 0 0 ;
+            }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
+<script>
+    // 步骤
+        // 获取指定的元素
+        var aBox = document.querySelectorAll(".box");//元素的集合，不是一个元素
+        console.log(aBox)
+        // 循环
+        for(var i = 0 ; i < 5 ; i++){
+            // 属性的绑定
+            aBox[i].aaa = i; // 等于号的左右两边是不一样的，，左边的变量是属性 ，右边是值（value）
+            aBox[i].onclick = function(){
+                // 打印每个盒子对应的索引值（下标）
+                // console.log(this.aaa)
+            }
+        }
+</script>

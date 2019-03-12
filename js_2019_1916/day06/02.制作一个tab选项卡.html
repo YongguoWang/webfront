@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {  /*通配符   代表页面所有的元素*/
+                padding: 0;
+                margin: 0;
+            }
+            ul {
+                list-style: none;
+            }
+            .container {
+                width: 350px;
+                margin: 0 auto;
+            }
+            .container  .tab_nav {
+                width: 350px;
+                height: 50px;
+                background-color: #ccc;
+            }
+            .container  .tab_nav ul {
+                width: 350px;
+            }
+            .container  .tab_nav ul li {
+                width: 70px;
+                float: left;/* 浮动*/
+                text-align: center;
+                height: 50px;
+                line-height: 50px;
+            }
+            .container  .tab_nav ul li.active {
+                background-color: yellow;
+            }
+            .container .tab_content {
+                width: 350px;
+                height: 350px;
+                background-color: yellow;
+            }
+    </style>
+
+</head>
+<body>
+
+    <!-- 结构 -->
+    <div class="container">
+        <div class="tab_nav">
+            <ul>
+                <li class="active">A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+            </ul>
+        </div>
+        <!-- 渲染 -->
+        <div class="tab_content">tabA</div>
+    </div>
+
+
+    <script>
+        // 步骤：
+            // 1.0 获取相关的元素
+            var lis = document.querySelectorAll(".tab_nav ul li ");
+            var tabContent = document.querySelector(".tab_content ");
+            // 2.0 事件的绑定
+            for(var i = 0 ; i < lis.length ; i++){
+                // 2.0.1  属性的绑定
+                lis[i].index = i ; 
+                // 2.0.2绑定点击事件
+                lis[i].onclick = function(){
+                    // 3.0.2 排他思想
+                    for(var j = 0 ; j < lis.length;j++){
+                        lis[j].classList.remove("active");
+                    }
+                    // 3.0.1类名操作
+                    // this ?指向事件的调用者
+                    this.classList.add("active")
+
+                    // 3.0.3 设置tab_content 盒子的内容
+                    tabContent.innerHTML = "你点击了"+lis[this.index].innerHTML+"盒子。";
+                }
+            }
+
+    </script>
+</body>
+</html>

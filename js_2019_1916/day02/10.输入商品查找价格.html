@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            input ,button {
+                border:0;
+                outline: none;
+                background-color: transparent;/*transparent  透明*/
+            }
+
+            .container  {
+                width: 640px;
+                height: 800px;
+                background-color: #ccc;
+                margin: 0 auto;
+            }
+            .container .search {
+                width: 640px;
+            }
+            .container .search .search_inp {
+                width: 636px;
+                height: 46px;
+                border:2px solid darkred;
+            }
+            .container .search .search_inp input {
+                width: 480px;
+                height: 46px;
+                background-color: #fff;
+                float: left;
+                padding-left: 20px;
+            }
+            .container .search .search_inp button {
+                width: 136px;
+                height: 46px;
+                background-color: darkred;
+                float: left;
+                color: #fff;
+                cursor: pointer;
+            }
+            .container  .search  .search_res {
+                width: 636px;
+                height: 400px;
+                border:2px solid darkred;
+                margin-top: 10px;
+            }
+
+            .container  .search  .search_res p {
+                width: 500px;
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 2px solid darkred;
+            }
+    </style>
+
+    <script>
+        window.onload = function(){
+            // 步骤：
+            // 1.0 获取相关元素
+            var inp = document.querySelector(".search_inp input");
+            var btn = document.querySelector(".search_inp button");
+            var productName = document.querySelector(".product_name span");
+            var productPrice = document.querySelector(".product_price span");
+
+            // 4.0 整理一份数据
+            var  baiCai = "白菜";
+            var baiCaiPrice = "1元/斤";
+
+            var  luoBo = "胡萝卜";
+            var luoBoPrice = " 3元/斤";            
+               
+            var fanShu = "番薯";
+            var fanShuPrice =" 3.5元/斤";
+            // 茄子	     1.5元/斤
+            // 土豆	     5元/斤
+
+            // 2.0 事件的绑定
+            btn.onclick = function(){
+                // 3.0 处理逻辑的编写
+                // 3.0.1 获取输入框的值
+               var pName =  inp.value;
+                 //3.0.1 判断输入的是什么
+                 if(pName == baiCai ){
+                    // 3.0.2 在span标签上显示相对数据
+                    productName.innerHTML = pName;
+                    productPrice.innerHTML = baiCaiPrice;
+
+                 }else if (pName == luoBo){
+                    productName.innerHTML = pName;
+                    productPrice.innerHTML = luoBoPrice;
+
+                }else if (pName == fanShu){
+                    productName.innerHTML = pName;
+                    productPrice.innerHTML = fanShuPrice;
+
+                }else {
+                    //  alert("不知道你输入的是什么商品！")
+                    productName.innerHTML = "";
+                    productPrice.innerHTML = "";
+                 }
+            }
+
+        }
+    
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+            <div class="search_inp">
+                <input type="text" placeholder="请输入你要查询的产品..">
+                <button>搜索</button>
+            </div>
+            <div class="search_res">
+                    <p class="product_name">名称:<span></span></p>
+                    <P class="product_price">价格:<span></span></P>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

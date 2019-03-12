@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="box"> </div>
+
+    <script>
+        // 记录速度
+        var speed = 0 ;
+        // 步骤：
+        // 1.0 获取元素  // 2.0 事件绑定
+        document.querySelector(".box").onclick = function(){
+                    //  this 指向事件的调用者
+                    var _box = this ;
+                   // 3.0 处理程序
+                   var timer = setInterval(function(){
+                        //  自增一        speed +=1
+                       speed ++;
+                       console.log(speed)
+                       
+                        if(speed > 700){
+                            // 停止定时器函数的方法
+                            clearInterval(timer);
+                        }
+                        // 设置盒子的左边外边距的值
+                        _box.style.marginLeft=speed+"px";
+                   },0)
+        }
+
+       
+
+     
+        
+    </script>
+</body>
+</html>

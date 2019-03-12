@@ -1,0 +1,77 @@
+* { /* 通配符  去掉页面所有标签的默认的内外边距*/
+    padding: 0;
+    margin: 0;
+}
+
+ul , ol {
+    list-style: none;
+}
+
+.clearfix::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+.banner {
+    overflow: hidden;/*溢出部分隐藏*/
+    width:1200px;
+    margin: 0 auto;
+    /*background-color: #000;*/
+    position: relative;/* 相对定位*/
+}
+.banner ul {
+    width:6000px;/* 1200 * 5 = 6000*/
+}
+.banner ul li {
+    width:1200px;
+    float:left;
+}
+.banner ul li a {
+    width:1200px;
+    display: block;
+}
+.banner ul li a img {
+    width:1200px;
+    display: block;
+}
+
+
+.banner ol {
+    position: absolute;/* 绝对定位 */
+    bottom:0;
+    left:50%;
+    margin-left:-40px;
+    width: 80px;/* 12*5 + 5*4 =80 */
+    height: 20px;
+    /*background-color: skyblue;*/
+}
+
+.banner ol li {
+    width: 10px;
+    height: 10px;
+    border:1px solid #333;
+    float: left;
+    margin-right: 5px;
+    margin-top:5px;
+}
+.banner ol li.active {
+    background-color: red;
+}
+
+.banner ol li:last-child {
+    margin-right: 0;
+}
+.banner ol li.mr_0 {
+    margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+

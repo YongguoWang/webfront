@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        ul {
+            list-style: none;/* 去掉点缀的符号*/
+            width: 500px;
+            margin: 0 auto;
+        }
+        ul li {
+            width: 500px;
+            height: 50px;
+            background-color: #ccc;
+            margin: 0 0 10px 0;/* 底部外边距是10px */
+        }
+
+        ul li.red {
+            background-color: red;
+        }
+        ul li.green {
+            background-color: green;
+        }
+    </style>
+
+    <script>
+        // // 1.0 获取页面所有的li标签
+        // var lis = document.querySelectorAll("ul li");//
+        // // 2.0 循环
+        // var count = lis.length;//看页面有多少个的li标签
+        // console.log(count) // 为何输出的是 0 ？ 缺少一个加载事件
+
+
+
+        window.onload = function(){
+                 // 1.0 获取页面所有的li标签
+                var lis = document.querySelectorAll("ul li");//
+                // 2.0 循环
+                var count = lis.length;//看页面有多少个的li标签
+                console.log(count) // 
+                for(var i = 0 ; i < count ; i++){
+                    
+                    if(i % 2 == 0){  // % 取余
+                            lis[i].classList.add("red");
+                    }else {
+                            lis[i].classList.add("green");
+                    }
+                }
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

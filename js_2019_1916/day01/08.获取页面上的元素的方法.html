@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 50px;
+                background-color: #ccc;
+                margin-bottom: 10px;
+            }
+    </style>
+    <script>
+        // 加载函数
+        window.onload = function(){
+                // 怎么获取页面的元素
+                //  01. document.getElementById();//通过id名获取单一元素
+                var elep = document.getElementById("textId");//参数是id名
+                console.log(elep)
+                // document.getElementsByTagName();//通过标签名 获取的是元素集合
+                var all_span  =  document.getElementsByTagName("span");
+                console.log(all_span)
+                console.log(all_span[1]);// 索引值（下标）从0开始
+                // document.getElementsByClassName();//通过类名 获取的是元素集合
+               var all_box = document.getElementsByClassName("box");
+               console.log(all_box)
+               console.log(all_box[2])
+                // document.querySelector("#id/class/标签");//通过id名、类名、标签名 来获取单一元素
+               var eleDiv =  document.querySelector("div.active");
+               console.log(eleDiv)
+                // document.querySelectorAll();通过类名、标签名 来获取元素集合
+              var allSpan =  document.querySelectorAll("span");
+              console.log(allSpan)
+
+
+            //   获取输入框的值
+            var inpEle = document.querySelector(".inp");
+            var btn = document.querySelector("button.btn");
+            var res = document.querySelector(".result");
+
+
+
+            btn.onclick = function(){
+
+                    var inpVal = inpEle.value;//这是获取输入框的值
+
+                    console.log(inpVal)
+
+                    res.innerHTML = inpVal;//把输入的值渲染类名叫.result 这个盒子上
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <div class="box result">aaa</div>
+    <div class="box active">bbb</div>
+    <div class="box">ccc</div>
+    <p id="textId"></p>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+
+
+    <input type="text" class="inp"><button class="btn">按钮</button>
+</body>
+</html>

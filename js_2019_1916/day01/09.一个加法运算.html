@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="inp1"> <button>+</button><input type="text" class="inp2"> <button class="res_btn">=</button><span class="result">0</span>
+</body>
+</html>
+
+<script>
+
+    //  步骤：
+        // 1.0 获取事件源（指定元素）
+       var inp1 =  document.querySelector(".inp1");
+       var inp2 =  document.querySelector(".inp2");
+       var resBtn =  document.querySelector(".res_btn");
+       var result =  document.querySelector(".result");
+
+    //    2.0 事件的绑定
+    resBtn.onclick = function(){
+        // 3.0 处理逻辑的编写
+        var a = inp1.value;
+        var b = inp2.value;
+        var total = (a-0) + (b-0);// 减去0  可以把数字字符串转成number类型
+        result.innerHTML = total;//显示结果
+
+    }
+
+</script>

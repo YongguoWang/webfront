@@ -1,0 +1,18 @@
+html,
+body {
+  width: 100%;
+}
+.banner {
+  width: 900px;
+  margin: 0 auto;
+}
+.banner .w {
+  height: 500px;
+  background-color: #cccccc;
+}
+.banner .w ul {
+  list-style: none;
+}
+.banner .w ul li {
+  height: 40px;
+}

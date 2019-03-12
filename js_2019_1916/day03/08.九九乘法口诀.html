@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        ul {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        ul li {
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        ul li span {
+            float: left;
+            width: 120px;
+            height: 38px;
+            border:1px solid pink;
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul class="list">
+        <!-- 渲染的部分 -->
+    </ul>
+        <script>
+            // 步骤：
+                // 1.获取相关的元素
+                var list = document.querySelector("ul.list");
+                //  加减乘除  
+                var str = "";
+                for(var i = 1 ; i <=9 ; i++ ){
+                    str+="<li>";
+                    for(var j = 1 ; j <=i; j++){
+                        // document.write(i+"*"+j+"="+i*j);// 字符串和变量的拼接
+                        str+="<span>"+i+"*"+j+"="+i*j+"</span>"
+                    }
+                    str+="</li>"
+                    // document.write("<br>");
+                }
+                console.log(str)
+                // 把拼接好的字符串渲染在ul这个盒子里面
+                list.innerHTML = str;
+        </script>
+</body>
+</html>

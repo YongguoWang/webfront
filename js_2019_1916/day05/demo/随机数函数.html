@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        // 指定范围的随机数
+        function fn(min , max) {
+                return Math.round(Math.random()*(max-min)+min); //向上取整
+                // return parseInt(Math.random()*(max-min)+min+1);
+
+        }
+       var res =  fn(0, 2)// 0,1
+       console.log(res)
+    
+    </script>
+    
+</body>
+</html>

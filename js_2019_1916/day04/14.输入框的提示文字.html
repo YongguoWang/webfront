@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+     * {
+         padding: 0;
+         margin: 0;
+     }
+
+     .search {
+         width: 580px;
+         height: 40px;
+         border:2px solid darkred;
+         margin: 150px auto;
+
+         position: relative;/* 相对定位*/
+     }
+     .search input.inp {
+         width: 480px;
+         height: 40px;
+         border:0;
+         outline: none;
+         background-color:transparent;
+         padding-left: 20px;
+         position: absolute;/* 绝对定位  会脱离正常的文档流*/
+         top:0;
+         left: 0;
+         z-index: 1;
+     }
+     .search p.tips {
+        width: 480px;
+         height: 40px;
+         color: red;
+         line-height: 40px;
+         font-size: 13px;
+         padding-left: 20px;
+     }
+    </style>
+</head>
+<body>
+    <!-- label 标签 -->
+    <label for="inpId">点一下</label> 
+    <div class="search">
+        <input type="text" class="inp" id="inpId">
+        <p class="tips">请输入你的账号.</p>
+    </div>
+
+    <script>
+
+        // 步骤
+            // 1.0 事件源
+          var inp =   document.querySelector("input.inp");
+          var tips = document.querySelector("p.tips");
+
+        //   2.0 事件
+        // 获取光标（焦点）事件 onfocus 
+        inp.onfocus = function(){
+                tips.style.display="none";//让p隐藏
+        }
+         // 失去光标 (焦点)  事件   onblur
+        inp.onblur = function(){
+            tips.style.display="block";//让p隐藏
+        }
+
+    </script>
+
+
+</body>
+</html>

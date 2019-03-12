@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        /*
+        >
+
+        < 
+
+        ==
+
+        !=
+
+        ===
+
+        ||  或  代表的是    “条件一 ||  条件二  ”   其中一个条件是false ，另一个是true  ，输出的结果是  true
+
+        && 与  代表的是  “条件一 ||  条件二  ”   其中一个条件是false ，另一个是true  ， 输出的结果是 false
+        
+        
+        */ 
+
+        var aaa = "hello";
+        // == 判断值
+        if(aaa.length == 0 ){
+            console.log("这是一个空字符串")
+        }else {
+            console.log("这个字符串的字符个数有"+aaa.length+"个");
+        }
+
+        // ===  这是 判断值和类型是否一致 
+        var num = 1000; // number
+        var str = "1000"; // string
+        if(num === str ){
+            console.log("他们是一样")
+        }else if(num == str){
+            console.log("哦，有点关系！类型不同")
+        }else {
+            console.log("半毛钱关系都没有！")
+        }
+
+
+        //  或
+        var bbb = false ; var ccc = true ;
+
+        if(bbb || ccc){  //两个条件,其中一个成立 ，就执行
+                // to do list 
+                console.log("这是‘或’")
+        }
+
+        var eee = true ; var fff = true ;
+
+        if(eee && fff ){ //两个条件同时成立 ，才执行
+            console.log("这是‘与’")
+        }
+
+        var hhh = false ;
+        console.log(!hhh); // true   取反 
+
+
+        /*
+        
+        ++  自增
+
+        --  自减
+
+        % 取余
+        
+        12 % 10 = 2
+
+        11 / 10 = 1 .....2   说的余数
+        
+        */ 
+
+        var a = 0 ;
+
+        console.log(a++); //在变量后  0 
+
+        var b = 0;
+
+        console.log(++b);//在变量前  1
+
+        var c = 0 ;
+
+        console.log(--c);// -1
+
+        console.log(109 % 10);// 取余
+
+
+    
+    </script>
+</body>
+</html>

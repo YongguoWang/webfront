@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*并集选择器*/
+        ul , ol {
+            list-style: none;
+            padding:0;
+            margin: 0;
+        }
+        /*直接子代选择器*/
+        ul {
+            width:180px;
+        }
+        ul > li {
+            width:180px;
+        }
+        ul > li > div {
+            width:180px;
+            height: 50px;
+            background-color: pink;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        ul > li > ol {
+            display: none;
+        }
+        ul>li:hover {
+            cursor: pointer;/* 鼠标变小手*/
+        }
+            /* 鼠标悬停*/
+        ul>li:hover > ol {
+            display: block;
+        }
+        ul>li > ol > li {
+            width:180px;
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+
+        <ul>
+            <li>
+                <div>一级菜单</div>
+                <ol>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ol>
+            </li>
+        </ul>
+</body>
+</html>

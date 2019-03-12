@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            width:500px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        ul li {
+            width: 480px;
+            height: 50px;
+            border-bottom:1px solid #ccc;
+            line-height: 50px;
+            padding-left:20px;
+
+            position: relative;/*父元素 相对定位*/
+        }
+        ul li .icon {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-image: url("./img/sprites.png");
+
+
+            position: absolute;/* 子元素  绝对定位*/
+            top:19px;/* 50 - 12)/ 2= 19 */
+            left:4px;/* 20 - 12 )/2 = 4 */
+        }
+
+        ul li  .up {
+            background-position: 0 -40px;
+        }
+        ul li .down {
+            background-position: 0 -20px;
+        }
+        
+    </style>
+</head>
+<body>
+        <ul>
+            <li><span class="icon up"></span>元宵节快乐！</li>
+            <li><span class="icon down"></span>元宵节快乐！</li>
+            <li><span class="icon up"></span>元宵节快乐！</li>
+            <li><span class="icon down"></span>元宵节快乐！</li>
+            <li><span class="icon up"></span>元宵节快乐！</li>
+        </ul>
+</body>
+</html>

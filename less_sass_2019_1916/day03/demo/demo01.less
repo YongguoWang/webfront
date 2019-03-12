@@ -1,0 +1,32 @@
+@width:1200px;
+.margin_auto (@y){
+    margin: @y auto;
+}
+// 版心
+.container {
+    width: @width;
+    .margin_auto(0);
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html , body {
+    width:100%;
+}
+.layout {
+    width:100%;
+    .header {
+        width:100%;
+        height: 50px;
+        background-color: skyblue;
+    }
+    .content {
+        width: 100%;
+        height: 500px;
+        background-color:#ccc; 
+    }
+    
+}
+

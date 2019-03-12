@@ -1,0 +1,13 @@
+@width:1000px;
+.big_box {
+  width:@width;
+  height: 50px;
+  background-color: #ccc;
+}
+
+//1. 调用者 2. 参数 3.返回值 4.功能
+.big_box .small_box {
+  width:ceil(99.9px);// 向上取整 ，floor()向下取整
+  height: 100px;
+  background-color:fadeout(red,50%);//fadeout 淡出
+}

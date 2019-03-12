@@ -1,0 +1,15 @@
+.layout {
+  font-family: "Microsoft YaHei";
+}
+.banxin {
+  width: 1200px;
+  margin: 0 auto;
+}
+.layout .header {
+  width: 1200px;
+  height: 100px;
+  background-color: #f0f0f0;
+}
+.layout .header p {
+  color: #87ceeb;
+}

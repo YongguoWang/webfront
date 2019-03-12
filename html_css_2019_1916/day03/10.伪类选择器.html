@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+            ul li {
+                width:500px;
+                height:40px;
+                /*  bb+   按tab 按键*/
+                border-bottom: 1px solid #ccc;
+            }
+            /*伪类选择器*/
+            ul li:nth-child(3) {
+                background-color: purple;
+            }
+            ul li:first-child {
+                background-color: yellow;
+            }
+            ul li:last-child {
+                background-color: green;
+            }
+
+    </style>
+</head>
+<body>
+    <!--  ul>li*5   按一下TAB按键 -->
+    <ul>
+        <li>li标签1</li>
+        <li>li标签2</li>
+        <li>li标签3</li>
+        <li>li标签4</li>
+        <li>li标签5</li>
+    </ul>
+
+
+</body>
+</html>

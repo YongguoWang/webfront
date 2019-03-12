@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .icon1 {
+                width: 56px;
+                height: 56px;
+                background-image: url("./images/sprites.png")
+            }
+
+            .icon_flower {
+                background-position: 0 0;
+            }
+
+            .icon2 {
+                width:112px;
+                height: 112px;
+                background-image: url("./images/sprites.png");
+                background-size: 400px 400px;
+            }
+
+            .icon3 {
+                width:28px;
+                height: 28px;
+                background-image: url("./images/sprites.png");
+                background-size: 100px 100px;
+            }
+
+            .box1 , .box2 {
+                width: 100px;
+                height: 100px;
+                position: absolute;/* 定位 */
+                right: 0;
+                top: 0;
+            }
+            .box1 {
+                background-color:red;
+                z-index: 99;
+            }
+            .box2 {
+                background-color: green;
+                z-index: 100;/* 有前提  必须定位了。*/
+            }
+
+    </style>
+
+</head>
+<body>
+
+        <div class="icon1 icon_flower"></div>
+
+        <div class="icon2 icon_flower"></div>
+
+        <div class="icon3 icon_flower"></div>
+
+
+        <div class="box1"></div>
+        <div class="box2"></div>
+    
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background-color:rgb(255,255,255);
+
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -250px;
+            margin-top: -250px;
+
+        }
+    </style>
+</head>
+<body>
+    
+        <div></div>
+
+        <script>
+        // 步骤
+            //  A ：实现点击改变盒子的背景色（每点击一次改变）
+            //  B： 实现自动改变盒子的背景色（每隔一段时间改变）
+            // A +B
+
+            // background-color:rgb(255,255,255);
+
+            function fn(min , max){
+                
+              var res  =  Math.random()*(max-min)+min;//指定随机数范围 得到的是带小数点的
+
+              var val = parseInt(res);  // 得到的是一个取整的数
+
+              return  val;//返回值
+                
+            }
+            // 产生三个 0-255之间的值（数字）
+           var red  =  fn(0,255);
+           var green  =  fn(0,255);
+           var blue  =  fn(0,255);
+           var color = "rgb("+red+","+green+","+blue+")";//把颜色的值拼接好
+           console.log(color)
+             //  获取元素
+            var ele =  document.querySelector("div");  
+            // 改变他的背景色属性的值
+            ele.style.backgroundColor=color;
+
+            // 实现需求 A
+            ele.onclick = function(){
+                red  =  fn(0,255);
+                green  =  fn(0,255);
+                blue  =  fn(0,255);
+                color = "rgb("+red+","+green+","+blue+")";//把颜色的值拼接好
+                // 改变他的背景色
+                this.style.backgroundColor=color;
+
+                // 定时器
+                var timer = setInterval(changColor,3000);
+
+            }
+
+            // 实现需求B
+            function changColor(){
+                red  =  fn(0,255);
+                green  =  fn(0,255);
+                blue  =  fn(0,255);
+                color = "rgb("+red+","+green+","+blue+")";//把颜色的值拼接好
+                   // 改变他的背景色
+                   ele.style.backgroundColor=color;
+            }
+
+
+            var n = fn(0,1);
+            console.log(n)
+        </script>
+
+
+</body>
+</html>

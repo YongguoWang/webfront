@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .picture_box {
+                width: 320px;
+                height: 320px;
+                border: 10px solid #333;
+                margin: 0 auto;
+            }
+            .picture_box  .picture {
+                width: 320px;
+                height: 320px;
+                background-image: url("./images/photo1.jpg");
+            }
+
+
+    </style>
+
+</head>
+<body>
+        <div class="picture_box">
+            <div class="picture"></div>
+        </div>
+
+        <script>
+                     // 步骤：
+                            // 1.0 获取指定的元素(事件源)
+                            var box = document.querySelector(".picture_box");
+                            var pic = document.querySelector(".picture");
+                            // console.log(pic) 检查代码是否有误（是否获取了该元素）
+                            // 2.0 绑定事件
+                            box.onmouseover = function(){
+                                       // 3.0 书写处理逻辑
+                                       console.log("test")
+                                    //    alert("就弹一下！")
+                                    pic.style.backgroundImage = "url(./images/photo2.jpg)";
+
+                            }
+
+                            box.onmouseout = function(){
+                                pic.style.backgroundImage="url(./images/photo1.jpg)";
+                            }
+
+
+                         
+        </script>
+
+
+</body>
+</html>

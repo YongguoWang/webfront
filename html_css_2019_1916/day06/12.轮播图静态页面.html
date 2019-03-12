@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./base.css">
+    <style>
+        /* 实现左右切换按钮 */
+        .banner .btn {
+            width: 100px;
+            height: 100px;
+            /*border: 1px solid #ccc;*/
+            position: absolute;
+            top:50%;
+            margin-top: -50px;
+            display: none;
+            text-align: center;
+            line-height: 100px;
+        }
+        /* 鼠标在轮播图悬停  按钮显示*/
+        .banner:hover .btn {
+            display: block;
+        }
+        .banner .btn_left {
+            left: 0;
+        }
+        .banner .btn_right {
+            right: 0;
+        }
+
+
+        .icon_next {
+
+        }
+        .icon_next::before {
+            content:"";
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+
+            width: 0;
+            height: 0;
+            border-top:10px solid transparent;
+            border-right:10px solid transparent;
+            border-left:10px solid #fff;
+            border-bottom:10px solid transparent;
+        }
+
+        .icon_prev {
+
+        }
+        .icon_prev::before {
+            content:"";
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+
+            width: 0;
+            height: 0;
+            border-top:10px solid transparent;
+            border-right:10px solid #fff;
+            border-left:10px solid transparent;
+            border-bottom:10px solid transparent;
+        }
+    </style>
+</head>
+<body>
+        <!-- a 是行内元素 img 是行内块元素 ， 行内元素包裹行内块元素会出现下间隙的问题-->
+        <!--1.0 把a元素设置成块元素display:block ，把font-size:0; -->
+        <!--2.0 把a行内元素转成块元素display:block；把img成块元素display:block-->
+        <div class="banner">
+            <!--图片-->
+            <!--ul>li>a>img-->
+            <ul class="clearfix">
+
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture2.jpeg" alt="">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture3.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture4.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture5.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="images/picture1.jpeg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <!--小圆点-->
+            <ol>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            <!--左右按钮-->
+            <div class="btn btn_left"><span class="icon_prev"></span></div>
+            <div class="btn btn_right"><span class="icon_next"></span></div>
+
+        </div>
+</body>
+</html>

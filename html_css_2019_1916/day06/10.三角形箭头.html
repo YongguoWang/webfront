@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .icon {
+            position: relative;
+        }
+        .icon::before {
+            content:"";/*产生一个伪类元素*/
+            position: absolute;
+            top: 5px;
+            left: 0;
+            z-index:1;/* 层级属性 */
+
+            width: 0;
+            height: 0;
+            border-top:10px solid transparent;
+            border-right:10px solid transparent;
+            border-left:10px solid blue;
+            border-bottom:10px solid transparent;
+        }
+        .icon::after {
+            content:"";
+            position: absolute;
+            top: 5px;
+            left: -5px;
+            z-index:2;
+
+            width: 0;
+            height: 0;
+            border-top:10px solid transparent;
+            border-right:10px solid transparent;
+            border-left:10px solid white;
+            border-bottom:10px solid transparent;
+        }
+        ul {
+            list-style: none;
+        }
+        ul li {
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-left:20px;
+            line-height: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+        <ul>
+            <li class="icon"> 新闻列表 </li>
+            <li class="icon"> 新闻列表 </li>
+            <li class="icon"> 新闻列表 </li>
+            <li class="icon"> 新闻列表 </li>
+            <li class="icon"> 新闻列表 </li>
+        </ul>
+</body>
+</html>

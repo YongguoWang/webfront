@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换下图片</title>
+    <style>
+        .img_box {
+            width: 160px;
+            height: 170px;
+            background-image: url("./images/jd1.png"); /* jpg png git ico  */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="img_box"></div>
+
+    <script>
+        //  步骤
+        // 1.0 事件源
+       var imgBox = document.querySelector("div.img_box");
+    //    2.0 事件绑定(鼠标悬停)
+    imgBox.onmouseover = function(){
+        // 3.0 逻辑程序 改变盒子的背景图路径
+        // this 指向的是事件的调用者
+        this.style.backgroundImage='url("./images/jd2.png")';  // 为什么出现红色错误提示
+    }
+    // (鼠标移开)
+    imgBox.onmouseout= function(){
+        // 3.0 逻辑程序 改变盒子的背景图路径
+        // this 指向的是事件的调用者
+        this.style.backgroundImage='url("./images/jd1.png")';  // 为什么出现红色错误提示
+    }
+    </script>
+    
+</body>
+</html>

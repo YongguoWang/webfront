@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .container{
+                width: 2500px;
+                height: 1500px;
+                background-color:skyblue;
+            }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container"></div>
+    <script>
+
+        // scrollTop  获取页面被浏览器卷去的顶部大小
+
+        // scrollLeft  获取页面被浏览器卷去左边的大小
+
+
+
+        // 1.0 
+        // 定义变量接收  
+        var ttop = 0 ;
+        // 2.0 事件  onscroll  监听页面滚动 
+        window.onscroll = function(){
+            // console.log("test")
+            // 获取页面被浏览器卷去的顶部大小
+            ttop = document.body.scrollTop  || document.documentElement.scrollTop;
+            console.log(ttop)
+        }
+    
+    </script>
+
+</body>
+</html>

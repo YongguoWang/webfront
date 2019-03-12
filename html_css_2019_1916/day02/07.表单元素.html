@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07.表单元素.html</title>
+</head>
+<body>
+	<form action="">
+		<!-- 单选题 -->
+		<p>1.单选题( "div"是不是块元素？)</p>
+		<div>
+			<div><input type="radio" name="single" value="yes"> 是   </div>
+			<div><input type="radio" name="single" value="no"> 不是 </div>
+		</div>
+
+		<!-- 多选题 -->
+		<p>2.多选题(盒子模型包括哪些属性？)</p>
+		<div>
+			<div><input  name="opt1" type="checkbox">A. margin  </div>
+			<div><input checked name="opt2" type="checkbox">B. border   </div>
+			<div><input name="opt3" type="checkbox">C. padding </div>
+			<div><input name="opt4" type="checkbox">D. content  </div>
+			<div><input name="opt5" type="checkbox">E. position  </div>
+		</div>
+		<!-- 填空题 -->
+		<p>3.命名的时候可以输入"下划线"？</p>
+		<div>
+			<input name="inp" type="text" placeholder="请输入答案">
+		</div>
+
+		<div>
+			<input type="submit" value="提交试卷">
+		</div>
+
+	</form>
+
+</body>
+</html>

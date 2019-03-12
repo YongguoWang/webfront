@@ -1,0 +1,24 @@
+@charset "UTF-8";
+$val : red;
+@mixin bd($width,$color){
+    border:$width  solid $color;
+}
+.box {
+    position: relative; // 相对定位
+    width: 500px;
+    height: 500px;
+
+    @include bd(10px ,pink);
+
+    .box1 {
+        position: absolute;/* 绝对定位*/
+        right: 0;
+        bottom: 0;
+
+
+        width: 50px;
+        height: 50px;
+        background-color: $val;
+    }
+}
+

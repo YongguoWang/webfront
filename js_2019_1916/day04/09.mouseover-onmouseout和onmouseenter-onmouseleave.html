@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            ul   , ol{
+                list-style: none;
+            }
+
+            ul {
+                width: 500px;
+
+            }
+            ul > li {
+                width: 250px;
+                background-color: #ccc;
+            }
+
+            ul > li > span {
+                display: block;
+                width: 250px;
+                height: 40px;
+                background-color: pink;
+            }
+
+            ul > li > ol {
+                width: 250px;
+                display: none;
+            }
+            ul > li > ol > li {
+                width: 250px;
+                height: 40px;
+                border-bottom: 1px solid #333;
+            }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li class="item">
+            <span>一级菜单</span>
+            <ol>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ol>
+        </li>
+    </ul>
+
+
+    <script>
+        // 步骤
+            // 1.0获取相关元素
+         var lis =  document.querySelectorAll("ul > li.item");
+         var ols = document.querySelectorAll("ul > li > ol");
+        //  2.0 事件的绑定
+        for(var i = 0 ; i < lis.length; i++){
+            // 3.0.1鼠标悬停事件 (在子元素身上离开，不会触发该事件)
+            lis[i].onmouseenter = function(){
+                ols[0].style.display = "block";
+            }
+             // 3.0.2  鼠标离开事件 (在子元素身上离开，不会触发该事件)
+            lis[i].onmouseleave= function(){
+                ols[0].style.display = "none";
+                console.log("onmouseleave")
+            }
+        }
+
+        // for(var i = 0 ; i < lis.length; i++){
+        //     // 3.0.1鼠标悬停事件 (在子元素身上离开，也会触发该事件)
+        //     lis[i].onmouseover= function(){
+        //         ols[0].style.display = "block";
+        //     }
+        //      // 3.0.2  鼠标离开事件  (在子元素身上离开，也会触发该事件)
+        //     lis[i].onmouseout= function(){
+        //         ols[0].style.display = "none";
+        //         console.log("onmouseout")
+        //     }
+        // }
+
+    </script>
+</body>
+</html>

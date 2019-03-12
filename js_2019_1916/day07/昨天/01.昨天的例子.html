@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .big {
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .big ul {
+            width: 1200px;
+            height: 200px;
+            /* position: absolute;
+            left: 0; */
+        }
+        .big ul li {
+            width: 400px;
+            height: 200px;
+            float: left;
+            text-align: center;
+            line-height: 200px;
+            font-size: 30px;
+            color: #fff;
+        }
+        .big ul li:nth-child(1) {background-color: red;}
+        .big ul li:nth-child(2) {background-color: yellow;}
+        .big ul li:nth-child(3) {background-color: blue;}
+       
+
+       .big button {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            margin-top: -50px;
+       }
+       .next_btn {
+           right: 0;
+       }
+    </style>
+</head>
+<body>
+
+    <div class="big">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+        <button class="prev_btn">LEFT</button>
+        <button class="next_btn">RIGHT</button>
+
+
+    </div>
+
+    <script src="animate.js"></script>
+    <script>
+        //  步骤：
+        // 获取元素
+        var btnPrev = document.querySelector(".prev_btn");
+        var btnNext = document.querySelector(".next_btn");
+        var ulEle =  document.querySelector(".big ul");
+        var aLi =  document.querySelectorAll(".big ul li");
+        // console.log(aLi)
+
+        // 索引值
+        var index = 0 ;
+        // 宽度
+        var width = aLi[0].offsetWidth; // 获取元素的宽度.offsetWidth
+        console.log(width)
+        // 绑定点击事件
+        btnPrev.onclick = function(){
+                index++; // 往左动画
+                if(index>2){
+                    index=2;
+                }
+                // 调用封装好的方法
+                run(ulEle , (-index*width))
+                console.log(-index*width) 
+        }
+        btnNext.onclick = function(){
+            index--; //往右边动画
+            if(index<0){
+                index=0;
+            }
+            console.log(-index*width)
+             // 调用封装好的方法
+            run(ulEle , (-index*width))
+        }
+    </script>
+    
+</body>
+</html>

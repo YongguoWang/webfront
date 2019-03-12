@@ -1,0 +1,39 @@
+.banner {
+  width: 200px;
+  height: 280px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  /* 父元素 相对定位 */
+}
+.banner ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 600px;
+}
+.banner ul li {
+  width: 200px;
+  float: left;
+}
+.banner ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+.banner ol li {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  float: left;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+.banner ol li.active {
+  /* 交集选择器*/
+  background-color: #fff;
+}

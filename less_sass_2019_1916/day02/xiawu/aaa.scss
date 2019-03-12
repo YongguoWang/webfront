@@ -1,0 +1,13 @@
+$w:100px;
+$h:100px;
+$bgColor:blue;
+.box {
+	
+	$color:red;
+}
+
+.nav {
+	width:$w;
+	height:$h;
+	background-color:$bgColor;
+}

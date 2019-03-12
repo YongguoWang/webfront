@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JD</title>
+
+    <style>
+            .fl {
+                float: left;
+            }
+            .fr {
+                float: right;
+            }
+            .clearfix::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            html , body {
+                width: 100%;
+            }
+            ul , h3 ,body {
+                padding: 0;
+                margin: 0;
+            }
+            .title {
+                width: 100%;
+                max-width: 640px;
+                margin: 0 auto;
+                height: 32px;
+                background-color: #ccc;
+                line-height: 32px;
+            }
+            .title > div.fl  h3{
+                font-size: 13px;
+                font-weight: 400;
+                color: #666;
+                padding-left: 23px;
+                position: relative;
+            }
+            .title > div.fl  h3::before {
+                content: "";
+                display: block;
+                width: 3px;
+                height: 10px;
+                background-color: red;
+                position: absolute;
+                top:11px;
+                left: 10px;
+            }
+
+            .title > div.fr a {
+                color: #333;
+                text-decoration: none;/* 修饰文本的属性*/
+            }
+
+    </style>
+</head>
+<body>
+        <div class="title">
+            <div class="fl"><h3>京东超市</h3></div>
+            <div class="fr"><a href="http://www.wyg.com">更多&gt;&gt;</a></div>
+        </div>
+</body>
+</html>

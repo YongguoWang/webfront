@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>  
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            margin-left: 500px;
+            margin-top: 200px;
+        }
+
+
+        .big {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+        }
+        .big .small {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box"></div>
+
+    <div class="big">
+        <div class="small"></div>
+    </div>
+
+
+</body>
+</html>
+
+<script>
+    // 步骤
+    var box = document.querySelector(".box");
+
+    var left = box.offsetLeft;
+    var ttop = box.offsetTop;
+
+    console.log("距离左边间距："+left)
+    console.log("距离顶部间距："+ttop)
+
+
+    var small = document.querySelector(".big .small");
+    console.log("这是子元素的offsetLeft值:"+small.offsetLeft)
+
+
+</script>

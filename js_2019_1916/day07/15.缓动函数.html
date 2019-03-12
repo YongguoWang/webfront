@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-left: 1000px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+
+
+    <script>
+        // 演示1   面向过程 
+        // 步骤
+            // // 1.0 获取元素
+            // var box = document.querySelector(".box");
+            //  // 定时器
+            // var timer = null;
+            // // 2.0 事件的绑定
+            // box.addEventListener('click',function(){
+            //     // this 事件的调用者
+            //     // 3.0 处理逻辑
+            //     // 先清除定时器 再用定时器
+            //     clearInterval(timer);
+            //     // 定时器
+            //     timer = setInterval(function(){
+            //     // 步长
+            //         var speed  = (0 - box.offsetLeft)/10; //  让 speed 的值不断变小
+            //         speed  = speed <0 ?Math.floor(speed) :  Math.ceil(speed); //把小数点处理好之后，赋值给speed变量
+            //     // 停止定时器
+            //     if(speed == 0 ){ // 说明已经到达指定位置
+            //         clearInterval(timer);//清除定时器
+            //         return ; //终止代码
+            //     }
+            //     // 设置盒子的位置 = 盒子当前位置 + 步长
+            //     box.style.marginLeft =box.offsetLeft + speed + "px";
+            //     },30)
+
+            // })
+
+            // 演示2 
+                // 1.0 获取元素
+                var box = document.querySelector(".box");
+
+                // 封装好的函数
+                // 定义函数
+                function move(dom,target){ //形参
+                    clearInterval(dom.timer);
+                    dom.timer = setInterval(function(){
+                         var speed  = (0 - box.offsetLeft)/10; //  让 speed 的值不断变小
+                         speed  = speed <0 ?Math.floor(speed) :  Math.ceil(speed); //把小数点处理好之后，赋值给speed变量
+                         if(speed == 0 ){
+                                clearInterval(dom.timer);
+                                return ;
+                         }
+                        //  设置盒子的位置
+                        dom.style.marginLeft = dom.offsetLeft + speed +"px";
+                    },30)
+                }
+
+                // 使用函数
+                move(box,100)// 实参
+        
+        
+    </script>
+</body>
+</html>

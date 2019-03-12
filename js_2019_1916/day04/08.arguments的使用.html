@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function foo(a,b,c,d){ //形参
+            console.log(arguments)
+            // arguments.callee();//调用函数自身
+            // arguments.length; 参数的个数
+
+            var str = a+"-"+b+"-"+c+"-"+d;
+
+            return  str;
+        }
+        
+      var res  =   foo("red","yollew","purple","吃饭的时间又快到了。"); //实参
+
+        console.log(res)//
+    </script>
+    
+</body>
+</html>

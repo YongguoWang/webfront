@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="search">
+        <input type="text" class="num1">
+        <select class="flag"> 
+            <option value="+">+</option> 
+            <option value="-">-</option> 
+            <option value="*">*</option> 
+            <option value="/">/</option> 
+        </select>
+        <input type="text" class="num2">
+        <input type="button" value="=" class="btn_calc">
+        <input type="text" class="result">
+    </div>
+
+    <script>
+        // 步骤：
+            // 1.0 获取相关的元素
+          var num1 =   document.querySelector(".num1");
+          var flag =   document.querySelector(".flag");
+          var num2 =   document.querySelector(".num2");
+          var calcBtn =   document.querySelector(".btn_calc");
+          var result =   document.querySelector(".result");
+
+        //   3.0 获取运算符号
+        var str = "+";
+        //   2.0 事件的绑定（给下拉标签绑定onchange事件
+        // onchange 一旦该标签的值变化了就触发了函数
+        flag.onchange = function(){
+            str = this.value;
+            console.log(str);
+        }
+
+        // 4.0 编写一个函数
+        function calcFun(s1 , n1 ,n2 ){//  形参 （形式参数）
+            var res = 0 ;
+            // 判断语句
+            if(s1 == "+"){
+                res =(n1-0)+(n2-0);
+            }else  if(s1 == "-"){
+                res =(n1-0)-(n2-0);
+            }else  if(s1 == "*"){
+                res =(n1-0)*(n2-0);
+            }else  if(s1 == "/"){
+                res =(n1-0)/(n2-0);
+            }
+            // 把结果显示出来
+            result.value = res;
+        }
+
+        // 5.0 给按钮绑定点击事件
+        calcBtn.onclick = function(){
+            var inp1 = num1.value;
+            var inp2 = num2.value;
+
+            // 在运算的函数 查找输入框的值是否被获取
+            console.log(inp1)
+            console.log(inp2)
+            calcFun(str, inp1, inp2);//调用运算函数 ，传递相应的参数 （实参） 参数与参数之间使用“,” 逗号隔开
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

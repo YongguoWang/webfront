@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .container {
+                width: 1200px;
+                margin: 0 auto;
+
+            }
+            .container .nav {
+                width: 1200px;
+                height: 100px;
+                background-color:orange;
+            }
+    </style>
+
+    <script>
+            // 看你的脚本 哪个位置
+            // window.onload = function(){   //页面加载函数 }
+            window.onload = function(){
+                var nav = document.querySelector(".nav");
+                var body = document.body;//获取body标签页面
+                // 点击事件
+                nav.onclick = function(){
+                        // 处理逻辑
+                        body.style.backgroundColor="#af8343";
+
+                }
+            }
+
+             // 事件：实际上就是一种行为
+            /*
+            // 鼠标事件
+            onclick  点击事件
+            onmouseover 鼠标悬停  onmouseenter  鼠标移入
+            onmouseout  鼠标离开   onmouseleave 鼠标移开
+            onmousedown  鼠标按下
+            onmousemove  
+            onmouseup  
+
+            // 键盘事件
+            onkeydown  键盘按下事件
+            onkeypress   键盘长按事件
+            onkeyup        键盘松开事件
+
+            // 监听输入的事件
+            inpEle.onfocus 获取焦点
+            inpEle.onblur    失去焦点
+            inpEle.oninput   监听输入的值的变化
+
+            // 手指按下 touchstarrt
+            ele.addEventListener("touchstarrt",function(){})
+            // 手指滑动  touchmove
+            // 手指松开 touchend
+
+            ......
+            
+            */
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="nav"></div>
+    </div>
+    
+</body>
+</html>

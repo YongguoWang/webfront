@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            .demo {
+                width: 600px;
+                height: 600px;
+                background-color:pink;
+
+                position: relative;/* 父元素  相对定位 */
+                top:100px;
+                left: 100px;
+            }
+
+             .box {
+                    width: 100px;
+                    height: 100px;
+                    background-color: orange;
+
+                    position: absolute; /* 子元素  绝对定位*/
+                    right: 100px;
+                    bottom: 100px;
+                    z-index: 100000;/*层级属性  值是数字  数字越大层级越高*/
+            }
+
+            .silder {
+                width: 90px;
+                height: 200px;
+                background-color: blue;
+
+                position: fixed;
+                top: 80px;
+                right: 10px;
+            }
+    </style>
+</head>
+<body style="height:1200px;">
+    <div class="demo">
+        <div class="box">1</div>
+    </div>
+
+    <div class="box">2</div>
+
+
+    <div class="silder">
+
+    </div>
+</body>
+</html>

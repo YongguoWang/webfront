@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+
+    <style>
+            div {
+                height: 50px;
+                margin-top: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+    </style>
+</head>
+<body>
+    
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <script>
+        
+        var arrColor = ["red","green","blue"];// 这就是一个数组
+        console.log(arrColor)
+
+        // 怎么取出数组 中的“blue”?
+        console.log(arrColor[2])
+
+        // 步骤
+            // 1。0 事件源
+            var divs = document.querySelectorAll("div");
+
+            // 2.0 循环 填充背景颜色
+            for(var i = 0 ; i < 3 ; i++){
+                    divs[i].style.backgroundColor = arrColor[i];// i = 0, 1, 2
+            }
+        
+   </script>
+
+
+</body>
+</html>

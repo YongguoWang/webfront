@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .search {
+            width: 612px;
+        }
+        .search .search_left {
+            width: 530px;
+            float: left;
+        }
+        .search .search_left .l  {
+            float: left;
+            width: 78px;
+        }
+        .search .search_left .l ul  {
+            width: 78px;
+        }
+        .search .search_left .l ul li  {
+            width:78px;
+            height: 38px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 38px;
+            color: #ccc;
+        }
+        .search .search_left .r {
+            float: left;
+            width: 448px;
+            height: 38px;
+            border: 1px solid #ccc;
+        }
+        .search .search_left .r input{
+            height: 26px;
+            border:0;
+            outline: none;
+        }
+        .search .search_right {
+            width: 82px;
+            float: left;
+        }
+        .search .search_right .btn{
+            display: block;
+            width: 80px;
+            height: 40px;
+            background-color: #1787FB;
+        }
+
+
+    </style>
+</head>
+<body>
+        <div class="search">
+            <div class="search_left">
+                <div class="l">
+                    <ul>
+                        <li>职位</li>
+                        <li>公司</li>
+
+                    </ul>
+                </div>
+                <div class="r">
+                    <input type="text" placeholder="H5开发">
+                </div>
+            </div>
+            <div class="search_right">
+                <span class="btn"></span>
+            </div>
+        </div>
+</body>
+</html>

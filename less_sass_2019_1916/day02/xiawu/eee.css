@@ -1,0 +1,11 @@
+@charset "UTF-8";
+ul li {
+  padding: 20px 10px;
+  /* 上下20px  左右10px*/
+  border-bottom: 10px solid pink;
+  font-size: 10px;
+  font-family: "microsoft yahei";
+  width: 300px;
+  height: 20px; }
+
+/*# sourceMappingURL=eee.css.map */

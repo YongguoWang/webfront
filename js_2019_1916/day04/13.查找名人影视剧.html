@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="search">
+        <input placeholder="tips" type="text" class="inp"><button class="btn">查询</button>
+    </div>
+
+    <ul style="list-style: none;">
+        <li ></li>
+    </ul>
+    
+
+    <script>
+
+        //  步骤：
+            // 1.0 获取相关的元素
+           var inpEle =  document.querySelector(".inp");
+          var btnEle =  document.querySelector(".btn");
+          var txt = document.querySelector("ul li");
+
+        //  2.0  绑定点击事件
+        btnEle.onclick = function(){
+            // 3.0 获取输入框的值
+            var inpVal = inpEle.value;
+            // switch(){ case "" :  ; break ;}  开关控制语句
+            switch(inpVal){
+                case "刘德华":
+                    //  TO DO LIST
+                    txt.innerHTML = " 神雕侠侣";
+                            break ;
+                case "老周":
+                    //  TO DO LIST
+                    txt.innerHTML = " 不能说的秘密";
+                            break ;
+                default:
+                        //  否则
+                         //  TO DO LIST
+                        txt.innerHTML = " 查无此人!";
+                    break ;
+            }
+
+        }
+    
+    
+    </script>
+</body>
+</html>

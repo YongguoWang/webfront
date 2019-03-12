@@ -1,0 +1,23 @@
+@width:900px;
+@color:yellow;
+@bgColor:#ccc;
+@height:40px;
+
+html , body {
+	width: 100%;
+}
+
+.banner {
+	width: @width;
+	margin: 0 auto;
+	.w {
+		height:500px;
+		background-color: @bgColor;
+		ul {
+			list-style: none;
+			li {
+				height: @height;
+			}
+		}
+	}
+}

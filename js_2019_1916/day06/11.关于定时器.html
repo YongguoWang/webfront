@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: #ccc;
+                text-align: center;
+                line-height: 100px;
+            }
+    </style>
+</head>
+<body>
+
+
+
+
+    <div class="box">0</div>
+    <button class="start_btn">执行定时器</button>
+    <button class="stop_btn">停止定时器</button>
+
+    <script>
+        // 获取事件源
+        var box = document.querySelector(".box");
+        var startBtn = document.querySelector("button.start_btn");
+        var stopBtn = document.querySelector("button.stop_btn");
+
+        // 数
+        var num = 0 ;
+        // 定时器
+        var timer = null ;
+
+        startBtn.onclick = function(){ // 要用定时器 先停止定时器函数
+            clearInterval(timer); // 主要：代码严谨，可执行有效
+            // var timer =  setInterval(fn,1000)
+             timer =  setInterval(fn,1000)
+        }
+        stopBtn.onclick = function(){
+            //    停止定时器
+            clearInterval(timer);
+
+        }
+
+        timer =  setInterval(fn,1000)
+        // 函数
+        function fn(){
+                num++;
+                box.innerHTML = num;
+        }
+        
+
+
+    </script>
+    
+</body>
+</html>

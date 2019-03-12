@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .bbox {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border:2px solid #ccc;
+            margin:  0  auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="bbox"></div>
+</body>
+</html>
+<script>
+        // 步骤
+        // 1.0 事件源
+        var bbox = document.querySelector(".bbox");
+        // 思考：如何实现互相切换颜色？  
+        // 定义一个bool值
+        var isChange = true;
+        // 2.0 事件的绑定
+        bbox.onclick = function (){
+            // this  事件的调用者
+            // if(isChange == true){
+            if(isChange ){ //表示 isChange == true
+                this.style.backgroundColor="red";
+                isChange = false;
+            }else {
+                this.style.backgroundColor="yellow";
+                isChange = true;
+            }
+        }
+</script>

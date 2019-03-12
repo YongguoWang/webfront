@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@import 'ggg';
+
+.container {
+    width: 1000px;
+    height: 500px;
+    background-color: $bgColor;
+    /* font-family */
+    // font-size
+    // font-weight
+    // font-style
+    font: {
+        family:" Microsoft YaHei";
+        size:20px;
+    }
+}

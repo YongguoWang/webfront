@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        /* 公共类名 */
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        .clear {
+            clear: both;
+        }
+
+        /*  伪类元素清除浮动 */
+        .clearfix::after {
+            content:"";
+            display: block;
+            clear: both;
+        }
+
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .r_bgc {
+            background-color: red;
+        }
+        .g_bgc{
+            background-color: green;
+        }
+        .b_bgc {
+            background-color: blue;
+        }
+
+        .nav {
+            width: 1000px;
+            height: 110px;
+            background-color: #f50;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+            width: 600px;
+            background-color: #ccc;
+        }
+
+        ul li {
+            width: 100px;
+            height: 50px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box r_bgc fr">1</div>
+    <div class="box g_bgc fr">2</div>
+    <div class="box b_bgc fr">3</div>
+    
+    <div class="nav clear"></div>
+
+    <ul class="clearfix">
+        <li class="fl">1</li>
+        <li class="fl">2</li>
+        <li class="fl">3</li>
+    </ul>
+</body>
+</html>

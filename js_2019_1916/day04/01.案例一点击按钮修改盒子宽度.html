@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        div.box {
+            height: 100px;
+            background: red;
+        }
+    </style>
+
+    <script>
+        // 加载函数
+        window.onload = function () {
+
+            // 步骤：
+            // 1.0 获取相关元素
+            var btn = document.querySelector(".btn");
+            var box = document.querySelector(".box");
+
+            //    2.0 事件的绑定
+            btn.onclick = function () {
+                console.log("test")
+                debugger;//打断点
+                // 3.0 改变盒子的宽度
+                box.style.width = "100px";
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <button class="btn">改变红色盒子宽度</button>
+    <div class="box"></div>
+
+
+
+</body>
+
+</html>

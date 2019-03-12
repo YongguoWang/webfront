@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            // 全局变量
+            var result = "hello";
+            function fn(){// 作用域
+                   console.log(result+"---fn里面");
+                    // 局部变量
+                    var aaa = "world";
+                    console.log(aaa+"---fn里面");
+            }
+            
+            fn();
+            console.log(result+"fn---外边");
+            console.log(aaa+"---fn外面");
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

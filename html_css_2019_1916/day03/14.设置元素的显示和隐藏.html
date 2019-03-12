@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            /* 属性名首字母+属性值    按tab按键*/
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+
+        }
+
+        .hide {
+            display: none; /* 隐藏 不占位置 */
+        }
+        .show {
+            display: block;
+        }
+        .visible {
+            visibility: hidden; /* 隐藏 占位置 */
+        }
+
+        ul {
+            margin:0;
+            padding:0;
+
+            width:200px;
+            height: 120px;
+            background-color: #ccc;
+        }
+
+        ul li {
+            /*w100px*/
+            width:100px;
+            height:100px;
+            /* bgc*/
+            background-color:blue;
+
+            list-style: none;/* 去掉小圆点 （默认样式）*/
+            display: none;
+        }
+        /*伪类选择器   */
+        ul:hover li {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ctrl + d   代码的整行复制 -->
+    <div>1</div>
+    <div class="hide">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div class="visible">5</div>
+    <div>6</div>
+
+
+    <ul>
+        <li></li>
+    </ul>
+
+
+
+
+</body>
+</html>

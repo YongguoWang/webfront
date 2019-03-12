@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单制作</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .nav {
+                width: 1000px;
+                height: 50px;
+                margin: 0 auto;
+                background-color: #ccc;
+            }
+
+            ul , ol {
+                list-style: none;
+            }
+            .nav  ul {
+                width: 1000px;
+            }
+            .nav ul > li { /* 直接子代选择器*/
+                width: 280px;
+                background-color: pink;
+                float: left;
+                margin-top: 5px;
+                margin-right: 5px;
+
+                position: relative;/* 相对定位*/
+            }
+            .nav ul > li  span {
+                display: block;
+                width: 280px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                cursor: pointer;
+                background-color: #af9;
+            
+            }
+            .nav ul > li  .slide {
+                width: 200px;
+                height: 150px;
+                background-color: #ccc;
+
+                position: absolute;
+                left: 280px;
+                top: 40px;
+                z-index: 3;
+
+                display: none;
+            }
+            .nav ul > li   ol {
+                width: 280px;
+                display: none;
+            }
+
+            .nav ul > li   ol li {
+                /* width:260px; */
+                padding-right: 20px;/* width-20 */
+                height: 40px;
+                border-bottom: 1px solid orange;
+                text-align: center;
+                line-height: 40px;
+                position: relative;
+            }
+
+            .nav ul > li   ol li span.icon_sjx {
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 8px solid pink;
+                border-right: 8px solid pink;
+                border-bottom: 8px solid pink;
+                border-left: 8px solid #000;
+
+                position: absolute;
+                right: 6px;/*20 - 8 )/ 2 = 6*/
+                top: 16px;/* 40- 8）/2 = 16px*/
+            }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <ul>
+            <li class="item">
+                <span>深阅读</span>
+                <ol class="box">
+                    <li>七嘴八舌 <span class="icon_sjx"></span> </li>
+                    <li>醍醐灌顶 <span class="icon_sjx"></span> </li>
+                    <li>临危不惧 <span class="icon_sjx"></span> </li>
+                </ol>
+                <div class="slide">
+                    <!-- 内容 -->
+                </div>
+            </li>
+
+            <li class="item">
+                <span>一级菜单</span>
+                <ol class="box">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ol>
+            </li>
+
+            <li class="item">
+                    <span>一级菜单</span>
+                    <ol class="box">
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                    </ol>
+                </li>
+        </ul>
+    </div>
+    <script>
+        // 步骤：
+            // 1.0 获取相关的元素
+            var items =  document.getElementsByClassName("item");//元素集合
+            var allBox =  document.getElementsByClassName("box");//元素集合
+            // var olLis =  document.getElementsByClassName("box").getElementsByTagName("li");//元素集合
+            var olLis =  document.querySelectorAll(".box li");//元素集合
+            var slide = document.querySelector(".item .slide");
+         //  2.0 绑定事件
+            // items[0].onmoseennter =function(){}
+            // items[1].onmoseennter =function(){}
+            var count = items.length;//获取集合的数量
+
+            for(var i = 0 ; i < count; i++){
+                items[i].index = i ;//给每个li添加一个叫index的属性
+                items[i].onmouseenter = function(){
+                    // this  是谁? this 是事件的调用者
+                    console.log(this.index);
+                    allBox[this.index].style.display="block"; 
+                    // 调用函数
+                    selectFunc();
+                }
+
+                items[i].onmouseleave = function(){
+                        allBox[this.index].style.display="none";
+                        slide.style.display="none";
+                }
+            }
+
+            // 定义一个函数
+            function selectFunc(){
+                // 循环 在此只为做一件事 给每个指定的li绑定事件
+                for(var j = 0 ; j < olLis.length;j++ ){
+
+                    olLis[j].aaa = j;
+                    olLis[j].onclick = function(){
+                        for( var k = 0 ; k < olLis.length;k++){
+                                olLis[k].style.borderBottom="1px solid orange";
+                                olLis[k].style.color="#fff";
+                        }
+                        slide.style.display = "block";
+                        olLis[ this.aaa ].style.borderBottom="1px solid red";
+                        olLis[ this.aaa ].style.color="red";
+                        console.log( this.aaa )
+                        slide.innerHTML =  this.aaa;
+                    }
+                }
+            }
+
+    </script>
+</body>
+</html>

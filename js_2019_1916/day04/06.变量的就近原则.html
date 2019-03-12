@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        console.log(aaa)//变量声明提升
+        var aaa =" xiaoming";//全局
+        
+        function foo(){
+            var aaa = "小红";
+            console.log(aaa)//.小红   就近原则
+        }
+        foo();
+        foo();
+        foo();
+        foo();
+        foo();
+        foo();
+    </script>
+</body>
+</html>

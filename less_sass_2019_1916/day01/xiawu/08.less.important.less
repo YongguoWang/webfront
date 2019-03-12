@@ -1,0 +1,30 @@
+.border(@width:100px,@colorTop:blue,@colorRight:transparent,@colorBottom:transparent,@colorLeft:transparent){
+  border-top:@width solid @colorTop;
+  border-right:@width solid @colorRight;
+  border-bottom:@width solid @colorBottom;
+  border-left:@width solid @colorLeft;
+}
+
+.saojiao {
+  width: 0;
+  height: 0;
+  /*  注意传参的顺序  */
+  //.border();
+  .border(10px ,transparent,transparent,red,transparent)!important;
+}
+
+@col1:pink;
+@col2:red;
+@col3:blue;
+
+p {
+  width:100px;
+  height:100px;
+  background-color: @col1 !important;
+}
+.box {
+  background-color: @col2;
+}
+#boxId {
+  background-color: @col3;
+}

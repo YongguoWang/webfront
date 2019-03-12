@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            ul {
+                list-style: none;
+            }
+            body {
+                background-color: #ccc;
+            }
+            .contain {
+                width: 225px;
+                height: 28px;
+                line-height: 28px;
+                font-size: 13px;
+                color: #666;
+                background-color: #fff;
+                margin: 100px auto;
+            }
+            .contain .txt {
+                float: left;
+            }
+            .contain ul {
+                float: left;
+            }
+            .contain ul li {
+                width: 16px;
+                height: 16px;
+                /* background-color: pink; */
+                float: left;
+                margin: 6px 5px;
+                background-image: url("./images/xing2.jpg");
+            }
+            .contain ul li.active {
+                background-image: url("./images/xing1.jpg");
+            }
+    </style>
+</head>
+<body>
+    
+
+    <div class="contain">
+            <div class="txt">综合运势:</div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+    </div>
+
+    <script>
+        //  步骤
+            // 获取元素
+            var lis = document.querySelectorAll(".contain ul li");
+            // 事件的绑定
+            for(var i = 0 ; i < lis.length;i++){
+                // 属性绑定
+                lis[i].index = i ; 
+                // 点击事件
+                lis[i].addEventListener('click',function(){
+                    // 排他思想
+                    for(var j = 0 ; j < lis.length;j++){
+                        lis[j].classList.remove("active");
+                    }
+
+                    // 怎么处理这个逻辑??\
+                    for(var a = 0 ; a <= this.index;a++){
+                        lis[a].classList.add("active");
+                    }
+                })
+            }
+
+
+
+
+    </script>
+
+
+</body>
+</html>

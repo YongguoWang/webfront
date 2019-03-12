@@ -1,0 +1,19 @@
+.pos(r){
+	position:relative; /* 相对定位 */
+}
+.pos(a){
+	position:absolute; /* 绝对定位 */
+}
+.pos(f) {
+	position:fixed; /* 固定定位 */
+}
+
+
+
+.big {
+	.pos(r);
+	
+	.small {
+		.pos(a);
+	}
+}

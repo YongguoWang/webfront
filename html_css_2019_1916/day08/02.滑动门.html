@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .title {
+            width: 730px;
+            height: 24px;
+            background-color: #fff;
+
+            margin: 50px auto;
+            border-bottom:2px solid #00b0e7;
+        }
+        .title > div {}
+        .title > div span {
+            float: left;
+            height: 24px;
+        }
+        .title > div span.l {/* 交集选择器 */
+            width: 12px;
+            background-image: url("./mlshop/images/p_l.png");
+        }
+        .title > div span.m {
+            background-image: url("./mlshop/images/p_m.png");
+        }
+        .title > div span.r {
+            width: 30px;
+            background-image: url("./mlshop/images/p_r.png");
+        }
+
+        .title > div a {}
+        /*  公共样式类名 */
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">
+        <div class="fl">
+            <span class="l"></span>
+            <span class="m">ISOFIX接口</span>
+            <span class="r"></span>
+        </div>
+        <div class="fr">
+            <a href="#">详情查看更多&gt;&gt;</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+.big {
+  position: relative;
+  /* 相对定位 */
+}
+.big .small {
+  position: absolute;
+  /* 绝对定位 */
+}

@@ -1,0 +1,47 @@
+@w:200px;
+@h:280px;
+
+.banner {
+  width:@w;
+  height:@h;
+  border: 1px solid #ccc;
+  margin:0 auto;
+  overflow: hidden;
+  position: relative;/* 父元素 相对定位 */
+  ul {
+    list-style: none;
+    padding:0;
+    margin: 0;
+    width:@w*3;
+
+    li {
+      width:@w;;
+      float: left;
+    }
+  }
+
+
+  ol {
+    list-style: none;
+    padding:0;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+
+    li {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #fff;
+      float: left;
+      margin-right: 5px;
+      border-radius: 50%;
+
+    }
+    li.active {/* 交集选择器*/
+      background-color: #fff;
+    }
+
+  }
+
+}

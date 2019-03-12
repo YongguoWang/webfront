@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        彩票 ： 随机数
+
+     -->
+
+     <script>
+        //  1-36
+        // function 定义函数 
+        function myRandom( min ,max ){
+            
+              var  res =  Math.random()*(max-min)+min;  // 这里是生成一个指定范围随机数
+
+              var num = parseInt(res);// 取整
+
+              console.log(num);
+        }
+
+        myRandom(1,36);
+
+
+        myRandom(100,200);
+
+
+
+     
+     </script>
+</body>
+</html>

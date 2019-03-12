@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /* 非块元素（行内元素）*/
+        span {
+            width:100px;
+            height: 100px;
+            background-color: pink;
+            display: block; /*display 把非块元素转块元素*/
+        }
+        /* 解决行内块元素出现的间隙问题*/
+        div {
+            font-size: 0;
+        }
+        div  span {
+            font-size:14px;
+            display: inline-block; /* 转行内块元素*/
+            width:100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+    </div>
+
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+
+
+</body>
+</html>

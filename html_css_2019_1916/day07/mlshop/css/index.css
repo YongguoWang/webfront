@@ -1,0 +1,352 @@
+html , body {
+    width: 100%;
+}
+body {
+    font-family: "Microsoft Sans Serif";
+    font-size: 14px;
+    color: #333;
+}
+/* 版心*/
+.w {
+    width: 970px;
+    margin:0 auto;
+}
+
+/* 顶部栏  css start  */
+.yg_top {
+    width:100%;
+    height: 28px;
+    line-height: 28px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ccc;
+}
+.yg_top > div .f_left h3  {
+    font-weight:normal;
+    font-size: 12px;
+}
+.yg_top > div .f_right ul li {
+    float: left;
+    font-size: 13px;
+    margin: 0 5px;
+    position: relative;/*父元素 相对定位*/
+}
+.yg_top > div .f_right ul li.pr_20 {
+    padding-right:14px;
+}
+.yg_top > div .f_right ul li .icon {
+    position: absolute;/* 子元素  绝对定位*/
+    top:12px;/* 28 - 4 ) / 2  = 12 */
+    right:3px;/*14 - 8 )/ 2 = 3*/
+    width: 8px;
+    height: 4px;
+    background-image: url("../images/sprites.png");
+    background-position: -50px -50px;
+}
+
+
+/* 顶部栏  css end   */
+
+
+
+/* LOGO 和 搜索框 css start */
+.yg_search {
+    width:100%;
+    height: 100px;
+    background-color:#fff;
+}
+.yg_search > div { /* 直接子代选择器*/}
+.yg_search > div .f_left span.logo {
+    display: block;
+    width:200px;
+    height:54px;
+    background-image: url("../images/ml_logo.png");
+    margin-top: 23px;/*100 - 54 ) 2 =23 */
+}
+.yg_search > div .f_right {}
+.yg_search > div .f_right form {
+    width:528px;
+    height: 40px;
+    border: 1px solid #ccc;
+    margin-top:29px;/*100 - 42 ) 2  = 39*/
+}
+.yg_search > div .f_right form div.inp {
+    width: 416px;
+    height: 28px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    line-height: 28px;
+
+}
+.yg_search > div .f_right form div.inp input {
+    width: 406px;
+    height: 24px;
+    vertical-align: middle;/* 设置行内块元素垂直方向位置 */
+    padding-left: 10px;
+}
+.yg_search > div .f_right form .btn {
+    width: 100px;
+    height: 30px;
+    background-color: #2f70d0;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-family: SimSun;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/* LOGO 和 搜索框 css end  */
+
+
+/*页面导航栏 css start */
+.yg_nav {
+    width:100%;
+    height: 28px;
+}
+.yg_nav > div {
+    height: 28px;
+    border-bottom:2px solid #0266a3;
+}
+.yg_nav > div ul li  {
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    padding:0 15px;
+}
+.yg_nav > div ul li a  {
+    display: block;
+}
+.yg_nav > div ul li:hover, /* 并集选择器*/
+.yg_nav > div ul li.active {
+    background-color: #0266a3;
+}
+.yg_nav > div ul li:hover a, /* 并集选择器*/
+.yg_nav > div ul li.active a {
+    color: #fff;
+}
+/*页面导航栏 css  end */
+
+/*页面广告栏 css start */
+.yg_banner {
+    width: 100%;
+    height: 210px;
+    margin-top: 10px;
+}
+.yg_banner > div { /* 970 */
+    width: 970px;
+    height: 210px;
+    background-color: #fff;
+
+    position: relative;/* 相对定位*/
+}
+.yg_banner > div .content {
+    width:770px;/*970 - 200 = 770*/
+    height: 210px;
+    background-color: #ccc;
+
+    position: absolute;
+    left: 200px;
+    top: 0;
+    z-index: 1000;
+
+    display: none;
+}
+
+.yg_banner > div .left {
+    width: 200px;
+    height: 210px;
+    background-color: #ebf0f6;
+}
+.yg_banner > div .left h3 {
+    width:180px;
+    height: 30px;
+    background-color: #0266a3;
+    line-height: 30px;
+    padding-left: 20px;
+    color: #fff;
+    font-family: SimSun;
+}
+
+.yg_banner > div .left ul {
+    width: 200px;
+}
+.yg_banner > div .left ul li {
+    width: 162px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 38px;
+    
+    position: relative;/* 父元素  相对定位*/
+}
+.yg_banner > div .left ul li span.icon { /* 子元素  绝对定位 */
+    position: absolute;
+    left: 9px;
+    top: 6px;
+    width: 20px;
+    height: 18px;
+    background-image: url("../images/sprites.png");
+}
+
+.yg_banner > div .left ul li .icon.icon1 {
+    background-position: 1px 2px;
+}
+.yg_banner > div .left ul li .icon.icon2 {
+    background-position: 1px -20px;
+}
+.yg_banner > div .left ul li .icon.icon3 {
+    background-position: 1px -40px;
+}
+.yg_banner > div .left ul li .icon.icon4 {
+    background-position: 1px -60px;
+}
+.yg_banner > div .left ul li .icon.icon5 {
+    background-position: 1px -80px;
+}
+.yg_banner > div .left ul li .icon.icon6 {
+    background-position: 1px -100px;
+}
+
+
+.yg_banner > div .left ul li a {
+    display: block;
+}
+
+
+.yg_banner > div .middle {
+    width: 520px;
+    height: 210px;
+    background-color: green;
+    margin:0 10px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.yg_banner > div .middle ul {
+    width: 1040px;
+}
+.yg_banner > div .middle ul li {
+    width: 520px;
+    float: left;
+}
+.yg_banner > div .middle ul li a {
+    display: block;
+}
+.yg_banner > div .middle ul li a img {
+    display: block;
+}
+
+.yg_banner > div .right {
+    width: 230px;
+    height: 210px;
+    /*background-color: blue;*/
+}
+
+.yg_banner > div .right .up {
+    width:228px;
+    height:96px;
+    border: 1px solid #ccc;
+    background-color: #f7faff;
+}
+.yg_banner > div .right .up  h3 {
+    width: 214px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 16px;
+}
+.yg_banner > div .right .up  .info {
+    width: 230px;
+    height: 66px;
+    padding-left:60px;
+
+    position: relative;/*相对定位 */
+}
+.yg_banner > div .right .up  .info .icon_news {
+    position: absolute;/*绝对定位 */
+    top:13px;
+    left:10px;
+
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/sprites.png");
+    background-position: -30px 0;
+}
+
+.yg_banner > div .right .up  .info .txt {
+    width: 170px;
+    height: 66px;
+    font-size: 13px;
+    line-height: 26px;
+}
+.yg_banner > div .right .up  .info .txt a  {
+    font-weight:bold;
+}
+
+.yg_banner > div .right .down {
+    width: 228px;
+    height: 90px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    background-color: #f7faff;
+}
+.yg_banner > div .right .down .question h3{
+    width: 230px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-family: SimSun;
+    font-size: 14px;
+    color: #b2b2b2;
+}
+
+.yg_banner > div .right .down .tell {
+    text-align: center;
+    color: #3f9ce0;
+    font-family: Helvetica;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.yg_banner > div .right .down .tell .icon_tell {
+    display: inline-block;
+    width:12px;
+    height: 16px;
+    background-image: url("../images/sprites.png");
+    background-position: -103px 0 ;
+}
+.yg_banner > div .right .down .icon_word {
+    width: 82px;
+    height: 24px;
+    background-image: url("../images/sprites.png");
+    background-position:-100px -40px ;
+    margin: 0 auto;
+}
+.yg_banner > div .right .down .icon_word a {
+    display: block;
+    width: 82px;
+    height: 24px;
+}
+
+/*页面广告栏 css end   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

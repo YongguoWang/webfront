@@ -1,0 +1,20 @@
+.saojiao {
+  width: 0;
+  height: 0;
+  /*  注意传参的顺序  */
+  border-top: 10px solid transparent !important;
+  border-right: 10px solid transparent !important;
+  border-bottom: 10px solid #ff0000 !important;
+  border-left: 10px solid transparent !important;
+}
+p {
+  width: 100px;
+  height: 100px;
+  background-color: #ffc0cb !important;
+}
+.box {
+  background-color: #ff0000;
+}
+#boxId {
+  background-color: #0000ff;
+}

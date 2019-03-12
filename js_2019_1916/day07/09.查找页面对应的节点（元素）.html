@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            .container {
+                height: 120px;
+            }
+            .header {
+                height: 100px;
+                background-color: #ccc;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <ul>
+                <li>1</li>
+                <li class="item">2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+
+        <script>
+            // 获取header标签
+            var header = document.getElementsByClassName("header")[0];
+            console.dir(header);// 打印是元素对象
+
+            // 1.0 父节点
+            // 通过parentNode这个属性获取父节点
+            var parentEle = header.parentNode;
+            // 设置父节点的背景色为蓝色
+            parentEle.style.backgroundColor="blue";
+
+
+            // 获取其中一个li标签
+            var item = document.querySelector(".item");
+            console.dir(item)
+
+            // 2.兄弟节点
+            // 获取上一个节点
+            var prev= item.previousElementSibling;
+            // 获取下一个节点
+            var next= item.nextElementSibling;
+            console.log(next)
+
+            // 3. 子节点
+            var ul = document.querySelector(".header ul");
+            //  firstChild lastChild     childNodes
+            console.log(ul.firstElementChild) //  获取ul下第一个li 子元素
+            console.log(ul.lastElementChild)  //  获取ul下最后一个li 子元素
+            console.log(ul.childNodes)// 获取ul下所有的li 子元素  nodeType = 1 
+            var eleArr = [];
+            var childrens = ul.childNodes;
+            for(var i = 0 ; i <childrens.length;i++ ){
+                if(childrens[i].nodeType == 1){
+                    eleArr.push(childrens[i]);
+                }
+            }
+            // 通过循环 ，过滤我们所需要的节点
+            console.log(eleArr)
+
+
+
+            
+
+
+        
+        </script>
+
+</body>
+</html>

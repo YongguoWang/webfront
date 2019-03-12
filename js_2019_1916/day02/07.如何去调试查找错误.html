@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .btn {
+                width:120px;
+                height: 40px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color:red;
+            }
+    </style>
+    <script>
+
+                // window.onload 这个方法一个页面只能出现一次，出现多次，因为最后一次会覆盖其他
+                window.onload = function(){
+                        // to do list
+                        // 步骤：
+                            // 1.0 获取相关元素
+                            var btn = document.querySelector(".btn");
+                            // alert(btn)
+                            console.log(btn)
+                            var box = document.querySelector(".box");
+
+                            // 2.0 事件的绑定
+                            btn.onclick = function(){
+                                        debugger;// 调试代码
+                                         // 3.0 书写处理逻辑
+                                         box.style.backgroundColor="orange";
+                            }
+                }
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+
+    <div class="btn"></div>
+    <div class="box"></div>
+    
+</body>
+</html>

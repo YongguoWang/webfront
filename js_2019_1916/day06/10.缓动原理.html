@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <script>
+        // 步骤
+            // 1.0 获取元素
+            var box = document.querySelector(".box");
+            // 3.0.5定时器
+             var timer = null;
+            //  3.0.6 重复利用的代码块（函数）
+            function move(){
+                 // 3.0.1 步长     
+                // 3.0.2目标位置 1000
+                var target = 1000;
+                var step = (target - box.offsetLeft)/5;
+                // 3.0.3设置步长 
+                step = step <0 ?Math.floor(step) : Math.ceil(step); // 是让步长接近 1 或-1 
+                // 3.0.4盒子目标位置 = 当前的位置+步长
+                box.style.marginLeft = box.offsetLeft + step+"px";
+                // 3.0.7 判断盒子是否到达指定的位置
+                if( box.offsetLeft >= target){
+                    // 停止定时器
+                    clearInterval(timer)
+                }
+                console.log(step)
+                console.log(box.offsetLeft)
+            }
+            // 2.0 事件的绑定
+            box.onclick = function(){
+                // 3.0 处理逻辑
+               timer = setInterval(move,30)
+            }
+    </script>
+    
+</body>
+</html>

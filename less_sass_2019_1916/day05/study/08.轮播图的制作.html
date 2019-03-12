@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .banner {
+            width: 600px;
+            height: 310px;
+            border:1px solid #333;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width:1800px ;
+            /* margin-left: -600px; */
+            position: absolute;
+            top: 0;
+            left: -1200px;
+        }
+        .banner ul li {
+            width: 600px;
+            height: 310px;
+            float: left;
+        }
+        .banner ul li:nth-child(1) {
+            background-color: green;
+        }
+        .banner ul li:nth-child(2) {
+            background-color: red;
+        }
+        .banner ul li:nth-child(3) {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <ul>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

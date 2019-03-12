@@ -1,0 +1,13 @@
+.btn {
+  width: 120px;
+  height: 50px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /* 圆角属性在低版本浏览器下 如：IE5678 ，可以用图片代替。 */
+}
+.login_btn {
+  text-align: center;
+  line-height: 50px;
+  background-color: red;
+}

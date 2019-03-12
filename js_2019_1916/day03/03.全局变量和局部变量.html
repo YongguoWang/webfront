@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        window.onload = function(){
+
+            // 在作用域外边写个变量
+            var aaa = "小红";
+            console.log(aaa+"，你站在作用域的外边了。")
+
+            function reading(){//作用域
+                console.log(aaa+"，你站在作用域的里边了。")
+                var bbb = "小兰";//局部变量
+                console.log(bbb)
+            }
+            reading();// 再强调一下，函数不调用不执行。
+
+            // console.log(bbb)
+
+
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

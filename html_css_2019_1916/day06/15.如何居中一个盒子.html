@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 版心 ： 水平方向居中的盒子 ；*/
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            background-color: skyblue;
+        }
+        .container .box {
+            width: 600px;
+            height: 600px;
+            border: 10px solid pink;
+            text-align: center;
+            line-height: 600px;/* 行高属性 */
+        }
+
+        .container .box .small {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+
+            vertical-align: middle;/* 设置行内块元素垂直方向位置*/
+        }
+
+        /* 通栏： 水平方向占满一行的盒子*/
+    </style>
+</head>
+<body>
+        <!-- position -->
+        <!-- left 、  right  同时出现的时候 ， left 的权重比较高-->
+        <!-- top 、 bottom   同时出现的时候 ， top 的权重比较高-->
+
+        <div class="container">
+                <div class="box">
+                    <div class="small"></div>
+                </div>
+        </div>
+</body>
+</html>

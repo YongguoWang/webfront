@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AAA</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+        .jd_layout {
+            width: 100%;
+        }
+        .jd_layout .jd_top {
+            width: 100%;
+            height: 80px;
+            background-color: #FCB4FE;
+        }
+        .jd_layout .jd_top a {
+            display: block;
+            width: 100%;
+        }
+
+        .jd_layout .jd_top a .jd_top_banner {
+            width: 100%;
+            height: 80px;
+            background-image: url("./images/banner.jpg");
+        }
+        .jd_layout .jd_top > div {
+            position: relative;
+        }
+        .jd_layout .jd_top > div  .jd_close_btn {
+            width: 18px;
+            height: 18px;
+            border:1px solid #fff;
+            text-align: center;
+            line-height: 18px;
+            color: #fff;
+
+            cursor: move;/* 设置鼠标形状*/
+            position: absolute;
+            right: 0;
+            top: 0;
+
+        }
+
+        .banxin {
+            width: 1190px;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="jd_layout">
+            <div class="jd_top">
+                <div class="banxin">
+                    <a href="">
+                        <div class="jd_top_banner"></div>
+                    </a>
+                    <span class="jd_close_btn">×</span>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        // 步骤
+            // 1.0 事件源
+            var closeBtn = document.querySelector(".jd_close_btn");
+           var topBox =   document.querySelector(".jd_top");
+          //   2.0 点击事件绑定
+          closeBtn.onclick = function(){
+            //   3.0 处理程序 让topBox隐藏
+            topBox.style.display="none";
+          }
+    
+    </script>
+    
+</body>
+</html>

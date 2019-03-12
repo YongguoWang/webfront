@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+    
+    // 定时器 setInterval()  调用者：， 参数：1. 匿名函数，2.毫秒值 ； 返回值：数字； 功能：每隔一段指定的时间就执行一次函数，
+
+     var index = 0 ;
+
+    // 1000 毫秒= 1秒
+     var timer = setInterval(function(){
+
+         index++;console.log(index)
+
+         if(index > 5){
+             // 清除定时器函数
+             console.log("到时间了，该去敲代码了！")
+             clearInterval(timer)
+         }
+     },1000);
+
+    //  console.log(timer)
+
+
+    // 定时炸弹
+    setTimeout(function(){
+        document.body.style.backgroundColor="#f50";
+    },5000)
+
+
+    
+    </script>
+</body>
+</html>

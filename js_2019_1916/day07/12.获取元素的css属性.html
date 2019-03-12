@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 102px;
+                height: 100px;
+                background-color: #ccc;
+            }
+    </style>
+</head>
+<body>
+
+     <div class="box"></div>
+
+     <script>
+        //  设置标签 css属性  box.style.width="200px";
+        var box = document.querySelector(".box");
+        // console.log(box.style.width)
+        var obj = getComputedStyle(box , null); //参数1.节点 2.null 伪类
+        console.log(obj.width);//获取css属性的值
+
+     </script>
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            float: left;
+            margin: 0 5px;
+        }
+        a {
+               color: #333;
+               text-decoration: none;
+        }
+
+
+
+        .line {
+            width: 80px;
+            height: 36px;
+            text-align: center;
+            line-height: 36px;
+            border: 1px solid #333;
+            position:relative;/* 相对定位*/
+        }
+
+        .line .bar_box {
+            width: 80px;
+            height: 10px;
+            position:absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .line .bar_box .bar {
+            width: 0px;
+            height: 10px;
+            background-color: deepskyblue;
+            margin: 0 auto;
+
+            transition:width 0.5s;/* 过渡属性： 属性  过渡时间*/
+        }
+
+        .line:hover .bar_box .bar {
+            width: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <div class="line">
+                <a href=""javascript:;>网站导航</a>
+                <div class="bar_box">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="line">
+                <a href=""javascript:;>网站导航</a>
+                <div class="bar_box">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="line">
+                <a href=""javascript:;>网站导航</a>
+                <div class="bar_box">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="line">
+                <a href=""javascript:;>网站导航</a>
+                <div class="bar_box">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="line">
+                <a href=""javascript:;>网站导航</a>
+                <div class="bar_box">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

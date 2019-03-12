@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .box ul li {
+            height: 50px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+   
+</head>
+<body>
+
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
+
+<script>
+        // 需求： 鼠标移入li标签，当前的li标签样式变化。（改背景色，透明度）
+        //    步骤：
+            // 1.0 获取事件源（元素）
+            var lis = document.querySelectorAll(".box ul li");
+            // 2.0 事件绑定
+            // 2.0.1 循环
+            for(var i = 0 ; i < lis.length; i++){
+                // 给每一个li绑定鼠标悬停事件
+                lis[i].onmouseenter = function(){
+                        // this  指向的是事件的调用者
+                        this.style.backgroundColor="orange";
+                }
+            }
+    </script>

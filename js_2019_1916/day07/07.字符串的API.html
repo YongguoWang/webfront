@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //  split()
+        var str1 = "hello ，world";
+        var res1 = str1.split(","); // 把字符串切割成数组
+        console.log(res1)// 返回值是数组
+
+        // slice()  功能：截取相应的字符
+        var str2 = "abcdef";// 0 ,1,2,3,4,5
+        var res2 =  str2.slice(1,3); //  参数：开始索引值，结束索引值（不包括结束索引值对应的字符）
+        console.log(res2) // bc 
+
+        // substring() 截取相应的字符
+        var str3 = "0123456";// 字符串
+        var res3 = str3.substring(3,6); //参数：开始索引值，结束索引值（不包括结束索引值对应的字符）
+        console.log(res3) // 345
+        // substr()
+        var str4 = "todayisaniceday!";
+        var res4 = str4.substr(1,3);//参数：开始的索引值 ， 截取的长度
+        console.log(res4)//oda
+
+        // concat  字符串的合并
+        var str5 = "adc";
+        var str6 = "def";
+        console.log(str5.concat(str6))//
+
+        // toLowerCase 转小写
+        var str7 = "MESSAGE";
+        var res7 = str7.toLowerCase();
+        console.log(res7)
+
+        // toUpperCase 转大写
+        var str8 = "information";
+        var res8 = str8.toUpperCase();
+        console.log(res8)
+
+        // indexOf()  判断是否存在指定的字符
+        var str9 = "myideallife !";
+        var res9 = str9.indexOf("m");//参数：检测的字符 
+        console.log(res9) ; // 返回值是 该字符所在的索引值
+
+        // ..
+        // 拓展的API
+        var str10 = "asdfasdf";
+        var res10 = str10.charAt(2); // 参数：索引值
+        console.log(res10)//.输出 该索引值所对应的字符
+
+        var str11 = "qaaabbbccc";
+        var val = str11.charCodeAt(0);// 字符编码值是多少   、、备注：每个字符都有与其对应的编码值  (ASCII) 
+        console.log(val)
+
+        
+        
+    </script>
+</body>
+</html>

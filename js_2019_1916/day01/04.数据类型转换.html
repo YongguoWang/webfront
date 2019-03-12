@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        
+    var numStr = "999";    // 字符串
+    console.log(typeof numStr);
+    // var num = numStr - 0 ;// 转number 类型
+    var num = parseInt(numStr);//强制性转number类型
+    console.log(typeof num);
+
+    var res = 1000;
+    var resStr = String(res);//把数字类型转字符串类型
+    console.log(typeof resStr);
+
+
+    var aaa = "111.22acbd";
+    // var resAaa = parseInt(aaa); // 取整   整型
+    var resAaa = parseFloat(aaa);// 带小数点后面数字  浮点型
+
+    console.log(resAaa);
+    
+
+
+    </script>
+    
+</body>
+</html>

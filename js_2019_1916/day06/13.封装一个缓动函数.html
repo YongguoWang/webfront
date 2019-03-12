@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+
+    <script>
+
+        // 1.0 
+        var box1  = document.querySelector(".box1");
+        var box2  = document.querySelector(".box2");
+        var box3  = document.querySelector(".box3");
+        // box.onclick = function(){
+        //     var _this = this ;
+        //     this.timer = setInterval(function(){
+        //         var target = 1000;
+        //         var speed = (target - box.offsetLeft)/10;
+        //         var step = speed < 0 ? Math.floor(speed) : Math.ceil(speed);
+        //         if(box.offsetLeft > target){
+        //             clearInterval(_this.timer)
+        //         }
+        //         _this.style.marginLeft =_this.offsetLeft+step+"px";
+        //     },30)
+        // }
+
+        // 封装一个函数
+        function move(dom,target,second){ // 形参  dom  元素  ；target：目标位置 ；second：时间
+            dom.onclick = function(){// dom 需要运动的元素
+                clearInterval(dom.timer);// 用定时器先清除定时器
+                dom.timer = setInterval(function(){// 属性的绑定  var 类似
+                    var speed = (target-dom.offsetLeft)/10; //步长的处理  步长计算方式：（目标位置 - 当前的位置）/ 10； 作用就是让speed值变小
+                    var step = speed < 0 ?Math.floor(speed) : Math.ceil(speed);// 避免出现小数点，到不了目标位置
+                    if(dom.offsetLeft >= target){//到达指定位置 
+                        clearInterval(dom.timer); //清除定时器
+                        return ; // 到达指定位置  终止执行代码
+                    }
+                    dom.style.marginLeft = dom.offsetLeft + step +"px";// 设置元素的marginLeft值（设置盒子的位置）
+                },second)
+            }
+        }
+
+        // 调用函数
+        move(box1,500,30);//实参
+        move(box2,700,50);
+        move(box3,1000,30);
+
+    
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+            div.box {
+                width: 100px;
+                height: 100px;
+                background-color: deepskyblue;
+                margin-top: 10px;
+            }
+            .r {
+                background-color: red;
+            }
+            .g {
+                background-color: green;
+            }
+            .b {
+                background-color: blue;
+            }
+            .fl {
+                float: left;
+            }
+
+            .clear {
+                clear: both;
+            }
+
+            .big {
+                width: 600px;
+                /*height: 100px;*/
+                background-color: #ccc;
+            }
+
+            .clearfix::after {
+                content: "";/* 创建伪类元素*/
+                display: block;
+                clear: both;
+            }
+
+            .big .small {
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+                margin-left: 10px;
+                float: left;
+            }
+    </style>
+</head>
+<body>
+    <!--<div class="box r"></div>-->
+    <!--<div class="box g fl"></div>-->
+    <!--<div class="box b clear"></div>-->
+
+
+    <div class="big clearfix">
+        <div class="small">1</div>
+        <div class="small">2</div>
+        <div class="small">3</div>
+    </div>
+
+</body>
+</html>

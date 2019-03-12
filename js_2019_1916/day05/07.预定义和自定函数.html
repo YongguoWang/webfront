@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+            var arr = [];
+           
+            // 编写 JavaScript 这门语言的那几个家伙，他们写好的函数 ，预定义函数
+            // 1.调用者   2. 参数  3.返回值  4.功能
+            arr.push("xiaohong");
+            // 1.0 调用者 ：数组 arr []
+            // 2. 参数  ： 新的元素  "xiaohong"
+            // 3.返回值 ：新的数组 ["xiaohong"]
+            // 4.功能： 添加一个元素 ，往尾部添加元素
+
+
+            // 自定义函数
+            // 1.调用者   2. 参数  3.返回值  4.功能
+            function foo(a){
+                    console.log(a);// 他对你的页面是没影响,他只是你在编程这条路上一个很好的工具方法。调试代码
+
+                    //  返回值  
+
+                    return  a + ",这是给作用域外边用的返回值";
+            }
+          var res  =   foo("这是就是参数");
+          console.log(res)  // 辅助 
+
+
+          function add(num1 , num2){
+                return  (num1-0)+(num2-0);// 返回值的作用：就是让作用域外边的人都能够使用返回的值
+          }
+
+        var res1 =    add(6,5);
+        console.log(res1)
+
+
+
+
+    
+    
+    </script>
+
+
+</body>
+</html>

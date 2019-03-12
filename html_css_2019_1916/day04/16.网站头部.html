@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container { /* 版心 ： 居中的盒子*/
+            width: 750px;
+            margin: 0 auto;
+        }
+        .container .header {
+            width: 750px;
+        }
+        .container .header .ttop {
+            width: 750px;
+            height: 150px;
+            background: url("./images/banner_bg.jpg");
+        }
+        .container .header .nav  {
+            width: 750px;
+            height: 32px;
+            background: url("./images/button1_bg.jpg") repeat-x;
+        }
+        .container .header .nav ul {
+            list-style: none;
+        }
+        .container .header .nav ul li {
+            float: left;
+            width: 80px;
+            text-align: center;
+            height: 32px;
+            line-height: 32px;
+            background:url("./images/button1.jpg");
+            font-size:13px;
+        }
+        .container .header .nav ul li:hover {
+            cursor: pointer;
+            background:url("./images/button2.jpg");
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="ttop">
+                <img src="./images/banner1.jpg" alt="">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>导航选项</li>
+                    <li>导航选项</li>
+                    <li>导航选项</li>
+                    <li>导航选项</li>
+                    <li>导航选项</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

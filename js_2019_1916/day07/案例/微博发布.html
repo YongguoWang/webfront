@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*  清除默认样式 */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        textarea {
+            border: 0;
+            outline: none;
+        }
+      /*  清除默认样式 */
+        .layout {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .content {
+            width: 900px;
+            background-color: #ccc;
+            padding: 20px;
+        }
+        .content .content_inp {
+            width: 900px;
+        }
+        .content .content_inp textarea {
+            display: block;
+            width: 460px;
+            height: 160px;
+            resize: none; /* 禁止拖拽缩放*/ 
+        }
+        .content .content_list {
+            width: 900px;
+
+        }
+
+        .content .content_list ul li {
+            height: 120px;
+            border-bottom: 1px solid #333;
+            border-top: 1px solid #333;
+            background-color: #fff;
+        }
+        .content .content_list ul li img {
+            width: 40px;
+            height: 40px;
+            margin-top: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
+            float: left;
+        }
+        .content .content_list ul li span {
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="layout">
+        <div class="content">
+            <!-- 输入域 -->
+            <div class="content_inp">
+                <textarea name="txt" id="txtId" placeholder="此刻想说点什么.."></textarea>
+                <button class="btn" id="btnId">发表微博</button>
+            </div>
+            <!-- 心情列表 -->
+            <div class="content_list">
+                <ul class="list" id="listId">
+                    <!-- <li> <img src="./imgs/1.bmp" alt=""><span>天天都是好心情</span></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // 步骤
+    // 1.0 获取相关元素
+    var inpEle = document.getElementById("txtId");
+    var btnEle = document.getElementById("btnId");
+    var listEle = document.getElementById("listId");
+
+    // 2.0 事件绑定 addEventListener()  参数：1. 事件名称， 2. 匿名函数 ， 3.布尔值  (false 是冒泡阶段)
+    btnEle.addEventListener('click',function(){
+            // 3.0 处理逻辑
+            // 创建节点 li 标签
+           var createEle =  document.createElement("li");
+
+            // 获取输入域的内容
+            var inpVal = inpEle.value;
+            // 判断是否输入了内容
+            if(inpVal.length == 0){
+                alert("请输入..") ; return ;
+            }
+
+            // 字符串拼接
+            var str = '<img src="./imgs/'+myRandom(100,1)+'.bmp" alt=""><span>'+inpVal+'</span>';
+
+            // 设置创建的li的内容
+            createEle.innerHTML = str;
+
+            // 添加节点
+            listEle.appendChild(createEle);
+
+    },false)
+
+    function myRandom(max,min){
+        // Math.round()  四舍五入
+        // Math.random() 随机数  0-1之间的小数点
+        return Math.round(Math.random()*(max-min)+min);  //
+    }
+
+    
+    </script>
+
+
+
+</body>
+</html>

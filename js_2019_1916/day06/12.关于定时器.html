@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        div.box {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="box">0</div>
+    
+    <script>
+        // 步骤
+            //1.0 事件源
+            var box = document.querySelector("div.box");
+            // 定义变量
+            var aaa  = 0;
+            // 2.0 事件的绑定
+            box.onclick = function(){
+                //记录 this （此处this指向box 事件的调用者）
+                var that  = this ;//  this 是学习js的一个十万分重要的关键字
+                // 3.0 处理逻辑
+                that.timer = window.setInterval(function(){
+                    // 在定时器函数里的 this  指向是window 
+                    console.log(this)// 理解  函数的调用者是谁！
+                    aaa++; // 自增
+                    if(aaa >=10){ // 判断  是否10
+                    that.style.backgroundColor = "skyblue";
+                     // 清除定时器
+                        clearInterval(that.timer);  // that.timer 是什么？？
+                    }
+                    that.innerHTML = aaa;// 设置调用者的文本内容
+                },300)
+            }
+             
+
+            //  为什么定时器函数里面的this不再指向box盒子？？
+            //  this指向不一样
+            //一个是  onclick 事件的调用者    <div class="box"></div>
+            // 一个是 setInteval()  函数的调用者   window
+    
+    </script>
+</body>
+</html>

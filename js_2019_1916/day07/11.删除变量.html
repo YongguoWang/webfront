@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // 隐式变量
+        var aaa = "hello";
+        console.log(aaa);
+
+        bbb = "world";
+        
+        delete(aaa);
+        delete(bbb); //删除的是隐式变量  ，关键字 var 声明的删除不了。
+
+        console.log(bbb); //报错
+        console.log(aaa); // hello
+        
+    </script>
+</body>
+</html>

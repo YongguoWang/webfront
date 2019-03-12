@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html,body {
+            width: 100%;
+        }
+        body {
+            height: 1500px;
+        }
+        .header {
+            width: 100%;
+            height: 50px;
+            background-color: rgba(201,21,85,0.5);
+
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .box {
+            /* width: 100%; */
+            width: calc( 100% - 120px); /* css3 计算属性*/
+            height: 50px;
+            position: relative;
+            padding: 0 50px 0 70px;
+        }
+        .header .box .logo {
+            display: block;
+            width: 70px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            /* background-color: #ccc; */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .header .box .login  {
+            display: block;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            /* background-color: #ccc; */
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .header .box form {
+            width: 100%;
+        }
+        .header .box form input {
+            width: 100%;
+            height: 30px;
+            border:0;
+            outline: none;
+            background-color: #fff;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+        <div class="header">
+            <div class="box">
+                <a class="logo" href="">LOGO</a>
+                <form action="">
+                    <input type="text">
+                </form>
+                <a class="login" href="">登录</a>
+            </div>
+        </div>
+
+        <script>
+            // 需求： 页面滚动改变header标签的颜色透明度
+            // 步骤：
+                // 获取元素
+               var header =  document.querySelector(".header");
+                // 定义透明度
+                var opacity = 0 ;    
+                //   事件
+                window.onscroll = function(){
+                    // 获取页面被浏览器卷去的高度  //  或  “ || ”  兼容其他浏览器（不同版本谷歌）
+                    var ttop = document.body.scrollTop || document.documentElement.scrollTop;
+
+                    if(ttop > 300){
+                        opacity = 1;
+                    }else {
+                        opacity = (ttop / 300)*1;
+                    }
+                    console.log(opacity)
+                    // 设置header标签的背景色
+                    header.style.backgroundColor="rgba(201,21,85, "+opacity+" )";
+
+                }
+
+        
+        </script>
+</body>
+</html>

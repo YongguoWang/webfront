@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            .header {
+                height: 100px;
+                background-color: #ccc;
+            }
+
+            .big {
+                width: 600px;
+                height: 600px;
+                background-color: lightgreen;
+
+                position: relative; /*相对定位 不会脱离正常文档流 */
+                 /*   position: absolute;*//* absolute 绝对定位会脱离正常文档流*/     
+                 /*   top: 0; *//* 子绝父相*/
+            }
+
+            .big .small {
+                width:100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;/* 绝对定位*/
+                top: 0;
+                left: 0;
+            }
+
+            .demo {
+                width: 100px;
+                height: 600px;
+                background-color: orange;
+
+                position: fixed;
+                top:80px;
+                right: 10px;
+
+                z-index: 1000; /* 值越大  层级越高*/
+            }
+
+            .demo2 {
+                width: 100px;
+                height: 600px;
+                background-color: purple;
+
+                position: fixed;
+                top:90px;
+                right:20px;
+
+                z-index: 1001; /* 值越大  层级越高*/
+            }
+    </style>
+</head>
+<body style="height:1100px;">
+        <div class="header"></div>
+        <div class="big">
+            <div class="small"></div>
+        </div>
+
+        <div class="demo"></div>
+        <div class="demo2"></div>
+</body>
+</html>

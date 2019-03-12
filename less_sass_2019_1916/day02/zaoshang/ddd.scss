@@ -1,0 +1,16 @@
+$w:1000px;
+$h:100px;
+$bgColor:#af9000;
+
+.banxin {
+  width:$w;
+  height:$h;
+  background-color:$bgColor;
+  margin:0 auto;
+  h1 {
+    text-align: center;
+    line-height:$h;
+  }
+}
+
+

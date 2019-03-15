@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <button> 点击一下 </button>
+
+
+    <script>
+
+        // 1.0 获取按钮
+        var btn = document.querySelector("button");
+        // 2.0 绑定事件
+        btn.onclick = function(){
+            // 3.0 this  关键字
+            console.log(this)
+            //  this 指向的事件/函数的调用者
+            var aaa = this ;
+            // 定时器函数
+            window.setInterval(function(){
+                console.log(aaa)
+                console.log(this)
+            },1000)
+
+
+        }
+        
+        
+    </script>
+    
+</body>
+</html>

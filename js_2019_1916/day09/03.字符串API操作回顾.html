@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+    // 1.0 调用者   2.0 参数  3.0 返回值  4.功能
+
+        // substring()
+        var str1 = "hello";
+        var res1 =  str1.substring(1,4);// 参数  1.0 开始索引值  2.0 结束索引值(不包括该索引值的字符)
+        console.log(res1) // 看返回值是 ell
+
+
+
+        // substr()
+        var str2 = "abcdef";
+        var res2 = str2.substr(1,3); // 参数： 1.0 开始的索引值  2.0 截取长度
+        console.log(res2) // 返回值 bcd
+
+
+        // slice()
+        var  str3 = "012345";
+        var res3 = str3.slice(2,5);  //  参数1： 开始索引值 ，参数2：结束的索引值(不包括该索引值的字符)
+        console.log(res3)// 234
+
+
+
+
+
+        // indexOf(); // 判断该字符串是否包含 指定的字符  0,1,2,3,4
+        var str5 = "home.jpg";// png  gif  ico
+        var res5 = str5.indexOf(".") ;// 参数  ： 检测的字符
+        console.log(res5) // 返回值是该字符所在的索引值 4
+
+        var res6 = str5.indexOf("a"); 
+        console.log(res6) // 返回值 -1 ; 如果不存在该字符返回值是负数（-1）
+
+        if(str5.indexOf("j") <0 ){
+            console.log("不存在该字符")
+        }else {
+            console.log("存在该字符")
+        }
+
+        // 截取指定索引值开始的所有字符 
+        var str7 = "home.png";
+        var index = str7.indexOf(".");
+        var res7 = str7.slice(index); // 参数：开始截取的字符索引值  ，功能：截取指定字符开始以及后面所有字符
+        console.log(res7)  //.png
+
+
+
+    
+    </script>
+    
+</body>
+</html>

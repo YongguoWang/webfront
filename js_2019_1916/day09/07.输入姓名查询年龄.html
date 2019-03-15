@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            width: 600px;
+            background-color: #ccc;
+            margin: 0 auto;
+        }
+        .search {
+            width:596px;
+            height: 46px;
+            border: 2px solid darkred;
+        }
+        .search input {
+            border:0;
+            outline: none;
+            background-color: #fff;
+            width: 490px;
+            height: 40px;
+
+            float: left; /* 浮动*/
+
+            margin-top:3px ; /* 46 - 36 )/2 = 5*/
+        }
+        .search button {
+            border:0;
+            outline: none;
+            width: 106px;
+            height: 40px;
+            background-color: pink;
+
+            float: left; /* 浮动*/
+
+            margin-top:3px ;
+
+            cursor: pointer;
+        }
+
+        .msg {
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="search">
+            <input type="text" class="inp">
+            <button class="btn">查询年龄</button>
+        </div>
+        <div class="msg">
+           他/她的年龄是: <span class="show"></span>
+        </div>
+    </div>
+
+
+    <!-- 编写脚本 -->
+    <script>
+    
+        // 模拟后端的数据
+        var  data = [
+            {
+                "_id":"0010xxx","name":"小红","age":"18"
+            },
+            {
+                "_id":"0010xxx","name":"小蓝","age":"98"
+            },
+            {
+                "_id":"0010xxx","name":"小黄","age":"58"
+            },
+            {
+                "_id":"0010xxx","name":"哈喽","age":"118"
+            },
+            {
+                "_id":"0010xxx","name":"滴滴","age":"28"
+            }
+        ]
+
+        console.log(data)
+            
+
+            // 业务处理
+            // 需求： 输入姓名，点击查询，返回该用户的信息。
+
+            // 1.0 获取相关元素
+            var inp = document.querySelector(".inp")
+            var btn = document.querySelector(".btn")
+            var show = document.querySelector(".show")
+
+            // 2.0 事件绑定
+            btn.addEventListener('click',function(){
+                // 3.0 处理逻辑程序
+                var inpVal = inp.value;
+                // console.log(inpVal)
+                // 判断是否输入了值
+                if(inpVal.length!=0){
+                        // 怎么查询？循环
+                        for(var i = 0 ; i < data.length;i++){
+                            //    console.log(inpVal+" --- "+data[i].name)
+                                if(inpVal == data[i].name ){ // 如果输入的姓名， 跟后端数据的姓名对应
+                                    
+                                    // console.log("年龄："+data[i].age)
+                                    show.innerHTML = data[i].age; // 在show这个标签显示 年龄
+
+                                    break; // 跳出循环
+
+                                }else {
+                                    show.innerHTML = "亲，你查询的对象不存在。"
+                                }
+                        }
+                }else {
+                    alert("您还没输入姓名呢！")
+                }
+
+            })
+
+    </script>
+    
+</body>
+</html>

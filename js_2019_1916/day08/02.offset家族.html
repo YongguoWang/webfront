@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            .box {
+                width: 550px;
+                height: 350px;
+                background-color: green;
+                margin-left: 400px;
+                margin-top: 200px;
+
+                border:10px solid #cccccc;/* 一个盒子四个边*/
+                padding: 15px;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+
+
+    <script>
+            // 1.0 获取元素
+            var box = document.querySelector(".box");
+
+            // 2.0 获取盒子距离左边以及顶部的间距
+            var left = box.offsetLeft ;
+            var ttop = box.offsetTop;
+
+            console.log("距离左边："+left+",距离顶部："+ttop);
+
+            // 3.0 获取盒子宽度高度
+            var w = box.offsetWidth; // 宽度：会把边框和内边距加起来（border+padding+width）
+            var h = box.offsetHeight;//高度：（border+padding+height）
+
+            console.log("宽度："+w+",高度："+h);
+
+            // innerWidth  指的是浏览器可视范围的宽
+           var resWidth =  window.innerWidth;
+            console.log(resWidth)
+            // innerHeight 指的是浏览器可视范围的高
+            var resHeight =  window.innerHeight;
+            console.log(resHeight)
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                width: 1800px;
+                height: 1600px;
+                background-color: pink;
+                border:3px solid #ccc;
+                padding: 10px;
+            }
+            .header {
+                height: 200px;
+                background-color: blue;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+            <div class="header"></div>
+    </div>
+
+    <script>
+        // scroll 家族的属性
+        // scrollTop;
+        var ttop = document.body.scrollTop || document.documentElement.scrollTop;
+        console.log("被浏览器卷去的顶部："+ttop)
+          // scrollLeft;
+        var left = document.body.scrollLeft || document.documentElement.scrollLeft;
+        console.log("被浏览器卷去的左边："+left)
+
+    
+        // scrollWidth  获取盒子的宽度（不含有边框）
+        var box = document.querySelector(".container");
+        var w = box.scrollWidth;
+        console.log("scrollWidth:"+w)
+        // scrollHeight  获取盒子的高度（不含有边框）
+        var h = box.scrollHeight;
+        console.log("scrollHeight:"+h)
+    
+    </script>
+</body>
+</html>

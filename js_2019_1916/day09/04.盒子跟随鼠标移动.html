@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color:green;
+
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+    
+
+    // 1.0 获取元素
+    var box = document.querySelector(".box");
+    console.log(box)
+    // 2.0 事件 
+    // onmouedown  鼠标按下事件
+    // 定义变量 接收鼠标的位置
+    var startx = 0;
+    var starty  = 0 ;
+
+    var movex = 0;
+    var movey = 0;
+
+    var resx = 0;
+    var resy = 0;
+
+    var x = 0;
+    var y = 0;
+
+    // 鼠标按下
+    box.onmousedown = function (event){
+        var evt  = event || window.event; // 兼容写法
+        // console.log("onmousedown")
+        console.log(evt)
+         // evt.stopPropagation(); //阻止事件冒泡
+        startx = evt.pageX ; // 记录鼠标按下的x位置
+        starty = evt.pageY;  // 记录鼠标按下的y位置
+        resx = startx - this.offsetLeft;  // 记录鼠标距离盒子的x位置
+        resy = starty - this.offsetTop; // 记录鼠标距离盒子的y位置
+         // 鼠标移动
+        document.onmousemove = function(event){
+            var evt = event || window.event;
+            // stopPropagation
+            // evt.stopPropagation(); //阻止事件冒泡
+            movex = evt.pageX; // 记录鼠标移动的x位置
+            movey = evt.pageY;  // 记录鼠标移动的y位置
+            x  =  movex - resx; //记录此刻盒子的x位置
+            y = movey - resy ; //记录此刻盒子的y位置
+            box.style.left = x +"px"; // 设置盒子的x位置
+            box.style.top = y +"px"; // 设置盒子的x位置
+        }
+    }
+
+
+    // 鼠标松开
+    document.onmouseup = function(){
+            document.onmousemove  = null;
+            // 初始化..
+            startx = 0;
+            starty = 0;
+            movex = 0;
+            movey = 0;
+            resx = 0;
+            resy = 0;
+        }
+   
+
+
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>

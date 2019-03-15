@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        <input type="file">
+
+        <script>
+            // 1.0 获取标签
+            var  inp = document.querySelector("input");
+            // 2.0 事件
+            inp.onchange = function(){
+                // 3.0   this.files 图片的信息
+               console.log(this.files)
+               var  size = this.files[0].size; // 是 1k = 1024      1m = 1024k
+                console.log( size/1024)  // 获取图片多少 k 
+               if( (size/1024)  > 100){  // 如果超过了100k ，就不让提交
+                    alert("你提交的图片太占空间了，请重新选择图片。")
+               }else { // 
+                    alert("你提交的图片在指定范围！")
+               }
+            }
+        
+        </script>
+</body>
+</html>

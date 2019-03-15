@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+    
+    div {
+        width: 500px;
+        height: 500px;
+        background-color: #ccc;
+    }
+
+    div p {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+    }
+
+    div p span {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    
+    </style>
+
+
+</head>
+<body>
+
+    <div>
+        <p>
+            <span></span>
+        </p>
+    </div>
+
+
+    <script>
+    // 1.0 获取元素
+    var div = document.querySelector("div");
+    var p = document.querySelector("p");
+    var span = document.querySelector("span");
+
+    // 2.0 绑定事件  false 事件冒泡
+    // div.addEventListener('click',function(){
+    //     console.log("我是div")
+    // },false)
+    // p.addEventListener('click',function(){
+    //     console.log("我是p")
+    // },false)
+    // span.addEventListener('click',function(){
+    //     console.log("我是span")
+    // },false)
+
+
+    // true  事件捕获
+    div.addEventListener('click',function(){
+        console.log("我是div")
+    },true)
+    p.addEventListener('click',function(){
+        console.log("我是p")
+    },true)
+    span.addEventListener('click',function(){
+        console.log("我是span")
+    },true)
+
+    
+    </script>
+    
+</body>
+</html>

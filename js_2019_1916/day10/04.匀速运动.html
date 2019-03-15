@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+
+    <script src="jq_v0.0.2.js"></script>
+    <script>
+    // 1.0 获取元素
+    var ele = document.getElementsByClassName("box")[0];
+    // 定时器
+    // var dingshiqi = null;
+    // // 步长
+    // var speed = 10;
+    //  // 先清除定时器
+    //  clearInterval(dingshiqi);
+    // // 处理逻辑
+    // dingshiqi = setInterval(function(){
+    //     // 判断 到目标位置 停止执行定时器
+    //     if(ele.offsetLeft >=1000 ){
+    //            // 清除定时器
+    //             clearInterval(dingshiqi); 
+    //             // 终止代码
+    //             return ;
+    //     }
+    //     console.log(ele.offsetLeft+speed)
+    //      // 盒子将去的位置 = 盒子当前位置 + 步长
+    //      ele.style.marginLeft =ele.offsetLeft + speed+ "px";
+    // },30)
+
+
+    move(ele,500)
+    
+    </script>
+</body>
+</html>

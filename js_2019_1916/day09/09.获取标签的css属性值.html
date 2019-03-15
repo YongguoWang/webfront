@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 150px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script src="jq_V0.0.1.js"></script>
+    <script>
+
+        // 1.0 获取元素
+        var box = document.querySelector(".box");
+        // 2.0 调用getStyle方法  获取宽度 高度的值
+        var w = getStyle(box,"width"); 
+        console.log(w)
+
+        var h = getStyle(box,"height"); 
+        console.log(h)
+
+        var bgc = getStyle(box,"backgroundColor"); 
+        console.log(bgc)
+    
+    </script>
+</body>
+</html>

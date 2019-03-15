@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    THIS IS PAGE A
+     
+
+    <a href="pageC.html?id=hello&num=10010&code=afsdfasdf" target="_blank">
+        跳转C页面
+    </a>
+
+    <button> 提交数据 </button>
+
+
+    <script>
+    
+
+
+
+
+    // 1.0 获取按钮
+    var btn = document.querySelector("button");
+    // 2.0 绑定事件
+    btn.addEventListener('click',function(){
+
+        var userName = "xiaohong";
+        // 跳转页面
+        window.location.href = "pageB.html?name="+userName;
+
+
+    })
+    
+    </script>
+    
+</body>
+</html>

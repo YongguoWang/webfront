@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+     <button> 点击一下</button>
+    <div class="box"></div>
+    
+    <script src="jq_V0.0.1.js"></script>
+    <script>
+        // 1.0 事件源
+        var box = document.querySelector(".box");
+        var button = document.querySelector("button");
+        // 2.0 绑定事件
+        button.onclick = function(){
+
+            changeStyle(box , {
+                width:150,
+                height:200,
+                marginLeft:100
+            });
+
+        }
+
+    </script>
+    
+</body>
+</html>

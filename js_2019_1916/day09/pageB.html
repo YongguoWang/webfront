@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个参数</title>
+</head>
+<body>
+    
+
+   THIS IS  PAGE  B  
+
+   <div> 传递过来的是<span class="content" style="color:red;"> </span> </div>
+
+   <script>
+    // 获取url地址
+    var url = location.href;
+    console.log(url)
+    var index = url.indexOf("?");// 该字符对应的索引值
+    var str = ""; // 记录？后面的字符的
+    if(index>-1){
+        str = url.slice(index);//截取索引值以后的所有字符 ?id=1000
+        console.log(str )
+        // split("")  可以把字符串分割成数组
+        var arr =  str.split("=");
+        console.log(arr)
+        var val = arr[1]; // 获取A页面传递过来的值（参数）
+        document.querySelector(".content").innerHTML = val;
+    }
+   
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+            * {
+                padding: 0;
+                margin: 0;
+
+            }
+            ul {
+                list-style: none;
+            }
+            .layout {
+                width: 1200px;
+                margin: 0 auto;
+            }
+            .title {
+                width: 1200px;
+                height: 100px;
+                text-align: center;
+                line-height: 100px;
+                font-size: 18px;
+                background-color: #ccc;
+            }
+            .main {
+                width: 1200px;
+                background-color: #f0f0f0;
+
+                position: relative;
+            }
+
+            .main ul {
+                width: 250px;
+                float: left;
+                /* height: 500px; */
+                background-color: #ffffff;
+                margin: 0 25px;
+            }
+            .main ul.first {
+                margin-top: 102px;
+            }
+            .main ul.thrid {
+                margin-top: 102px;
+            }
+            .main ul.fourth {
+                margin-top: 152px;
+            }
+
+            .main ul li {
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+            }
+            .main::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .info {
+                width: 1200px;
+                height: 80px;
+                text-align: center;
+                line-height: 80px;
+                background-color: #ccc;
+            }
+            .info .btn {
+                width: 180px;
+                height: 50px;
+                vertical-align: middle; /* 关于行内块元素的居中   */
+            }
+            .tell {
+                width: 1200px;
+                height: 40px;
+                background-color: #f0f0f0;
+            }
+
+            .msk {
+                width: 250px;
+                height: 50px;
+                background-color:rgba(0, 128, 0, 1);
+                text-align: center;
+                line-height: 50px;
+                color: #fff;
+                font-weight: bold;
+                display: none;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 999;
+            }
+	</style>
+
+
+</head>
+<body>
+
+	<div class="layout">
+		<div class="title">
+			<h3>GZ1916班级座位表</h3>
+		</div>
+		<div class="main">
+            <ul class="first"></ul>
+            <ul class="second"></ul>
+            <ul class="thrid"></ul>
+            <ul class="fourth"></ul>
+
+             <!-- 选中的状态 -->
+            <div class="msk"></div>
+        </div>
+        
+		<div class="info">
+                <button class="btn"> 随机点名 </button>
+		</div>
+        <div class="tell"></div>
+        
+       
+	</div>
+
+    <script src="jq_v0.0.3.js"></script>
+	<script>
+		var data = [
+			{
+				"id":"第一组",
+				"items":["陈桂升","胡杰信","陈伟亮","刘钊俊","刘荣","叶林生","罗鹍翔","吴瑞洪","朱日强"]
+			},
+			{
+				"id":"第二组",
+				"items": ["李金堂","黄君尚","梁静仪","陈志星","曾加仁","王梓伟","吴莹芳","严宇航","钟本恒","李芸","苏鸿达"]
+			},
+			{
+				"id":"第三组",
+				"items":[ "陈惠玲","张坤林","纪淳","李明捷","丁娅云","黄家彬","沈少楷","尧斌","廖权彬"  ]
+			},
+			{
+				"id":"第四组",
+				"items": ["周亨坚", "许立阳", "冯华鹏", "黄景昌", "黄锦雯", "黄伦凤", "黄慧仪", "陈良京"]
+			}
+        ]
+        
+        // 步骤
+            // 1.0 获取元素
+            var firstEle = document.querySelector(".first");
+            var secondEle = document.querySelector(".second");
+            var thridEle = document.querySelector(".thrid");
+            var fourthEle = document.querySelector(".fourth");
+            var btn = document.querySelector(".btn");
+            // 2.0 渲染数据
+            function template(result){
+                var str = ""; // 空字符
+                for(var i = 0 ; i < result.length;i++){ // 循环数组
+                    str+="<li>"+result[i]+"</li>" // 拼接字符
+                }
+                return str ; //把拼接好的字符串返回
+            }
+            //3.0 把数据表现在页面上
+            firstEle.innerHTML = template(data[0].items)
+            secondEle.innerHTML = template(data[1].items)
+            thridEle.innerHTML = template(data[2].items)
+            fourthEle.innerHTML = template(data[3].items)
+
+            // 4.0 定义一个数组 记录每个同学的位置
+            var  posArr = [];
+            // 5.0 获取每一组下的li
+            var firstLi = firstEle.querySelectorAll("li");
+            var secondLi = secondEle.querySelectorAll("li");
+            var  thridLi = thridEle.querySelectorAll("li");
+            var fourthLi = fourthEle.querySelectorAll("li");
+            // 6.0 封装一个函数 记录每一组成员的座位置
+            function getPos(obj){
+                for(var j = 0 ; j < obj.length;j++){
+                    var o = {
+                        left:obj[j].offsetLeft,
+                        top:obj[j].offsetTop,
+                        name:obj[j].innerHTML
+                    };
+                    //   console.log( obj[j].offsetLeft);
+                    //   console.log( obj[j].offsetTop);
+                    //   o.left =  obj[j].offsetLeft;
+                    //   o.top =  obj[j].offsetTop;
+                    posArr.push(o);
+                }
+              
+            }
+            //7.0 调用获取组员位置的函数
+            getPos(firstLi)
+            getPos(secondLi)
+            getPos(thridLi)
+            getPos(fourthLi)
+            console.log(posArr)
+            // 8.0 产生一个随机数的方法
+            function myRandom(min , max){
+               return  Math.round(Math.random()*(max - min)+min);
+            }
+            // console.log(myRandom(0,37))
+
+            // 9.0 设置黄色盒子的位置
+            // 获取黄色盒子
+            var msk = document.querySelector(".msk");
+          
+            // 定时器是全局
+            var dingshiqi = null;
+            // 10. 点击随机点名
+            btn.addEventListener('click',function(){
+                   
+                        clearInterval(dingshiqi);
+                      // 倒数的次数
+                        var time = 15;
+                        // 定时器
+                        dingshiqi = setInterval(function(){
+                            // 显示盒子
+                            msk.style.display="block";
+                            time -- ;
+                            if(time <=0){
+                                clearInterval(dingshiqi);
+                                return ;
+                            }
+                            // 随机数
+                            var num = myRandom(0,37);
+                            // 设置换色盒子的位置
+                            changeStyle(msk , posArr[num]);
+                            // 设置黄色盒子的文本
+                            msk.innerHTML = posArr[num].name;
+
+                        },1000)
+            })
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+            }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script src="jq_v0.0.3.js"></script>
+    <script>
+        // 1.0 熟悉对象的遍历
+
+        // 对象  obj   {键：值}   是以键值对的形式出现的
+        var obj = {
+            "width":"200px",
+            "height":"100px",
+            "backgroundColor":"red"
+        }
+    
+        // 循环 for( var k in obj ){ }
+        for(var k in obj ){
+            console.log(obj[k]) // 输出来是：每个key对应的值
+        }
+
+        // 2.0对三目运算的理解
+        //  三目运算 ：  条件 ？执行结果1 ： 执行结果2
+        var speed = 0.2 ;
+        speed = speed < 0 ? Math.floor(speed) : Math.ceil(speed);
+        // Math.floor 向下取整
+        // Math.ceil  向上取整
+        console.log(speed);// 猜一猜 speed 是多少？？1
+
+
+        // 3.0 理解函数传参（参数：对象）
+        function foo(options){
+            for(var k in options){
+                console.log(k+"----->"+options[k])
+            }
+        }
+        // 调用函数 foo
+        foo({
+            "width":10,
+            "height":15,
+            "marginLeft":100
+        })
+
+        // 4.0 使用封装好的changeStyle函数
+        var box = document.querySelector(".box");
+        // changeStyle(box,{
+        //     "width":150,
+        //     "height":200,
+        //     "marginLeft":100,
+        //     "marginTop":200
+        // });
+
+        // 5.0 拓展 ： 回调函数
+        changeStyle(box,{
+            "width":180,
+            "height":300,
+            "marginLeft":100,
+            "marginTop":120
+        },function(){    // 这里是被执行的函数
+            box.style.backgroundColor="blue";
+            // 再次调用
+              changeStyle(box,{
+                    "width":100,
+                    "height":100,
+                    "marginLeft":0,
+                    "marginTop":0
+                });
+        })
+
+    
+    </script>
+    
+</body>
+</html>

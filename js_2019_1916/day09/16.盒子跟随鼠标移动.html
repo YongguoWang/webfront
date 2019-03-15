@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            div.box {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+
+        // 1.0 获取元素
+        var box = document.querySelector(".box");
+
+        // 2.0 事件  按下  移动  松开
+
+        var sx = 0;// 记录鼠标按下的x坐标
+        var sy = 0;
+
+        var mx = 0; // 记录鼠标的移动x坐标
+        var my = 0;
+
+        var rx = 0; // 记录鼠标距离盒子的x位置
+        var ry = 0;
+
+        var x = 0 ; // 设置给盒子的left的值
+        var y = 0; 
+
+        // 鼠标按下事件
+        box.onmousedown = function(evt){
+            console.log("onmousedown")
+            sx = evt.pageX;// 记录鼠标按下的x坐标
+            sy = evt.pageY;
+
+            rx = sx - box.offsetLeft; // 记录鼠标距离盒子的x位置
+            ry = sy - box.offsetTop;
+
+            // 鼠标移动事件
+            document.onmousemove = function(event){
+                console.log("onmousemove")
+                x = event.pageX - rx;  // 设置给盒子的left的值
+                y = event.pageY - ry ;
+
+
+                box.style.left=x+"px"; //设置盒子left值
+                box.style.top = y+"px";
+
+            }
+
+        }
+
+        // 鼠标松开
+        document.onmouseup = function(){
+            document.onmousemove = null; //解绑鼠标移动事件
+        }
+    
+    
+    </script>
+</body>
+</html>

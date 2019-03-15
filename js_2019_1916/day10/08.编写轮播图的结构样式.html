@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .banner {
+            width: 640px;
+            margin: 0 auto;
+            overflow: hidden;
+
+            /* 定位  */
+            position: relative;
+        }
+        .banner ul {
+            width:1000% ; /* 6400 */ 
+            list-style: none;
+        }
+        .banner ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .banner ul li {
+            width:10%; /* 640*/
+            float: left;
+        }
+
+        .banner ul li img {
+            display: block;
+            width: 100%;
+        }
+        .banner ol {
+            width: 100%;
+            height: 20px;
+            /* background-color: pink; */
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+
+            /* 字体：0 */
+            font-size: 0;
+            text-align: center;
+        }
+        .banner  ol li {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border:1px solid #fff;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        /* 跟随轮播的点 背景色白色  */
+        .banner  ol li.active {
+            background-color: #fff;
+        }
+        .banner .btn {
+            width: 30px;
+            height: 120px;
+            background-color: rgba(0,0,0,0.5);
+
+            position: absolute;
+            top:50%;
+            z-index: 100;
+            margin-top: -60px;
+
+            cursor: pointer;
+        }
+        .banner .btn.next_btn {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="banner">
+        <!-- 图片列表 -->
+        <ul>
+            <li><img src="./images/img_1.jpg" alt=""></li>
+            <li><img src="./images/img_2.jpg" alt=""></li>
+            <li><img src="./images/img_3.jpg" alt=""></li>
+            <!-- <li><img src="./images/img_1.jpg" alt=""></li> -->
+        </ul>
+
+        <!-- 小圆点 -->
+        <ol>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ol>
+
+        <!-- 左右按钮 -->
+        <div class="btn prev_btn"></div>
+        <div class="btn next_btn"></div>
+    </div>
+
+
+    <script src="jq_v0.0.3.js"></script>
+    <script>
+        // 1.0 获取元素
+        var banner  = document.querySelector(".banner");
+        var ulEle  = document.querySelector(".banner ul ");
+        var leftBtn  = document.querySelector(".prev_btn");
+        var rightBtn  = document.querySelector(".next_btn");
+        
+        var ulLis = document.querySelectorAll(".banner ul li"); // 元素集合
+        var points = document.querySelectorAll(".banner ol li"); // 元素集合
+
+        // 2.0 定义索引值
+        var index = 0 ;
+        // 3.0 定义宽度
+        var width  = ulLis[0].offsetWidth;
+        // 4.0 定时器
+        var timer = setInterval(loop ,2000); // 参数1.函数名  参数2.时间
+        // 5.0 定义改变索引值的函数
+        function  loop(){
+            console.log(index)
+            index++; 
+            if(index > ulLis.length-1){
+                index = 0;
+            }
+            // 设置ul的位置
+            // ulEle.style.marginLeft = -(index*width)+ "px";
+            changeStyle(ulEle,{
+                "marginLeft": -(index*width)
+            })
+            // 调用设置小圆点背景色的函数
+            setPoints();
+        }
+
+        // 6.0 鼠标在轮播图上悬停  停止轮播
+        banner.addEventListener('mouseenter',function(){
+            clearInterval(timer);
+        })
+          // 7.0 鼠标在轮播图上离开  继续轮播
+          banner.addEventListener('mouseleave',function(){
+            //   用定时器 先清除定时器
+            clearInterval(timer);
+            // 继续执行轮播
+            timer = setInterval(loop,2000);
+        })
+        // 8.0 小圆点跟随轮播
+       function setPoints(){
+           for(var i =  0 ; i < points.length;i++) {
+                points[i].classList.remove("active"); // 把所有的小圆点的li的active类名去掉
+           }
+            //   索引值 对应的小圆点添加 active 类名
+           points[  index ].classList.add("active");
+       }
+
+
+        //    9.0 点击小圆点切换图片
+        // 9.0.1 事件的绑定
+        for(var j = 0 ; j < points.length;j++){
+            // 记录每个li的索引值 
+            points[j].currentIndex = j;
+            // 点击事件
+            points[j].addEventListener('click',function(){
+                // this  指向 事件调用者 （你点击的那个小圆点）
+                index = this.currentIndex; 
+                // 设置ul的位置
+                changeStyle(ulEle,{
+                    "marginLeft":-index*width
+                })
+                // 调用设置小圆点的方法
+                setPoints();
+
+            })
+        }
+        // 10.点击左右按钮
+        leftBtn.addEventListener('click',function(){
+                 index--;
+                 if(index<0){ //如果索引值小于0  把最大索引值赋给 index
+                    index = ulLis.length-1;
+                 }
+                 // 设置ul的位置
+                 changeStyle(ulEle,{
+                    "marginLeft":-index*width
+                })
+                // 调用设置小圆点的方法
+                setPoints();
+        })
+        rightBtn.addEventListener('click',function(){
+                 index++;
+                if(index>ulLis.length-1){// 如果索引值大于最大索引值 把0赋给index
+                    index = 0;
+                }
+                  // 设置ul的位置
+                changeStyle(ulEle,{
+                    "marginLeft":-index*width
+                })
+                // 调用设置小圆点的方法
+                setPoints();
+        })
+
+
+
+
+
+    
+    
+    </script>
+
+</body>
+</html>

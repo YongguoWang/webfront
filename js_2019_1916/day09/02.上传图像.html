@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="file" name="" id="" value="">
+
+    <script>
+
+        // 1.0 获取input标签
+        //  "input[type='file']"   属性选择器
+        var ele = document.querySelector("input[type='file']");
+        // console.log(ele)
+        // 2.0  获取上传的内容  绑定事件 onchange 
+        ele.onchange = function( event ){
+            // this  事件的调用者
+            var url = this.value;// 图片的路径
+            console.log(url)
+            var index = url.lastIndexOf(".") ;
+            if(url.lastIndexOf(".") > -1){
+               var flag =  url.slice(index); // 截取作为判断文件格式的字符
+               console.log(flag)
+                //    ==   等等于    主要是值一致就可以
+                //  ||  或   在两个或者多个条件中，只要一个条件成立就返回 true  ，说明这是一个图片格式的文件
+                if(flag == ".jpg" || flag == ".png"  || flag == ".gif" || flag == ".ico" || flag == ".bmp"){
+                    alert("你提交的是图片")
+                }else{
+                    this.value="";// 重置
+                    alert("你提交的不是图片")
+                }
+            }else  {
+                this.value="";// 重置
+                alert("您还没选择文件！");
+
+            }
+
+
+
+
+
+            //关于文件上传的事件对象
+            console.log(event)
+            // 判断图片的大小？？？
+
+
+        }
+    
+    
+    </script>
+
+
+</body>
+</html>

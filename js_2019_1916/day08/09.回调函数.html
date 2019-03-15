@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+    
+        //函数   演示1 
+            var num = 0 ;
+            // 传参
+            // 关键字 定义的方法 (callback 回调)
+            function foo( cb ){
+                     // 定时器函数
+                    var timer = setInterval(function(){
+                        num++;// num 加一
+                        // console.log("num:"+num)
+                        if(num >= 5){ // 当num>= 5的时候
+                            cb(   );// 执行回调函数
+                            clearInterval(timer); //停止定时器
+                            return; // 终止代码
+                        }
+                    
+                    },1000);// 时间
+            }
+
+            // 调用foo( 参数 ) 函数
+
+            foo(function(){
+                // document.body.style.backgroundColor="red";
+            })
+
+
+            // 函数 演示2 
+            function fn1(callback){ // callback 形参
+                // 数据
+                var obj = {
+                    "productName":"程序员",
+                    "productPrice":"10元/个",
+                    "productCoding":function(){}
+                }
+                // callback();
+                if(callback){  //  判断回调函数是否存在
+                    callback(obj);// 存在 调用 ，  obj是 实参
+                }
+            }
+
+            // 调用函数    fn1( 实参 ) 
+            fn1(function(data){ // 形参
+                // 拼接字符
+                var str = "<div>目前市面上,<span>"+data.productName+"</span>的价格是<span>"+data.productPrice+"</span></div>";
+                // 把拼接好的字符串渲染在页面
+                document.body.innerHTML = str; 
+            });  // 调用函数
+
+
+
+            // 演示3 
+            // 函数1里面调用函数2
+            function fn2(cb){
+                if(cb){
+                    cb("hello");
+                }
+            }
+
+            fn2(function(msg){
+                console.log(msg)
+            })
+
+
+            // 演示 4
+
+            // 定义函数
+            function fn3(aaa){
+                console.log(aaa)
+            }
+            // 调用函数
+            fn3(["red","blue","green"])
+
+            // 定义函数
+            function fn4(cb){
+                cb(); //调用回调函数
+            }
+            // 调用函数
+            fn4( function(){ console.log(" I am a  callback  ") }  ) //  "function(){ console.log(" I am a  callback  ") }"  这个哥们是回调函数
+
+
+
+
+
+
+        
+        
+    </script>
+    
+</body>
+</html>

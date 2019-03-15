@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="box box1"></div>
+
+    <div class="box box2"></div>
+    
+</body>
+</html>
+
+<script src="tool.js"></script>
+<script>
+    // 步骤
+    // 匀速运动
+    // 1.0 获取box1元素
+    var ele1 = document.querySelector(".box1");
+    // 2.0 事件的绑定
+    // ele1.onclick = function(){}
+    ele1.addEventListener('click',function(){
+        // 3.0 调用封装好的move函数
+        move(ele1,1000);
+    })
+
+
+
+    // 缓动运动
+    var ele2 = document.querySelector(".box2");
+     // 2.0 事件的绑定
+    // ele1.onclick = function(){}
+    ele2.addEventListener('click',function(){
+        // 3.0 调用封装好的run函数
+        run(ele2,1000);
+    })
+
+    
+
+</script>

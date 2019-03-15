@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <script>
+        // 定义json对象
+        var dom = {
+            "width":"100px",
+            "height":"100px",
+            "backgroundColor":"blue"
+        }
+
+        // 获取元素
+        var box = document.querySelector(".box");
+
+        // 循环对象 不是循环数组
+        for(var k  in dom ){
+            console.log("key:"+k)
+            console.log("value:"+dom[k])
+            // 设置box的css样式
+            box.style[k] = dom[k];
+        }
+
+
+        
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color:red;
+            }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box"></div>
+
+
+    <script>
+
+
+        // 封装缓动框架函数
+        function changeStyle(dom,obj ,cb){  // 形参
+            clearInterval(dom.timer); // 先干掉定时器
+            dom.timer = setInterval(function(){
+                // 布尔值 （判断传递的目标属性值是否达到）
+                var isChange = true;
+                // 循环
+                // 步长：(目标属性值 - 元素当前的属性值)/10
+                for(var k in obj){
+                     var speed = obj[k] - parseInt(getComputedStyle(dom,null)[k]) // 计算步长
+                     var step =  (speed/10) < 0 ? Math.floor((speed/10)) : Math.ceil((speed/10)); // 处理小数点
+                     if(parseInt(getComputedStyle(dom,null)[k]) !=obj[k]){ // 如果元素没有达到目标属性值 ，那么 isChange = false
+                        isChange = false;
+                     }
+                    // 目标属性值 = 元素当前的属性值 + 步长
+                    //  dom.style.width="100px"
+                    dom.style[k] = parseInt(getComputedStyle(dom,null)[k]) + step +"px";
+                }
+                // 判断如果 isChange == true ; 说明每个属性都已经达到目标属性值了
+                if(isChange){
+                    clearInterval(dom.timer); //停止定时器
+                    if(cb){ //判断有没有回调函数 
+                        cb(); // 执行回调函数
+                    }
+                    return;
+                }
+            },30)
+        }
+
+        // 步骤
+            // 1.0 获取元素
+            var box =  document.querySelector(".box");
+            // 2.0 调用方法
+            changeStyle(box,{
+                "width":200,
+                "height":150,
+                "borderRadius":50
+            },function(){
+                box.style.backgroundColor="orange";
+            })
+    
+    </script>
+</body>
+</html>

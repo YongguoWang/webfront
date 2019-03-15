@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .time_box {
+                width: 500px;
+                height: 500px;
+                border:2px solid #333;
+                border-radius: 50%;
+                margin: 20px auto;
+
+                position: relative; /* 父元素  相对定位*/
+            }
+            .time_box > div {
+                position: absolute; /* 子元素  绝对定位*/
+                left: 50%;
+                top: 50%;
+
+                transform-origin: left top;/* 原点*/
+
+            }
+
+            /* 半径 250   */
+            .time_box > div.hour {
+                    width: 80px;
+                    height: 6px;
+                    background-color: #ccc;
+                    margin-top: -3px;
+            }
+            .time_box > div.minute {
+                    width: 130px;
+                    height: 4px;
+                    background-color: #333;
+                    margin-top: -2px;
+            }
+            .time_box > div.second {
+                    width: 200px;
+                    height: 2px;
+                    background-color: red;
+                    margin-top: -1px;
+                    /* transform: rotate(45deg);  */  /*css3 旋转*/
+
+            }
+            .time_box > div.circle {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #000;
+                    border-radius: 50%;
+                    margin-left: -15px;
+                    margin-top: -15px;
+                    z-index: 1000;
+
+            }
+    </style>
+</head>
+<body>
+            <div class="time_box">
+                        <div class="hour"></div>
+                        <div class="minute"></div>
+                        <div class="second"></div>
+                        <div class="circle"></div>
+            </div>
+
+            <script>
+            
+            // 需求：
+                // 实现一个js时钟表
+                // 1.0 获取相关元素
+                var hEle = document.querySelector(".hour"); // 小时
+                var mEle = document.querySelector(".minute"); // 分钟
+                var sEle = document.querySelector(".second"); // 秒钟
+            
+                // 定时器
+                var timer = setInterval(function(){
+                    // 实例化
+                    var dt = new Date();  //Date(); 类似模具   
+                    // 获取小时
+                    var hour = dt.getHours();
+                    // 获取分钟
+                    var min = dt.getMinutes();
+                    // 获取秒钟
+                    var second = dt.getSeconds();
+                    // 毫秒
+                    var ms = dt.getMilliseconds();
+
+                    console.log(hour*30)
+
+                    var hh = hour+(min/60);
+                    var mm = min + second/60;
+                    var ss = second+ (ms/1000);
+
+                    //  transform: rotate(45deg); 
+                    hEle.style.webkitTansform = "rotate(  "+(hh*30-90)+"deg)";  //  360 / 12 = 30
+                    hEle.style.mozTransform = "rotate(  "+(hh*30-90)+"deg)";  //  360 / 12 = 30
+
+
+                    hEle.style.transform = "rotate(  "+(hh*30-90)+"deg)";  //  360 / 12 = 30
+                    mEle.style.transform = "rotate(  "+(mm*6-90)+"deg)";  //  360 / 12 = 30
+                    sEle.style.transform = "rotate(  "+(ss*6-90)+"deg)";  //  360 / 12 = 30
+
+                },1000)
+            
+            </script>
+</body>
+</html>

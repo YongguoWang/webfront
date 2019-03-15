@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .big {
+                width: 600px;
+                height: 600px;
+                background-image: url("./images/clock.jpg");
+                position: relative;
+            }
+
+            .big >div {
+                position: absolute;
+                top:0;
+                left: 50%;
+                margin-left: -15px;
+            }
+            .hour {
+                width: 30px;
+                height: 600px;
+                background-image: url("./images/hour.png");
+                z-index: 1;
+            }
+            .minute {
+                width: 30px;
+                height: 600px;
+                background-image: url("./images/minute.png");
+                z-index: 2;
+            }
+            .second {
+            width: 30px;
+            height: 600px;
+            background-image: url("./images/second.png");
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="big">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+    </div>
+
+
+    <script>
+             // 需求：
+                // 实现一个js时钟表
+                // 1.0 获取相关元素
+                var hEle = document.querySelector(".hour"); // 小时
+                var mEle = document.querySelector(".minute"); // 分钟
+                var sEle = document.querySelector(".second"); // 秒钟
+
+                // 定时器
+                var timer = setInterval(function(){
+
+                    var dt = new Date();//  new 关键字   创建一个实例。
+                    var ms = dt.getMilliseconds(); // 获取当前的毫秒
+                    var s = dt.getSeconds()+ms/1000;//获取当前的秒
+                    var m = dt.getMinutes()+s/60;//获取当前分钟
+                    var h = dt.getHours()+m/60;//获取当前的小时
+
+                    hEle.style.transform = "rotate("+h*30+"deg)";// 设置小时div的角度
+                    mEle.style.transform = "rotate("+m*6+"deg)"; // 设置分钟div的角度
+                    sEle.style.transform = "rotate("+s*6+"deg)";// 设置秒钟div的角度
+                },30)
+
+
+    
+    </script>
+
+</body>
+</html>

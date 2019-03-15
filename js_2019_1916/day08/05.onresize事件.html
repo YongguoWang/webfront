@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            body {
+
+                height: 1000px;
+            }
+            .box {
+                background-color: #ff5500;
+                margin: auto;
+
+
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+
+    <script>
+
+        // 步骤：
+        // 1.0 获取box元素
+        var box = document.querySelector(".box");
+        // 2.0 事件  onresize  窗口大小改变就触发函数。      调用者：window
+        window.onresize = function(){
+            // 3.0  设置盒子的宽度高度  documentElement
+            var w = document.body.clientWidth;
+            var h  = document.body.clientHeight;
+            console.log("onresize")
+            console.log( w/3)
+            console.log( h/2)
+            box.style.width=( w/3)+ "px";
+            box.style.height=(h/4)+ "px";
+        }
+    
+    </script>
+</body>
+</html>

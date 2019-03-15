@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+            // 时间对象  Date()
+            var dt = new Date();
+            // console.log(dt)
+
+            // 年
+            var year = dt.getFullYear();
+            console.log("今夕是何年? 是"+year)
+            // 月
+            var month = dt.getMonth()+1;  // 获取月份的时候注意  从0 开始  ["一月份","二月份","三月份",.........]
+            console.log("几月啦？"+month)
+
+            // 日
+            var day = dt.getDay();// [ "星期日","星期一","，星期二" ,"星期三","星期四","星期五","星期六"]
+            var week  =  [ "星期日","星期一","，星期二" ,"星期三","星期四","星期五","星期六"];
+            console.log(week[day]) // 3  ---> 星期三
+
+            // 小时
+            var hour = dt.getHours();
+            console.log("小时:"+hour)
+
+            // 分钟
+            var minutes = dt.getMinutes();
+            console.log("分钟:"+minutes)
+            // 秒钟
+            var second = dt.getSeconds();
+            console.log("秒钟:"+second)
+            // 毫秒
+            var ms = dt.getMilliseconds();
+            console.log("毫秒:"+ms)
+
+
+
+
+        
+    </script>
+</body>
+</html>

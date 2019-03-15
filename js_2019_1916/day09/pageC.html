@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个参数</title>
+</head>
+<body>
+     THIS IS PAGE C  
+
+    <ul>
+        <li>传递过来的参数: <span></span></li>
+        <li>传递过来的参数: <span></span></li>
+        <li>传递过来的参数: <span></span></li>
+    </ul>
+
+     <script>
+        //  pageC.html?id=10010&product=白菜&aaa=fadfasdfs
+
+        // 1.0 获取地址url
+        var url = location.href;
+
+        // 2.0 判断是否带有参数
+        var index = url.indexOf("?");
+        // 定义数组 记录传递过来的参数
+        var data = [] ;
+        if(index>-1){ //大于 -1 表示带有参数
+            var str = url.slice((index+1));
+            console.log(str)  // id=hello  &  num=10010  &   code=afsdfasdf
+            data = str.split("&"); 
+            console.log(data) // 
+        }
+
+        // 定义一个空对象 ， 把处理好的数据记录起来
+        var obj = { }
+        // var objStr ="{";
+        // 遍历
+        for(var i = 0 ; i < data.length ;i++){
+                // console.log(data[i].split("=")[0]);
+                // console.log(data[i].split("=")[1]);
+                obj[i] = data[i].split("=")[1]; // 把处理好的值记录起来
+                // objStr += data[i].split("=")[0]+":"+data[i].split("=")[1]+",";
+        }
+
+        // objStr+="}"
+        console.log(obj)
+        var spans = document.querySelectorAll("ul li span"); // 获取span元素集合
+        // 把处理好的字符串渲染在页面上
+        spans[0].innerHTML = obj[0];
+        spans[1].innerHTML = obj[1];
+        spans[2].innerHTML = obj[2];
+        // hello
+        // json格式的字符串 转json对象
+        var strObj = '{"username": "xiaoming","password": "123456"}';
+        console.log(strObj)
+        var resObj = JSON.parse(strObj) ; // 备注 ： 字符串必须json格式的，检验是否是json格式的地址 ：http://www.bejson.com/
+        console.log(resObj);
+        // 把json对象转字符串
+        var product = {
+            "proudct_name":"土豆",
+            "proudct_price":"10元/斤"
+        }
+        var strProduct =  JSON.stringify(product); // 返回值就是  字符串
+        console.log(strProduct)
+     </script>
+
+</body>
+</html>

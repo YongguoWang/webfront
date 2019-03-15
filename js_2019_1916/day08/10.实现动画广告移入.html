@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .banner {
+                width: 90px;
+                height: 360px;
+                background-color: #ccc;
+
+                position: fixed;/* 固定定位*/
+                top:80px;
+                right: 0;
+                cursor: pointer;  
+                z-index: 1000;
+            }
+
+            .banner_box {
+                width: 90px;
+                height: 360px;
+                position: relative; /* 相对定位*/
+            }
+
+            .banner_box  .box_content {
+                    width: 350px;
+                    height: 350px;
+                    border:2px solid red;
+                    position: absolute;/* 绝对定位*/
+                    left: 0px; /* 354 - 90 ) = 260*/
+                    z-index: 99;
+            }
+
+            .banner_box  .box_content span {
+                display: block;
+                width: 16px;
+                height: 16px;
+                border:1px solid #ccc;
+                text-align: center;
+                line-height: 16px;
+            }
+             .box_msk {
+                width: 90px;
+                height: 360px;
+                background-color: #ccc;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 999;
+             }
+
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner_box">
+            <div class="box_msk"></div>
+            <div class="box_content">
+                <span>×</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="tool.js"></script>
+    <script>
+        // 步骤：
+        // 1.0 获取相关元素
+        var  msk = document.querySelector(".box_msk");
+        var content = document.querySelector(".box_content");
+        var btnClose = document.querySelector(".box_content span")
+
+        // 2.0 事件的绑定 (鼠标悬停事件)
+        msk.addEventListener('mouseenter',function(){
+            // 鼠标移入msk盒子  先弹到left 380的位置
+            animate(content,-380, function(){
+                // 再往回走20像素
+                animate(content,-360)
+            })
+
+        })
+        // 3.0 点击关闭按钮 回到原来位置
+        btnClose.addEventListener('click',function(){
+            // 回到left=0 的位置上
+            animate(content,0)
+        })
+
+    
+    </script>
+</body>
+</html>

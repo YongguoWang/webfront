@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            ul , ol {
+                list-style: none;
+            }
+            .banner {
+                width: 450px;
+                height: 200px;
+                background-color: #ccc;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .banner ol {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                
+                width: 100%;
+                height: 30px;
+                background-color: skyblue;
+
+                font-size: 0;
+                text-align: center;
+            }
+            .banner ol li {
+                display: inline-block; /* 行内块带有间距*/
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                border-radius: 50%;
+                margin: 5px 5px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <!-- 图片 -->
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!-- 小圆点 -->
+        <ol>
+                <!-- 动态创建 -->
+        </ol>
+    </div>
+
+    <script>
+        
+        // 1.0 获取元素
+        var ol = document.querySelector(".banner ol");
+        // 2.0 循环拼接字符串
+        var str = "";
+        for(var i =  0 ; i < 6 ; i++){
+            str+="<li></li>";
+        }
+        // 3.0 渲染
+        ol.innerHTML = str;
+    </script>
+    
+</body>
+</html>

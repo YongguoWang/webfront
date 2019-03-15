@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 120px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+
+    <script src="jq_v0.0.2.js"></script>
+    <script>
+        // 1.0- 获取元素
+        var ele = document.querySelector(".box");
+        // 判断当前浏览器是否支持 getComputedStyle 这个方法
+        // if(window.getComputedStyle){
+        //     var obj = getComputedStyle(ele,null) ;  // 参数：1. dom元素  2.0 伪类（null）
+        //     // console.log(obj.width)
+        //     // console.log(obj.height)
+
+        //     console.log(obj["width"]) // 作为key
+        //     console.log(obj["height"])
+
+        //    var resW =  parseInt(obj["width"]); // 取出字符串的数字
+        //    console.log(resW) // 100
+        // }else {
+        //     // 通过currentStyle 属性
+        //     var obj1 = dom.currentStyle;
+        //     console.log(obj1["width"]) // 100px
+
+        //     var resW1 =  parseInt(obj1["width"]); // 取出字符串的数字
+        //    console.log(resW1) // 100
+        // }
+
+
+        var resw3 = getStyleValue(ele,"width")
+        console.log(resw3)
+
+
+
+    </script>
+</body>
+</html>

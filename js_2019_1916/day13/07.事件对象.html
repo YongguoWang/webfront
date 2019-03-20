@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background: #ccc;
+
+                position: fixed;
+                bottom: 100px;
+                left: 200px;
+            }
+    </style>
+</head>
+<body style="height:1500px;">
+    
+    <div id="boxId"></div>
+
+    <script>
+        // 步骤
+        // 1.0 
+        var ele = document.getElementById("boxId");
+        // 2.0
+        ele.onclick = function(event){
+            // console.log(event)
+            // console.log(event.target)
+            // console.dir(event.target)
+
+            console.log("event.pageY------>"+event.pageY)
+            console.log("event.clientY------>"+event.clientY)
+            console.log("document.documentElement.scrollTop------>"+document.documentElement.scrollTop)
+            console.log("event.screenY------>"+event.screenY)
+
+
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .container {
+                width: 1200px;
+                background-color: #ccc;
+                margin: 0 auto;
+            }
+            
+            .box {
+                width: 100px;
+                height: 200px;
+                background-color: pink;
+
+                position: relative;
+            }
+            
+            .box .small {
+                position: absolute;
+                top: 50px;
+                left: 10px;
+
+                width: 60px;
+                height: 60px;
+                background-color: orange;
+            }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <div class="box">
+                <div class="small"></div>
+        </div>
+    </div>
+    
+
+    <script>
+        // 步骤
+        var small = document.querySelector(".small");
+        var res = small.offsetParent; // 获取的是该元素的父节点 
+        console.log(res)
+        var left = small.offsetLeft; // 距离左边(父元素带定位 ， 则距离父元素，不带定位，距离浏览器)的间距
+        console.log(left)
+       
+    
+    </script>
+</body>
+</html>

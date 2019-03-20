@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .menu {
+                width: 90px;
+               position: fixed;
+               left: 100px;
+               top: 160px;
+               z-index: 1000;
+            }
+
+            .menu ul {
+                padding: 0;
+                margin: 0;
+                width: 90px;
+                background-color: #ccc;
+                list-style: none;
+            }
+
+            .menu  ul li {
+                width: 90px;
+                height: 60px;
+                border-bottom: 1px solid #333;
+                text-align: center;
+                line-height: 60px;
+                cursor: pointer;
+            }
+
+            .menu ul li.active {
+                background-color: red;
+                color: #fff;
+            }
+
+            .container {
+                width: 1200px;
+                margin: 0 auto;
+            }
+            .container .main {
+                width: 1200px;
+                position: relative;
+            }
+            .container .main ul {
+                width: 1200px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                list-style: none;
+                z-index: 1;
+            }
+            .container .main ul li  {
+                width: 1200px;
+                /* height: 600px; */
+            }
+
+            .container .main ul li:nth-child(1) {
+                    background-color: skyblue;
+            }
+            .container .main ul li:nth-child(2) {
+                    background-color: lightcoral;
+            }
+            .container .main ul li:nth-child(3) {
+                    background-color: lightgreen;
+            }
+            .container .main ul li:nth-child(4) {
+                    background-color: saddlebrown;
+            }
+            .container .main ul li:nth-child(5) {
+                    background-color: blueviolet;
+            }
+    
+    </style>
+
+    <script src="jq_v0.0.3.js"></script>
+    <script>
+        window.onload = function(){
+             // 步骤
+            // 1.0 获取元素
+            var lis =  document.querySelectorAll(".menu ul li");
+            var items =  document.querySelectorAll("ul.list li");
+            console.log(lis)
+            var listEle = document.querySelector(".list");
+
+            // 3.0 获取页面可视部分高度 ( 获取满屏高度的方法 / 属性 )
+            var h = window.innerHeight ;
+            console.log(h)
+            //2.0  设置 list盒子下每个li标签高度  /    // 4.0 事件绑定
+            for(var i = 0 ; i <  items.length; i++){ // items 和 lis 的length 个数一样
+                console.log( items[i])
+                items[i].style.height = h +"px";
+
+                // 5.0 属性绑定
+                lis[i].index = i ;
+                // 4.0 事件绑定
+                lis[i].onclick = function(){
+
+                    //  6.0 改变list盒子top值
+                    var  height = -this.index * h;
+
+                    // 7.0 调用缓动方法
+                    changeStyle(listEle,{
+                        "marginTop":height
+                    })
+
+                    // 8.0 排他
+                    for(var j = 0 ; j < lis.length ; j ++){
+                        lis[j].classList.remove("active");
+                    }
+                    // 9.0当前点击的盒子
+                    this.classList.add("active");
+                }
+            }
+
+         
+
+
+        }
+    
+    </script>
+</head>
+<body>
+    
+    <div class="menu">
+        <ul>
+            <li class="active">女装</li>
+            <li >男鞋</li>
+            <li>数码</li>
+            <li>家具</li>
+            <li>蔬菜</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="main">
+            <ul class="list">
+                <li>女装</li>
+                <li>男鞋</li>
+                <li>数码</li>
+                <li>家具</li>
+                <li>蔬菜</li>
+            </ul> 
+        </div>
+    </div>
+
+
+
+</body>
+</html>

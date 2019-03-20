@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            button.back_btn {
+                position: fixed;
+                bottom: 100px;
+                right: 50px;
+                z-index: 1000;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                outline: none;/* 去掉高亮边框*/
+            }
+    </style>
+
+    <script src="jq_v0.0.4.js"></script>
+    <script>
+        // 步骤
+        window.onload = function(){
+                    // 1.0 获取按钮
+                    var btn = document.getElementsByTagName("button")[0];
+                    // 2.0 事件
+                    // 5.0 获取页面当前的位置
+                    var  current = 0 ;
+                    window.onscroll = function(){
+                        // current = scroll().top;
+                        current = document.body.scrollTop|| document.documentElement.scrollTop;
+                    }
+                    // 4.0 定义定时器 ， 目标位置 ， 步长
+                    var timer = null , target = 0 , speed = 0;
+                    btn.onclick = function(){
+                        // 3.0 处理逻辑
+                       // window.scrollTo(0, 0);/// 0  意思就是顶部
+                        clearInterval(timer);
+                        // 定时器
+                        timer = setInterval(function(){
+                            speed = (target - current )/10; // 处理步长   负数
+                            var step = speed < 0 ? Math.floor(speed) : Math.ceil(speed); // 处理步长的小数点
+                            var y =  step+current; // 每次执行定时器的时候  页面走  y ( px )
+                            // console.log(step)
+                            console.log("current:"+current +"  ===  step:"+step);  //  处理步长的目的的是 ， 结果不断接近0 ，并且等于0 
+                            if(scroll().top == 0 ){ // 到达目标位置  
+                                clearInterval(timer); /// 清除定时器
+                                return ;// 终止代码
+                            }
+                            //  屏幕跳转 
+                            window.scrollTo(0 , y);  // step 到0 就是目标位置
+                        },30)
+                    }
+        }
+    
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ol>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+            <li>天天我等着你，等着来敲代码..</li>
+        </ol>
+    </div>
+
+    <button class="back_btn">返回顶部</button>
+
+</body>
+</html>

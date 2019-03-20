@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .menu {
+            width: 200px;
+            margin-left: 150px;
+            margin-top: 80px;
+            background-color: #ccc;
+        }
+        .menu ul {
+            list-style: none;
+        }
+        .menu ul > li.item {
+            width: 200px;
+            border-bottom: 2px solid #666;
+
+            height: 40px;
+            overflow: hidden;
+        }
+        .menu ul > li.item span {
+            display: block;
+            width: 200px;
+            height: 40px;
+            background-color: pink;
+        }
+
+        .menu ul > li.item ol {
+            list-style: none;
+            /* display: none; */
+        }
+
+        .menu ul > li.item ol li {
+            width: 200px;
+            height: 40px;
+
+        }
+        .menu ul > li.item ol li:hover {
+            background-color: #af9;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="menu">
+        <ul>
+            <li class="item">
+                <span>  职业  </span>
+                <ol>
+                    <li>前端开发</li>
+                    <li>后端开发</li>
+                    <li>测试岗位</li>
+                </ol>
+            </li>
+
+            <li  class="item">
+                    <span> 兴趣 </span>
+                    <ol>
+                        <li>打代码</li>
+                        <li>打篮球</li>
+                        <li>阅读</li>
+                    </ol>
+                </li>
+
+            <li  class="item">
+                    <span> 学习 </span>
+                    <ol>
+                        <li>HTML5</li>
+                        <li>JAVA</li>
+                        <li>C++</li>
+                    </ol>
+            </li>
+        </ul>
+    </div>
+    
+        <script src="js/jq_v0.0.3.js"></script>
+        <script>
+        // // 1.0 获取事件源
+        // var items = document.querySelectorAll(".item");
+        // // 2.0 事件的绑定
+        // // 循环的方式
+        // for(var i = 0 ; i < items.length ;i++){
+        //     items[i].index = i; // 属性绑定
+        //     // 事件绑定
+        //     items[i].addEventListener('click',function(){
+        //         // 3.0 处理程序
+        //         // this ? 是谁，事件调用者，（你点击的那个li标签）
+        //         var index = this.index ;
+
+        //         // 排他思想
+        //         for(var j = 0 ; j < items.length ; j++){
+        //             changeStyle(items[j], {
+        //                     "height":40
+        //                 })
+        //         }
+        //         changeStyle(items[index], {
+        //             "height":160
+        //         })
+        //     })
+        // }
+
+
+        changeTab();
+
+        function changeTab(){
+             // 1.0 获取事件源
+            var items = document.querySelectorAll(".item");
+            // 2.0 事件的绑定
+            // 循环的方式
+            for(var i = 0 ; i < items.length ;i++){
+                items[i].index = i; // 属性绑定
+                // 事件绑定
+                items[i].addEventListener('click',function(){
+                    // 3.0 处理程序
+                    // this ? 是谁，事件调用者，（你点击的那个li标签）
+                    var index = this.index ;
+                    // 排他思想
+                    for(var j = 0 ; j < items.length ; j++){
+                        changeStyle(items[j], {
+                                "height":40
+                            })
+                    }
+                    changeStyle(items[index], {
+                        "height":160
+                    })
+                })
+            }
+        }
+
+
+
+        
+        </script>
+</body>
+</html>

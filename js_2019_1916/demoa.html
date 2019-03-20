@@ -95,15 +95,18 @@
         // 4.0 定时器
         var timer = setInterval(function(){
 
-            index--;
-            if(index <0 ){
-                    index= lis.length-1;
-            }
-            
-            changeStyle(lis[2],pos[index]);
-            // changeStyle(lis[1],pos[index]);
-            // changeStyle(lis[0],pos[index]);
-            // changeStyle(lis[3],pos[index]);
+            // shift() 方法用于把数组的第一个元素从其中删除,并返回第一个元素的值。 
+            //  var newObj =  pos.shift();
+            // pos.push(newObj)
+
+            //  pop() 方法用于删除并返回数组的最后一个元素。
+            var newObj =  pos.pop();
+             pos.unshift(newObj);
+            console.log(pos)
+             for(var j = 0 ; j < pos.length ; j++){
+                changeStyle(lis[j],pos[j]);
+             }
+
 
         },2000)
     

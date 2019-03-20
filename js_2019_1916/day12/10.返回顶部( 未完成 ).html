@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+    
+        .container {
+            width: 1200px;
+            /* height: 1500px; */
+            background-color: #ccc;
+            margin: 0 auto;
+        }
+
+        .back_top {
+            width: 36px;
+            height: 65px;
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            cursor: pointer;
+
+            display: none;
+        }
+
+    </style>
+
+    <script src="jq_v0.0.3.js"></script>
+    <script>
+     window.onload = function(){
+             // 步骤 
+            // 1.0 获取元素
+            var btnTop = document.querySelector(".back_top");
+
+            // 6.0 定时器
+            var timer = null ;
+
+           //3.0  获取页面被浏览器卷去的高度
+           var scrollTop = 0;
+            // 2.0 事件
+            window.onscroll = function(){
+
+                //3.0  获取页面被浏览器卷去的高度
+                scrollTop = document.body.scrollTop || document.documentElement.scrollTop; 
+                if(scrollTop > 200){
+                    btnTop.style.display = "block";
+                }else {
+                    btnTop.style.display = "none";
+                }
+              
+            }
+
+
+
+            // 4.0 点击返回顶部
+            btnTop.onclick = function(){
+                //  目标位置
+                var target = document.body.scrollTop || document.documentElement.scrollTop; 
+                console.log(target)
+                //5.0  闪现 
+                // window.scrollTo(0 , 0);
+                // 7.0 动画效果回到顶部
+                timer = setInterval(function(){
+                    // var speed = (target - scrollTop)/10;
+                    target -= 20;
+                    // speed = speed < 0 ? Math.floor(speed) : Math.ceil(speed);
+
+                    
+                    // console.log(speed)
+                    if(target <= 0){
+                            clearInterval(timer); return;
+                    }
+                    window.scrollTo(0 , target);
+                },30)
+            }
+
+            // 封装   scroll()  
+     }
+    
+    </script>
+</head>
+<body>
+
+
+    <div class="container">
+            <ul>
+                <li>沧海一声笑,....1</li>
+                <li>沧海一声笑,....2</li>
+                <li>沧海一声笑,....3</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+                <li>沧海一声笑,....</li>
+            </ul>
+    </div>
+
+    <img  class="back_top" src="images/Top.jpg" alt="">
+    
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            ul {
+                padding: 0;
+                list-style: none;
+                width: 760px;
+                background-color: #ccc;
+                margin: 0 auto;
+            }
+
+            ul li {
+                width: 758px;
+                height: 40px;
+                border:1px solid #333;
+                margin-top: 10px;
+                background-color: #fff;
+            }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box">
+        <ul class="list">
+            <!-- 动态渲染 -->
+        </ul>
+    </div>
+
+
+    <script>
+        // 步骤
+        // 1.0 获取元素
+        var ul = document.getElementsByClassName("list")[0];
+        // 2.0 准备数据
+        var data = [
+            {
+                "txt":"习近平主持召开中央全面深化改革委员会第七次会议",
+                "icon":""
+            },
+            {
+                "txt":"习近平在意大利媒体发表署名文章 | 习近平今年首出访 | 理上网来",
+                "icon":""
+            },
+            {
+                "txt":"办好思政课关键在教师 | 培养社会主义建设者接班人",
+                "icon":""
+            },
+            {
+                "txt":"这位欧洲国家元首10次访华，与习主席有很多共同话题",
+                "icon":""
+            },
+            {
+                "txt":"人民网评: 奋力推进网络强国建设，开创网信工作新局面",
+                "icon":""
+            },
+            {
+                "txt":"习近平要求突出抓这件事 | 这座意大利港口城市重焕生机活力",
+                "icon":""
+            }
+        ]
+             console.log(data)
+            // 3.0 遍历数据
+            // for(var i  = 0 ; i < data.length ; i++){
+            //     var cLi = document.createElement("li"); // 创建li标签
+            //     cLi.innerHTML = data[i].txt; // 填充li标签的内容
+            //     ul.appendChild(cLi);// 添加li标签
+            // }
+
+            // 4.0  遍历数据
+            var  str = "";
+            for(var j = 0 ; j < data.length; j++){
+                str+="<li>  "+data[j].txt+"  </li>";
+            }
+            // 渲染在ul盒子
+            ul.innerHTML = str;
+
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            ul  , ol {
+                list-style: none;
+            }
+            .container {
+                width: 1200px;
+                background-color: #ccc;
+                height: 900px;
+                overflow: hidden;
+                margin: 0 auto;
+            }
+            .banner {
+                width: 300px;
+                height: 150px;
+                background-color: #fff;
+
+                margin: 250px auto;
+            }
+            .banner ul {
+                width: 300px;
+                height: 150px;
+                position: relative;
+            }
+            .banner ul li {
+                width: 300px;
+                height: 150px;
+                border: 1px solid #fff;
+                font-size: 50px;
+                color: #666;
+
+                position: absolute;
+            }
+            .banner ul li.one {
+                top: 120px;
+                left: 0;
+                z-index: 4;
+                background-color: red;
+            }
+            .banner ul li.two {
+                top: 0;
+                left: 250px ;
+                z-index: 3;
+                background-color: green;
+            }
+            .banner ul li.three {
+                top: -120px;
+                left: 0;
+                z-index: 2;
+                background-color:blue;
+            }
+            .banner ul li.four {
+                top: 0;
+                left: -250px;
+                z-index: 1;
+                background-color: orange;
+            }
+
+    </style>
+    <script>
+        // 步骤：
+        window.onload = function(){
+           
+            // 1.0 定义数组存放每个li的位置
+            var data = [
+                {
+                    "top": "120px",
+                    "left": 0,
+                    "zIndex": 4
+                },
+                {
+                    "top":0,
+                    "left": "250px",
+                    "zIndex": 3
+                },
+                {
+                    "top": "-120px",
+                    "left": 0,
+                    "zIndex": 2
+                },
+                {
+                    "top": 0,
+                    "left": "-250px",
+                    "zIndex": 1
+                }
+            ]
+
+            //  测试
+            // var box = document.querySelector(".box");
+            // // var box = document.getElementsByClassName("box");
+            // console.log(box)
+            // move(box,{
+            //     "width":"100px",
+            //     "height":"100px"
+            // })
+
+
+            // 2.0 缓动动画方法
+            function move(dom,options){
+                // 先清除定时器
+                clearInterval(dom.timer);
+                // 执行定时器函数
+                dom.timer = setInterval(function(){
+                    // console.log(options)
+                    // 标识  判断每个属性是否到达目标值
+                    var isChange = true ;
+                    // 循环
+                    for(var k in options){ // k 意思是属性  options[k] 意思是 属性值
+                        // 步长 
+                        var speed = (parseInt(options[k]) - parseInt(getComputedStyle(dom,null)[k]))/ 10;
+                        // 处理小数点
+                        var step = speed < 0 ? Math.floor(speed) : Math.ceil(speed);
+                         // 判断
+                        //  if(step == 0 ){
+                        //     isChange = false;
+                        // }
+                            // 判断传进的属性值 是否达到目标值 
+                        if(parseInt(options[k]) !=  parseInt(getComputedStyle(dom,null)[k])){
+                            // 每一个属性值 ，有一个不达到目标值 ， 都设置isChange = false 
+                            isChange = false;
+                        }
+                        // 设置dom的属性值
+                        // 盒子的目标位置 = 盒子当前位置 + 步长
+                        dom.style[k] = parseInt(getComputedStyle(dom,null)[k])+step+"px";
+                    }
+                    // 判断
+                    if(isChange == true){
+                        // 停止定时器
+                        clearInterval(dom.timer);
+                        return;
+                    }
+                },30)
+            }
+            // 4.0 获取相关元素
+            var aLi = document.querySelectorAll(".banner ul li");
+            // 3.0 实现旋转木马
+            var dingshiqi = setInterval(function(){
+                // 改变数组（data）的元素的位置   arr = [4,5,1,2,3]
+                // .shfit()   删除第一个元素并返回第一个元素
+                // .push()  往数组后面添加一个元素
+                // .pop()    删除最后一个元素 并返回最后一个元素
+                // .unshift() 往数组的前面添加一个元素
+
+                // var first = data.shift();
+                // data.push(first);
+                // console.log("-----")
+                // console.log(data);
+
+                var last = data.pop();
+                data.unshift(last);
+                // 循环
+                for(var i = 0 ; i < aLi.length ; i++){
+                    move( aLi[i], data[i] ) ; // 参数1 ，dom ; 参数2，对象
+                }   
+
+            },1500)
+        }
+
+      
+
+    </script>
+
+
+</head>
+<body>
+    <!-- <div class="box" style="background:red;"></div> -->
+
+    <div class="container">
+        <div class="banner">
+                <ul>
+                    <li class="one">A</li>
+                    <li class="two">B</li>
+                    <li class="three">C</li>
+                    <li class="four">D</li>
+                </ul>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

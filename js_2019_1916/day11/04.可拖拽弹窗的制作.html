@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+             html ,body {
+                 width: 100%;
+                 height:100%;
+                 overflow: hidden;
+             }
+             body {
+                 background-image:url('./mi.png');
+                 background-position: center 0;
+                 background-repeat: no-repeat;
+             }
+            .msk {
+                width: 100%;
+                 height:100%;
+                 background-color:rgba(0,0,0,0.9);
+                 display: none;
+            }
+            .msk .msk_box {
+                width: 350px;
+                height: 450px;
+                background-color: #fff;
+                position: absolute;
+                /* left: 50%;
+                top:50%;
+                margin-left: -175px;
+                margin-top: -225px; */
+
+                margin: auto;
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+            }
+            .msk .msk_box  .msk_box_content .msk_title {
+                width: 350px;
+                height: 50px;
+                background-color: skyblue;
+                position: relative;
+                cursor: move;
+            }
+            .msk .msk_box  .msk_box_content .msk_title span {
+                position: absolute; 
+                /* display: block; */
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                line-height: 20px;
+                border: 1px solid red;
+                right: 10px;
+                top: 15px;
+                cursor: pointer;
+            }
+
+            button {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                z-index: 10;
+            }
+    </style>
+</head>
+<body>
+    <button class="btn"> 点击一下 </button>
+    <div class="msk">
+        <div class="msk_box">
+            <div class="msk_box_content">
+                <div class="msk_title"><span>×</span></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // 1.0 获取相关元素
+      var btn =   document.querySelector(".btn");
+      var msk =   document.querySelector(".msk");
+      var mskBox =   document.querySelector(".msk_box");
+      var mskTitle =   document.querySelector(".msk_title");
+
+    //   3.0 显示弹窗
+    btn.onclick = function(){
+        msk.style.display = "block";
+    }
+
+     // 2.0  鼠标拖拽盒子
+     function outFun(){ //外部函数
+        //  鼠标按下的坐标
+        var startX = 0;
+        var startY = 0;
+
+        // 鼠标移动的坐标
+        var moveX = 0;
+        var moveY = 0;
+
+        // 鼠标离盒子的距离
+        var resX = 0;
+        var resY = 0;
+
+        // 盒子的left 和 top的变量
+        var left = 0 ;
+        var ttop= 0;
+
+        function inFun(){ // 内部函数
+                // 鼠标按下事件
+                mskTitle.onmousedown = function(event){  //事件对象
+                    var event = event || window.event;// 兼容写法
+                    startX = event.pageX;
+                    startY = event.pageY;
+
+                    resX = startX - mskTitle.offsetLeft;
+                    resY = startY - mskTitle.offsetTop;
+                    // 鼠标移动
+                    document.onmousemove = function(evt){
+                             var evt = evt || window.event;
+                             moveX = evt.pageX ;
+                             moveY = evt.pageY ;
+
+                             left  =  moveX - resX ;
+                             ttop =  moveY - resY ;
+
+                            //  设置盒子的位置
+                            mskBox.style.left = left + "px";
+                            mskBox.style.top = ttop + "px";
+                    }
+                }
+
+                // 鼠标松开
+                document.onmouseup = function(){
+                    document.onmousemove = null; 
+                }
+        }
+        inFun(); // 调用内部函数
+     }
+    //  调用外部函数
+    outFun();
+
+
+    // 点击关闭弹窗
+    var close = document.querySelector(".msk_title span");
+    close.onclick = function(){
+        msk.style.display = "none";
+    }
+    
+    
+    </script>
+
+</body>
+</html>

@@ -190,7 +190,8 @@
             getPos(secondLi)
             getPos(thridLi)
             getPos(fourthLi)
-            console.log(posArr)
+            console.log("----")
+            console.log(JSON.stringify(posArr))
             // 8.0 产生一个随机数的方法
             function myRandom(min , max){
                return  Math.round(Math.random()*(max - min)+min);
@@ -208,7 +209,7 @@
                    
                         clearInterval(dingshiqi);
                       // 倒数的次数
-                        var time = 15;
+                        var time = 5;
                         // 定时器
                         dingshiqi = setInterval(function(){
                             // 显示盒子

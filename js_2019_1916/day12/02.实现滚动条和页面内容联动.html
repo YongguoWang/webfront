@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .content_box {
+                width: 400px;
+                height: 600px;
+                /* border:10px solid #333; */
+                margin-left: 100px;
+                margin-top: 50px;
+                overflow: hidden;
+
+                position: relative;
+
+                float: left;  /* 浮动 */
+            }
+
+            .content_box .content {
+                background-color: pink;
+                width: 400px;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            
+            .scroll_box {
+                width: 50px;
+                height: 600px;
+                background-color: #ccc;
+
+                position: relative;  /* 相对定位*/
+
+                float: left;  /* 浮动 */
+                margin-left: 20px;
+                margin-top: 50px;
+            }
+
+            .scroll_box .scroll {
+                width: 50px;
+                height: 100px; /* 此处高度由内容高度决定 */
+                background-color: red;
+                border-radius: 25px;
+                cursor: pointer;
+
+                position: absolute; /* 子 绝对定位*/
+                top: 0;
+                left: 0;
+            }
+    </style>
+</head>
+<body>
+        <div class="content_box">
+            <div class="content">
+                开头一把斧！
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+
+                <p>满199减120三只松鼠 夏威夷果160g 零食坚果炒货孕妇坚果每日坚果干果休闲零食送开口器 160g</p>
+                <p>满199减120三只松鼠 开心果100g坚果炒货零食每日坚果 1袋装</p>
+                <p> 三只松鼠坚果炒货零食特产每日坚果开心果100g/袋</p>
+                <p> 三只松鼠芒果干蜜饯果干芒果片休闲零食办公室小吃果脯水果干116g/袋</p>
+                <p>last  </p>
+            
+
+            </div>
+        </div>
+
+
+        <div class="scroll_box">
+            <div class="scroll"></div>
+        </div>
+
+
+        <script>
+                //步骤：
+                // 1.0  获取相关元素
+                var  bigBox = document.querySelector(".content_box");
+                var  content = document.querySelector(".content");
+
+                var smallBox =  document.querySelector(".scroll_box");
+                var scroll = document.querySelector(".scroll");
+
+                // 3.0 计算滚动条的高度
+                var bigHeight = bigBox.offsetHeight;
+                var contentHeight = content.offsetHeight;
+                var smallHeight = smallBox.offsetHeight;
+                // 此处比例 是设置滚动条的高度    
+                //  大盒子高度/内容盒子高度 = 滚动条高度 / 小盒子高度
+                var scrollHeight = smallHeight * (bigHeight /contentHeight  );
+                console.log(scrollHeight)
+                // 设置滚动条的高度
+                scroll.style.height = scrollHeight +"px";
+                // 2.0实现滚动条在指定位置滑动
+                //  定义y 变量 
+                var y = 0; 
+                // var sy = 0 ;
+                // var rx = 0;
+                // 鼠标按下
+                scroll.onmousedown = function(){
+                    // 鼠标 移动
+                    document.onmousemove = function(evt){
+                            // 鼠标在页面的y坐标值  - 小盒子距离页面顶部的间距 -  scroll盒子高度的一半
+                            y = evt.pageY - smallBox.offsetTop - scroll.offsetHeight/2;
+                            console.log(  y )
+                            if(y < 0){
+                                    y = 0;
+                            }
+                            if(y > (smallBox.offsetHeight - scroll.offsetHeight)){
+                                    y = smallBox.offsetHeight - scroll.offsetHeight;
+                            }
+                            // 设置 scroll 盒子的top属性值
+                            scroll.style.top = y +"px";
+                            
+                            // 计算比例
+                            var demo = (bigBox.offsetHeight-content.offsetHeight) / (smallBox.offsetHeight-scroll.offsetHeight);
+
+                            // 设置content盒子的位置
+                            content.style.top = y * demo + "px";
+
+                    }
+                }
+
+                // 鼠标松开事件
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                }
+
+                console.log(window.innerHeight)
+        </script>
+
+
+</body>
+</html>

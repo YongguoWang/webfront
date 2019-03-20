@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #000;
+        }
+        .nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #fff;
+            margin: 100px auto;
+            position: relative; /* 相对定位 */
+        }
+
+        .nav ul {
+            width: 1200px;
+            height: 100px;
+            list-style: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        .nav ul li {
+            float: left;
+            width: 180px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            /* background-color: #ccc; */
+            border-bottom: 2px solid #333;
+            margin-left: 10px;
+            margin-top: 29px;
+            cursor: pointer;
+        }
+        .nav ul li.active {
+            border-bottom: 2px solid red;
+        }
+
+        .nav .icon {
+            width: 180px;
+            height: 48px;
+            border: 2px solid lightcoral;
+
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            border-top-left-radius: 25px;
+
+            position: absolute;
+            top: 24px; /* 父元素高 - 子元素高 ) / 2  = 24 */
+            left: 10px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+        <div class="nav">
+            <ul>
+                <li class="active">导航 A </li>
+                <li>导航 B </li>
+                <li>导航 C </li>
+                <li>导航 D </li>
+                <li>导航 E </li>
+            </ul>
+
+            <div class="icon"></div>
+        </div>
+
+        <script src="jq_v0.0.3.js"></script>
+        <script>
+        // 步骤
+        // 1.0 获取li标签
+        var lis = document.querySelectorAll(".nav ul li");
+        var icon = document.querySelector(".icon");
+        // 2.0 绑定事件
+        // 遍历  循环
+        for(var  i  = 0 ; i  < lis.length ;i ++){
+            lis[i].onclick = function(){
+                //  this  this this  很重要！
+                // 记录当前点击的li的 offsetLeft 值
+                var leftVal = this.offsetLeft;
+                // console.log(left)
+                // 记录 this 
+                // var _this = this ;
+
+                // 调用你在第二周封装好的缓动动画函数
+                changeStyle(icon ,{
+                    "left":   leftVal
+                });
+
+                // 排他思想
+                for(var j = 0 ; j < lis.length ;j++){
+                        lis[j].style.borderBottom = "2px solid #333";
+                }
+
+                // 设置当前点击的盒子的下边框的颜色
+                this.style.borderBottom = "2px solid red";
+            }
+        }
+        </script>
+</body>
+</html>

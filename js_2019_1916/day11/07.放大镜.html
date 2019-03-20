@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .small_box {
+                width: 350px;
+                height: 350px;
+                float: left;
+                border: 1px solid #ccc;
+                position: relative;
+                margin-left: 100px;
+                margin-top: 50px;
+            }
+            .small_box img {
+                width: 350px;
+                height: 350px;
+            }
+            .small_box .msk {
+                width: 200px;
+                height: 200px;
+                background-color: rgba(255, 255, 0 , 0.5);
+                position: absolute;
+                top: 0;
+                left: 0;
+                cursor: move;
+            }
+
+
+            .big_box {
+                width: 400px;
+                height: 400px;
+                float: left;
+                border: 1px solid #ccc;
+                overflow: hidden;
+
+                position: relative;
+
+                display: none;
+            }
+            .big_box  img {
+                width: 800px;
+                height: 800px;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="small_box">
+        <img src="./images/small.jpg" alt="">
+        <div class="msk"></div>
+    </div>
+
+    <div class="big_box">
+        <img class="big_img" src="./images/big.jpg" alt="">
+    </div>
+    
+
+    <script>
+        // 步骤 ：
+        // 1.0 获取相关的元素
+        var smallBox = document.querySelector(".small_box");
+        var msk = document.querySelector(".msk");
+        var bigImg = document.querySelector(".big_img");
+        var bigBox = document.querySelector(".big_box");
+
+        // 2.0 实现黄色盒子的跟随鼠标移动
+        var x = 0;
+        var y = 0;
+        // 鼠标移入事件
+        smallBox.addEventListener('mouseenter',function(){
+            //  显示大盒子
+            bigBox.style.display="block";
+
+            // 鼠标移动事件
+            document.onmousemove = function(event){
+                var  event = event || window.event; // 通过事件对象 ，可以获取鼠标的坐标
+                x = event.pageX - smallBox.offsetLeft - msk.offsetWidth/2; // 鼠标的x坐标 -  msk盒子的宽度
+                y = event.pageY -smallBox.offsetTop -  msk.offsetHeight/2; //鼠标的y坐标 - msk盒子的高度
+                if(  x < 0){  // x 小于0 
+                   x = 0; // 把0 赋值给x
+                }
+                if (x > (smallBox.offsetWidth - msk.offsetWidth)){ // x 大于 小盒子中msk的可移动的最大值
+                    x = smallBox.offsetWidth - msk.offsetWidth ; // 把 msk的可移动的最大值 赋给x ;
+                }
+
+                if(y < 0 ){
+                    y = 0;
+                }
+
+                if(y > (smallBox.offsetHeight - msk.offsetHeight)){
+                    y = smallBox.offsetHeight - msk.offsetHeight;
+                }
+
+                //  设置msk的位置
+                msk.style.left = x + "px";
+                msk.style.top = y +"px";
+            }
+
+        })
+        // 鼠标离开事件
+        smallBox.addEventListener('mouseleave',function(){
+            //  隐藏大盒子
+            bigBox.style.display="none";
+        })
+        
+
+
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div></div>
+
+    <script>
+        // 4.0 传参 获取实参的个数的方法是？
+        function foo1(x,y,z) {
+            console.log(arguments.length) ;  // 获取实参的个数
+        }
+        foo1(1,2)
+        // 函数能作为返回值？ 可以
+        function foo2 (){
+            // return (function(){
+            //     // document.body.style.backgroundColor= "red";
+            //     document.body.style["backgroundColor"] = "blue";
+            // })()
+            return function(){
+                // document.body.style.backgroundColor= "red";
+                document.body.style["backgroundColor"] = "blue";
+            }
+        }
+
+        // 调用foo2函数 ，他的返回值是个函数
+        var res1 =  foo2();
+
+        // 调用foo2的返回值（函数）
+        res1();
+
+
+
+
+    
+    </script>
+</body>
+</html>

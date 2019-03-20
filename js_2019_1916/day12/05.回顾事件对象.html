@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color:green;
+
+                position: absolute;
+            }
+
+            body {
+                height: 1200px;
+            }
+    </style>
+</head>
+<body>
+    
+    <div></div>
+
+    <script src="jq_v0.0.3.js"></script>
+    <script>
+    
+        document.querySelector("div").onclick = function(e){  // 形参    事件对象  在作用域里面使用
+            console.log(e)// 事件对象
+
+            // 应用事件对象 实现盒子跟随
+            // var _this = this ; // 记录你点击的div
+
+            // changeStyle(_this , {
+            //     "marginLeft":e.pageX,
+            //     "marginTop":e.pageY
+            // })
+        }
+
+        var box = document.querySelector("div");
+
+        document.body.onclick = function(e){
+            console.log(e.pageX+" --- "+e.pageX)
+            changeStyle(box , {
+                "left":e.pageX- box.offsetWidth/2,
+                "top":e.pageY- box.offsetHeight/2
+            })
+        }
+    </script>
+</body>
+</html>

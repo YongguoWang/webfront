@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color:red;
+            }
+    </style>
+</head>
+<body>
+
+
+    <div class="box"></div>
+
+    <script>
+        // 1.0 获取box元素
+        var box = document.querySelector(".box");
+
+        // 3.0 事件
+        box.onclick = function(){
+            //  this 事件的调用者
+            move(box,1000);
+        }
+
+        // 2.0 动画原理： 目标位置 = 盒子当前位置 + 步长
+        function move(dom , target){
+            clearInterval(dom.timer);
+            dom.timer = setInterval(function(){
+                var speed = (target-dom.offsetLeft)/10;
+                var step = speed < 0?Math.floor(speed) : Math.ceil(speed);
+                if(step == 0){
+                    clearInterval(dom.timer);
+                    return ;
+                }
+                dom.style.marginLeft = dom.offsetLeft + step +"px";
+            },30)
+        }
+    
+    </script>
+    
+</body>
+</html>

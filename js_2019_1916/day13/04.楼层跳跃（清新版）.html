@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            ul ,ol {
+                list-style: none;
+            }
+            html , body {
+                width: 100%;
+                height: 100%;
+            }
+            ul { /* 关于定位   left top right bottom*/
+                position: fixed;
+                right: 100px;
+                top: 180px;
+            }
+            ul li {
+                width: 50px;
+                height: 50px;
+                border: 1px solid #000; 
+                text-align: center;
+                line-height: 50px;
+                margin-top: -1px;
+            }
+
+            ol {
+                width: 100%;
+                height: 100%;
+            }
+            ol li {
+                font-size: 80px;
+                width: 100%;
+                height: 100%;
+            }
+    </style>
+
+</head>
+<body>
+
+    <ul class="small">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+    </ul>
+
+
+    <ol class="big">
+        <li>A1</li>
+        <li>B2</li>
+        <li>C3</li>
+        <li>D4</li>
+        <li>E5</li>
+    </ol>
+
+
+    <script src="jq_v0.0.4.js"></script>
+    <script>
+        // 步骤
+        // 1.0 获取相关的元素
+        var ulEle = document.getElementsByTagName("ul")[0];
+        var ulLis = ulEle.children;// 获取ul下所有的li标签
+
+        var olEle = document.getElementsByTagName("ol")[0];
+        var olLis = olEle.children; // 获取ul下所有的li标签
+        console.log(olLis)
+
+        // 2.0 定义数组记录颜色
+        var arrColor = ['red','green','blue','orange','pink'];
+
+        // 6.0 记录页面当前的位置
+        var current = 0; // 全局变量
+        window.onscroll = function(){
+            current =  scroll().top;
+        }
+
+
+        // 5.0 定义定时器  目标位置  步长
+        var timer = null , target = 0 ; speed = 0;
+
+        // 3.0 遍历数组
+        for(var i = 0 ; i < arrColor.length ;i++){
+            ulLis[i].style.backgroundColor = arrColor[i];
+            olLis[i].style.backgroundColor = arrColor[i];
+            
+            // 5.0 属性绑定
+            ulLis[i].aaa = i;
+            // 4.0 事件绑定
+            ulLis[i].onclick = function(){
+                     //9.0获取点击的盒子的索引值
+                    var index = this.aaa ; 
+                    // 10. 获取li标签当前的位置（当前点击的li的offsetTop）(目标位置)
+                    target = olLis[index].offsetTop;
+                    // 7.0 先清除定时器
+                    clearInterval(timer);
+                    // 8.0 定时器函数  参数1. 匿名函数  2. 时间
+                    timer  = setInterval(function(){
+                        //  11.步长： 
+                        speed = (target - current) / 10;
+                        var step = speed < 0 ? Math.floor(speed) : Math.ceil(speed);
+                        // 12. 定义每次走的距离
+                        var y = step + current;
+                        console.log(step)
+                        // 14. 到达目标位置
+                        if(step == 0 ){
+                                clearInterval(timer);// 停止定时器函数
+                                return ;// 终止代码
+                        }
+                        // 13. 调用屏幕跳转函数
+                        window.scrollTo(0 , y );
+                    },30)
+
+
+            }
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul li {
+            width: 380px;
+            height: 50px;
+            border-bottom: 1px solid #333;
+            line-height: 50px;
+            cursor: pointer;
+        }
+        ul li span {
+            color: red;
+        }
+    </style>
+    <script>
+
+        // 加载函数
+        window.onload = function(){
+
+            // 1.0 相关的元素
+            var aItem = document.querySelectorAll("ul li");
+            console.log(aItem)
+            // 2.0 循环 绑定事件
+            for(var i = 0 ; i < aItem.length ; i++){
+                // 点击事件
+                aItem[i].onclick = function(evt){
+                    var event = evt || window.event; 
+                    console.log(event)  //打印事件对象
+                    if(event.target.current == undefined ){
+                        event.target.current  = 0;
+                    }
+
+                    // 设置span标签的值
+                    // this 点击的那个li标签
+                    this.querySelector("span").innerHTML = ++  event.target.current;
+                }
+            }
+        }
+    
+    </script>
+</head>
+<body>
+    <ul>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+        <li>收藏 <span>0</span></li>
+    </ul>
+</body>
+</html>

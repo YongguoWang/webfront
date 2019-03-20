@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+            .container {
+                width: 970px;
+                height: 1500px;
+                background-color: #ccc;
+                margin: 0 auto;
+            }
+            
+            .box {
+                width: 300px;
+                height: 350px;
+                overflow: scroll; /* 让超出的部分产生滚动条 */
+                
+                border: 2px solid #333;
+                padding: 10px;
+            }
+            .box .child {
+                width: 300px;
+                height: 700px;
+                background-color: orange;
+            }
+
+            .ele {
+                width: 100px;
+                height: 100px;
+                padding: 5px;
+                border: 1px solid #000;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+            <div class="box">
+                <div class="child">
+                    <ol>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="ele"></div>
+
+    </div>
+
+    <script>
+        // 步骤
+        // 页面滚动事件 winow.onscroll = function(){}
+        var resTop = document.body.scrollTop || document.documentElement.scrollTop;
+        console.log("页面被浏览器卷去的高度："+resTop)
+
+       var box =  document.querySelector(".box");
+       var ele =  document.querySelector(".ele");
+        box.onscroll = function(){
+            var ttop = box.scrollTop; // child 标签被box标签卷去的部分高度
+            console.log(ttop)
+        }
+        console.log("获取ele的scrollWidth宽度"+ele.scrollWidth); // 不包括盒子的边框
+        console.log("获取ele的clientWidth宽度"+ele.clientWidth); // 不包括盒子的边框
+
+        
+        
+
+        
+    
+    </script>
+
+</body>
+</html>

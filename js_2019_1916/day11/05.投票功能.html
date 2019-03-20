@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            ol li {
+                width: 50px;
+                padding: 5px 10px;
+                border: 1px solid #ccc;
+                margin: 5px 10px;
+                list-style: none;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+        <ol>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+        </ol>
+
+
+        <script>
+                // 1.0 
+                // 获取所有的li标签
+                var aLi = document.getElementsByTagName("li");
+                // 给每个li绑定事件
+                for(var i = 0 ; i < aLi.length ;i++){
+                    aLi[i].index = 0 ; // index = 0;
+                    aLi[i].onclick = function(){
+                        this.index ++;
+                        this.innerHTML = this.index; // 
+                    }
+                }
+
+        </script>
+</body>
+</html>

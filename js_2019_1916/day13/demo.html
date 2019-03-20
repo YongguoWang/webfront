@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+    var arr = ["red","blue","green"];
+
+    var timer = setInterval(function(){
+        // shift() 方法用于把数组的第一个元素从其中删除,并返回第一个元素的值。 
+        var ele = arr.shift();
+        console.log("------------");
+        arr.push(ele);
+
+        console.log(arr)
+
+    },1500)
+        
+    </script>
+</body>
+</html>

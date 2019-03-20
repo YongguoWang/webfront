@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container" style="width:1000px;height:1300px;background-color: #ccc;"></div>
+
+    <script>
+
+            // console.log(window)
+            // console.log(window.pageYOffset)
+            //     谷歌火狐 IE（不包括6/7/8） 欧朋 
+            function scroll(){
+                //  如果浏览器支持  window.pageYOffset 获取页面被卷去的高度 
+                if(window.pageYOffset !=undefined){
+                        return {
+                            top: window.pageYOffset,
+                            left:window.pageXOffset
+                        }
+                }else if (document.documentMode == 'BackCompat'){ //  没声明dtd
+                        return {
+                            top:document.body.scrollTop,
+                            left:document.body.scrollLeft
+                        }
+                }else {
+                    return {
+                        top:document.documentElement.scrollTop,
+                        left:document.documentElement.scrollLeft
+                    }
+                }
+            }
+
+            // var res = scroll();
+            // console.log(res)  //{top:0,left:0}
+            // console.log(res.top)  
+
+
+            window.onscroll = function(){
+                    console.log( scroll() );
+            }
+
+
+    </script>
+
+</body>
+</html>

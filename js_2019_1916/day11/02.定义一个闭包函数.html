@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+
+    <script>
+        // function  关键字
+        function fn1(){
+                 var uname = "小红";  // 该变量创建在fn1函数
+                 function fn2 (){ //  一个函数能够引用另外一个函数内部变量，我们称之为闭包。
+                    console.log(" 引用了fn1的内部变量: "+uname);
+                 }
+                 fn2();
+        }
+        fn1();
+    
+
+     
+        // 闭包的简单理解
+        function outFun(){
+            var aaa = "hello";
+            function inFun(){  // 闭包： 一个函数有权访问另外一个函数的内部变量。我们称之为闭包
+                console.log(aaa);
+            }
+            inFun();
+        }
+        outFun();
+
+
+
+    
+    </script>
+</body>
+</html>

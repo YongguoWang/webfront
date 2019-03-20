@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+            * {
+                padding: 0;
+                margin: 0;
+            }
+    
+            .small {
+                width: 400px;
+                height: 400px;
+                border: 1px solid #333;
+
+                margin-left: 100px;
+                margin-top: 100px;
+
+                position: relative;
+            }
+            .small  .msk {
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+
+                position: absolute;
+
+                /*  改变的是left 和 top 的值 */
+                top: 0;
+                left: 0;
+
+                /* 隐藏msk */
+                display: none;
+            }
+    </style>
+</head>
+<body>
+
+
+    <div class="small">
+        <div class="msk"></div>
+    </div>
+
+
+    <script>
+            // 步骤：
+            // 1.0  获取元素
+            var small = document.querySelector(".small");
+            var msk = document.querySelector(".msk");
+
+            // 2.0 鼠标悬停事件
+            small.onmouseenter = function(){
+                msk.style.display = "block";
+                // 鼠标移动事件
+                document.onmousemove = function(event){
+                    var x = event.pageX - small.offsetLeft - msk.offsetWidth/2;// 鼠标在页面的x位置 - 小盒子距离页面x位置 - msk盒子的宽度一半
+                    var y = event.pageY - small.offsetTop - msk.offsetHeight/2;// 鼠标在页面的y位置 - 小盒子距离页面y位置 - msk盒子高度的一半
+                    if (x < 0 ){
+                        x = 0;
+                    }
+                    if(x >(small.offsetWidth - msk.offsetWidth)){
+                        x = small.offsetWidth - msk.offsetWidth;
+                    }
+                    if(y < 0){
+                        y = 0;
+                    }
+                    if(y > (small.offsetHeight - msk.offsetHeight)){
+                        y = small.offsetHeight - msk.offsetHeight;
+                    }
+                    // 设置msk盒子的位置
+                    msk.style.left = x +"px";
+                    msk.style.top = y +"px";
+                }
+            }
+            // 鼠标离开事件
+            small.onmouseleave= function(){
+                msk.style.display = "none";
+            }
+
+    </script>
+    
+</body>
+</html>

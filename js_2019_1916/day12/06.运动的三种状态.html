@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #ccc;
+            }
+
+            .r {
+                background-color:red;
+            }
+
+            .b {
+                background-color:blue;
+            }
+
+            .g {
+                background-color:green;
+            }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box r">1</div>
+    <div class="box b">2</div>
+    <div class="box g">3</div>
+
+
+    
+    <script>
+        // 步骤：
+        // 1.0 获取事件源
+        var aDiv = document.querySelectorAll(".box");
+
+        // 2.0 绑定事件
+        aDiv[0].onclick = function(){
+            // 闪现
+            
+            this.style.marginLeft = "1000px";
+        }
+
+        // 匀速
+        aDiv[1].onclick = function(){
+            // this  事件的调用者
+            clearInterval(this.timer)
+            //  记录 this 
+            var _this = this ;// 
+            this.timer = setInterval(function(){ // 在定时器里，为什么就不能使用 this 了 ？ 因为定时器函数的调用者是 window ，所以指向的不是 页面元素
+                var speed = 5;
+                // console.log(_this.offsetLeft )
+                if(_this.offsetLeft >= 1000 ){
+                    console.log("test")
+                    clearInterval(_this.timer);
+                    return ;
+                }
+                // 设置第二个盒子的位置
+                _this.style.marginLeft = _this.offsetLeft + speed +"px";
+
+            },30)
+        }
+
+        // 缓动
+        aDiv[2].onclick = function(){
+            // this  点击的那个div
+            clearInterval(this.timer);
+            var aaa = this;
+            this.timer = setInterval(function(){
+                var speed = (1000 - aaa.offsetLeft)/10;
+                var step = speed < 0 ? Math.floor(speed) : Math.ceil(speed);
+
+                console.log(aaa.offsetLeft)
+                console.log(step)
+                if(step == 0){
+                    clearInterval(aaa.timer);
+                    return ;
+                }
+                // 设置第三个盒子的位置
+                aaa.style.marginLeft = aaa.offsetLeft + step +"px";
+            },30)
+
+        }
+    
+    </script>
+</body>
+</html>

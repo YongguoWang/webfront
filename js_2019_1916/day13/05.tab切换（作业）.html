@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .prodcut {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .prodcut .prodcut_box {
+            width: 350px;
+            float: left;
+        }
+        .prodcut .prodcut_box .prodcut_box_img {
+            width: 348px;
+            height: 498px;
+            border: 1px solid red;
+            background-image: url("./images/p_big_1.jpg");
+
+            position: relative;
+        }
+        .prodcut .prodcut_box .prodcut_box_img .msk {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 0,.5);
+            cursor: move;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .prodcut .prodcut_box  .prodcut_box_list {
+            margin-top: 10px;
+        }
+        .prodcut_box_list ul {
+            height: 68px;
+        }
+        .prodcut_box_list ul li  {
+            width: 54px ;
+            height: 68px;
+            float: left;
+            border: 1px solid blue;
+            margin: 0 5px;
+        }
+        .prodcut_box_list ul li img {}
+        .prodcut_box_list .btn {}
+        .prodcut_box_list .left_btn {}
+        .prodcut_box_list .right_btn {}
+
+        .product_show {
+            width: 450px;
+            height: 450px;
+            position: relative;
+            float: left;
+
+            overflow: hidden;
+        }
+        .product_show .product_show_img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="prodcut">
+        <div class="prodcut_box">
+            <div class="prodcut_box_img">
+                <!-- <img src="" alt=""> -->
+                <div class="msk"></div>
+            </div>
+            <div class="prodcut_box_list">
+                <ul>
+                    <li><img src="./images/p_small_1.jpg" alt=""></li>
+                    <li><img src="./images/p_small_2.jpg" alt=""></li>
+                    <li><img src="./images/p_small_3.jpg" alt=""></li>
+                    <li><img src="./images/p_small_4.jpg" alt=""></li>
+                    <li><img src="./images/p_small_5.jpg" alt=""></li>
+                </ul>
+                <div class="btn left_btn "></div>
+                <div class="btn right_btn "></div>
+            </div>
+        </div>
+
+        <div class="product_show">
+            <img class="product_show_img" src="./images/p_bigger_1.jpg" alt="">
+        </div>
+
+    </div>
+    
+    <script>
+    
+        //  步骤
+        // 1.0 事件源
+        var items =document.querySelectorAll(".prodcut_box_list ul li");
+        var biggerImg = document.querySelector(".product_show_img"); 
+        var bigImg = document.querySelector(".prodcut_box_img"); 
+
+        // 2.0 事件绑定
+        for(var i = 0 ; i < items.length ; i++){
+            items[i].index = i+1;
+            items[i].onmouseenter = function(){
+                // var curImg = this.querySelector("img");
+                // var curImgSrc = curImg.getAttribute("src");
+                var index = this.index;
+                biggerImg.setAttribute("src","./images/p_bigger_"+index+".jpg");
+                bigImg.style.backgroundImage= 'url("./images/p_big_'+index+'.jpg")'
+            }
+        }
+    </script>
+</body>
+</html>

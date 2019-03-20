@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .line {
+                width: 1200px;
+                height: 6px;
+                background-color: #ccc;
+                margin: 100px auto;
+
+                position: relative;
+            }
+
+            .line .bar {
+                width: 20px;
+                height: 80px;
+                background-color: skyblue;
+
+                position: absolute;
+                left:0px;
+                top: -37px; /* 74 / 2 = ??*/
+
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    
+
+    <div class="line">
+        <div class="bar"></div>
+    </div>
+
+    <script>
+    // 步骤
+        // 1.0 相关的元素
+       var line =  document.getElementsByClassName("line")[0];
+       var bar =  document.getElementsByClassName("bar")[0];
+
+      // 3.0 定义 x
+      var x = 0;    
+       // 2.0 事件绑定 x
+       bar.onmousedown = function(){
+
+        // 4.0 事件鼠标移动
+        document.onmousemove = function(evt){
+                // 5.0 计算x的值
+                x = evt.pageX - line.offsetLeft - bar.offsetWidth/2;
+
+                // 8.0判断 按钮滑动的范围 x
+                // 8.0判断 按钮滑动的范围 x
+                if(x < 0 ){
+                        x = 0;
+                }
+                if(x > ( line.offsetWidth - bar.offsetWidth) ){
+                        x = line.offsetWidth - bar.offsetWidth;
+                }
+
+                // 6.0 设置bar 位置
+                bar.style.left = x +"px";
+        }
+       }
+
+    // 7.0 鼠标松开事件
+    document.onmouseup = function() {
+        document.onmousemove =  null ; // 解绑事件
+    }
+
+
+    
+    </script>
+
+</body>
+</html>

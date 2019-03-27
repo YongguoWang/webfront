@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+    // 对象
+    // 原型  .prototype  也是一个对象 （实现属性和方法被共享 ） 继承
+
+    function Cat(){}
+      // 原型链
+    // Cat.prototype.name = "";
+    Cat.prototype = {
+        name:"猫",
+        run:function(){
+            console.log(this.age +"岁的"+this.name +"在奔跑！")
+        }
+    }
+    // 通过prototype 添加的say方法
+    Cat.prototype.say = function(){
+        console.log(this.color+"的"+this.name+"发出了'喵喵'！")
+    }
+     // 通过prototype 添加的 age 属性
+    Cat.prototype.age = 2;
+     // 通过prototype 添加的 color  属性
+    Cat.prototype.color = "红色"; 
+
+    // 创建实例
+   var cat =  new  Cat();
+   cat.run();
+   cat.say();
+
+
+        
+    </script>
+</body>
+</html>

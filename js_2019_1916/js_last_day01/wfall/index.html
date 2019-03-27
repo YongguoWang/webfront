@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流网页</title>
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <ul>
+                <!--  动态渲染 -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/template.js"></script>
+
+    <script type="text/template" id="tp1">
+        <%for(var i = 0 ; i < result.length; i++ ){%>
+            <li>
+                <img src="<%=result[i].path%>">
+                <p><%=result[i].text%></p>
+            </li>
+        <%}%>
+    </script>
+
+    <script>
+        window.onload = function(){
+                // console.log(data)
+                var str = template("tp1",{result:data}); // 渲染模板 （原生）
+                console.log(str)
+                var ul = document.querySelector(".box ul");
+                ul.innerHTML = str;
+                // 调用瀑布流插件
+                var fn = new WaterFall({
+                    width:232,
+                    columnCount:5,
+                    distance:10,
+                    aLi:document.getElementsByTagName("li")
+                })
+                fn.init();
+        }
+
+
+    </script>
+</body>
+</html>

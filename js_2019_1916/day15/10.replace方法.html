@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        var str = "hello word";
+        console.log(str);
+        // replace()  方法
+        var res = str.replace('hello',"你好"); // 1. 调用者 字符串    2.参数 ('替换掉的内容' , '新的内容') 3. 返回值 ： 替换过的新字符串
+        console.log(str);
+        console.log(res)
+
+        // 替换数字
+        var str2 = "123123afasdf23424";
+        console.log(str2)
+        var res2 =   str2.replace(/\d/g , "");  // 备注： g 表示全局，所有的意思
+        console.log(res2)
+
+        // 替换特殊字符 #
+        var  str3 = "#boxId";
+        var res3 = str3.replace("#","");
+        console.log(res3)
+
+
+    
+    </script>
+    
+</body>
+</html>

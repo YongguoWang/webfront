@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //  sort 方法
+        var  arr = [23,56,8,234,0,6];
+        console.log(arr)
+        var res1 = arr.sort( function(a,b){
+            return a-b;  //注意 升序
+        } )
+        console.log(res1)
+        // sort()  调用者数组
+        // 参数：带参的匿名函数 
+        //  这个匿名函数第一个参数 减去第二个  ： 升序
+         //  这个匿名函数第二个参数 减去第一个 ： 降序
+        //  返回值是：排好顺序的数组
+        var res2 = arr.sort( function(a,b){
+            return b-a;  //注意  降序
+        } )
+        console.log(res2)
+    
+    </script>
+</body>
+</html>

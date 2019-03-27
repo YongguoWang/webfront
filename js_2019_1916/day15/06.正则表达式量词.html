@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // *  
+        var reg1 = /^\d*m$/ // 以数字开头一个或者多个字符  ，然后以m结束
+        console.log(reg1.test("14312m")); //true
+
+        // +
+        var reg2 = /a+9$/; // 出现a字符一次或者多次   然后以9结束 
+        console.log(reg2.test("aaaa9"))// true
+
+        // ?
+        var reg3 = /^a?1$/; // a出现0次或者1次 ，然后以1结束
+        console.log(reg3.test("a1")); //true
+        console.log(reg3.test("1")); //true
+        console.log(reg3.test("aaaa1")); //false
+
+        //  {}
+
+        var reg4 = /^\d{2}a$/; // 以数字开头出现2次数字字符  然后以a结束
+        console.log(reg4.test("12a")); // true
+        console.log(reg4.test("12123a"));//fase
+        console.log(reg4.test("1a"));//fase
+
+        // {2，5}
+        var reg5 = /^[a-z]{2,5}/; 
+        console.log(reg5.test("ab"));// true
+        console.log(reg5.test("b"));//false
+
+        // var reg6 = /^a{2,5}/;
+        // console.log(reg5.test("aaaaaaa0"));
+
+        //  | 
+        var reg6 =/^\d|a/;  // 因为空格也算一个字符
+        console.log(reg6.test("a")); 
+
+    </script>
+</body>
+</html>

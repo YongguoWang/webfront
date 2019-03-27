@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        // ^    该字符在 [] 里表示取反  [^abc]  //  取的字符只要不是abc 都返回 true
+        // ^    该字符不在 [] 里表示开始  /^a/  // 取的字符必须是a开始
+
+        var  reg1 = /[^abc]/;
+        console.log(reg1.test("efg"));// true
+        var reg2 = /^a/; 
+        console.log(reg2.test("abc dfasef")); // true
+        console.log(reg2.test("babc dfasef")); // false
+
+
+        // $ 表示结束
+        var reg3 = /^\d[a-z]k$/; // 以数字开头， 以 k 结束  true 
+        console.log(reg3.test("1kiy")); // false
+        console.log(reg3.test("9dfdfk")); // false
+        console.log(reg3.test("9dk"))//truetruetrue
+
+
+    
+    
+    </script>
+</body>
+</html>

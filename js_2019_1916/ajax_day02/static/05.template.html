@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渲染模板</title>
+</head>
+<body>
+
+
+    <ul class="list">
+        <!-- 动态渲染 -->
+    </ul>
+
+    <script src="../js/template.js"></script>
+    <!-- 定义模板 -->
+    <script type="text/template" id="templateId">
+        <% for( var i = 0  ; i < result.length; i ++){ %>
+                <li>
+                        <div>
+                            <img src="<%=result[i].src %>" alt="">
+                        </div>
+                        <div class="r">
+                            <div class="title">
+                                    <%=result[i].title %>
+                            </div>
+                            <div class="msg"><%=result[i].msg %></div>
+                        </div>
+            </li>
+        <%}%>
+    </script>
+
+    <!-- 脚本 -->
+    <script>
+        // 定义数据
+        var data = [
+            {
+                "src":"../images/01.jpg",
+                "title":"天气标题1",
+                "msg":"其他的信息1"
+            },
+            {
+                "src":"../images/02.jpg",
+                "title":"天气标题2",
+                "msg":"其他的信息3"
+            },
+            {
+                "src":"../images/03.jpg",
+                "title":"天气标题3",
+                "msg":"其他的信息3"
+            }
+        ]
+
+        // 步骤：
+        var list = document.querySelector("ul");
+        // 调用模板函数
+        var htmlStr = template("templateId",{result:data});//参数1. 模板Id  参数2.数据  ； 返回值： 和数据匹配好的字符串
+        
+        console.log(htmlStr)
+            // 数据渲染在页面
+        list.innerHTML = htmlStr;
+    </script>
+    
+</body>
+</html>

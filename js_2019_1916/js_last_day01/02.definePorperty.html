@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 对象
+    var obj = {
+        color:"红色"
+    }    
+    // 修改对象的属性值
+    obj.color = "蓝色";
+    console.log(obj)
+    // 对obj新增属性、设置属性的读（获取）写（设置）
+    // defineProperty()  参数：1.对象   2.属性 3. {}  设置属性的值，控制属性读写
+    Object.defineProperty(obj,"aaa",{
+        value:"hello", //设置 aaa的值
+        writable:false // 禁止写入
+    })
+    console.log(obj)
+    obj.aaa="你好"; // 只读不写
+    console.log(obj)
+
+        
+    </script>
+    
+</body>
+</html>

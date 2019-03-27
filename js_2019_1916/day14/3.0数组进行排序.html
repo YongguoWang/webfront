@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        //  .sort() 排序
+        var data = [10,34,567,23,12,6,78,80];
+        console.log(data);
+        // 遍历数组  
+        // 从大到小
+        // 降序
+        for(var i = 0 ; i < data.length ;i++){
+                console.log("第"+i+"次（行）")
+                for(var j = 0 ; j < data.length-i-1;j++){
+                    
+                        if(data[j]  < data[j+1]){ // 数组元素 两两进行比较  （交换位置）
+                            var  temp = data[j];  //  把第一个元素记录下来 temp
+                            data[j]  = data[j+1]; // 把第二个元素赋给第一个元素
+                            data[j+1] = temp;     // 把第一个元素temp 赋值给第二个元素
+                        }
+                }
+        }
+
+        console.log(data);
+
+
+        // 升序
+        // 从小到大
+        for(var i = 0 ; i < data.length ;i++){
+                for(var j = 0 ; j < data.length-i-1;j++){
+                        // console.log("---第"+j+"次---")
+                        // console.log(data[j])
+                        // console.log(data[j+1])
+                        if(data[j]  > data[j+1]){ // 数组元素 两两进行比较  （交换位置）
+                            var  temp = data[j];  //  把第一个元素记录下来 temp
+                            data[j]  = data[j+1]; // 把第二个元素赋给第一个元素
+                            data[j+1] = temp;     // 把第一个元素temp 赋值给第二个元素
+                        }
+                }
+        }
+
+        console.log(data);
+
+    
+    
+    </script>
+    
+</body>
+</html>

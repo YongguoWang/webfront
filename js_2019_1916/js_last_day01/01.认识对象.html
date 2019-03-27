@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // 这是一个json对象
+        var obj = {
+            name:"小红",
+            age:18,
+            sayHello:function(){
+                console.log("我是谁？你是"+this.name)
+            }
+        };
+        console.log(obj)
+        obj.sayHello();
+        console.log("----------------------------认识对象里的this--------------------------------------")
+        //  window 对象
+        window.aaa="一千万";
+        window.sayHello = function(){
+            console.log("你有多少钱？我有"+this.aaa);
+        }
+        console.log(this)
+        window.sayHello();
+        console.log("----------------------------认识对象里的this--------------------------------------")
+        // 关键字 构造一个对象
+        function Cat() {
+          this.color = "蓝色";
+          this.catch = function(){
+              console.log(this.color+"的猫正在抓老鼠！")
+          }
+        //   console.log(this)
+        }
+        //创建实例
+       var tom = new Cat();
+       console.log(tom.color)
+       tom.catch();
+
+        
+    </script>
+</body>
+</html>

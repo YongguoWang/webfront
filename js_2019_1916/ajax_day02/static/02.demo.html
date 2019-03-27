@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script src="jq_v.0.0.1.js"></script>
+<script>
+            ajax({
+            url:"http://127.0.0.1/ajax_day02/server/01.demo.php", // 1.0 请求地址
+            type:"get",                                // 2.0 请求方式
+            async:true,                             // 3.0 是否异步
+            data:{
+                page:1
+            },                                // 4.0 提交的参数
+            success:function(data){
+                console.log(data);
+                var result = JSON.parse(data);
+                console.log(result)
+            },
+            error:function(data){
+                console.log("失败")
+            }
+        })
+</script>

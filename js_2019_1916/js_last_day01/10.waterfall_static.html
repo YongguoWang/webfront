@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流布局</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            ul {
+                list-style: none;
+            }
+            .container {
+                width: 1200px;
+                margin: 0 auto;
+            }
+            .container .box {
+                width: 1200px;
+            }
+            .container .box ul {
+                width: 1200px;
+                position: relative;
+            }
+            .container .box ul li {
+                width: 230px;
+                border: 1px solid #ccc;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .container .box ul li img {
+                width: 230px;
+            }
+            .container .box ul li p {
+                padding: 5px;
+            }
+            .container .box ul li:hover p {
+                box-shadow: 0 2px 2px #ccc ; /*设置阴影  水平偏移  垂直偏移  模糊度   阴影颜色  */
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box">
+            <ul>
+                <li>
+                        <img src="./images/01.jpg" alt="">
+                        <p>描述文字</p>
+                </li>
+                <li>
+                        <img src="./images/02.jpg" alt="">
+                        <p>描述文字</p>
+                </li>
+                <li>
+                        <img src="./images/05.jpg" alt="">
+                        <p>描述文字</p>
+                </li>
+                <li>
+                        <img src="./images/03.jpg" alt="">
+                        <p>描述文字</p>
+                </li>
+                <li>
+                        <img src="./images/04.jpg" alt="">
+                        <p>描述文字</p>
+                </li>
+                
+                <li>
+                        <img src="./images/06.jpg" alt="">
+                        <p>描述文字</p>
+                </li>
+
+                <li>
+                        <img src="./images/07.jpg" alt="">
+                        <p>描述文字</p>
+                </li>
+
+                <li>
+                        <img src="./images/08.jpg" alt="">
+                        <p>描述文字</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+<script>
+
+ //  备注： 图片加载速度要比文字的慢
+//  页面文本，图片加载完毕了才执行脚本
+window.onload = function(){
+        // 1.0 获取页面所有的li标签
+        var items = document.querySelectorAll(".box ul li");
+        // 2.0 定义变量 
+        var width =  232;
+        var column = 5;
+        var space = 10 ;
+        // 4.0 定义空数组  记录高度
+        var arrHeight = [];
+        // 3.0 遍历
+        for(var i = 0 ; i < items.length ;i++){
+            var height =  items[i].offsetHeight ; // 获取每一个li标签的高度
+            // console.log(height)
+            if(i <column ){
+                arrHeight.push(height);
+                // items[i].style.top = "px";
+                // items[i].style.left = "px";
+                items[i].style.cssText = "left:"+(i *(width+space) )+"px; top: 0 ;";
+                console.log(i *242)
+            }else {
+                    // 寻找数组的最小高度
+                    var minHeight = arrHeight[0]; //假设数组第一元素是最小值
+                    var minIndex = 0; // 数组里最小高度值的索引
+                    for( var j = 0 ; j < arrHeight.length ; j++){
+                        if(minHeight > arrHeight[j]){
+                                minHeight = arrHeight[j]; // 把最小高度赋给假设值
+                                minIndex = j ;// 把最小高度的索引记录下
+                        }
+                    }
+                    console.log("数组最小值："+minHeight)
+                    arrHeight[minIndex]+= height + 10;// 更新数组的高度（找到数组最小值 ，和下一个高度相加，再加上10 间距）
+                    items[i].style.cssText = "left:"+(minIndex*(width+space))+"px;top:"+(minHeight+10)+"px;" ;//下一个名片的位置
+            }
+            console.log(arrHeight)
+        }
+       
+}
+
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- http://huaban.com/explore/chunfenjieqichahua/ -->
+
+
+    <script>
+        var arr = [23,45,1,45,89,100,21]; // 定义数组 ， 然后寻找数组最大值
+        console.log(arr);
+        var max = arr[0]; // 假设第一个是最大值
+        for(var i = 0 ; i < arr.length ;i++){ // 遍历
+                if(max < arr[i]){ //   当前假设的最大值 和下一个元素 进行比较
+                        max = arr[i]; // 如果假设值比下一个小  ，那么把下一个值赋给假设的最大元素
+                }
+        }
+        console.log(max)
+        function arrValue( arr , flag){
+                var first = arr[0];
+                for( var i = 0 ; i < arr.length ; i ++){
+                        if(flag){  // flag === true 寻找最大值
+                             if(first < arr[i]){
+                                first =  arr[i];
+                             }
+                        }else { // flag === false 寻找最小值
+                            if(first >  arr[i]){
+                                first =  arr[i];
+                             }
+                        }
+                }
+                // 把最大值 / 最小值返回
+                return first;
+        }
+        var  data = [10,34,56,6,76];
+        console.log(data)
+
+        var res1  = arrValue(data, true);  //最大值
+        console.log(res1)
+
+        var res2  = arrValue(data, false); //最小值
+        console.log(res2)
+
+
+    </script>
+</body>
+</html>

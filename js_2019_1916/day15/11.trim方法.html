@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var str = "   aaa   ";
+        console.log(str+"-----")
+        var res = str.trim();  // 1. 调用者 str   2. 没有参数  3. 返回值：去掉前后空格字符的新字符串
+        console.log(res+"-----")
+
+        function myTrim(str){
+                return str.replace(/(^\s+)|(\s+$)/g, '');
+        }
+
+        var str2 = "     hello    ";  // 替换前后空白字符
+        console.log(str2)
+        console.log(myTrim(str2)+"--------")
+
+
+        function foo(str){ // 替换所有的空白字符
+            return str.replace(/\s+/g, '');
+        }
+        var str3 = "     hello     word!   ";
+        console.log(foo(str3)+"--------")
+
+        
+    </script>
+</body>
+</html>

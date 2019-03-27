@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        var data = ["aaa","123123","xiaoming","red","aaa","123123"];  // 定义数组 
+        console.log("----原来----")
+        console.log(data)
+        var counts = data.length  ;  // 记录数组的长度
+        // 对象   {key : value }  key 在对象里是唯一
+        var  newArr = []; // 记录没有重复元素的数组
+        var obj = {  };
+        for( var i = 0 ; i < counts ; i++){
+            if(obj[data[i]] == undefined ){  // 判断对象的key 有没存放
+                obj[data[i]] = true ; // 不存在 给他添加一个key 并且赋值给他
+                newArr.push( data[i]); // 往数组添加 这个key 
+            }
+        }
+        console.log("----现在----")
+        console.log(newArr); // 过滤后的 数组
+        console.log(obj)
+    
+    
+    </script>
+    
+</body>
+</html>

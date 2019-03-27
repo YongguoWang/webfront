@@ -1,0 +1,35 @@
+[
+    {
+        "color":"",
+        "url":"./images/music_1_pic.jpg"
+    },
+    {
+        "color":"",
+        "url":"./images/music_2_pic.jpg"
+    },
+    {
+        "color":"",
+        "url":"./images/music_3_pic.jpg"
+    },
+    {
+        "color":"",
+        "url":"./images/music_4_pic.jpg"
+    },
+    {
+        "color":"",
+        "url":"./images/music_5_pic.jpg"
+    },
+    {
+        "color":"",
+        "url":"./images/music_6_pic.jpg"
+    },
+    {
+        "color":"",
+        "url":"./images/music_7_pic.jpg"
+    },
+    {
+        "color":"",
+        "url":"./images/music_8_pic.jpg"
+    }
+
+]

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="jq_v.0.0.2.js"></script>
+    <script>
+        
+        ajax({
+            type:'post',
+            url:'http://127.0.0.1/ajax_day02/server/02.demo_post.php',
+            data:{
+                aaa:"red"
+            },
+            async:true,
+            success:function(data){
+                    console.log(data)
+            },
+            error:function(err){
+                console.log(err)
+            }
+        })
+    
+    </script>
+</body>
+</html>

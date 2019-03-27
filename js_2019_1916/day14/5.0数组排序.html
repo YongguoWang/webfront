@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            div {
+                width: 960px;
+                margin: 0 auto;
+                height: 80px;
+                background-color: #ccc;
+            }
+            p {
+                height: 80px;
+                line-height: 80px;
+            }
+            p  span {
+                    display: inline-block;
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid red;
+                    text-align: center;
+                    line-height: 80px;
+                    border-radius: 50%;
+            }
+
+            button {
+                width: 120px;
+                height: 80px;
+                 float: right;
+            }
+            .active {
+                background-color: red;
+                color: #fff;
+            }
+
+
+    
+    </style>
+</head>
+<body>
+    
+    <div>
+         <button class="active">排序</button>
+
+        <p>
+                <span>2</span>
+                <span>30</span>
+                <span>45</span>
+                <span>12</span>
+        </p>
+    </div>
+
+    <script>
+        // 步骤
+            // 1.0 获取按钮和所有span标签
+            var aSpan = document.querySelectorAll("span");
+            var btn = document.querySelector("button");
+
+            // 4.0 获取span的文本内容
+            var data = [];
+            for(var i = 0 ; i < aSpan.length;i++){
+                data[i] = Number(aSpan[i].innerText); // Number() 方法 把字符串 转数字
+            }
+            console.log(data)
+
+            // 2.0 类名的操作  
+            btn.onclick = function(){
+                // this  在这里指的是你点击的按钮
+                var isHasClass = this.classList.contains("active"); // 返回值 是false 和 true 
+                if(isHasClass){
+                    this.classList.remove("active")
+                     // 从大到小   降序
+                    var result =   mySort(data , false);
+                    console.log(result)
+                    for(var k = 0 ; k < result.length;k++){
+                        aSpan[k].innerHTML= result[k];
+                    }
+                }else {
+                    this.classList.add("active");
+                      // 从小到大 升序
+                      var result =   mySort(data , true);
+                    console.log(result)
+                    for(var k = 0 ; k < result.length;k++){
+                        aSpan[k].innerHTML= result[k];
+                    }
+                }
+            }
+
+            // 3.0 封装排序函数
+            function mySort(arr , flag){
+                 for(var i = 0 ; i < arr.length ;i++){
+                      for(var j = 0 ; j < arr.length-i-1 ; j++){
+                            if(flag == false ){
+                                    if( arr[j] < arr[j+1]){     // 从大到小 
+                                            var temp = arr[j];
+                                            arr[j] = arr[j+1];   // 交换位置 
+                                            arr[j+1] = temp;
+                                    }
+                            }else {
+                                    if( arr[j]  > arr[j+1]){     // 从小到大 
+                                                var temp = arr[j];
+                                                arr[j] = arr[j+1];   // 交换位置 
+                                                arr[j+1] = temp;
+                                        }
+                            }
+                      }
+                 }
+                //  返回值
+                return arr;
+            }
+
+
+
+
+
+            
+    
+    </script>
+
+</body>
+</html>

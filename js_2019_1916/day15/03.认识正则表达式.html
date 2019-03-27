@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 正则 ：匹配文本内容的格式  -->
+
+    <script>
+        // 1.0 定义正则的第一种方式 new 
+        var reg = new RegExp(/aaa/);
+
+        var str = "aaa";
+        var str2 = "bbb";
+
+        var res1 =  reg.test(str) ; // true  
+        var res2 =  reg.test(str2) ; // false
+
+        console.log(res1)
+        console.log(res2)
+
+
+        // 2.0  定义正则的第二种方式
+        var  reg3 = /hello/ ; // 
+
+        var str3 = "hello world";
+        var str4 = "world";
+
+        var res3 = reg3.test(str3);
+        console.log(res3) //  true  因为该字符串包含  hello 字符  
+
+        var res4 = reg3.test(str4); 
+        console.log(res4)  // false 因为该字符串不包含  hello 字符  
+
+        //  test()   这个方法怎么用！
+    
+    </script>
+</body>
+</html>

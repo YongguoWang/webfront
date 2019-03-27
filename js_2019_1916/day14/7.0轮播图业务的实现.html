@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var data = [
+                {
+                    "color":"",
+                    "url":"./images/music_1_pic.jpg"
+                },
+                {
+                    "color":"",
+                    "url":"./images/music_2_pic.jpg"
+                },
+                {
+                    "color":"",
+                    "url":"./images/music_3_pic.jpg"
+                },
+                {
+                    "color":"",
+                    "url":"./images/music_4_pic.jpg"
+                },
+                {
+                    "color":"",
+                    "url":"./images/music_5_pic.jpg"
+                },
+                {
+                    "color":"",
+                    "url":"./images/music_6_pic.jpg"
+                },
+                {
+                    "color":"",
+                    "url":"./images/music_7_pic.jpg"
+                },
+                {
+                    "color":"",
+                    "url":"./images/music_8_pic.jpg"
+                }
+
+            ]
+    </script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul  , ol {
+            list-style: none;
+        }
+      
+        html , body {
+            width: 100%;
+        }
+        .banner {
+            width: 100%;
+            height: 336px;
+            background-color: #ccc;
+        }
+        .box {
+              /* 版心  730  + 250 =  980*/
+            width: 980px;
+            margin: 0 auto;
+        }
+        .banner_content {
+            position: relative;
+        }
+        .banner_content .msk {
+            width: 250px;
+            height: 336px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 10000;
+            background-color: #333;
+        }
+         .banner_content_list {  /* 图 */
+             width: 730px;
+             height: 336px;
+             overflow: hidden;
+         }
+         .banner_content_list ul {
+             width: 1000%; /*7300px*/
+         }
+         .banner_content_list ul li {
+             width: 10%; /*730px*/
+             float: left;
+         }
+         .banner_content_list ul li a {
+             display: block;
+             width: 100%; /*730px*/
+         }
+         .banner_content_list ul li a img {
+             display: block;
+             width: 100%; /*730px*/
+             height: 336px;
+         }
+
+        .banner_content_points {
+            width: 730px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 20px;
+            /* background-color:red */
+        }
+        .banner_content_points ol {
+            width:100% ;
+            text-align: center;
+            font-size: 0;
+        }
+        .banner_content_points ol li {
+            width: 20px;
+            height: 20px;
+            background-image:url("./images/banner.png");
+            background-position: 3px -343px;
+            display: inline-block;
+        }
+        .banner_content_points ol li.active {
+            background-position: -16px -343px;
+        }
+        .banner_content_btn .btn {
+            width: 37px;
+            height: 63px;
+            background-image: url("./images/banner.png");
+            position: absolute;
+            top:50%;
+            margin-top: -32px;
+            cursor: pointer;
+        }
+        .banner_content_btn .prev_btn {
+            background-position: 0  -360px ;
+            left: -100px;
+        }
+        .banner_content_btn .prev_btn:hover {
+            background-position: 0  -430px ;
+        }
+        .banner_content_btn .next_btn {
+            background-position: 0  -508px ;
+            right: -100px;
+        }
+        .banner_content_btn .next_btn:hover {
+            background-position: 0  -578px ;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <!-- 轮播图 -->
+    <div class="banner">
+            <div class="box  banner_content">
+                    <!-- 图 -->
+                    <div class="banner_content_list">
+                            <ul>
+                                <!-- <li><a href="javascript:;"><img src="./images//music_1_pic.jpg" alt=""></a></li> -->
+                            </ul>
+                    </div>
+                    <!-- msk -->
+                    <div class="msk"></div>
+                    <!-- 点 -->
+                    <div class="banner_content_points">
+                            <ol>
+                                <!-- <li class="active"></li> -->
+                            </ol>
+                    </div>
+                    <!-- 按钮 -->
+                    <div class="banner_content_btn">
+                        <div class="prev_btn btn "></div>
+                        <div class="next_btn btn"></div>
+                    </div>
+            </div>
+    </div>
+
+
+    <script>
+    // 步骤
+    // 1.0 获取相关元素
+    var bannerContentList = document.querySelector(".banner_content_list");
+    var ul = bannerContentList.children[0];
+    var ol = document.querySelector(".banner_content_points ol");
+    var prevBtn = document.querySelector(".prev_btn");
+    var nextBtn = document.querySelector(".next_btn");
+    var banner = document.querySelector(".banner");
+
+    //2.0  图 和 点的字符串拼接
+    var strPicture = "";
+    var strPoints = "";
+    for(var i = 0 ; i < data.length ;i++){
+        strPicture += '<li><a href="javascript:;"><img src="./images//music_'+(i+1)+'_pic.jpg" alt=""></a></li>';
+        strPoints += '<li class=""></li>';
+    }
+    // console.log(strPicture)
+    // console.log(ul)
+    // 3.0 渲染图
+    ul.innerHTML = strPicture;
+    // 4.0 渲染点
+    ol.innerHTML = strPoints;
+
+    // 5.0 获取所有的点标签
+    // var points = ol.querySelectorAll("li");
+    var points = ol.getElementsByTagName("li");
+    console.log(points)
+    // 6.0 设置第一个点 背景色
+    points[0].classList.add("active");
+
+    // 7.0 实现图片的自动播放
+    // 7.0.1 索引值
+    var index = 0 ;
+    // 7.0.2 定时器
+    var timer = setInterval(autoPlay , 1500);
+    // 7.0.3 定义autoPlay方法
+    function autoPlay(){
+        index++;
+        if(index > data.length -1){
+                index = 0;
+        }
+        //  设置ul的水平位置   marginLeft  / position:absolute;left:0 ;/  transform:translateX();
+        ul.style.marginLeft = - index * 730 + "px";
+        //  设置小圆点的背景色
+        // 排他思想
+        for(var  j = 0 ; j < data.length ; j++){
+            points[j].classList.remove("active");
+        }
+        points[index].classList.add("active");
+    }
+    //  7.0.4 鼠标悬停 清除定时器
+    // bannerContentList.addEventListener('mouseenter',function(){
+    //     clearInterval(timer);
+    // })
+    banner.onmouseenter = function(){
+        clearInterval(timer);
+    }
+    //  7.0.5鼠标离开 继续执行定时器
+    // bannerContentList.addEventListener('mouseleave',function(){
+    //     clearInterval(timer);
+    //     timer = setInterval(autoPlay,1500);
+    // })
+    banner.onmouseleave = function(){
+        clearInterval(timer);
+        timer = setInterval(autoPlay,1500);
+    }
+    // 7.0.6 点击小圆点 显示相应图
+    for(var k = 0 ; k < data.length ; k ++){
+            // 属性绑定
+            // points[k].index = k ;
+            points[k].aaa = k ;
+            // 事件绑定
+            points[k].onclick = function(){
+                index = this.aaa ; // 当前的索引值
+                // 设置ul的水平位置
+                ul.style.marginLeft = -index * 730 +"px";
+                // 设置 点 的背景色
+                for(var key = 0 ; key < data.length ; key ++){
+                    points[key].classList.remove("active");
+                }
+                points[index].classList.add("active");
+            }
+    }
+    // 7.0.7 点击左右按钮实现图片切换
+    // 点击左边按钮
+    prevBtn.onclick = function(){
+         index -- ;
+         if(index < 0 ){
+                index = data.length-1;
+         }
+        //  设置ul的水平位置
+        ul.style.marginLeft = -index * 730 +"px";
+        // 设置点的背景色
+        for(var a = 0 ; a < data.length ; a ++){
+            points[a].classList.remove("active");// 把所有的小圆点的类名 active 去掉
+        }
+        points[index].classList.add("active"); // 给index对应的小圆点 添加类名 active
+    }
+    // 点击右边按钮
+    nextBtn.onclick = function(){
+        index ++ ;
+        if(index > ( data.length-1)){
+            index = 0;
+        }
+        //  设置ul的水平位置
+          ul.style.marginLeft = -index * 730 +"px";
+        // 设置点的背景色
+        for(var a = 0 ; a < data.length ; a ++){
+            points[a].classList.remove("active");// 把所有的小圆点的类名 active 去掉
+        }
+        points[index].classList.add("active");// 给index对应的小圆点 添加类名 active
+    }
+
+
+    </script>
+
+</body>
+</html>

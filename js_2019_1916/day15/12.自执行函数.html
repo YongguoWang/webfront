@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // 自执行函数
+        (function(){
+
+            console.log("hello")
+
+        })()
+
+        // 传参
+        var index = 1 ;
+        (function(i){
+            console.log("你传进的索引值："+i);
+        })(index)
+
+        // 闭包1
+        function foo1(){
+                var aaa = "world";
+                function foo2(){
+                        console.log("你好,"+aaa)
+                }
+                foo2();
+        }
+
+        foo1();
+
+        // 闭包2
+        function fn1(){
+            var bbb = "我爱学习";
+            (function(str){ // 形参
+                    console.log(str)
+            })(bbb) // 实参
+        }
+
+        fn1();
+    
+    
+    </script>
+</body>
+</html>

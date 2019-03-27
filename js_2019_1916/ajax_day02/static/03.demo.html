@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script src="jq_v.0.0.2.js"></script>
+    <script>
+            ajax({
+                type:"get",
+                url:"../server/01.demo.php",
+                data:{
+                    page:0
+                },
+                async:true,
+                success:function(data){
+                        console.log(data)
+                }
+            })
+    
+    </script>
+</body>
+</html>

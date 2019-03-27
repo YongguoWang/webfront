@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //  如何改变this的指向？？
+        
+    window.color = "red"; // window对象下的属性
+
+    var  cat = {color:"orange"}// 定义一个cat对象
+    
+    var person = {}; // 定义一个person对象
+
+    person.color = "blue" // person对象下的属性
+ 
+    person.foo = function(){ // person对象下的方法
+
+        console.log(this.color) 
+    }
+    person.foo(); // blue // this 此刻指向的是person
+    person.foo.apply(window ); //调用apply()之后， this 此刻指向的是window
+    person.foo.call(cat );// 调用call()方法之后 ， this此刻指向的是 cat 
+
+
+        
+    </script>
+</body>
+</html>

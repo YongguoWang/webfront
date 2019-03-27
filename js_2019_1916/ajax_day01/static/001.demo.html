@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax</title>
+</head>
+<body>
+    
+
+        <!-- 8行代码 -->
+
+    <script>
+     //      ajax
+    //  XMLHttpRequest();对象      Date();   .getHours()
+    var xhr  = new XMLHttpRequest();//实例
+    xhr.open('get','http://127.0.0.1/ajax_day01/server/001.demo.php',true);// 发请求请求1. 请求的方式   2. 请求的地址  3.是否异步
+    xhr.send(null);// 因为是get 请求方式  ，所以是null
+    xhr.onreadystatechange = function(){ // 监听请求响应
+            if(xhr.readyState == 4 ){ // 请求完成
+                    if(xhr.status == 200){ // 响应成功
+                            // 接收响应回来的内容
+                            var res  =  xhr.responseText;
+                            console.log(res)
+                    }
+            }
+    }
+    
+    </script>
+</body>
+</html>

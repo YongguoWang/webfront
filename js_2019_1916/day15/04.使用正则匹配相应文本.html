@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        //     ' \ '   转义
+        console.log(" \"\"")  // ？ 能不能输出这个双引号  <div class=\"box \">
+
+        var rx1 = /\d/;   //  表示数字  [0-9]
+        console.log("------------预定义类------------")
+        var res1  = rx1.test("abc");
+        var res2  = rx1.test(123123);
+        console.log(res1) // false
+        console.log(res2) // true
+
+        console.log("------------简单类------------") 
+
+        var rx2 = /今天天气真的很好/; //匹配的内容 比这个只能多 不能少
+        var res3 = rx2.test("今天天气真的很好,明天呢？");
+        var res4 = rx2.test("今天天气真的");
+        console.log(res3)  // true
+        console.log(res4)  // false
+
+        console.log("------------负向类------------")
+        var rx3 = /[^123]/;  // 备注 ： ^ 是在 [  ] 中括号里才表示 取反
+        var res5 = rx3.test(1);
+        console.log(res5)
+        var res6 = rx3.test("ABC");
+        console.log(res6)
+
+        console.log("------------范围类------------")
+        var rx4 = /[0-9]/; //只要输入的是数字 返回的都是 true
+        var  res7 =  rx4.test(12313);
+        console.log(res7) // true
+        var  res8 =  rx4.test("234234");
+        console.log(res8) // true
+        var  res9 =  rx4.test("Aasdfasdf");
+        console.log(res9);// false
+
+        console.log("------------组合类------------")
+        var rx5 = /[0-5a-f]/; // 匹配数字0-5字母a-f
+        console.log(rx5.test('6xyz')); // false;
+        console.log(rx5.test('5adc')); // true;
+        console.log(rx5.test('12xyz')); // true;
+
+
+    
+
+ 
+    
+    </script>
+    
+</body>
+</html>

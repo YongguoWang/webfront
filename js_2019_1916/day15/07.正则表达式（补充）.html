@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    //  {2,5} 区间  在2~5之间
+    var reg1 = /^\da{2,5}9$/; // 以数字开头 a字符出现次数可以在2~5次，以9结束
+    console.log(reg1.test("1aaaaa9"));// true
+    console.log(reg1.test("1aaaaaaaaaa9"));// false
+
+    //  |  "或"
+    var  reg2 = /(\d)|([a-f])/;
+    console.log(reg2.test("1")) // true
+    console.log(reg2.test("d")) // true
+    console.log(reg2.test("k")) // false
+    
+    </script>
+</body>
+</html>

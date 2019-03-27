@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+
+
+    </ul>
+    
+    <script>
+            // 数组：能够记录一系列值的集合，并且索引值是0,1,2,3,4,5.....
+
+            //1. 随意定义的变量
+            var one = "小米";
+            var two = "yellow";
+            var three = "10010";
+             // 2.数组可以放单一的变量
+            var  arr1 = [one,two,three] ; 
+            console.log(arr1);
+            // 3.数组可以嵌套数组
+            var four = ["aaa","bbb"]
+
+            arr1.push(four);
+            console.log(arr1)
+            // 4.数组还可以存放对象
+            var five = {
+                "username":"小红",
+                "password":"123456"
+            }
+            arr1.push(five);
+            console.log(arr1)
+
+
+            // 获取ul
+            var ul = document.querySelector("ul");
+            var str = "";
+            //  数据分析剖解
+            for(var i =  0 ; i < arr1.length ;i++){
+                if( i < 3 ){
+                    str+="<li> "+arr1[i]+" </li>";
+                }else if (i  == 3){
+                    str+= "<li> "+arr1[i][0]+" </li>";
+                    str+= "<li> "+arr1[i][1]+" </li>";
+                }else {
+                    str+= "<li> "+arr1[i].username+" </li>";
+                    str+= "<li> "+arr1[i].password+" </li>";
+                }
+            }
+
+            // 渲染在ul盒子
+            ul.innerHTML = str;
+
+
+    </script>
+</body>
+</html>

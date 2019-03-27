@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            html , body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            .container {
+                width: 1200px;
+                margin: 0 auto;
+                height: 900px;
+                background-color: #ddd;
+                position: relative;
+            }
+            .register {
+                width: 450px;
+                height: 600px;
+                background-color: orange;
+                position: absolute;
+                top: 120px;
+                right: 20px;
+            }
+            .register .register_content {
+                width: 410px;
+                height: 560px;
+                padding: 20px;/* 上下40px  左右40px*/
+            }
+            .register .register_content form {
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+            }
+            .register .register_content form div {
+                    height: 42px;
+                    border-bottom: 2px solid #ccc;
+                    background-color: #f0f0f0;
+                    margin-top: 10px;
+                    line-height: 42px;
+
+                    position: relative; /* 父元素 相对*/
+            }
+            .register .register_content form div span {
+                    position: absolute; /* 子元素  绝对*/
+                    top: 11px; /* 42 - 20 ) / 2 = 11*/
+                    right: 0;
+                    width: 20px;
+                    height: 20px;
+                    border:1px solid red;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 18px;
+                    color: red;
+                    display: none;
+            }
+            .register .register_content form div input {
+                    border: 0;
+                    outline: none;
+                    width: calc(100% - 30px);
+                    height: 32px;
+                    padding-left: 10px;
+                    padding-right: 20px;
+                    vertical-align: middle;/* 设置行内块元素垂直居中*/
+            }
+            /* input[type='submit']  属性选择器 */
+            .register .register_content form div input[type='submit'] {
+                width: 100%;
+                padding: 0;
+                cursor: pointer;
+            }
+
+            .msk {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                display: none;
+            }
+            .msk_content {
+                width: 400px;
+                height: 200px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -200px;
+                margin-top: -100px;
+                background-color: #fff;
+            }
+            .msk_content  p {
+                color: red;
+                line-height: 28px;
+                padding: 0 15px;
+                text-indent: 20px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="register">
+            <div class="register_content">
+                <form action="#">
+                        <div>
+                            <input type="text" placeholder="请输入手机号码">
+                            <span class="icon">!</span>
+                        </div>
+                        <div>
+                                <input type="text" placeholder="请输入密码">
+                                <span class="icon">!</span>
+                        </div>
+                        <div>
+                                <input type="text" placeholder="请输入邮箱">
+                                <span class="icon">!</span>
+                        </div>
+                        <div class="btn">
+                            <input type="submit" value="注册">
+                        </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <!-- 弹窗 -->
+    <div class="msk">
+        <div class="msk_content">
+            <p class="tip"></p>
+        </div>
+    </div>
+
+    <script>
+    // 步骤
+        // 1.0 获取相关元素
+       var items =  document.querySelectorAll(".register_content  form div");
+       var phoneEle = items[0].children[0];
+        //    console.log(phoneEle)
+       var passwordEle = items[1].children[0];
+       var emailEle = items[2].children[0];
+       var submitEle = items[3].children[0];
+
+       var msk = document.querySelector(".msk");
+       var tips = document.querySelector(".tip");
+
+        // 2.0 封装弹窗函数
+        // 显示弹窗
+        function showAlert( str ){
+            msk.style.display = "block";
+            tips.innerHTML = str;
+        }
+        // 隐藏弹窗
+        function hiddeAlert(){
+            msk.style.display = "none";
+            tips.innerHTML = "";
+        }
+        // showAlert("测试")
+        // 手机号码的正则  
+        //  ^1[34578]\d{9}$   //  以 1 开头 第二字符可以是3,3,4,5,7,8,  后面接9个数字
+        var phoneReg = /^1[34578]\d{9}$/;
+    //    console.log(phoneReg.test("18316484142")); //  true
+
+       //邮箱正则
+       // ^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$
+       //    1217245503@qq.com
+       //   longtimenosee@yeah.net   
+        //    _wangyongguo@timemtech.com.cn
+        var emailReg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
+       // var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/
+
+        // console.log(emailReg.test("longtimenosee@yeah.net"))
+
+        // 匹配密码复杂度
+        // 8位数以上
+        // 数字 英文字母 _ .
+        var passwordReg = /^[a-zA-Z0-9]{7,18}\.$/;  // 以大小写字母或者数字开始6到18个 以"."结束
+        // console.log(passwordReg.test("312dg45.")) // true
+
+
+        // 3.0 点击判断输入框是否有值
+        submitEle.onclick = function(){
+                // 获取输入框的值
+                var phoneEleValue = phoneEle.value;
+                var passwordEleValue = passwordEle.value;
+                var emailEleValue = emailEle.value;
+                // 输入框是否有值
+                if(phoneEleValue.length == 0){
+                        showAlert("亲，你的手机丢了吗！")    
+                }else   if(passwordEleValue.length == 0){
+                        showAlert("亲，密码忘记了？")    
+                }else   if(emailEleValue.length == 0){
+                         showAlert("亲，邮箱没输入..")    
+                }else {
+                              // ! 表示取反的意思
+                            if(!phoneReg.test(phoneEleValue)){
+                                showAlert("请输入正确的手机号码！")
+                                items[0].children[1].style.display = "block";
+                            }
+
+                            if(!passwordReg.test(passwordEleValue)){
+                                    showAlert("填写的密码过于简单!")
+                                    items[1].children[1].style.display = "block";
+                            }
+
+                            if(!emailReg.test(emailEleValue)){
+                                    showAlert("邮箱格式错误!")
+                                    items[2].children[1].style.display = "block";
+                            }
+                }
+        }
+    
+            // 4.0 随意点击遮罩层隐藏msk盒子
+            msk.addEventListener('click',function(){
+                hiddeAlert();
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //  对象 都有原型
+        //  原型 也是一个对象
+        // .prototype 原型链  
+        // 面向对象的特点  封装性  继承性  
+        // 对象
+        function Animal(options){
+            this.color = options.color; // 通过this添加color属性 （私有）
+            this.sayHello = function(){
+                console.log("你好！"+this.color+"的"+this.name);
+            }
+        }
+        // prototype 添加了一个属性 name
+        // Animal.prototype ={
+        //     name:"猫"
+        // }
+        Animal.prototype.name="狗";
+        // prototype 添加一个方法  foo
+        Animal.prototype.foo = function(){
+            this.name="猫";
+            console.log("你好！"+this.color+"的"+this.name);
+        }
+        // 创建实例
+        var cat =  new Animal({color:"蓝色"});
+        // console.log(cat.name) //猫
+        // cat.sayHello();
+        cat.foo();
+    </script>
+</body>
+</html>

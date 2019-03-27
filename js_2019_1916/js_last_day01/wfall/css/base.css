@@ -25,6 +25,13 @@ ul {
 }
 .container .box ul li img {
     width: 230px;
+    height: 250px;
+}
+.container .box ul li:nth-child(2n) img {
+    height: 350px;
+}
+.container .box ul li:nth-child(3n) img {
+    height: 450px;
 }
 .container .box ul li p {
     padding: 5px 8px;

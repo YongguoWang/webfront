@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //  构造了一个对象
+        function Person(name,age,sex){
+                this.name=name;
+                this.age = age;
+                this.sex = sex;
+        }
+
+        var p = new Person("xiaohong",19,"女");
+        console.log(p)
+        // 定义一个数组
+        var arr = new Array("red","blue","green");
+        console.log(arr)
+        //  _proto__  
+        // prototype  通过这个原型添加一个属性和方法
+        Array.prototype.init = function(){
+                console.log(this)// 这里的 this 指向数组
+                var newArr = []; // 空数组
+                var obj = {};//空对象
+                var data = this; // 记录一下this(数组)
+                for(var i = 0 ; i < data.length ; i++){
+                        if(obj[data[i]] == undefined ){
+                            obj[data[i]] = true;
+                            newArr.push(data[i]); // 就是去重的数组
+                        }
+                }
+                return newArr;// 去重的数组
+        }
+        arr.init();
+        var arr2 = ["aaa","aaa","bbb","ccc"];
+       var res2 =  arr2.init();
+       console.log(res2);
+
+
+    </script>
+
+</body>
+</html>

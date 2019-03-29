@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+        .container .nav_tab {
+            width: 600px;
+        }
+        .container .nav_tab .nav_tab_top ul {
+            list-style: none;
+            width: 600px;
+            height: 50px;
+            border-bottom: 1px solid #fff;
+        }
+        .container .nav_tab .nav_tab_top ul li {
+            float: left;
+            width: 119px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-right: 1px solid #fff;
+            cursor: pointer;
+        }
+        .container .nav_tab .nav_tab_top ul li:last-child {
+            width: 120px;
+            border-right: 0;
+        }
+
+        .container .nav_tab .nav_tab_top ul li.active {
+            background-color: red;
+            color: #fff;
+        }
+        .nav_tab_content {
+            width: 600px;
+            height: 350px;
+            background-color: #ccc;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="nav_tab">
+            <div class="nav_tab_top">
+                <ul>
+                    <li class="active">阳光</li>
+                    <li>沙滩</li>
+                    <li>海洋</li>
+                    <li>白云</li>
+                    <li>鲜花</li>
+                </ul>
+            </div>
+            <div class="nav_tab_content">
+                <div class="box">阳光</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        // 1.0 获取相关元素
+        var box = document.querySelector(".nav_tab_content .box");
+        var items = document.querySelectorAll(".nav_tab_top ul li");
+        var data = ["阳关","沙滩","海洋","白云","鲜花"];
+        // 2.0 业务
+            // 2.0.1 点击tab栏的选项，在内容区显示相应的文本
+            // 2.0.2 当前点击的盒子，添加类名 active ，其他的相邻的盒子去掉 类名 active
+        // 3.0 面向对象的思维封装  tab栏函数
+        // 3.0.1 构造对象
+        function Tab(lis , content, arr){ // 形参
+            this.aLi = lis;
+            this.ele = content;
+            this.index = 0;
+            this.timer = null ;
+            this.result = arr;
+        }
+        // 3.0.2 原型（添加方法）
+        Tab.prototype.init = function(){
+                this.click_Event();//调用函数 
+        }
+        Tab.prototype.click_Event = function(){
+                //  记录 this 的指向
+                var _this = this ;
+                // 循环遍历
+                for(var i = 0 ; i < this.aLi.length ;i++){
+                    this.aLi[i].aaa = i; //属性绑定 记录索引值
+                    this.aLi[i].addEventListener('click',function(){  //事件里面this 指向的是你点击的li标签
+                        // this  此this 非 彼 this 
+                        // _this  指向Tab() 对象
+                        _this.index = this.aaa;
+                        // 排他思想
+                        for(var j = 0 ; j < _this.aLi.length ; j++){
+                            _this.aLi[j].className="";
+                        }
+                        // 设置当前点击的li添加上
+                        this.className ="active";
+                        // 设置内容区的文本
+                        // console.log( _this.result)
+                        _this.ele.innerHTML = _this.result[_this.index];
+                    },false)
+                }
+        }
+          // 3.0.3 实例化对象
+          var tab = new Tab(items,box,data); //实参
+         //   3.0.3.1 调用初始化方法
+         tab.init();
+
+    
+    
+    
+    </script>
+</body>
+</html>

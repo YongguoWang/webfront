@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+    
+    var A1 = {
+        color:"red",
+        data:[
+            {
+
+            }
+        ]
+    }
+    
+    var B1 = {}
+
+    for(var k in A1 ){
+        B1[k] = A1[k];
+    }
+    console.log(A1)
+    console.log(B1)
+    console.log("====================")
+    B1.color = "green";
+    console.log(A1)
+    console.log(B1)
+
+
+
+    // 通过递归实现的深拷贝
+    function deepClone(obj){
+        var newClone = Array.isArray(obj)?[]:{};
+        if(obj && typeof obj == "object"){
+                for(var k in obj){
+                        if(obj[k] && typeof obj[k] == "object"){       
+                            newClone[k] =  deepClone(obj[k])
+                        }
+                        else {
+                            newClone[k] =obj[k];
+                        }
+                }
+        }
+        return newClone;
+    }
+
+
+    var o = {
+        name:"xiaoming",
+        data:[
+            {
+                color:"red"
+            }
+        ]
+    }
+   var o1 =  deepClone(o)
+   console.log(o1)
+   console.log(o)
+   console.log("============================")
+   o1.name ="aaabbccc";
+   o1.data[0].color = "green";
+   console.log(o1)
+   console.log(o)
+
+        
+        
+    </script>
+</body>
+</html>

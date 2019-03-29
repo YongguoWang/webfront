@@ -5,10 +5,29 @@
     <title>Document</title>
 </head>
 <body>
-    
+
 
     <script>
-       
+
+
+        // var index = 0 ;
+        // var arrImgHeight = [];
+        // var timer = setInterval(function(){
+        //         index++;
+        //         if(index > 105){
+        //                 console.log(JSON.stringify(arrImgHeight))
+        //                 clearInterval(timer) ; return ;
+        //         }
+        //         var img  = new  Image();
+        //         img.src = "./images/"+index+".jpg";
+        //         img.onload = function(){
+        //             var h =  img.height;
+        //             // console.log(h)
+        //             arrImgHeight.push(h);
+        //         }
+        // },0)
+
+
         function getImageHeight(callback){
             var index = 0;
             var arr = [];
@@ -33,7 +52,9 @@
         getImageHeight(function(data){
             console.log(JSON.stringify(data))
         });
-
+    
+    
     </script>
+    
 </body>
 </html>

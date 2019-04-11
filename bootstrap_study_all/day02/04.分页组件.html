@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+<body>
+    
+        <nav>
+                      <ul class="pagination">
+                                <li>
+                                        <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                </li>
+                                <li class="item" data-page="0"><a href="#">1</a></li>
+                                <li class="item" data-page="1"><a href="#">2</a></li>
+                                <li class="item" data-page="2"><a href="#">3</a></li>
+                                <li class="item" data-page="3"><a href="#">4</a></li>
+                                <li class="item" data-page="4"><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                        </ul>
+              </nav>
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <!-- 编写逻辑 -->
+    <script>
+        // 入口函数
+        $(function(){
+                // $(".pagination li[class='item']").click(function(){})
+                $(".pagination li[class='item']").bind('click',function(){
+                        // 获取自定义属性值（参数藏在li标签内）
+                        var page = $(this).attr("data-page");
+                        console.log(page)
+                        // ajax
+                })
+        })
+    
+    
+    </script>
+</body>
+</html>

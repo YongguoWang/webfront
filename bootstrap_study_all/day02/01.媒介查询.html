@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 1200px;
+                margin: 0 auto;
+                height: 1000px;
+                background-color: #ccc;
+            }
+
+            /* 作响应的监听 */
+            /* >=1200px  */
+             /* @media (min-width:1200px) { */
+            @media screen and  (min-width:1200px) {  
+                    .box {
+                        width: 1000px;
+                        background-color: skyblue;
+                    }
+            }
+
+            /* 在指定的屏幕宽度区间 */
+            @media (min-width:800px) and (max-width:900px) {
+                    .box {
+                        width: 100px;
+                        height: 100px;
+                        background-color: red;
+                    }
+            }
+                /* <=700px  */
+            @media (max-width:700px){
+                    .box {
+                            width: 500px;
+                            background-color: pink;
+                    }
+            }
+
+
+    
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

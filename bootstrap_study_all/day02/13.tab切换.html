@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 自定义的样式 -->
+    <style>
+            .row > div {
+                    height: 700px;
+            }
+
+            .nav-tabs > li > a {
+                width:115px;
+                height: 115px;
+
+                line-height: 95px; /* 上下有10px 内边距  20*/
+                text-align: center;
+                border-radius: 50%;
+                background-color: #fff;
+
+                margin-top: 20px;
+                margin-left: 25px; /*165 - 115 ) / 2 = 25*/
+            }
+
+            .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+                background-color: red;
+                color: #fff;
+                border: 0;
+            }
+            .nav-tabs > li > a:hover {
+                background-color: pink;
+            }   
+            .my_line_box {
+                position: relative;
+            }
+            .my_line {
+                width: 4px;
+                height: 600px;
+                background-color: #333;
+                position: absolute;
+                left: 50%;
+                top:0;
+                margin-left: -2px;
+            }
+
+            @media (min-width:901px) and (max-width:1200px) {
+                .nav-tabs > li > a {
+                        width:80px;
+                        height: 80px;
+
+                        line-height: 60px; /* 上下有10px 内边距  20*/
+                        text-align: center;
+                        border-radius: 50%;
+                        background-color: #fff;
+
+                        margin-top: 20px;
+                        margin-left: 25px; /*130 - 80 ) / 2 = 25*/
+                    }
+            }
+
+            @media (min-width:768px) and (max-width:900px) {
+                .nav-tabs > li > a {
+                        width:65px;
+                        height: 65px;
+
+                        line-height: 45px; /* 上下有10px 内边距  20*/
+                        text-align: center;
+                        border-radius: 50%;
+                        background-color: #fff;
+
+                        margin-top: 20px;
+                        margin-left: 15px; /*95 - 65 ) / 2 = 15*/
+                    }
+            }
+
+            @media (max-width:767px) {
+
+                .row > div {
+                        height: auto;
+                }
+
+                .nav-tabs > li > a {
+                        width:65px;
+                        height: 65px;
+
+                        line-height: 45px; /* 上下有10px 内边距  20*/
+                        text-align: center;
+                        border-radius: 50%;
+                        background-color: #fff;
+
+                        margin-top: 20px;
+                        margin-left: 15px; /*95 - 65 ) / 2 = 15*/
+                    }
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+                    <div class="col-sm-2 bg-success my_line_box">
+                            <!-- 线 -->
+                            <div class="my_line hidden-xs hidden-sm"></div>
+                            <!-- tab选项 -->
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs " role="tablist">
+                                        <li role="presentation" class="active"><a href="#home"  role="tab" data-toggle="tab">首页</a></li>
+                                        <li role="presentation"><a href="#profile"role="tab" data-toggle="tab">简介</a></li>
+                                        <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">动态</a></li>
+                                        <li role="presentation"><a href="#settings"  role="tab" data-toggle="tab">设置</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-sm-10 bg-danger">
+                         <!-- tab内容 -->
+                         <!-- Tab panes -->
+                        <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="home">首页</div>
+                                <div role="tabpanel" class="tab-pane" id="profile">简介</div>
+                                <div role="tabpanel" class="tab-pane" id="messages">动态</div>
+                                <div role="tabpanel" class="tab-pane" id="settings">设置</div>
+                            </div>
+                    </div>
+
+        </div>
+    </div>
+    
+    
+
+    
+
+
+
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

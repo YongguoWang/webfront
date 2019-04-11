@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+             .item > a  {
+                 display: block;
+                 width: 100%;
+             }
+            .item > a > img {
+                width: 100%;
+            }
+            .item > a.pc_img {
+                display: block;
+                height: 410px;
+            }
+            .item > a.pc_img > img {
+                height: 410px;
+            }
+    
+    </style>
+</head>
+<body>
+    
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+              
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                        <!-- pc端的图片 -->
+                                        <a href="" class="pc_img hidden-xs "><img src="./imgs/slide_01_2000x410.jpg" alt=""></a>
+                                        <!-- 移动端图片 -->
+                                        <a href="" class="mb_img hidden-sm hidden-md hidden-lg"> <img src="./imgs/slide_01_640x340.jpg" alt=""></a>
+                                </div>
+                                <div class="item">
+                                        <a href="" class="pc_img hidden-xs"><img src="./imgs/slide_02_2000x410.jpg" alt=""></a>
+                                        <a href="" class="mb_img  hidden-sm hidden-md hidden-lg"> <img src="./imgs/slide_02_640x340.jpg" alt=""></a>
+                                </div>
+                                <div class="item">
+                                         <a href="" class="pc_img hidden-xs "><img src="./imgs/slide_03_2000x410.jpg" alt=""></a>
+                                         <a href="" class="mb_img hidden-sm hidden-md hidden-lg"> <img src="./imgs/slide_03_640x340.jpg" alt=""></a>
+                                </div>
+                        </div>
+              
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </a>
+              </div>
+
+    
+
+
+
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+
+    <!-- 自定义css -->
+    <style>
+            .jd_layout {
+                width: 100%;
+            }
+            .jd_layout .jd_header {
+                width: 100%;
+                position: fixed;
+                left: 0;
+                top: 0;
+            }
+            .jd_layout .jd_header .jd_header_box {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                height: 50px;
+                background-color: #f0f0f0;
+                /* 解决的方法 */
+                /* overflow: hidden; */
+                border: 1px solid #f0f0f0;
+            }
+
+            /*  加外边距 ：产生外边塌陷； 解决的方法：找该元素的父元素添加 ：overflow:hidden; */
+            .jd_layout .jd_header .jd_header_box .input-group {
+                /* margin-top:8px ; */
+                /* 位移 */
+                transform: translateY(8px);
+            }
+
+            .jd_layout .jd_header .jd_header_box .input-group {
+                border:0;
+            }
+            .jd_layout .jd_header .jd_header_box .input-group span {
+                border:0;
+            }
+            .jd_layout .jd_header .jd_header_box .input-group input {
+                border:0;
+                outline: none !important;
+                /* background-color: transparent; */
+                box-shadow:none;
+            }
+    </style>
+</head>
+<body>
+    
+    
+
+        <div class="jd_layout">
+                <div class="jd_header">
+                    <div class="jd_header_box">
+                            <!-- 输入框组 -->
+                           <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">LOGO</span>
+                                    <input type="text" class="form-control" placeholder="tips..">
+                             </div>
+                    </div>
+                </div>
+        </div>
+
+
+            <!-- 输入框组 -->
+            <!-- <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">USER</span>
+                    <input type="text" class="form-control" placeholder="请输入你的账号..">
+            </div> -->
+              
+    
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

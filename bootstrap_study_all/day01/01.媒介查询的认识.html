@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                width: 1200px;
+                margin: 0 auto;
+            }
+            .box {
+                height: 1200px;
+                background-color: #ccc;
+            }
+
+            /* 媒介查询 属性 */
+            @media screen and (min-width : 1200px ) {  /* => 1200 */
+                    .container.box {
+                         background-color: green;
+                    }
+            }
+
+            @media (min-width:900px ) and (max-width : 1200px ) {  /* 900<=   &&  <= 1200 */
+                    .container.box {
+                         background-color: blue;
+                    }
+            }
+
+            @media (min-width:700px ) and (max-width : 899px ) {  /* 700<=   &&  <= 899 */
+                    .container.box {
+                         background-color: red;
+                    }
+            }
+            @media screen and (max-width : 699px ) {  /*  <=699 */
+                    .container.box {
+                         background-color: orange;
+                    }
+            }
+    
+    </style>
+
+</head>
+<body>
+    <div class="container  box">
+
+    </div>
+</body>
+</html>

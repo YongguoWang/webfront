@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+            .my_bgColor {
+                background-color: red !important;
+                color: #fff;
+            }
+    </style>
+</head>
+<body>
+    
+        <div class="container">
+                <!-- 弹窗 -->
+                <!-- data-placement="left" top right bottom -->
+                <!-- data-content= 提示的内容 -->
+                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="提示：前方500米有美女！">
+                       点击一下
+                  </button>
+
+
+        </div>
+    
+
+
+    
+
+
+
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <script>
+        $(function(){
+            // 用法
+            $('.btn-default').popover();
+
+        
+        })
+    </script>
+</body>
+</html>

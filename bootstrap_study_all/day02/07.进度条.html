@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+<body>
+    
+    
+        <!-- <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 60%;">
+                </div>
+        </div> -->
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3">
+                            <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%;">
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="col-md-3">
+                            <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 50%;">
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="col-md-3">
+                            <div class="progress">
+                                    <div class="progress-bar  progress-bar-warning" role="progressbar" style="width: 0%;">
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="col-md-3">
+                            <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 20%;">
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    
+
+
+
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 脚本 -->
+    <script>
+        
+        $(function(){
+
+            var index = 0 ; // 计数器的变量
+            var timer = setInterval(function(){
+                    // 0 - 100%；
+                    index ++ ;
+                    if(index>100){
+                            clearInterval(timer); //停止定时器
+                            return ;
+                    }
+                    // var width =parseInt((index/50)*100);
+                    // var persent = width+"%";
+                    // console.log(persent)
+                    $(".progress-bar-warning").css("width",index+"%");
+
+            },30)
+        })
+    
+    </script>
+</body>
+</html>

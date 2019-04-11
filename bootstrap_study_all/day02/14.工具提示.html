@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+<body>
+    
+    
+        <!-- <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button> -->
+        <div class="container">
+                <!-- 提示 -->
+                <!--  data-toggle="tooltip" data-placement="left" title="广州市" -->
+                <div class="btn btn-success"  data-toggle="tooltip" data-placement="left" title="广州市">这是哪？</div>
+        </div>
+
+    
+
+
+
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <script>
+            $(function () {
+                // 调用者：
+                // 参数 ： 
+                // 返回值 ：
+                // 功能： 
+                $('[data-toggle="tooltip"]').tooltip();
+            })
+    </script>
+</body>
+</html>

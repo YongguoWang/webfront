@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+
+    <style>
+            .container {
+                background-color: #ccc;
+            }
+    </style>
+</head>
+<body>
+    
+
+                <div class="alert alert-danger alert-dismissible fade in" >
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <h4>Oh snap! You got an error!</h4>
+                        <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                        <p>
+                                <button type="button" class="btn btn-danger">Take this action</button>
+                                <button type="button" class="btn btn-default">Or do this</button>
+                        </p>
+                </div>
+    
+       
+
+
+    
+
+
+
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <script>
+            $(function(){
+
+                $('.alert').on('closed.bs.alert', function () {
+                                 // do something…
+                                 console.log("test")
+                })
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉菜单</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+        /* 层叠性   */
+        .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+                background-color: #ccc;
+        }
+        .btn {
+            border-radius: 0 !important; /*最高的优先级*/
+        }
+        .btn-default:hover {
+            background-color: skyblue;
+            color: #fff;
+        }
+        .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+            background-color: red !important;
+            color: #fff !important;
+        }
+    </style>
+</head>
+<body>
+        <!-- dropdown   下拉 -->
+        <div class="dropdown">
+            <!-- btn  按钮 -->
+                    <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" >  <!--- data-*  自定义属性的意思-->>
+                    你的兴趣
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" >
+                            <li><a href="#">睡觉</a></li>
+                            <li><a href="#">吃饭</a></li>
+                            <li><a href="#">读书</a></li>
+                            <!-- role ：角色  separator ：线-->
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">关于</a></li>
+                    </ul>
+    </div>
+              
+
+    <!-- jquery.js 文件 -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js  文件-->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+</body>
+</html>

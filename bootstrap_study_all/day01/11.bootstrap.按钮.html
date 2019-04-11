@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <!-- btn 基础 -->
+    <!-- btn-default  默认按钮-->
+    <div class="btn  btn-default  ">点击一下</div>
+    <!-- btn-danger  红色背景 -->
+    <div class="btn btn-danger">点击一下</div>
+
+    <!-- toolbar ： 工具条 -->
+    <div class="btn-toolbar" role="toolbar">
+        <!-- group  集团  （组） -->
+            <div class="btn-group" role="group">
+                    <span class="btn btn-default">1</span>
+                    <span class="btn btn-default">2</span>
+                    <span class="btn btn-default">3</span>
+                    <span class="btn btn-default">4</span>
+            </div>
+            <div class="btn-group" role="group">
+                    <span class="btn btn-default">5</span>
+                    <span class="btn btn-success">6</span>
+                    <span class="btn btn-default">7</span>
+            </div>
+            <div class="btn-group" role="group">
+                    <span class="btn btn-primary">8</span>
+                    <span class="btn btn-default">9</span>
+            </div>
+    </div>
+
+    <!-- 分列式按钮的下拉菜单 -->
+    <!-- Split button -->
+    <div class="btn-group">
+              <!-- warning : 警告  -->
+            <button type="button" class="btn btn-warning">公司职位</button>
+            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <!--sr-only  : 在屏幕阅读器下， 发出 " Toggle Dropdown" -->
+                    <!-- <span class="sr-only">Toggle Dropdown</span> -->
+            </button>
+            <ul class="dropdown-menu">
+                    <li><a href="#">H5开发攻城狮</a></li>
+                    <li><a href="#">JAVA攻城狮</a></li>
+                    <li><a href="#">PHP攻城狮</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">请留意</a></li>
+            </ul>
+      </div>
+    
+    
+
+    
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

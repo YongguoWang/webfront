@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>插件</title>
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+        <!--  包裹住提示框的盒子  -->
+       <div class="col-md-3">
+            <div class="alert alert-danger alert-dismissible fade in  box" >
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <h4>你确定放弃该订单吗？</h4>
+                    <p>abc</p>
+                    <p>
+                            <button type="button" class="btn btn-danger">确定</button>
+                            <button type="button" class="btn btn-default">取消</button>
+                    </p>
+            </div>
+       </div>
+
+    
+        <!-- 脚本文件 -->
+        <script src="./lib/jquery/jqeury-1.12.4.js"></script>
+        <!-- bootstrap -->
+        <script src="./lib/bootstrap/js/bootstrap.js"></script>
+        <script>
+            
+            // 关闭弹窗
+            $('.box').on('closed.bs.alert', function () {
+                          // do something…
+                          console.log("test")
+                        //   $("body").css("backgroundColor","pink")
+            })
+            
+        
+        </script>
+</body>
+</html>

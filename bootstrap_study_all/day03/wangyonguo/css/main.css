@@ -1,0 +1,95 @@
+a,
+a:hover,
+a:visited,
+a:focus {
+  color: #333;
+  text-decoration: none;
+}
+.wyg_layout {
+  width: 100%;
+}
+/*顶部栏  start  */
+.wyg_header {
+  border-bottom: 1px solid #ccc;
+}
+.wyg_header .container .row div {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.wyg_header .container .row div .wyg_header_register {
+  background-color: #e92333;
+  color: #fff;
+  font-size: 12px;
+}
+.wyg_header .container .row div .wyg_header_register:hover {
+  border: 1px solid #e92333;
+}
+.wyg_header .container .row div a {
+  font-size: 13px;
+  color: #666;
+}
+.wyg_header .container .row div .box_phone {
+  display: block;
+  position: relative;
+  font-size: 12px;
+  color: #666;
+}
+.wyg_header .container .row div .box_phone img {
+  z-index: 1000;
+  display: none;
+}
+.wyg_header .container .row div .box_phone:hover img {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -60px;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.wyg_header .container .row .rBorder {
+  border-right: 1px solid #ccc;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .wyg_header .container .row .rBorder {
+    border-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .wyg_header .container .row .rBorder {
+    border-right: 0 !important;
+  }
+}
+/*顶部栏  end  */
+/* 导航栏  start */
+.wyg_nav {
+  width: 100%;
+}
+.wyg_nav .wjs_icon {
+  vertical-align: middle;
+}
+.wyg_nav .wjs_icon_logo {
+  color: #e92333;
+  font-size: 50px;
+}
+.wyg_nav .wjs_icon_word {
+  font-size: 30px;
+  color: #333;
+}
+/* 导航栏  end */
+/* 广告栏  start*/
+.wyg_banner {
+  width: 100%;
+}
+.wyg_banner .item a {
+  display: block;
+  width: 100%;
+}
+.wyg_banner .item a img {
+  width: 100%;
+}
+.wyg_banner .item a.pc_img img {
+  height: 410px;
+}
+/* 广告栏  end */

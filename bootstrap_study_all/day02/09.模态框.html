@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+
+    <style>
+            .modal {
+                background-color: rgba(0,0,0,0.3);
+            }
+    
+    </style>
+</head>
+<body>
+
+ 
+        <!-- 模态框 -->
+        <div class="modal fade" role="dialog">
+                <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" ></button>
+                                                <h4 class="modal-title">标题文本</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                                <p>模态框的提示</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn btn-primary">保存</button>
+                                    </div>
+                                </div>
+                </div>
+        </div>
+
+
+    <!-- 点击按钮 -->
+    <div class="btn btn-default">点击显示</div>
+    <!-- <div class="btn btn-danger">点击保存</div> -->
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <!-- 脚本 -->
+    <script>
+            $(function(){
+                        // 点击弹窗
+                        $(".btn-default").on("click",function(){
+                            // 显示模态框  去掉透明度的类名 fade
+                             $(".modal").show().removeClass("fade");
+                        })
+
+                           // 点击保存
+                        $(".btn-primary").on("click",function(){
+                            console.log("close")
+                        // 显示模态框  去掉透明度的类名 fade
+                            $(".modal").hide().addClass("fade");
+                        })
+            })
+    
+    </script>
+</body>
+</html>

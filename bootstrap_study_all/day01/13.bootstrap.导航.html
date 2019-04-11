@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+
+    <!-- 自定义css -->
+    <style>
+            .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+                border:0;
+                border-bottom:1px solid red ;
+            }
+            .nav-tabs > li > a:hover {
+                border:1px solid transparent;
+                background-color: transparent;
+                border-bottom:1px solid red ;
+            }
+            .nav > li > a:hover, .nav > li > a:focus {
+                background-color: transparent;
+            }
+    </style>
+</head>
+<body>
+        <!-- 标签页 -->
+       <div class="container">
+            <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#">首页</a></li>
+                    <li role="presentation"><a href="#">简介</a></li>
+                    <li role="presentation"><a href="#">动态</a></li>
+            </ul>
+       </div>
+    
+    
+
+    
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

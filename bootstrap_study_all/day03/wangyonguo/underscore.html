@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="box">
+           
+    </div>
+
+
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script type="text/template" id="templateId">
+        <ul> 
+                <% for(var i = 0 ; i < result.length ;i++){ %>
+                        <li style="background-color:<%=result[i].color%>;"><%= result[i].title%></li>
+                <%}%>
+        </ul>
+    </script>
+    <script>
+            var box  = document.querySelector(".box");
+            // 1.0 获取模板内容 (html 字符串)
+            var html = document.getElementById("templateId").innerHTML;
+            // 2.0 定义数据
+            var  data = [
+                {
+                    color:"red",
+                    title:"我是红色"
+                },
+                {
+                    color:"blue",
+                    title:"我是蓝色"
+                },
+                {
+                    color:"green",
+                    title:"我是绿色"
+                }
+            ]
+            // 3.0 使用underscore.js这个库提供模板函数  template()
+            // 调用者 ： _ 
+            // 参数 ： html 字符串 
+            // 返回值 ： 函数
+           var foo =   _.template(html);
+
+            // 4.0 foo  
+            // 调用者 ： 
+            // 参数：数据
+            // 返回值 ： 数据和html字符串匹配的内容
+            // 功能：把数据和html字符串匹配
+           var res =  foo({result:data})
+          
+           console.log(res);
+           box.innerHTML = res;
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                height: 1500px;
+            }
+            header {
+            
+                /* 需要提前设置width /  top /  left 属性值 */
+                width: 100%;
+                top:50px;
+                left: 0;
+            }
+            header .search {
+                width: 1200px;
+                margin: 0 auto;
+                border: 1px solid #ccc;
+                height: 98px;
+            }
+            ul > li {
+                width: 100px;
+                height: 100px;
+            }
+            ul li:nth-child(1) {
+                background-color: red;
+            }
+            ul li:nth-child(2) {
+                background-color: blue;
+            }
+            ul li:nth-child(3) {
+                background-color: orange;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <!-- 第一种方式： -->
+        <!-- data-offset-top="300" -->
+        <header data-spy="affix" >
+                <div class="search">
+                        搜索框 
+                </div>
+        </header>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    
+
+
+
+
+    <!-- jquery.js -->
+    <script src="lib/jquery/jqeury-1.12.4.js"></script>
+    <!-- bootstrap.js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script>
+    
+        $(function(){
+            // 第二种方式
+            // 1. 调用者
+            // 2. 参数
+            var res = $("header").affix({
+                offset:{
+                    top:100
+                }
+            })
+        })
+    </script>
+</body>
+</html>

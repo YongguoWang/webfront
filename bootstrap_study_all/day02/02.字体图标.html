@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            /* 引入字体文件  */
+            /* 定义字体名称 */
+            @font-face {
+                    font-family: 'xiaohong';
+                    src: url('./files/glyphicons-halflings-regular.eot');
+                    src: url('./files/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+                    url('./files/glyphicons-halflings-regular.woff2') format('woff2'), 
+                    url('./files/glyphicons-halflings-regular.woff') format('woff'), 
+                    url('./files/glyphicons-halflings-regular.ttf') format('truetype'), 
+                    url('./files/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+            }
+            /* 基础类 */
+            .icon {
+                font-family: 'xiaohong';
+            }
+            /* 组合类 */
+            .icon_plus::before {
+                content: "\002b";  /* 图标的字符编码*/
+            }
+            .icon_heart::after {
+                content: "\e005";
+            }
+    </style>
+</head>
+<body>
+
+    <span class="icon icon_plus"></span>
+
+    <span class="icon icon_heart"></span>
+    
+</body>
+</html>

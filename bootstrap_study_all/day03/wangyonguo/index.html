@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>响应式.项目.首页</title>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css//nav.css">
+    <!-- 注解 -->
+    <!-- 兼容低版本浏览器 -->
+     <!--[if lt IE 9]>
+            <script src="lib/html5shiv/html5shiv.min.js"></script>
+            <script src="lib/respond/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="wyg_layout">
+        <!-- 顶部栏 -->
+        <div class="wyg_header hidden-sm   hidden-xs">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-md-2 rBorder">
+                                        <a href="javascript:;" class="box_phone">
+                                                <span class="wjs_icon wjs_icon_phone"></span>
+                                                手机微金所
+                                                <span class="glyphicon glyphicon-menu-down"></span>
+                                                <img src="./images/code.jpg" alt="">
+                                        </a>
+                                </div>
+                                <div class="col-md-5 rBorder">
+                                        <a  href="javascript:;">
+                                            <span class="wjs_icon wjs_icon_tel"></span>
+                                            4006-89-4006（服务时间：9:00-21:00）
+                                        </a>
+                                </div>
+                                <div class="col-md-2 rBorder">
+                                        <a href="javascript:;">常见问题</a>
+                                        <a href="javascript:;">财富登录</a>
+                                </div>
+                                <div class="col-md-3">
+                                        <a href="javascript:;" class="btn btn-danger btn-xs wyg_header_register">免费注册</a>
+                                        <a href="javascript:;" class="btn btn-link wyg_header_login">登录</a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- 导航栏 -->
+        <div class="wyg_nav  ">
+                <div class="container">
+                                <!-- 导航条组件-->
+                                <div class="navbar-header">
+                                        <!-- 折叠按钮 -->
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                        </button>
+                                        <!-- logo -->
+                                        <a class="navbar-brand" href="#">
+                                                <span class="wjs_icon wjs_icon_logo"></span>
+                                                <span class="wjs_icon wjs_icon_word"></span>
+                                        </a>
+                                </div>
+                                <!-- 导航  -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <ul class="nav navbar-nav">
+                                                <li class="active"><a href="#">我要投资 </a></li>
+                                                <li><a href="#"> 我要借贷</a></li>
+                                                <li><a href="#">平台介绍</a></li>
+                                                <li><a href="#">新手介绍</a></li>
+                                                <li><a href="#">最新动态</a></li>
+                                                <li><a href="#"> 微平台</a></li>
+                                        </ul>
+                                        <!-- 链接   -->
+                                        <ul class="nav navbar-nav navbar-right  hidden-sm hidden-xs">
+                                                <li><a href="#">个人中心</a></li>
+                                        </ul>
+                                </div>
+                </div>
+        </div>
+
+        <!-- 广告栏 -->
+        <div class="wyg_banner">
+              <!-- 动态渲染 -->
+        </div>
+
+        <!-- 产品栏 -->
+
+        <!-- 预约栏 -->
+
+        <!-- 信息栏 -->
+
+        <!-- 新闻栏 -->
+
+        <!-- 底部栏 -->
+
+    </div>
+    
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 自定义模板内容 -->
+    <script type="text/template" id="templateId">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- 控制点 -->
+                        <ol class="carousel-indicators">
+                                <%for( var i = 0  ; i < result.length ;i++ ){%>
+                                         <% if( i == 0  ){%>
+                                                <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" class="active"></li>
+                                        <%}else {%>
+                                                <li data-target="#carousel-example-generic" data-slide-to="<%=i%>"></li>
+                                        <%}%>
+                                <%}%>
+                        </ol>
+                        
+                        <!-- 轮播图 -->
+                        <div class="carousel-inner" role="listbox">
+                                <% for(var j = 0 ; j < result.length ; j++) {%>
+                                        <% if( j == 0  ){%>
+                                                <div class="item active">
+                                                        <a class="pc_img hidden-xs" href="javascript:;"><img src="<%=result[j].url%>" alt=""></a>
+                                                        <a class="mb_img hidden-sm hidden-md hidden-lg" href="javascript:;"><img src="<%=result[j].src%>" alt=""></a>
+                                                </div>
+                                        <%}else {%>
+                                                <div class="item">
+                                                        <a class="pc_img hidden-xs" href="javascript:;"><img src="<%=result[j].url%>" alt=""></a>
+                                                        <a class="mb_img hidden-sm hidden-md hidden-lg" href="javascript:;"><img src="<%=result[j].src%>" alt=""></a>
+                                                </div>
+                                        <%}%>      
+                                <%}%>
+                        </div>
+                        
+                        <!-- 控制：左右切换 -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" ></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                        </a>
+        </div>
+
+   </script>
+
+   <!-- 引入underscore.js这个库 -->
+   <script src="lib/underscore/underscore-min.js"></script>
+   <!-- 脚本 -->
+   <script src="js/main.js"></script>
+</body>
+</html>

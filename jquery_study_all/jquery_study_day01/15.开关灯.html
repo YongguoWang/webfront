@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            body {
+                text-align: center;
+            }
+            .btn_other ,
+            .btn_open , /* 并集选择器*/
+            .btn_close {
+                width:120px;
+                height: 40px;
+                background-color: #ccc;
+                text-align: center;
+                line-height: 40px;
+                cursor: pointer;
+
+                position: fixed;
+                top: 100px;
+                right: 50px;
+            }
+
+            .btn_close {
+                top: 150px;
+            }
+            .btn_other {
+                top: 200px;
+            }
+    </style>
+</head>
+<body>
+    <img src="https://www.baidu.com/img/bd_logo1.png?qua=high" alt="">
+
+    <div class="btn_open"> 开灯 </div>
+    <div class="btn_close"> 关灯</div>
+
+    <div class="btn_other"> 开关</div>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+            // 入口函数
+            $(function(){
+                        //  第一种方式
+                        // 绑定事件（鼠标移入事件）
+                        // 开灯
+                        // $(".btn_open").mouseenter(function(){
+                        //     $("body").css("backgroundColor","#fff")
+                        // })
+                        // // 关灯
+                        // $(".btn_close").mouseenter(function(){
+                        //     $("body").css("backgroundColor","#000")
+                        // })
+
+
+                     // 第二种方式
+                     var flag = true ;
+                     $(".btn_other").click(function(){
+                         if(flag){
+                            $("body").css("backgroundColor","#000");
+                            flag = false;
+                         }else {
+                            $("body").css("backgroundColor","#fff");
+                            flag = true;
+                         }
+                     })
+
+                    //  第三种方式 ... 
+
+            })
+    </script>
+</body>
+</html>

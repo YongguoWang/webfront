@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            html , body {
+                width: 100%;
+                height: 100%;
+            }
+    </style>
+</head>
+<body>
+
+    
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            $(function(){
+                    $(document).keydown(function(event){
+                            console.log(event.keyCode)  // 键值码： 对应键盘每个按键的数值
+                            var kCode = event.keyCode;
+                            // #000000 十六进制
+                            // var color = "#d8"+kCode+"5c";  
+                            var r = myRandom(99,10);
+                            var g = myRandom(99,10);
+                            var b = myRandom(99,10);
+                            // var strColor ="#"+String(r)+String(g)+String(b);
+                            var strColor = "#"+r+g+b;
+                            console.log(strColor)
+                            $("body").css("backgroundColor",strColor);
+                    })
+
+
+                    // 定义产生随机数的函数
+                    function myRandom(max , min ){
+                        return Math.round(Math.random()*(max-min)+min);
+                    }
+            })
+    </script>
+</body>
+</html>

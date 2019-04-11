@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .btn {
+                cursor: pointer;
+                width: 120px;
+                text-align: center;
+                height: 40px;
+                line-height: 40px;
+                border: 1px solid #ccc;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="btn">
+        请求数据
+    </div>
+
+
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        // 优缺点：
+
+        //  get 
+
+        //  post 
+
+        
+            $(function(){
+                    $(".btn").click(function(){
+                        $.ajax({
+                            url:"http://127.0.0.1/jquery_study_day04/server/02.demo.php",
+                            type:"post",
+                            dataType:"",
+                            data:{
+                                aaa:"100010"
+                            },
+                            success:function(data){
+                                    console.log(data)
+                            },
+                            error:function(err){
+                                    console.log("失败...")
+                            }
+                        })
+                    })
+            })
+    
+    </script>
+</body>
+</html>

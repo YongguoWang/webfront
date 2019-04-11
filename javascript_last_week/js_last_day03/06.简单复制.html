@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+    var a = {
+        name:"小红"
+    }
+
+    var b = a ;
+    console.log(a)
+    console.log(b)
+    console.log("==================================")
+    // 简单复制（浅拷贝）
+    b.name = "小白";
+    console.log(a)
+    console.log(b)
+
+
+    console.log("==================================")
+    var res1 = {
+        color:"red"
+    }
+
+    var res2 = {};
+    for(var k in res1) {
+        res2[k] = res1[k];
+    }
+    console.log(res1)
+    console.log(res2)
+    console.log("==================================")
+    // 深拷贝
+    res2.color="green";
+    console.log(res1)
+    console.log(res2)
+
+    </script>
+</body>
+</html>

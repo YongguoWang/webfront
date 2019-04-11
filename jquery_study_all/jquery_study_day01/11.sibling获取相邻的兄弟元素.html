@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            div {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #ccc;
+                margin-left: 10px;
+                float: left;
+            }
+    </style>
+</head>
+<body>
+    
+
+    <div>1</div>
+    <div>2</div>
+    <div class="box">3</div>
+    <div>4</div>
+    <div>5</div>
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            //  siblings() 获取兄弟元素（不包含自身）
+            $(".box").siblings("div").css({"backgroundColor":"red","borderRadius":"50%"});
+        })
+    
+    </script>
+</body>
+</html>

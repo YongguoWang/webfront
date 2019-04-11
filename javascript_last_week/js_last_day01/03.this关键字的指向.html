@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        
+        // 看 this 在那个作用域 ( 函数调用者 )
+        var box = document.querySelector(".box");
+        // 因为onclick 事件的调用者是 页面元素
+        box.onclick = function(){
+            console.log(this); // 指向的是 div
+        }
+        console.log("--------------------------------------------------------")
+        var  result = {
+            color:"blue",
+            foo:function(){
+                console.log(this) // 指向的是 result 对象
+            }
+        }
+        // 调用了result这个对象下的foo函数  
+        result.foo();
+
+        console.log("--------------------------------------------------------")
+        //  new  创建一个实例
+        // function 定义的函数是挂在window 下  是全局的
+        // Car() 这是一个函数对象
+        function Car(){
+            console.log(this) ; //指向的window
+            this.aaa = "你好，明天";
+            this.run = function(){
+                console.log(this.aaa);
+            }
+        }
+
+        Car();
+        //  new 做了什么？
+        var c = new Car();
+        console.log(c)
+        c.run();
+        
+
+
+
+        
+        
+    </script>
+
+
+</body>
+</html>

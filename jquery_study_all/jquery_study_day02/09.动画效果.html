@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 300px;
+                height: 300px;
+                background-color: #ccc;
+                margin: 100px auto;
+
+                position: relative;
+            }
+
+            .box > div {
+                position: absolute;
+            }
+            .box > div.t {
+                width: 300px;
+                height: 10px;
+                background-color: red;
+                left: -300px;
+                top: 0;
+            }
+            .box > div.b {
+                width: 300px;
+                height: 10px;
+                background-color: green;
+                left: 300px;
+                bottom: 0;
+            }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box">
+        <div class="t"></div>
+        <div class="r"></div>
+        <div class="b"></div>
+        <div class="l"></div>
+    </div>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+             // 入口函数
+            $(function(){
+
+                        // 需求：
+                        // 1.0 鼠标在灰色的盒子上悬停的时候， 左右两边的线划入
+                        // 鼠标移入
+                        $(".box").mouseenter(function(){
+                            $(".box  div.t").stop().animate({left:0},1000)
+                            $(".box  div.b").stop().animate({left:0},1000)
+                        })
+                        //  鼠标离开
+                        $(".box").mouseleave(function(){
+                            $(".box  div.t").stop().animate({left:-300},1000)
+                            $(".box  div.b").stop().animate({left:300},1000)
+                        })
+
+                        // 问题：为什么鼠标快速移入移出的时候，动画没停下？
+            })
+    </script>
+</body>
+</html>

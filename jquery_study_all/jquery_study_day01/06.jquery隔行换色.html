@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ol {
+            width: 500px;
+            margin: 0 auto;
+
+        }
+        ol  li {
+                width: 500px;
+                height: 50px;
+                border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    
+    <script src="jquery/jquery.js"></script>
+    <script>
+
+        $(function(){
+            $("ol li:odd").css("backgroundColor","darkred");//  偶数
+            $("ol li:even").css("backgroundColor","green");// 奇数
+        })
+    
+    
+    </script>
+</body>
+</html>

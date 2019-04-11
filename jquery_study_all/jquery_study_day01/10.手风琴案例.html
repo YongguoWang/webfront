@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .banner {
+                width: 750px;
+                margin:  50px auto;
+            }
+            .banner ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .banner ul::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .banner ul li {
+                width: 148px;
+                height: 448px;
+                border: 1px solid #ccc;
+                float: left;
+            }
+            .banner ul li.active {
+                width: 298px;
+            }
+            .banner ul li a {
+                display: block;
+            }
+            .banner ul li a  img {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <ul>
+            <li><a href="javascript:;"><img src="" alt="">1</a></li>
+            <li><a href="javascript:;"><img src="" alt="">2</a></li>
+            <li><a href="javascript:;"><img src="" alt="">3</a></li>
+            <li class="active"><a href="javascript:;"><img src="" alt="">4</a></li>
+        </ul>
+    </div>
+
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        // 1.0 定义一个数组 存放颜色 
+        var arrColor = ['red','green','blue','orange'];    
+        var items = document.querySelectorAll("ul li");
+        // 2.0 给每一个li标签填充颜色
+        for(var  i = 0 ; i < items.length ; i++){
+            items[i].style.backgroundColor = arrColor[i];
+        }
+        // 3.0 入口函数
+        $(function(){
+            // 4.0 鼠标悬停 （ 隐式迭代）
+            $("ul li").mouseenter(function(){
+                // 5.0 改变鼠标悬停的当前盒子的宽度
+                $(this).css("width","298px").siblings("li").css("width","148px");
+                // 6.0 排他 （）
+            })
+        })
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style: none;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.container .box {
+    width: 1200px;
+}
+.container .box ul {
+    width: 1200px;
+    position: relative;
+}
+.container .box ul li {
+    width: 230px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.container .box ul li img {
+    width: 230px;
+    height: 250px;
+}
+.container .box ul li:nth-child(2n) img {
+    height: 350px;
+}
+.container .box ul li:nth-child(3n) img {
+    height: 450px;
+}
+.container .box ul li p {
+    padding: 5px 8px;
+}
+.container .box ul li:hover p {
+    box-shadow: 0 2px 2px #ccc;
+}

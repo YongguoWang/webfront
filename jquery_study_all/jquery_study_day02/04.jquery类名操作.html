@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            ul {
+                padding: 0;
+                list-style: none;
+                width: 600px;
+                margin: 0 auto;
+                /*  给父元素 设置 overflow:hidden; */
+                overflow: hidden;
+                background-color: #af9;
+            }
+
+            ul li {
+                width: 598px;
+                height: 40px;
+                border: 1px solid #ccc;
+                margin-top: 10px;
+                background-color: #fff;
+            }
+
+            ul li.current {
+                background-color: orange;
+            }
+
+    </style>
+</head>
+<body>
+    
+        <ul>
+            <li>1</li>
+            <li class="current">2</li>
+            <li>3</li>
+            <li class="current">4</li>
+            <li>5</li>
+        </ul>
+
+
+        <script src="./jquery/jquery.js"></script>
+        <script>
+
+
+            // js 
+            // classList.add()
+            // classList.remove()
+            // classList.contains()
+
+            // 入口函数
+            $(document).ready(function(){
+                //  添加类名的api
+                $("ul li").eq(0).addClass("current");
+                // 删除类名的api
+                $("ul li").eq(1).removeClass("current");
+                // 绑定点击事件
+                $("ul li").eq(2).click(function(){
+                        // 给事件的调用者 切换类名 
+                        $(this).toggleClass("current");
+                })
+                // 判断是否存在该类名
+               var isHas =  $("ul li").eq(3).hasClass("current")
+               console.log(isHas)
+
+            })
+        
+        </script>
+
+</body>
+</html>

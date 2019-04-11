@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="box">
+            <!-- 动态渲染 -->
+    </div>
+
+    <script>
+
+            // 5.0 获取元素
+            var box = document.querySelector(".box");
+            // 6.0 定义空字符串
+            var str =  "";
+
+
+
+            // 1.0 XMLHttpRequest()   是在http:// 需要服务器环境打开
+            var xhr = new XMLHttpRequest();
+            // 2.0 发起请求
+            xhr.open('get','./data.txt',true);
+            // 3.0发送请求主体
+            xhr.send(null);
+            // 4.0 监听
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                        console.log(xhr.responseText);
+                        var res = xhr.responseText; // 字符串 string
+                        var data = JSON.parse(res); // 对象 object
+                        console.log(data)
+                        str+='<img src="'+data.src+'" alt=""> <p>'+data.txt+'</p>';// 拼接好字符串
+                        box.innerHTML = str;//渲染字符串
+
+                }
+            }
+    
+    </script>
+</body>
+</html>

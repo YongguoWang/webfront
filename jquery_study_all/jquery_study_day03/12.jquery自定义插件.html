@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <div class="aaa"></div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            // 拓展方法
+            $(function(){
+                // 1.0 
+                // extend()  
+                // 调用者 ： $  / jQuery
+                // 参数 : {}  对象     可以添加属性，添加方法
+                // 功能 ： 编写拓展的方法
+                $.extend({
+                    aaa:"HELLO",
+                    foo:function(){
+                        console.log("test ")
+                    },
+                    init:function(){
+                        console.log(this.aaa)
+                        this.foo();
+                    }
+                })
+                // 调用拓展的方法
+                // 调用者： $
+               $.init();
+                // 2. 
+                // fn 拓展包
+                // 定义方法
+                $.fn.waterFall = function(){
+                    console.log("fn  test")
+                }
+                // 调用方法
+                // 调用者 ： jquery的元素对象 (标签)
+                $("div").waterFall();
+
+                // $.fn.init
+            })
+    </script>
+</body>
+</html>

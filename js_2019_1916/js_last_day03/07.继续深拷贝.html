@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    
+    var data1 = {
+        name:"小夏",
+        result:[
+            {
+                "num":"20190329"
+            }
+        ]
+    }
+    var data2 = {}
+    for(var key in data1){
+        data2[key] = data1[key];
+    }
+    console.log(data1)
+    console.log(data2)
+    console.log("================================")
+    // 深拷贝？ 最佳的解决方案了吗？ not 
+    // 概念 ： 把data1对象复制给data2对象，但是data2对象下的属性的变化不会影响data1对象的属性。
+    // data2.result[0].num = "1652";
+    // console.log(data1)
+    // console.log(data2)
+
+    // 封装一个方法（递归）
+    function deepClone(obj){
+            // Array.isArray(obj) 判断是不是一个数组 true
+            var nweClone = Array.isArray(obj)?[]:{}
+            for(var k in  obj ){
+                 // typeof 判断变量的数据类型
+                    if(obj[k] && typeof obj[k] == 'object'){
+                        // alert("test")
+                        nweClone[k] = deepClone( obj[k] ); //递归
+                    }else {
+                        nweClone[k] = obj[k];
+                    }
+            }
+            //  返回复制好的对象
+            return nweClone;
+    }
+
+
+ // 调用封装的方法
+ var data3 = deepClone(data1);
+ console.log("========================")
+ console.log(data3)
+ data3.result[0].num="helloworld!"
+ console.log("========================")
+//  深拷贝
+ console.log(data1)
+ console.log(data3)
+    
+    </script>
+</body>
+</html>

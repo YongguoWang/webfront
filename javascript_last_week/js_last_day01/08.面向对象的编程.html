@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: #ccc;
+                margin: 5px;
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+
+    <script>
+    
+    // 步骤 ： 封装性 继承性 
+    // 对象
+    function BoxFun(options){
+        this.ele = document.querySelector(options.selector)
+        this.color = options.color;
+        var _this = this ; // 记录this的指向
+        this.ele.onclick = function(){
+            // _this 指向 BoxFun 对象
+            _this.ele.style.backgroundColor = _this.color;
+        }
+    }
+
+    // BoxFun.prototype.click_fn = function(){
+    //     var _this = this ; // 记录this的指向
+    //     this.ele.onclick = function(){
+    //         // _this 指向 BoxFun 对象
+    //         _this.ele.style.backgroundColor = _this.color;
+    //     }
+    // }
+      // box1.click_fn();
+
+  var box1 =  new  BoxFun({ selector:".box1",color:"red"})
+  var box2 =  new  BoxFun({ selector:".box2",color:"blue"})
+  var box3=  new  BoxFun({ selector:".box3",color:"green"})
+  var box4=  new  BoxFun({ selector:".box4",color:"orange"})
+
+    
+    
+    
+    </script>
+</body>
+</html>

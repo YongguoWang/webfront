@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+    
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+             // 入口函数
+            $(function(){
+                    // animate()  参数： 1. 对象（css属性） 2. 时间（毫秒值） slow fast   3.回调函数 (可选参数)
+                    $(".box").animate({
+                        marginLeft:"500px"
+                    },1000,function(){
+                        $(".box").css("backgroundColor","red");
+                    })
+            })
+    </script>
+</body>
+</html>

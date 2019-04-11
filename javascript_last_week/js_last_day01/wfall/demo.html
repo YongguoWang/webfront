@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+       
+        function getImageHeight(callback){
+            var index = 0;
+            var arr = [];
+            var timer = setInterval(function(){ /* 每一次执行定时器函数 ，都开了另外一个进程 */
+                index++;
+                if(index > 105){
+                    // console.log(arr)
+                    if(callback){
+                        callback(arr);
+                    }
+                    clearInterval(timer) ; return ;
+                }
+                var image = new Image();
+                image.src = "./images/"+index+".jpg ";
+                image.onload = function(){
+                     arr.push(image.height);
+                }
+            },0)
+        }
+
+        // var res = [];
+        getImageHeight(function(data){
+            console.log(JSON.stringify(data))
+        });
+
+    </script>
+</body>
+</html>

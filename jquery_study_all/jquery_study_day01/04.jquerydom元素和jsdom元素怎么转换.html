@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原生js元素对象和jquery元素对象互相转换</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: #ccc;
+            }
+
+    </style>
+</head>
+<body style="height:1000px">
+    
+
+    <div class="box"></div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+        // javascript 
+        // 步骤 ：
+            // 1.0 获取事件源
+            var dom = document.querySelector(".box");
+            // 2.0 绑定事件
+            dom.onclick = function(){
+                // 3.0 处理逻辑
+                this.style.backgroundColor="red";
+                // css()  是jquery的方法 ， 
+                // 把 js元素对象 转 jquery元素对象
+                $(dom).css('borderRadius',"50%");
+            }
+
+      // jquery 
+        // 步骤
+        // 1.0 入口函数
+        $(document).ready(function(){
+            // 2.0 获取事件源 
+           var $ele =  $(".box");
+            // 3.0绑定事件
+           $ele .click(function(){
+                // 4.0 处理逻辑
+                $(this).css("width","400px")
+                $(this).css("height","400px")
+            })
+            // 5.0 转原生js dom对象 $ele.get(0).
+            //  把jquery元素对象 转 js元素对象
+            $ele.get(0).onmouseover =  function(){
+                // console.log("test")
+                // 改变页面背景色
+                document.body.style.backgroundColor="skyblue";
+            }
+            console.log("---------jq--------------")
+            console.log( $ele)
+            console.log("---------js--------------")
+            console.log( $ele[0])
+            
+            // 6.0  把jquery元素对象 转 js元素对象
+            $ele[0].onmouseout = function(){
+                  // 改变页面背景色
+                  document.body.style.backgroundColor="pink";
+            }
+        })
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            ul li {
+                padding: 5px 25px;
+                border: 1px solid #ccc;
+                margin: 5px;
+                cursor: pointer;
+                float: left;
+                list-style: none;
+            }
+    
+    </style>
+</head>
+<body>
+
+
+    <ul>
+        <!-- data-color= 自定义属性 -->
+        <li data-color="blue">蓝色</li>
+        <li data-color="red">红色</li>
+        <li data-color="green">绿色</li>
+        <li data-color="purple">紫色</li>
+        <li data-color="orange">橙色</li>
+    </ul>
+    
+
+    <script>
+
+            // // 1.0 ajax 编程
+            // var aaa  = new XMLHttpRequest();
+            // // 8.0 参数
+            // var data = "yellow";
+            // // 2.0 发起请求
+            // aaa.open('get','http://127.0.0.1/ajax_day01/server/002.demo.php?color='+data,true);// true 异步
+            // // 3.0 发送请求主体
+            // aaa.send(null);
+            // // 4.0 监听请求和响应
+            // aaa.onreadystatechange = function(){
+            //     // 5.0 请求的状态 (完成)
+            //     if(aaa.readyState == 4 ){
+            //             // 6.0 响应的状态 （完成）
+            //             if(aaa.status == 200){
+            //                     // 7.0 响应回来的内容
+            //                     var res = aaa.responseText;
+            //                     console.log(res);
+            //             }
+            //     }
+            // }
+
+
+            //步骤：
+            // 1.0 获取所有li标签
+            var items = document.querySelectorAll("ul li");
+            // 2.0 绑定事件
+            for(var i = 0 ; i < items.length ; i++){
+                    // 3.0 
+                    items[i].onclick = function(){
+                        var param = this.getAttribute("data-color");
+                        // 记录 this
+                        var that = this; // 当前点击的盒子
+                        console.log("前端提交的参数："+param)
+                        // 欲哭无泪
+                         // 1.0 ajax 编程
+                        var aaa  = new XMLHttpRequest();
+                        // 8.0 参数
+                        // var data = "yellow";
+                        // 2.0 发起请求
+                        aaa.open('get','http://127.0.0.1/ajax_day01/server/002.demo.php?color='+param,true);// true 异步
+                        // 3.0 发送请求主体
+                        aaa.send(null);
+                        // 4.0 监听请求和响应
+                        aaa.onreadystatechange = function(){
+                            // 5.0 请求的状态 (完成)
+                            if(aaa.readyState == 4 ){
+                                    // 6.0 响应的状态 （完成）
+                                    if(aaa.status == 200){
+                                            // 7.0 响应回来的内容
+                                            var res = aaa.responseText;
+                                            console.log("后端返回的数据："+res);// 来源于服务端
+                                            // 给点击的li标签填充背景色
+                                            that.style.backgroundColor=res;
+                                    }
+                            }
+                        }
+                    }
+            }
+    
+    
+    
+    </script>
+</body>
+</html>

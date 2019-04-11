@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="ajax.js"></script>
+<script>
+    $.ajax({
+        url:"http://127.0.0.1/jquery_study_day04/server/05.demo.php",
+        type:"get",
+        data:{},
+        async:true,
+        dataType:"jsonp",
+        jsonpCallBack:"foo",
+        success:function(data){
+            console.log(data)
+            var res = JSON.parse(data);
+            console.log(res)
+        }
+    })
+
+
+</script>
+</body>
+</html>

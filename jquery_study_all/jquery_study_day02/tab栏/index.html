@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            ul {
+                list-style: none;
+            }
+            .container {
+                width: 1000px;
+                margin: 0 auto;
+            }
+            .nav_tab {
+                width: 1000px;
+                background-color: skyblue;
+            }
+            .nav_tab ul::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .nav_tab ul li {
+                float: left;
+                height: 40px;
+                padding: 0 20px;
+                background-color: #ccc;
+                text-align: center;
+                line-height: 40px;
+                cursor: pointer;
+            }
+            .nav_tab ul li.active {
+                height:38px;
+                border-bottom: 2px solid red;
+            }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="nav_tab">
+            <ul>
+                <li class="active">国际大牌<span>◆</span></li>
+                <li>国妆名牌<span>◆</span></li>
+                <li>清洁用品<span>◆</span></li>
+                <li>男士精品<span>◆</span></li>
+            </ul>
+        </div>
+        <div class="tab_content">
+            <img src="./imgs/guojidapai.jpg" alt="">
+        </div>
+    </div>
+    
+
+    <!-- <script src="../jquery/jquery.js"></script> -->
+
+    <!-- 使用别人服务器上的jquery.js文件 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+             // 入口函数
+            $(function(){
+
+                    //  需求： 
+                        //  1. 点击当前的tab选项，显示相应内容 ， 设置当前点击的盒子的下边框颜色（高亮）。
+
+                    // 步骤：
+                        // 2.0 定义数组(存放图片的路径)
+                        var arr = ["./imgs/guojidapai.jpg","./imgs/guozhuangmingpin.jpg","./imgs/nanshijingpin.jpg","./imgs/qingjieyongpin.jpg"]
+                        console.log(arr)
+                        // 1.0 获取页面指定的元素
+                        //  var lis = document.querySelectorAll()  ;  for(var i = 0 ; i < lis.length ; i++){ lis[i].onclick = function(){}}
+                        // 隐式迭代
+                        $(".nav_tab ul li").click(function(){
+                            console.log($(this))
+                            // index()  这是一个方法，获取当前点击的li的索引值
+                            // 3.0 索引值
+                           var index =  $(this).index();  //返回值 ： Number   索引值
+                             // var index =  $(".nav_tab ul li").index($(this));
+                           console.log(index)
+                            // 4.0 设置img标签的src属性
+                            $(".tab_content img").attr("src",arr[index]);
+                            // 5.0 设置当前点击的盒子的下划线 .active
+                            $(this).addClass("active").siblings().removeClass("active")
+                        })
+
+            })
+    </script>
+</body>
+</html>

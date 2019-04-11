@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 300px;
+            height: 50px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            clear: both;
+        }
+
+        .box1 , .box2 {
+            float: left;
+            width: 150px;
+            height: 450px;
+        }
+        .box1 {
+            background-color: pink;
+        }
+        .box2 {
+            background-color: orange;
+        }
+        .small {
+            width: 120px;
+            height: 50px;
+            background-color: red;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="btn btn_top"> 搬砖 </div>
+    <div class="box1">
+        <div class="small"></div>
+    </div>
+    <div class="box2"></div>
+    <div class="btn btn_bottom"> 清空 </div>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+             // 入口函数
+            $(function(){
+                        // 1.0 获取事件源
+                        $(".btn_top").click(function(){
+
+                                // 调用者： 要移动的盒子
+                                // 参数： 移动到指定的盒子
+                                // 功能： 移动盒子
+                                $(".small").appendTo($(".box2"))
+                        })
+
+                        // 2.0 empty() 清空盒子的内容（元素）
+                        $(".btn_bottom").click(function(){
+                            $(".box1").empty();
+                            $(".box2").empty();
+                        })
+            })
+    </script>
+</body>
+</html>

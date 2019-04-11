@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                width: 900px;
+                /* height: 1500px; */
+                margin: 0 auto;
+            }
+            .header {
+                width: 1200px;
+                height: 50px;
+                background-color: #ccc;
+            }
+            .main  .box {
+                height: 1200px;  
+                background-color: skyblue;
+            }
+    </style>
+</head>
+<body>
+    <div class="header">
+            <div class="container">
+                    HELLO 
+            </div>
+    </div>
+    <div class="main">
+            <div class="container ">
+                        <div class="box">
+                             WORLD
+                        </div>
+            </div>
+    </div>
+    
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            $(function(){
+                    //  需求： 页面滚动到一定的位置的时候，让顶部栏固定 top:0 ,  否则去掉固定定位。
+                    //    js
+                    // onscroll 
+                    // scrollTop
+                    // scrollLeft
+
+                 
+                    // jquery 
+                    //  .scroll()   事件   监听页面的滚动
+                    // .scrollTop()     方法  获取页面被浏览器卷掉的高度
+                    $(document).scroll(function(){
+                        // console.log("test")
+                        var resTop = $(this).scrollTop(); // 获取页面被浏览器卷掉的顶部高度
+                        console.log(resTop)
+                        if(resTop > 200){  //  当页面被浏览器卷掉的高度 大于 200 的时候
+                                $(".header").css({  // 设置 header 定位属性 为固定定位 ， top 等于0 
+                                    position:"fixed",
+                                    top:0
+                                })
+                        }else {   // 设置 header 定位属性 为静态 ，（恢复正常的文档流）
+                            $(".header").css({
+                                    position:"static",
+                                    top:0
+                                })
+                        }
+                    })
+            })
+    </script>
+</body>
+</html>

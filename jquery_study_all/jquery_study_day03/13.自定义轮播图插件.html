@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <!-- 动态创建 -->
+    </div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery.banner.js"></script>
+    <script>
+
+            // alert(jQuery === $)
+            $(function(){
+                // $数据类型
+                // console.log(typeof $ )
+                // 调用jq轮播图插件
+                $(".container").banner({
+                    width:"200px",
+                    height:"50px",
+                    bgcolor:"#ccc",
+                    count:5,
+                    arrColor:["red","blue","orange","pink","green"]
+                })
+            })
+    </script>
+</body>
+</html>

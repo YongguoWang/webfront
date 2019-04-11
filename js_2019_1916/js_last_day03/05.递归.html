@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+    // 1.认识递归
+    // 定义一个变量
+    // var index = 0 ;
+    // function foo(str){ // 形参
+    //     index++;
+    //     if(index > 5){
+    //             return; 
+    //     }else {
+    //         if(index  == 2){
+    //             foo("拿快递去了");
+    //         }else if(index == 4){
+    //             foo("继续吃饭")
+    //         }
+    //         foo("吃饭");
+    //     }
+    //     console.log(str)
+    // }
+
+    // foo("吃饭")
+
+    var num = 5;
+    function fn(){
+        num --;
+        if(num <=0){
+            return ;//终止代码
+        }else {
+            console.log(num)
+            fn(); // 大于0 的时候不断调用自身
+        }
+        
+    }
+    
+    fn();
+
+
+    // function func(){
+    //     func(); //函数直接调用 ， 需要符合场景的要求执行调用自身
+    // }
+    // func();
+    
+    </script>
+</body>
+</html>

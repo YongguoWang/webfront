@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .btn {
+                display: block;
+                width:128px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                cursor:pointer;
+                background-color: #fff;
+            }
+            .box {
+                width: 900px;
+                height: 900px;
+                background-color: #ccc;
+            }
+            .box .demo {
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+            }
+    </style>
+</head>
+<body>
+    
+   <div class="parent"><div class="btn">点击一下</div></div>
+    <div class="box"></div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            $(function(){
+                    //  delegate
+
+                    // $(".btn").delegate('click',function(){  // 报错
+                    //     console.log("test")
+                    // })
+
+                    // $(".parent").delegate('click', ".btn" ,function(){ // 不执行
+                    //     console.log("test")
+                    // })
+                    
+                    // 调用者 ： 父元素
+                    // 参数 ： 1. 子元素  2.事件的名称  3. 匿名函数
+                    $(".parent").delegate(".btn","click",function(){
+                        $(".box").css("backgroundColor","red")
+                        $(".box").html("<div class='demo'></div>")
+                    })
+
+                    // 给粉红色盒子绑定点击事件
+                    // $(".demo").click(function(){  // 在这里不执行动态创建的元素的事件
+                    //     console.log("test")
+                    // })
+
+                    //  delegate 事件委托
+                    $(".box").delegate('.demo' ,'click' , function(){ // 在这里执行动态创建的元素的事件
+                        console.log("test")
+                    })
+
+                   
+            })
+    </script>
+</body>
+</html>

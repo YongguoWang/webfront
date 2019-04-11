@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+            // 对象  (封装、继承 、 多态)
+
+            //A 构造函数（对象）
+            //B 原型（对象）
+            //C 实例对象
+
+            //1. 构造函数（对象）
+            function Animal(){
+                    this.color ="red"
+            }
+            //2. 原型（对象）
+            Animal.prototype.init = function(){
+                console.log("我是init方法")
+                this.aaa()
+                this.bbb();
+            }
+            Animal.prototype.aaa = function(){
+                console.log("我是aaa方法")
+            }
+            Animal.prototype.bbb = function(){
+                console.log("我是bbb方法")
+            }
+            Animal.prototype.hide = function(){}
+            Animal.prototype.show = function(){}
+
+             //3. 实例对象
+            var animal = new Animal();
+            console.log(animal)
+            animal.init();
+            
+        
+        
+    </script>
+    
+</body>
+</html>

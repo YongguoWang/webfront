@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 120px;
+            height: 40px;
+            background-color: #ccc;
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="btn"></div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            $(function(){
+                    // bind 
+                    // 第一种方式 ： 参数 ： 1. 事件（多个） 2. 匿名函数
+
+                    // 第二种方法 ： 参数 ： 1.事件   2. {} （data）可选参数   3.匿名函数
+
+                    $(".btn").bind('click'  , {"aaa":"点击了，谢谢！" ,"color":"blue"}, function(event){  // event 事件对象
+                            console.log(event)
+                            $(this).css("backgroundColor",event.data.color)
+                    })
+             })
+    </script>
+</body>
+</html>

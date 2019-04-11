@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="../jquery/jquery.min.js"></script>
+
+    <script>
+
+        // 1.0 获取元素
+
+
+        // 2.0 输入框值
+        var cname = "杭州";
+
+        getCityFunc(cname);
+        function getCityFunc(cityName){
+                 $.ajax({
+                     url:"http://api.map.baidu.com/telematics/v3/weather?&output=json",// 天气查询的接口
+                     type:"get",
+                     data:{
+                        ak:"rOxVAiTE768wol49rGdOoelc11EojPvE",
+                        location:cityName
+                     },
+                     dataType:"jsonp",
+                    //  jsonp:"callback",
+                    //  jsonpCallback:"abc",
+                     success:function(data){
+                        console.log(data)
+                     }
+                 })
+        }
+    
+    
+    </script>
+</body>
+</html>

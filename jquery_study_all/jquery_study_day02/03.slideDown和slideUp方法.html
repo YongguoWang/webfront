@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul , ol {
+            list-style: none;
+        }
+        ul >li {
+            width: 180px;
+            background-color: #ccc;
+        }
+        ul >li span {
+            display: block;
+            width: 180px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            background-color: orange;
+        }
+        ul > li > ol {
+            display: none;
+        }
+    </style>
+</head>
+<body style="height:1000px;">
+
+    <ul>
+        <li>
+            <span>一级菜单</span>
+            <ol>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ol>
+        </li>
+    </ul>
+    
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+
+        // 入口函数
+        $(function(){
+                // 点击一级菜单 展开二级菜单
+                $("ul > li").click(function(e){
+                        //阻止事件冒泡
+                        e.stopPropagation();
+                        // 下拉
+                        $("ul > li ol").slideDown(2000);
+                })
+
+                // 点击空白处 收起菜单
+                $("body").click(function(){
+                    // 上卷
+                    $("ul > li ol").slideUp();
+                })
+        })
+    
+    </script>
+</body>
+</html>

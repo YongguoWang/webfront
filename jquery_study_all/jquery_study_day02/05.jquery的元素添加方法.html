@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 450px;
+            background-color:pink;
+        }
+        .box .small {
+            width: 300px;
+            height: 50px;
+            background-color: orange;
+        }
+        .box > div.item {
+            width: 300px;
+            height: 50px;
+            background-color:red;
+        }
+        .box > div.active {
+            width: 300px;
+            height: 50px;
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <!-- 前 -->
+        <div class="small"> small </div>
+        <!-- 后 -->
+    </div>
+    
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+             // 入口函数
+            $(function(){
+                        //  添加元素的方法
+                        var eleStr1 = "<div class='item'>1</div>"
+                        // 功能 ： 往指定的盒子后面添加内容(子元素)
+                        // 调用者：
+                        // 参数:
+                        // 返回值:
+                        $(".box").append(eleStr1)
+                        // 
+                        var eleStr2 = "<div class='item'>2</div>"
+                        // 功能 ： 往指定的盒子前面添加内容（子元素）
+                        // 调用者：
+                        // 参数:
+                        // 返回值:
+                        $(".box").prepend(eleStr2)
+
+                        var eleStr3= "<div class='active'>3</div>"
+                          // 功能 ： 往指定的盒子前面添加内容（相邻元素）
+                        // 调用者：
+                        // 参数:
+                        // 返回值:
+                        $(".small").before(eleStr3);
+            })
+    </script>
+</body>
+</html>

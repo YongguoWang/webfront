@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .banner {
+            width: 300px;
+            overflow: hidden;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        .banner ul {
+            width: 1000%;
+            list-style: none;
+        }
+        .banner ul li {
+            width: 10%;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="banner">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+
+
+    <script>
+    // 1.0 获取页面元素
+    var ul = document.querySelector("ul");
+    // 2.0 轮播图
+    function Banner(dom){
+        this.ele = dom;
+    }
+    Banner.prototype = {
+      index:0,
+      timer:null,
+      width:300,
+      arrColor:["red","green","blue"]
+    }
+    Banner.prototype.init = function(){
+        // 记录this
+        var _this = this ;
+        var items = this.ele.querySelectorAll("li");// 获取所有li标签
+          // 填充第一个li的背景色
+          items[0].style.backgroundColor = _this.arrColor[_this.index];
+        this.timer = setInterval(function(){
+            console.log(_this)
+                //  setInterval 调用者是 ？ window
+                _this.index ++;
+                if(_this.index > 2){
+                        _this.index = 0;
+                }
+                // 设置ul的水平位置
+                _this.ele.style.marginLeft = - (_this.index*_this.width)+"px";
+                  // 填充每个li的背景色
+                  items[_this.index].style.backgroundColor = _this.arrColor[_this.index];
+
+        },1000);
+    }
+
+    var banner = new Banner(ul);
+    banner.init();
+
+    
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>按钮</button>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        
+        $(function(){
+            // jquery 元素对象
+            var $btn = $("button");
+            // js元素对象才能使用 js原生的属性和方法
+            // $btn.style.background="red";
+            // 1.0 第一种方式
+            // 转js元素对象
+            // $btn.get(0).style.background="red";
+            // 2.0 第二种方式
+            $btn[0].onclick = function(){
+                    console.log("test1")
+            }
+
+            // 注意事件不能冲突了！
+            // $btn.get(0).onclick = function(){
+            //         console.log("test2")
+            // }
+
+            // $btn[0].onclick = function(){
+            //         console.log("test3")
+            // }
+        })
+    
+    </script>
+
+</body>
+</html>

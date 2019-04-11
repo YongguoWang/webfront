@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        var name;
+    </script>
+
+    <style>
+        .box {
+            width: 120px;
+            height: 40px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 40px;
+            color: #000;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+
+        <div class="box"></div>
+
+<script>
+
+    /*
+    *
+    *  在javascript 里面解决跨域数据的一个方式是 ：
+    *
+    *  动态创建script标签，通过src属性去获取数据（javascript脚本）
+    *
+    * 我如何获取跨域数据？
+    *
+    *
+    * */
+
+    var el = document.createElement("script");
+    el.src = "http://127.0.0.1/jquery_study_day04/server/05.demo.php";
+    var head = document.getElementsByTagName("head")[0];
+    head.appendChild(el);
+
+    // 在webstrom 的服务器下访问 apache服务器下的数据
+    // var  name = xiaohong
+//    console.log(name)
+    // 渲染在页面上了
+//    document.querySelector(".box").innerHTML = name;
+
+
+    function foo(data){
+        // 因为它是字符串啊
+        console.log(data)
+        var obj = JSON.parse(data)
+        console.log(obj)
+        //渲染在页面上了
+        document.querySelector(".box").innerHTML = obj.message ;
+    }
+
+</script>
+
+</body>
+</html>

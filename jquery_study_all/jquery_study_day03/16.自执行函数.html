@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        // ====================================================
+        // 自执行函数
+        (function(str){  // 这是形参 
+            console.log(str)
+
+        })("hello") // 这是实参
+        // ====================================================
+
+        // jQuery 是一个函数 作为参数
+        (function(aaa){// 这是形参 
+          if(aaa ){
+                aaa.fn.你的方法名= function(){
+                    
+                }
+          }
+        })(jQuery) // 这是实参
+        // ====================================================
+
+
+
+        $(function(){
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: #ccc;
+            }
+    </style>
+</head>
+<body>
+
+
+    <div class="box"></div>
+
+    <script>
+        // 面向过程
+        // 1.0 获取.box元素
+        var box = document.querySelector(".box");
+        // 2.0 事件绑定
+        box.onclick = function(){
+            // 3.0 设置盒子背景色
+            box.style.backgroundColor="blue";
+        }
+
+
+        
+    
+    </script>
+    
+</body>
+</html>

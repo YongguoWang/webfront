@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .btn {
+                position: absolute;
+                left: 300px;
+                top: 200px;
+                width: 120px;
+                height: 40px;
+                background-color: #ccc;
+                
+            }
+    </style>
+</head>
+<body>
+
+    <div class="btn"></div>
+
+    <div class="box" style="width:100px;height:100px;background-color:red;"></div>
+    
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+        //  入口函数
+        $(document).ready(function(){
+            // 定义一个布尔值
+            var isChange = true ;
+            //绑定事件
+            $(".btn").click(function(){
+                if(isChange){
+                        $(".box").fadeOut(2000);
+                        isChange = false;
+                }else {
+                        $(".box").fadeIn();
+                        isChange = true;
+                }
+            })
+
+        })
+    </script>
+</body>
+</html>

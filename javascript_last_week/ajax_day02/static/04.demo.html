@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        <div>
+            <p>姓名:<span class="name"></span> ---- 工作:<span class="work"></span></p>
+        </div>
+
+        <script>
+
+            // ajax编程
+            var xhr = new XMLHttpRequest(); // 创建实例 
+            // xhr.open('get','http://127.0.0.1/ajax_day02/server/04.demo.php',true); //发起请求
+            xhr.open('get','http://localhost/ajax_day02/server/04.demo.php',true); //发起请求
+            xhr.send(null); //发送请求主体
+            xhr.onreadystatechange = function(){ // 监听请求响应转台
+                    if(xhr.readyState == 4 && xhr.status == 200){ // 请求完成以及响应成功
+                            var ctype = xhr.getResponseHeader('Content-Type');  // 判断响应回来的数据的格式
+                            var result = "";  //  定义变量接收
+                            if(ctype.indexOf("xml") > -1){ // 如果是xml数据
+                                result = xhr.responseXML;   //把响应回来的xml赋值给result变量 
+                            }else if(ctype.indexOf("json") > -1){ // 如果是xml数据
+                                result = JSON.parse(xhr.responseText); // JSON.parse() 这个方法可以把json格式字符串转成json对象
+                            }else { // 否则就是普通文本
+                                result = xhr.responseText;//把响应回来的内容赋值给result变量 
+                            }
+                            console.log(result)
+                            // 处理XML格式数据
+                            var root = result.querySelector("root");
+                           var uname =  root.querySelector("zhoujielun").innerHTML;// 获取储存在xml标签的数据
+                           var work =  root.querySelector("job").innerHTML; // 获取储存在xml标签的数据
+                            document.getElementsByClassName("name")[0].innerHTML = uname; // 获取页面标签并设置标签文本
+                            document.getElementsByClassName("work")[0].innerHTML = work;  // 获取页面标签并设置标签文本
+                    }
+            }
+        
+        
+        </script>
+</body>
+</html>

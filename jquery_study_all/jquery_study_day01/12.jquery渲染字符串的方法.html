@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .item {
+                width: 600px;
+                height: 80px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+            }
+    
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+            <!--  渲染字符串 -->
+    </div>
+
+    <button class="btn">渲染字符串</button>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+            // 入口函数
+           $(function(){
+                    // 定义一个索引值
+                    var  index  = 0 ;
+                    // 定义空字符串
+                    var str = "";
+                     //  给按钮绑定事件
+                    $("button.btn").click(function(){
+                             index ++;
+                             str+= "<div class='item'>我是第 "+index+"个div标签</div>"
+                            // html 
+                            $(".container").html(str); // 把拼接好的字符串渲染在页面
+                    })
+           })
+   </script>
+
+</body>
+</html>

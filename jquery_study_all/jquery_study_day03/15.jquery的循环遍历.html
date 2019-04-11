@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            ul {
+                list-style: none;
+            }
+            ul li {
+                padding: 10px 20px;
+                border: 1px solid #ccc;
+                float: left;
+            }
+    </style>
+</head>
+<body >
+
+    <ul>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+        <li><span>0</span></li>
+    </ul>
+
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            // js
+            // for(var i = 0 ; i < arr.length ; i++){}
+            // for(var key in data){}
+            // while(){}
+            // do{} while()
+
+            $(function(){
+                // 1. 写法
+                // .each()  循环
+                // 调用者 ：  $("ul li")
+                // 参数 ：匿名函数 形参 （key , 数组每个元素）
+                // $("ul li").each(function( i  , dom ){
+                //         //    console.log($(this))
+                //         //    $(this).html()
+                //         console.log("index:" + i) // 索引值
+                //         console.log(dom)
+                //         var num = rd(99,10);// 返回两位数的随机数
+                //    $(dom)  转jquery元素对象
+                //         $(dom).html( num ) 
+                // })
+                
+                // 2. 写法
+                var obj =  $("ul li");
+                // 调用者 ： $
+                // 参数 ： 1. 数组/对象 2. 匿名函数 （key , 数组每个元素）
+                $.each(obj , function(index , item ){
+                        console.log(index)
+                        //  item 直接就是js元素对象
+                        console.log(item)
+                        item.innerHTML = rd(99,10)
+                })
+
+                // 随机数
+                function rd(max , min){
+                        return Math.round(Math.random()*(max-min)+min)
+                }
+            })
+    </script>
+</body>
+</html>

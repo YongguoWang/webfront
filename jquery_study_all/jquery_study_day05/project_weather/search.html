@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport :视口容器  -->
+    <!-- width=device-width ：当前的设备浏览器宽度   -->
+    <!--  initial-scale=1.0 ：初始化的缩放比 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 默认采用最新的浏览器渲染引擎 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索页</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div class="yg_search">
+            <div class="yg_search_header">
+                <h3>天气查询</h3>
+            </div>
+            <div class="yg_search_box">
+                <input type="text" class="search_inp">
+                <button class="search_btn">查询</button>
+            </div>
+            <div class="yg_search_result">
+                <!-- <h3>广州市</h3>
+                <ul>
+                    <li>20°~30°</li>
+                    <li>东南风</li>
+                    <li><img src="http://api.map.baidu.com/images/weather/day/xiaoyu.png" alt=""></li>
+                    <li><img src="http://api.map.baidu.com/images/weather/night/xiaoyu.png" alt=""></li>
+                </ul> -->
+            </div>
+            <div class="yg_search_more ">
+                <div class="more_btn">
+                    <a href="detail.html?">查询更多..</a>
+                </div>
+            </div>
+    </div>
+
+
+    <!-- jquery  -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="js/search.js"></script>
+    <!-- template-native.js -->
+    <script src="libs/template/template-native.js"></script>
+    <!-- 定义模板 -->
+    <script type="text/template" id="templateId">
+        <h3><%=str%></h3>
+        <ul>
+                <li><%=result.date%></li>
+                <li><%=result.temperature%></li>
+                <li><%=result.weather%></li>
+                <li><%=result.wind%></li>
+                <li><img src="<%=result.dayPictureUrl%>" alt=""></li>
+                <li><img src="<%=result.nightPictureUrl%>" alt=""></li>
+        </ul>
+    
+    </script>
+</body>
+</html>

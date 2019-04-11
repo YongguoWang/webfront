@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            width: 500px;
+            /* height: 200px; */
+            background-color: #ccc;
+            margin: 0 auto;
+        }
+        ul li {
+            height: 38px;
+            line-height: 38px;
+            border-bottom: 2px solid #d8505c;
+
+            position: relative; /* 父元素 相对*/
+        }
+
+        ul li span {
+            display: block;
+            width: 120px;
+            height: 28px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 28px;
+            color: #666;
+            font-size: 13px;
+            cursor: pointer;
+
+            position: absolute;
+            right: 10px;
+            top:5px ;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>软件行业<span data-id="0" class="del_btn">Delete</span></li>
+        <li>金融行业<span data-id="1" class="del_btn">Delete</span></li>
+        <li>医疗行业<span data-id="2" class="del_btn">Delete</span></li>
+        <li>五金行业<span data-id="3" class="del_btn">Delete</span></li>
+        <li>养殖行业<span data-id="4" class="del_btn">Delete</span></li>
+    </ul>
+    
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+             // 入口函数
+            $(function(){
+                    // js 
+                    // removeChild( dom )
+                    // 需求：
+                    // 1.0 点击删除按钮，删除指定的li标签
+                    // 
+                    $("ul li").find("span").click(function(){
+
+                            // a.获取删除按钮的自定义属性值 data-id 
+                            // b.调用 ajax() 方法
+                            // c. 后端响应一个字段，告诉前端，当前的数据记录是否删除成功 例如：   .status_code == 10001 表示删除成功
+                            // d. 根据后端的字段，判断是否移除当前的li标签
+
+                            // remove()
+                            // var res =  $(this).parent("li").remove();
+                            // console.log(res)
+                            $(this).parent("li").remove();
+                    })
+
+
+                    // empty()  .html("")
+            })
+    </script>
+</body>
+</html>

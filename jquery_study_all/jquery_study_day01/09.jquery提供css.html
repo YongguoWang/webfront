@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: #ccc;
+            }
+    </style>
+</head>
+<body>
+    
+
+    <div class="box"></div>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+    //  jquery  包含有许多已经封装好的方法。
+    //  使用jquery 提供的方法
+            // 1. 调用者
+            // 2. 参数
+            // 3. 返回值
+            // 4. 功能
+        
+            //步骤 ：
+                $(function(){
+                        // a. 获取事件源 
+                        //  1. 调用者  $(".box")    2. 参数属性名 ， 属性值  3. 返回值jquey元素对象  4. 设置页面元素的样式  
+                        $(".box").css('backgroundColor','red'); // 单一属性
+
+                        // 多个属性    2. 参数 {属性名: 属性值，属性名: 属性值，属性名: 属性值}
+                        $(".box").css({
+                            width:"200px",
+                            height:"200px",
+                            borderRadius:"50%"
+                        })
+                })
+    
+    </script>
+</body>
+</html>

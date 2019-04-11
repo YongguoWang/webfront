@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .list {
+            width: 600px;
+            margin: 0 auto;
+            height: 900px;
+            background-color: #ccc;
+            padding: 20px;
+        }
+        .list .item {
+            width: 100%;
+            text-align: center;
+        }
+        .click_btn {
+            width: 600px;
+            height: 40px;
+            background-color: #ddd;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <div class="box">
+             <!-- <div class="item">
+                <img src="" alt="">
+                <p></p>
+            </div> -->
+        </div>
+        <button class="click_btn">点击加载</button>
+    </div>
+
+    <script>
+
+        // 步骤：
+            // 1.0 获取box盒子以及按钮
+            var box = document.querySelector(".box");
+            var btn = document.querySelector(".click_btn");
+            // 3.0.9 定义字符串
+            var htmlStr = "";
+            // 3.0.4 定义索引值
+            var index = 0;
+            // 2.0 绑定事件
+            btn.onclick = function(){
+                if(index > 2){ return ; }
+                // 3.0 处理逻辑
+                // ajax编程
+                // 3.0.1 实例化XMLHttpRequest()对象
+                var xhr = new XMLHttpRequest();  // ActiveXobject()
+                // 3.0.3 请求地址
+                var url = "http://127.0.0.1/ajax_day02/server/01.demo.php?page="+index;
+                // 3.0.2 发起请求
+                xhr.open('get',url,true);
+                // 3.0.5 发送请求主体
+                xhr.send(null);
+                // 3.0.6 监听请求和响应的状态
+                xhr.onreadystatechange = function(){
+                    //3.0.7 监听请求响应状态
+                    if(xhr.readyState ==  4 && xhr.status == 200){
+                          var data = JSON.parse(xhr.responseText); // 3.0.8 服务端影响返回来的内容
+                          console.log(data)
+                          htmlStr+='  <div class="item"><img src="'+data.src+'" alt=""><p>'+data.text+'</p></div>'; //3.10 拼接好字符
+                          box.innerHTML = htmlStr;// 渲染盒子
+                    }
+                }
+
+                index++; 
+            }
+    
+    
+    
+    </script>
+  
+</body>
+</html>

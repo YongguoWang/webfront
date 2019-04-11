@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+
+    <select id="provincesId">
+        <option value="">---请选择省份---</option>
+    </select>
+
+    <select id="cityId">
+            <option value="">---请选择城市---</option>
+    </select>
+        
+    
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+
+            //  省市联动
+            //  json 
+            // .append() .html()
+            // .change()
+            
+             // 入口函数
+            $(function(){
+
+                //  json  
+                // github.com
+                var data = [
+                    {
+                        "provinces":"广东省",
+                        "citys":[
+                            {
+                                "name":"广州市"
+                            },
+                            {
+                                "name":"深圳市"
+                            },
+                            {
+                                "name":"东莞市"
+                            }
+                        ]
+                    },
+                    {
+                        "provinces":"广西省",
+                        "citys":[
+                            {
+                                "name":"南宁市"
+                            },
+                            {
+                                "name":"百色市"
+                            },
+                            {
+                                "name":"桂林市"
+                            }
+                        ]
+                    },
+                    {
+                        "provinces":"江西省",
+                        "citys":[
+                            {
+                                "name":"九江市"
+                            },
+                            {
+                                "name":"新余市"
+                            },
+                            {
+                                "name":"上饶市"
+                            }
+                        ]
+                    }
+                ]
+
+                // 1.0 渲染省份
+                var provinceStr = "";
+                for(var i = 0 ; i < data.length ; i++){
+                    provinceStr += '<option value="'+data[i].provinces+'">'+data[i].provinces+'</option>'
+                }
+                $("#provincesId").append(provinceStr);
+
+                // 2.0 选择城市
+                // .change()   select标签的值发生改变，触发该事件 
+                $("#provincesId").change(function(){
+                        // js .value
+                        // .val()
+                        var provinceVal = $(this).val();
+                        console.log(provinceVal)
+                        // 城市的字符串
+                        var cityStr = ' <option value="">---请选择城市---</option>';
+                        // 存放城市的数组
+                        var cityArr = [];
+                        // 3.0 查找省份下相应的城市
+                        for(var  j = 0 ; j < data.length ; j++){
+                            if(provinceVal == data[j].provinces){ //  寻找省份下的城市
+                                cityArr =data[j].citys;
+                            }
+                        }
+                        for(var k = 0 ; k < cityArr.length ; k++){
+                            cityStr+=' <option value="">'+cityArr[k].name+'</option>'
+                        }
+                        console.log(cityStr)
+                        // 4.0 渲染城市
+                        $("#cityId").html(cityStr)
+                        // $("#cityId").append(cityStr)
+                })
+            })
+    </script>
+</body>
+</html>

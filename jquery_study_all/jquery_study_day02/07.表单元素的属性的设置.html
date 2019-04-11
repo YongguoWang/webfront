@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <!-- 数据提交的途径： -->
+    <!-- 表单提交 -->
+    <!-- ajax提交 -->
+    <form action="" method="">
+
+            <input type="checkbox" class="item"> 打代码    <br>
+
+            <input type="checkbox" class="item"> 打豆豆    <br>
+
+            <input type="checkbox" class="item"> 打篮球    <br>
+
+            <input type="checkbox" class="all_select"> 全选
+
+    </form>
+    
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+             // 入口函数
+
+            //   attr()
+            $(function(){
+                    // var res  = $("input.all_select").prop("checked")
+                    // console.log(res)
+                    // .prop()
+                    $("input.all_select").click(function(){
+                        // 布尔值
+                           var flag =  $(this).prop("checked") // 获取
+                           console.log(flag)   // 因为你点击下去的时候，已经勾选了  所以为true
+                           if(flag){
+                                $(".item").prop("checked",true); //设置
+                                $(this).prop("checked",true)  
+                           }else {
+                                $(".item").prop("checked",false);
+                                $(this).prop("checked",false)
+                           }
+                    })
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <!-- <li> <span> </span> </li> -->
+    </ul>
+
+    <script src="../jquery/jquery.js"></script>
+    <script>
+            $(function(){
+            
+                $.ajax({
+                    url:"http://127.0.0.1/jquery_study_day04/server/04.demo.php",
+                    type:"get",
+                    dataType:"jsonp",
+                    jsonpCallback:"callback",
+                    success:function(data){
+                            console.log(data)
+                            var ul  = document.querySelector("ul");
+                            var str = "<li> 名称 ：<span> "+data.name+" </span>价格 ： <span> "+data.price+" </span> 详情：<span> "+data.des+" </span> </li>"
+                            ul.innerHTML = str;
+                    },
+                    error:function(err){
+                        console.log(err)
+                    }
+                })
+
+
+                //  XMLHttpRequest() 这个对象不支持跨域 
+                // $.ajax({
+                //     url:"http://127.0.0.1/jquery_study_day04/server/04.demo.php",
+                //     type:"get",
+                //     data:{},
+                //     async:true,
+
+                //     success:function(data){
+                //         console.log(data)
+                //     },
+                //     error:function(err){
+                //         console.log(err)
+                //     }
+                // })
+
+
+            })
+    </script>
+</body>
+</html>

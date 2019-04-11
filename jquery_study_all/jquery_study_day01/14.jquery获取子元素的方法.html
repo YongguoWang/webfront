@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        ul li {
+            width: 80px;height: 80px;border: 1px solid #ccc;float: left;list-style: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+             // 入口函数
+            $(function(){
+                    //  获取了ul下所有的li标签，设置粉红色背景  
+                    // jquery (链式编程  、隐式迭代)
+                    // 链式编程 :主要是因为调用children() 返回值 是页面元素 ； 
+                    // 隐式迭代 ：主要是封装jquery的时候，已经遍历过 指定盒子下所有子元素
+                    var res = $("ul").children().css("backgroundColor","pink");
+                    console.log(res)
+                    //  for(var i = 0 ; i < aLi.length ; i++ ){ aLi[i].style.backgroundColor="pink"}
+            })
+    </script>
+</body>
+</html>

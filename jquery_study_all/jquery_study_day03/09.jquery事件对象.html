@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: #ccc;
+            }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+        //  $()
+        // foo()
+            $(function(){
+                    // 事件的绑定
+                    $(".box").on('click',function(event){
+                            console.log(event) // 事件对象：包含许多的属性和方法的集合。
+                    })
+
+
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .btn {
+                width: 180px;
+                height: 40px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn start_btn">开始动画</button>
+    <button  class="btn end_btn">结束动画</button>
+
+    <div class="box"></div>
+    
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+             // 入口函数
+            $(function(){
+                    // .stop()  参数：
+                    $(".start_btn").click(function(){
+                          $(".box").animate({"marginLeft":"500"},500).slideUp(1000).show(2000)
+                    })
+
+                    $(".end_btn").click(function(){
+                        // .stop(true)   立即停止当前的动画
+                        $(".box").stop(true)  
+                         // .stop(false)  停止当前的动画，还执行后续的动画
+                        //  $(".box").stop(false)
+                          // .stop(true,true) 立即完成当前的动画 ，停止后续的动画
+                        //   $(".box").stop(true , true)
+                           // .stop(true ,false) // 停止当前的动画，不执行后续动画
+                        //    $(".box").stop(true,false)
+                            // .stop(false,false)  // 停止当前的动画，还执行后续的动画
+                            // $(".box").stop(false,false)
+                            // .stop(false,true) // 立即完成当前动画，还执行后续的动画
+                            // $(".box").stop(false,true)
+                    })
+
+
+
+            })
+    </script>
+</body>
+</html>

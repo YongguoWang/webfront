@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 500px;margin-left: 100px;
+        }
+        ul li {
+            width: 500px;height: 40px;border-bottom: 1px solid #ccc;
+        }
+    
+    </style>
+</head>
+<body>
+    
+
+    <ul class="list">
+        <li class="box">菜单1</li>
+        <li id="boxId">菜单2</li>
+        <li>菜单3</li>
+        <li data-item="01">菜单4</li>
+        <li>菜单5</li>
+    </ul>
+
+    <input type="text" placeholder="tips..">
+
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+    // 1.0 入口函数
+    // $ 这是什么鬼？ 美元符号  它是一个函数  
+    //  function $( ){}
+    $(function(){
+            // 2.选择器 
+            // 2.0.1标签选择器
+            $("ul").css('backgroundColor','skyblue');
+            //2.0.2 类名选择器
+            $(".box").css('borderBottom',"1px solid red");
+             //2.0.3 id选择器
+             $("#boxId").css('backgroundColor','green')
+            //  2.0.4 伪类选择器
+            $("ul li:nth-child(3)").css('backgroundColor','lightgreen')
+            //  2.0.5 属性选择器
+            $("input[type='text']").css("backgroundColor",'pink')
+                 //  2.0.5 属性选择器
+            $("li[ data-item='01']").css("backgroundColor",'pink')
+    })
+    </script>
+</body>
+</html>

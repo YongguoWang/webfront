@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 200px;
+                height:200px;
+                background-color: red;
+            }
+            .btn {
+                width: 198px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                cursor:pointer;
+            }
+    </style>
+</head>
+<body>
+
+
+    <div class="box"></div>
+    <div class="btn">点击一下</div>
+    
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            $(function(){
+                    // 步骤 ：
+                    // $(".btn").click(function(){})
+                    $(".btn").bind('click' , function(){
+                            // console.log("test")
+                            // 改变盒子的css样式
+                            // $(".box").css({
+                            //         // borderRadius:"50%"
+                            //         backgroundColor:"green"
+                            // })
+                            $(".box").animate({
+                                borderRadius:"50%"
+                            },1000,function(){
+                                    $(".box").css({
+                                            // borderRadius:"50%"
+                                            backgroundColor:"green"
+                                    })
+                            })
+
+                            // animate() 
+                            //备注 ： jquery里animate这个方法没有封装背景色颜色属性！
+                    })
+            })
+    </script>
+</body>
+</html>

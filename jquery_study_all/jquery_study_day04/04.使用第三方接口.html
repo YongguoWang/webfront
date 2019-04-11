@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="http://hq.sinajs.cn/list=sh601006"></script>-->
+</head>
+<body>
+
+
+<script src="jquery/jquery.js"></script>
+<script>
+
+    $.ajax({
+        url:"https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=wise_web&sugsid=1457,21125,28775,28724,28557,28585,28604,28627,28605&req=2&csor=3&pwd=aa&cb=jQuery110204238026639926116_1554369540313&_=1554369540319",
+        type:"get",
+        data:{
+            wd:"衣服"
+        },
+        dataType:"jsonp",
+
+
+        jsonpCallback:"wangyongguo", // 自定义回调函数的名称
+        jsonp:"cb",// 。。。。？？？
+
+        success:function(data){
+            console.log(data)
+        },
+        error:function(err){
+            console.log(err)
+        }
+    })
+
+//        var el = document.createElement("script");
+////        el.src="http://hq.sinajs.cn/list=sh601006";
+//        el.src="http://hq.sinajs.cn/list=sh601006";
+//        // 往head标签添加script
+//        var head = document.getElementsByTagName("script")[0];
+//        head.appendChild(el);
+
+//        console.log(hq_str_sh601006);
+
+//https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=wise_web&sugsid=1457,21125,28775,28724,28557,28585,28604,28627,28605&req=2&csor=3&pwd=aa&cb=jQuery110204238026639926116_1554369540313&_=1554369540319
+
+//    &wd=aaa
+</script>
+
+
+</body>
+</html>

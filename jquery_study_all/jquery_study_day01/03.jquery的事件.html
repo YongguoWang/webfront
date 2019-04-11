@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 120px;
+                height: 30px;
+                border-radius: 15px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                text-align: center;
+                line-height: 30px;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="box btn"> 按钮 </div>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        // 1.0 先写入口函数
+        $(function(){
+                // 2.0 获取事件源
+                $(".btn").click(function(){
+                    // 3.0 处理逻辑
+                    //  此处的this 不是事件调用者 ， $(this)才是事件调用者 
+                    // 设置按钮的样式
+                    $(this).css('backgroundColor',"red");
+                    $(this).css('color',"#fff");
+                })
+        })
+    
+    </script>
+</body>
+</html>

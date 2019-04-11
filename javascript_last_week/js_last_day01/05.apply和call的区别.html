@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        // 函数 add()
+        // 对象 Add()
+
+        // 构造加法对象
+        function Add(a,b){
+            this.aaa = a ;
+            this.bbb = b;
+            this.sayHello = function(m,n){
+                // console.log("这是apply---数组的第一个元素---"+m)
+                // console.log("这是apply---数组的第二个元素--"+n)
+                console.log("这是call -----第一元素--"+m);
+                console.log("这是call -----第二元素--"+n);
+                console.log("我是加法函数对象的sayHello");
+                console.log(this)
+                // this.foo(); // 
+                return this.aaa + this.bbb;
+            }
+            this.loading = function(){
+                console.log("这是加法对象下的loading函数")
+            }
+
+        }
+
+
+        //构造减法对象
+        function Sub(x,y){
+            this.xxx = x ;
+            this.yyy = y;
+            this.sayHello = function(){
+                console.log("我是减法对象的sayHello");
+                return this.xxx - this.yyy;
+            }
+            this.foo = function(dom , target){
+                console.log("我是减法对象的foo");
+                console.log(this)
+                // this.loading();
+            }
+        }
+
+        // 创建加法的实例
+        var add = new Add(1,2);
+        // 创建减法的实例
+        var sub = new Sub(5,1);
+
+        // apply  参数：1 对象（实例） 2. 数组   功能 ： 改变this指向
+        // add.sayHello(); // this 指向add()实例
+        console.log("=========================================")
+        // add.sayHello.apply(sub,[100,99]);
+
+        // call 参数：1对象（实例） 2.单一的元素
+        // add.sayHello.call(sub,88,77);
+        sub.foo.call(add,"div",1000); // 调用减法对象下的foo函数，改变this指向 ，指向了add(实例)，参数是单一的
+
+
+        
+        
+    </script>
+    
+</body>
+</html>

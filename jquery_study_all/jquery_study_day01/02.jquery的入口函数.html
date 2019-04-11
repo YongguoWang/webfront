@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+    
+    </style>
+
+    <script>
+        // 加载事件
+        // window.onload = function(){
+        //     var el = document.querySelector(".box");
+        //     console.log(el)
+        // }
+     
+
+    </script>
+</head>
+<body>
+    
+    <div class="box"></div>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        // 入口函数
+        // 1.0 
+        // $(function(){
+        //        var $dom =   $(".box");
+        //        console.log($dom)
+        // })
+        // $(function(){
+        //        var $dom =   $(".box");
+        //        console.log($dom)
+        // })
+
+        // 2.0 
+        $(document).ready(function(){
+            var $dom =   $(".box");
+            console.log($dom)
+        })
+    </script>
+</body>
+</html>

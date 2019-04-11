@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+            .box {
+                width: 100px;height: 100px;background-color: red;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="box box1"></div>
+
+    <script>
+
+        // 1.0 构造函数（对象）
+        function Box(){
+            this.box = document.querySelector(".box1");
+            this.index = 0;
+        }
+        // 2.0 原型 （对象） 拓展一个方法
+        Box.prototype.addEvent = function(){
+            this.color = "blue";
+            // this   A  指向谁？ Box对象 和 Box原型
+            // 记录 this A  
+            // var _this = this ;
+            var that = this;
+            this.box.onclick = function(){
+                    //this  B 指向谁 ？ 事件的调用者 div.box1
+                    this.style.backgroundColor = that.color;
+            }
+        }
+        // 3.0 实例
+        var b = new Box();
+        // 
+        b.addEvent();
+
+
+    
+    
+    </script>
+    
+</body>
+</html>

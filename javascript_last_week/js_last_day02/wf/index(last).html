@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .container .box {
+            width: 100%;
+            position: relative;
+        }
+        .container .box ul li {
+            width: 230px;
+            border: 1px solid #ccc;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* .container .box ul li img {
+            height: 250px;
+        }
+        .container .box ul li:nth-child(2n) img {
+            height: 350px;
+        }
+        .container .box ul li:nth-child(3n) img {
+            height: 450px;
+        } */
+
+        .container .box ul li img {
+            width: 230px;
+        }
+        .container .box ul li p {
+            padding: 5px 10px;
+        }
+        .container .box ul li:hover p {
+            box-shadow: 0 2px 2px #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <ul>
+               <!--  渲染 -->
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <script src="./js/template.js"></script>
+    <script type="text/template" id="templateId">
+        <%for (var i = 0 ; i < result.length;i++) {%>
+            <li>
+                    <img src="<%=result[i].path%>" alt="">
+                    <p><%=result[i].text%></p>
+            </li>
+        <%}%>
+    </script>
+    <script src="js/main.js"></script>
+
+
+    <script>
+        // 1.0 获取images目录下所有图片的高度
+        var imgHeight = [283,167,368,350,177,460,364,307,362,285,167,275,460,398,333,824,526,341,339,472,750,460,391,329,345,459,613,766,460,460,696,306,528,305,323,344,479,296,327,300,306,366,548,345,600,306,306,308,308,303,330,318,344,341,293,237,303,288,291,266,416,304,567,505,306,413,459,460,689,306,304,303,800,308,306,253,255,460,389,689,459,370,302,287,315,258,459,306,304,306,499,526,308,480,460,306,384,306,305,306,600,382,335,341,335];
+        // 2.0 获取data.json文档的内容
+        var xhr = new XMLHttpRequest();
+        // 2.0.1 发起请求
+        xhr.open('get','./data.json',true);
+        // 2.0.2 发送请求主体
+        xhr.send(null);
+        // 2.0.3 监听请求和响应
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                var res = xhr.responseText;
+                var data = JSON.parse(res);
+                // console.log(data)
+                // 3.0 调用模板函数
+                var str = template("templateId",{result:data});
+                // console.log(str)
+                // 4.0 渲染页面
+                document.querySelector(".box ul").innerHTML = str;
+                // 5.0获取所有的img标签
+                var aImg = document.querySelectorAll(".box ul li img");
+                // 6.0 遍历高度数组
+                for(var j = 0 ; j < imgHeight.length ; j++){
+                    aImg[j].style.height = imgHeight[j]+"px"; // 设置每一个img标签的高度
+                }
+                // 8.0 获取所有的li标签
+                var items = document.querySelectorAll(".box ul li");
+                // 7.0 调用瀑布流插件
+                var wf =  new  WaterFall({
+                    width:232,
+                    columnCount:5,
+                    distance:10,
+                    aLi:items
+                });
+                wf.init();
+            }
+        }
+    
+    </script>
+    
+</body>
+</html>

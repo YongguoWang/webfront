@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        // 1.0 构造函数
+        function Person(){
+            this.name = "小红"
+        }
+        // 2.0 原型
+        Person.prototype.init = function(){
+            console.log("init"+this.name)
+        }
+        // 3.0 实例
+        var p = new Person();
+        // p.__proto__ ==  Person.prototype ;
+        //  __proto__
+
+        // 4. 构造另外一个对象
+        function Cat(){
+            this.color = "黑色的猫"
+        }
+        // 5.0 原型
+        Cat.prototype.say = function(){
+            console.log(this.color)
+        }
+        // 6.0 实例
+        var cat = new Cat();
+        cat.__proto__ = p; // 注意：继承了Person对象的属性和方法，抛弃了Cat的属性和方法
+
+        cat.init();
+        // cat.say(); 此刻 Cat对象的实例不再拥有 Cat下的属性和方法
+
+
+
+    
+    
+    
+    </script>
+    
+</body>
+</html>

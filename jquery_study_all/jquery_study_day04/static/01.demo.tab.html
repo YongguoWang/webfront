@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .tab {
+                width: 600px;
+                height: 50px;
+                background-color: #ccc;
+            }
+            .tab ul {
+                list-style: none;
+            }
+            .tab ul li {
+                width:200px;
+                height: 50px;
+                float: left;
+                text-align: center;
+                line-height: 50px;
+                border-bottom: 1px solid #fff;
+            }
+            .tab ul li:hover {
+                background-color: #ddd;
+            }
+            .content {
+                width: 600px;
+                height: 300px;
+                background-color: #ccc;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="tab">
+        <ul>
+            <li data-id="0">首页</li>
+            <li data-id="1">案例</li>
+            <li data-id="2">联系</li>
+            <!-- <li data-id=""></li> -->
+        </ul>
+    </div>
+    <div class="content">
+
+    </div>
+
+
+    <div>整个页面刷新了吗？没有！因为是ajax请求。局部刷新</div>
+    
+    <script src="../jquery/jquery.js"></script>
+    <script>
+            $(function(){
+                    // 步骤:
+                    // 1.0 事件源
+                    $(".tab ul li").click(function(){
+                        // 2.0 获取自定义属性值   
+                        // attr 获取属性值
+                        var rid = $(this).attr("data-id");
+                        // 3.0 是否获取data-id的值
+                        if(rid){
+                                // 4.0 调用jquery 下的 ajax  ( 同源策略  协议，域名 ，端口，三者一致)
+                                $.ajax({
+                                    url:"http://127.0.0.1/jquery_study_day04/server/01.demo.php",
+                                    type:"get",
+                                    data:{
+                                        index:rid //此处传参给服务端
+                                    },
+                                    async:true,
+                                    success:function(data){
+                                        console.log(data)
+                                        // 接收服务响应的数据
+                                        var bgColor = data;
+                                        // 设置.content盒子的背景色
+                                        $(".content").css("backgroundColor",bgColor);
+                                    },
+                                    error:function(err){
+                                        console.log("拿不到数据，检查你的代码！");
+                                    }
+                                })
+                        }
+
+                    })
+            })
+    
+    </script>
+</body>
+</html>

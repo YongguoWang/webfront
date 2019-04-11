@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            ul li {
+                    float: left;
+                    width: 232px;
+                    border: 1px solid #ccc;
+                    margin-left: 10px;
+            }
+            ul li img {
+                width: 232px;
+            }
+    
+    </style>
+</head>
+<body>
+
+    <ul>
+       <!-- 渲染 -->
+    </ul>
+    
+
+    <script src="jq_v.0.0.2.js"></script>
+    <script>
+
+        // 老三步
+        // 1.0 获取相关的元素
+        var list = document.querySelector('ul');
+    
+        // var xhr = new XMLHttpRequest();
+        // // xhr.open('get','../server/data.xml',true);
+        // xhr.open('get','../server/data_xml_demo.php',true);
+        // xhr.send(null);
+        // xhr.onreadystatechange = function(){
+        //     if(xhr.readyState == 4 && xhr.status == 200){
+        //         var res1 =  xhr.responseText;
+        //         console.log(res1)
+        //         console.log("--------")
+        //         var res2 = xhr.responseXML;
+        //         console.log(res2)
+        //     }
+        // }
+
+        ajax({
+            type:'get',
+            url:"http://127.0.0.1/ajax_day02/server/data_xml_demo.php",
+            data:{},
+            async:true,
+            success:function(data){
+                console.log(data)
+                // 剖析一下数据
+               var root =  data.querySelector("root");
+               var items = root.querySelectorAll("item");
+                //    定义一个字符串
+                var str = "";
+               console.log(items)
+               for(var i = 0 ; i < items.length ;i++){
+                    var src=  items[i].querySelector("image").innerHTML; //获取储存在xml标签里的数据
+                    var txt=  items[i].querySelector("text").innerHTML; //获取储存在xml标签里的数据
+                    console.log(txt)
+                    str+="<li><img src='"+src+"' alt=''><p>"+txt+"</p></li>";//拼接字符串
+               }
+               //渲染在ul标签
+               list.innerHTML = str;
+            },
+            error:function(err){
+                console.log(err);
+            }
+        })
+        
+    </script>
+</body>
+</html>

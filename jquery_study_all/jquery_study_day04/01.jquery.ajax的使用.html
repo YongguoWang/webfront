@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+            $(function(){
+                        // 1.0 请求数据的地址
+                        // 2.0 请求数据的方式
+                        // 3.0 是否异步
+                        // 4.0 提交到服务端的参数
+                        // 5.0 请求成功，执行的回调函数  success
+                        // 6.0 请求失败，执行的回调函数  error
+                        
+                        // jquery  里编写好的ajax方法 
+                        // 重点 ： 把参数记住了，理解了
+                        $.ajax({
+                            url:"./data/data.txt",
+                            type:"get",
+                            async:true,
+                            data:{},
+                            success:function(data){
+                                    console.log(data)
+                            },
+                            error:function(err){
+                                   console.log(err)
+                            }
+                        })
+            })
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+.yg_search .yg_search_header {
+  width: 100%;
+  height: 50px;
+  background-color: #333333;
+  text-align: center;
+  line-height: 50px;
+}
+.yg_search .yg_search_header h3 {
+  color: #fff;
+}
+.yg_search .yg_search_box {
+  width: 100%;
+  height: 40px;
+  background-color: skyblue;
+}
+.yg_search .yg_search_box .search_inp {
+  width: 180px;
+  float: left;
+  height: 30px;
+  outline: none;
+  border: 0;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.yg_search .yg_search_box .search_btn {
+  width: 80px;
+  float: left;
+  height: 30px;
+  outline: none;
+  border: 0;
+  margin-top: 5px;
+}
+.yg_search .yg_search_result {
+  width: 100%;
+}
+.yg_search .yg_search_result h3 {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.yg_search .yg_search_result ul {
+  width: 100%;
+}
+.yg_search .yg_search_result ul li {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+.yg_search .yg_search_result ul li img {
+  vertical-align: middle;
+}
+.yg_search .yg_search_more {
+  text-align: center;
+  margin-top: 50px;
+  display: none;
+}
+.yg_search .yg_search_more .more_btn a {
+  display: block;
+}
+/* 详情页 */
+.yg_detail {
+  width: 100%;
+}
+.yg_detail .yg_detail_header {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #333;
+}
+.yg_detail .yg_detail_header h3 {
+  color: #fff;
+}
+.yg_detail .yg_detail_list {
+  padding: 10px 15px;
+  background-color: #ccc;
+}
+.yg_detail .yg_detail_list .yg_detail_list_items {
+  width: 100%;
+}
+.yg_detail .yg_detail_list .yg_detail_list_items li {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-top: 10px;
+}
+.yg_detail .yg_detail_list .yg_detail_list_items li .item {
+  line-height: 26px;
+  padding: 5px 0 ;
+  text-align: center;
+}
+.yg_detail .yg_detail_list .yg_detail_list_items li .item img {
+  vertical-align: middle;
+}
+.yg_detail .yg_detail_city {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f0f0f0;
+  text-align: center;
+}

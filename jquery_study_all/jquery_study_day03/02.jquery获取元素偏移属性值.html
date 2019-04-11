@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+
+                border: 2px solid  blue;
+                padding: 10px 5px;
+
+                margin-left: 300px;
+                margin-top: 100px;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+
+            //  js
+            //  offsetTop
+            // offsetLeft
+
+            $(function(){
+                    // .offset()
+                    // 1.调用者  2.参数  3. 返回值 4.功能
+                    
+                    // 返回值 : 对象 
+                   var res = $(".box").offset();
+                   console.log("offsetTop:"+res.top)
+                   console.log("offsetLeft:"+res.left)
+
+                var w = $(".box").width(); // 是元素的css属性 width 的值
+                var h = $(".box").height();
+
+                console.log("w:"+w)
+                console.log("h:"+h)
+
+                var w2 = $(".box").outerWidth(); // 包括元素的边框 + 内边距 + 宽（width）
+                console.log("w2:"+w2)
+
+                var w3 = $(".box").innerWidth(); // 包括元素 + 内边距 + 宽（width）
+                console.log("w3:"+w3)
+
+            })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        var aaa = "xiaohong";
+    
+    </script>
+
+    
+</head>
+<body>
+    
+
+
+    <script>
+
+        //1.0 动态创建script标签
+        var createEle = document.createElement("script");
+        // 2.0 访问数据所在的地址
+        createEle.src="http://127.0.0.1/jquery_study_day04/server/03.demo.php";
+        // 3.0 获取head标签
+        var head = document.getElementsByTagName("head")[0];
+        // 4.0 往head标签添加创建的script
+        head.appendChild(createEle)
+
+
+
+                
+        function foo(data){
+                console.log(data)
+        }
+        
+    </script>
+</body>
+</html>

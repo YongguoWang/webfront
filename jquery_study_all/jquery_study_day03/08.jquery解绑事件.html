@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .btn {
+            display: block;
+            width:128px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor:pointer;
+            background-color: #fff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parent">
+        <div class="child1 btn"> BUTTON  1</div>
+    </div>
+    <div class="parent">
+            <div class="child2 btn"> BUTTON 2</div>
+        </div>
+    
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            $(function(){
+                    // 解绑事件  1 。 
+                    // // bind  
+                    // $(".child1").bind('click',function(){
+                    //     $(this).css("color","red")
+                    // })
+
+                    // $(".child2").click(function(){
+                    //     // unbind 
+                    //     console.log("child1调用了 ， unbind方法")
+                    //     $(".child1").unbind();
+                    // })
+
+                    // 解绑事件 2。 
+                    // on 
+                    // $(".child1").on("click" , function(){
+                    //     $(this).css("backgroundColor","blue")
+                    // })
+                    // $(".child2").click(function(){
+                    //     // off
+                    //     console.log("child1调用了 ， off方法")
+                    //     $(".child1").off();
+                    // })
+
+                       // 解绑事件3。 事件委托  delegate
+                        // delegate
+                        $(".parent").delegate(".child1" , "click" , function(){
+                            $(this).css("width","1000px")
+                        })
+                        $(".child2").click(function(){
+                            // undelegate
+                            console.log("child1调用了 ， undelegate方法")
+                            // $(".child1").undelegate('click');
+                            $(".parent").undelegate(".child1",'click');
+                        })
+
+            })
+    </script>
+</body>
+</html>

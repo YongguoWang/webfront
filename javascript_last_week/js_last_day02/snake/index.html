@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .map {
+                width: 100px;
+                height: 60px;
+                background-color: #ccc;
+                margin: 50px auto;
+            }
+            .map .row {
+                height: 20px;
+            }
+            /* .map .row:hover {
+                background-color: #f0f0f0;
+            } */
+            .map .row .col {
+                width:18px;
+                height: 18px;
+                border: 1px solid skyblue;
+                float: left;
+            }
+            .map .row .col.snake {
+                background-color: blue;
+            }
+            .map .row .col.egg {
+                background-color: red;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="map">
+        <!-- <div class="row">
+            <div class="col snake"></div>
+            <div class="col snake"></div>
+            <div class="col snake"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+        <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col egg"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div> -->
+    </div>
+
+
+    <script>
+        // 1.0 获取map标签
+        var map = document.querySelector(".map");
+        // 2.0 设置地图的宽度高度
+        var rowCount = 30; // 行数
+        var colCount = 30; // 列数
+        var distance = 20; // 格子的宽高
+        map.style.width = colCount * distance +"px";
+        map.style.height = rowCount * distance +"px";
+        // 4.0 定义空数组 （所有的格子 大数组）
+        var allDiv = [];
+        // 3.0 绘制网格状
+        for(var i = 0 ; i < rowCount ; i++){
+                // 5.0 定义行数组
+                var rowArr = [];
+                // 3.0.1 创建元素 （行）
+                var rowEle = document.createElement("div");
+                // 3.0.2 添加类名 row
+                rowEle.className = "row"; 
+                // 3.0.4 创建元素 （列）
+                for(var j = 0 ; j < colCount ; j ++){
+                    // 列
+                    var colEle = document.createElement("div");
+                    colEle.className = "col"; //添加类名 col
+                    // 6.0  往行数组添加（列）
+                    rowArr.push(colEle);
+                     // 3.0.5往行添加 （列）   
+                    rowEle.appendChild(colEle);
+                }
+                // 3.0.3 往map标签填充（行）
+                map.appendChild(rowEle)
+
+                // 7.0 往大数组里添加行数组
+                allDiv.push(rowArr);
+        }
+        console.log(allDiv)
+        // 8.0 设置蛇的身体
+        var snakeBody = [];
+        for(var k = 0 ; k < 3 ; k++){
+            allDiv[0][k].className = "col snake" ; // 蛇身体是蓝色
+            snakeBody.push(allDiv[0][k]);
+        }
+        // 9.0 设置蛇的参数
+        var x = 2 ;
+        var y = 0;
+        var isChange = true;
+        var direction = "right";
+        // 设置食物坐标
+        var eggx = 0 ;
+        var eggy = 0;
+        var timer = setInterval(move , 200);
+        // 10.移动的方向
+        // 键盘事件
+        document.onkeydown = function(evt){
+            // 处理上下左右按键 按下速度
+            if(!isChange){
+                return ;
+            }
+            // 事件对象
+            var event = evt || window.event ;
+            var keyCode = evt.keyCode; // 键值码（键盘每个按键对应的数值）
+            // keyCode  40 按下   38 按上  39 按右  37按左
+            if(direction == "right" && keyCode == 37 ){ // 当蛇往右边移动  ，按下向左按键无效
+                    return ; 
+            }
+            if(direction == "left" && keyCode ==39 ){ // 当蛇往左边移动  ，按下向右按键无效
+                    return ; 
+            }
+            if(direction == "down" && keyCode == 38 ){// 当蛇往下边移动  ，按下向上按键无效
+                    return ; 
+            }
+            if(direction == "up" && keyCode == 40 ){// 当蛇往上边移动  ，按下向下按键无效
+                    return ; 
+            }
+            switch(keyCode) { // 根据keyCode 判断 按下了那个按键（ 键盘的上下左右按键）
+                    case 40 : // 40 按下
+                            direction = "down" ;// 设置 direction 变量为 down
+                        break ;
+                    case 38://  38 按上
+                             direction = "up" ;     // 设置 direction 变量为up
+                        break;
+                    case 39://   39 按右
+                            direction = "right";    // 设置 direction 变量为right
+                        break;
+                    case 37: //37按左
+                            direction = "left";   // 设置 direction 变量为 left
+                        break;
+            }
+            console.log(direction)// 输出方向
+            isChange = false ; // 防止用户连续按方向的按键
+            //设置延迟
+            setTimeout(function(){
+                isChange = true;
+            },300)
+        }
+        // 11 .设置蛇移动的函数
+        function move(){
+                switch(direction){
+                        case "right":  // direction 变量为right的时候
+                                    x ++;   // 蛇往右边移动
+                                break ;
+                        case "left":
+                                    x --;   // 蛇往左边移动
+                                break ;
+                        case "down":
+                                    y++;   // 蛇往下边移动
+                                break ;
+                        case "up":
+                                    y --;   // 蛇往上边移动
+                                break ;
+                }
+                //14. 蛇移动的范围 
+                if( x < 0 || y < 0 || x >=colCount || y >= rowCount){
+                        alert("蛇碰墙壁了..");
+                        clearInterval(timer);
+                        return ;
+                }
+                //15. 蛇头碰到蛇身体
+                for(var a = 0 ; a < snakeBody.length; a++){
+                        if(snakeBody[a] == allDiv[y][x]){
+                                alert("蛇吃自己了。");
+                                clearInterval(timer);
+                                return ;
+                        }
+                }
+                // 16.处理蛇的身体 蛇与食物碰撞
+                if(x == eggx && y ==eggy ){
+                    snakeBody.push(allDiv[y][x]); // 把和食物坐标对应的格子添加到大数组
+                    allDiv[eggy][eggx].className = "col snake";//把食物的格子设置成蛇身体
+                    createFood();//重新创建食物
+                }else {
+                    snakeBody[0].className ="col";//把蛇身体第一个元素设置为普通格子
+                    snakeBody.shift(); // 数组 删除第一个元素
+                    snakeBody.push(allDiv[y][x])// 没吃到食物的时候，把下一个格子添加到蛇身体数组
+                }
+                allDiv[y][x].className ="col snake"; // 设置蛇移动
+        }
+        // 12. 随机产生一个数（指定范围）
+        function myRandom( max , min ){
+                // Math.random()*(max - min )+min;  // 带小数点
+              return  Math.round( Math.random()*(max - min )+min); //四舍五入
+        }
+        // var res = myRandom(colCount-1, 0)
+        // console.log(res)
+        // 13. 设置食物的坐标
+        function createFood(){
+            eggx = myRandom(colCount-1, 0); // 记录食物的x坐标
+            eggy = myRandom(rowCount-1, 0); //记录食物的y坐标
+            if(allDiv[eggy][eggx].className == "col snake"){ // 判断食物有没有在蛇身体上
+                createFood() // 是    重新创建食物
+            }else {
+                allDiv[eggy][eggx].className = "col egg";  // 否则   设置食物的类名
+            }
+        }
+        // 调用创建食物的函数
+        createFood()
+
+
+    
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+
+                position: absolute;
+                left: 100px;
+                top: 50px;
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+            $(function(){
+                    // .position()
+                    // 1.调用者  2.参数  3. 返回值 4.功能
+
+                    var res = $(".box").position(); //获取元素的定位属性的left top 的值
+                    console.log(res)
+            })
+    </script>
+</body>
+</html>

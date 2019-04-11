@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div.nav {
+            width: 1200px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+        div.nav ul {
+            list-style: none;
+        }
+        div.nav ul > li { /* 直接子代选择器*/
+            width: 180px;
+            float: left;
+            border-bottom: 1px solid #ccc;
+            margin-left: 10px;
+        }
+        div.nav ul > li span {
+            display: block;
+            width: 180px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            text-align: center;
+        }
+        div.nav ul > li  ol {
+            list-style: none;
+            display: none;
+        }
+        div.nav ul > li  ol li {
+            height: 40px;
+            background-color: pink;
+        }
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul class="clearfix">
+            <li>
+                <span>企业文化</span>
+                <ol>
+                    <li>技术部门文化</li>
+                    <li>行政部门文化</li>
+                    <li>市场部门文化</li>
+                </ol>
+            </li>
+
+            <li>
+                <span>合作伙伴</span>
+                <ol>
+                    <li>百度公司</li>
+                    <li>腾讯公司</li>
+                    <li>阿里巴巴</li>
+                </ol>
+            </li>
+
+            <li>
+                <span>成功案例</span>
+                <ol>
+                    <li>淘宝项目</li>
+                    <li>英雄联盟</li>
+                    <li>王者荣耀</li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        // 入口函数
+        $(document).ready(function(){
+            // 选中ul下的li（集合）
+            $(".nav ul li").mouseenter(function(){
+                $(this).find("ol") // 获取指定的li标签下的ol标签
+                .css("display","block") //设置当前鼠标悬停 ol 显示
+                .parent("li") // 找ol的父元素
+                .siblings("li") // 当前鼠标悬停的li标签的兄弟元素
+                .find("ol")//找到li兄弟元素下的ol
+                .css("display","none") // 把li兄弟元素下的ol 隐藏
+            })
+
+            // $(".nav ul li").mouseleave(function(){
+            //     $(this).find("ol").css("display","none");
+            // })
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var index = 10;
+        function foo(num){
+            if(num<0){
+                    return  ;
+            }else {
+                console.log("============递归之前======"+index+"==================")
+                 index --;
+                 console.log("============递归之后======"+index+"==================")
+                 foo(index);
+            }
+        }
+        foo(index);
+
+
+        
+
+    </script>
+</body>
+</html>

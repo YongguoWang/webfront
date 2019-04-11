@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+     <script src="../jquery/jquery.min.js"></script>
+    <!-- <script src="ajax.js"></script> -->
+    <script>
+
+            // $.ajax({
+            //     url:"https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=1457,21125,28775,28724,28557,28585,28604,28627,28605&wd=衣服&req=2&pbs=qq%E9%82%AE%E7%AE%B1&csor=4&pwd=qq11&cb=jQuery110208530107861649125_1554691565806&_=1554691565814",
+            //     dataType:"jsonp",
+            //     success:function(data){
+            //             console.log(data)
+            //     }
+            // })
+
+            // 同源策略
+
+            // $.ajax({
+            //     url:"http://127.0.0.1/jquery_study_day05/server/02.demo.php",
+            //     type:"get",
+            //     dataType:"text", // 响应回来的数据的格式 json
+            //     success:function(data){
+            //             console.log(data)
+            //     }
+            // })
+
+            // 跨域
+            $.ajax({
+                url:"http://127.0.0.1/jquery_study_day05/server/02.demo.php",
+                type:"get",
+                dataType:"jsonp", // 响应回来的数据的格式 json
+                jsonp:"cb", //callback
+                jsonpCallback:"foo",
+                success:function(data){
+                        console.log(data)
+                }
+            })
+    </script>
+</body>
+</html>

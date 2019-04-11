@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .btn {
+            width: 120px;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="btn btn_show">显示</div>
+    <div class="btn btn_hide ">隐藏</div>
+    <div class="box"></div>
+
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+        // 入口函数
+        $(function(){
+            // 1.0 获取页面的元素
+            $(".btn_hide").click(function(){
+                // 2.0 让.box隐藏
+                $(".box").hide("slow");  // slow  fast  1000
+                // a. 调用者   $(".box")  b. 参数 ： slow  fast  毫秒值  c.返回值：  $(".box")  d.功能： 隐藏盒子
+            })
+
+            $(".btn_show").click(function(){
+                // 3. 让盒子显示
+                $(".box").show();
+                // box.style.display="block";
+            })
+        })
+
+        // 宗旨： 写更少的代码，做更多的事情。
+
+    </script>
+</body>
+</html>

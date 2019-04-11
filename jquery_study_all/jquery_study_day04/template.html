@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+            $(function(){
+                $.ajax({
+                        //  ?location=北京&output=json&ak=E4805d16520de693a3fe707cdc962045
+                        url:"http://api.map.baidu.com/telematics/v3/weather",
+                        type:"get",
+//                        传递参数
+                        data:{
+                            location:val || "北京" ,//默认北京
+                            output:"json",
+                            ak:"rOxVAiTE768wol49rGdOoelc11EojPvE"  //百度接口 必须填的参数 密钥ak
+                        },
+                        dataType:"jsonp",
+                        success:function(data){
+                            console.log(data)
+                            var weaterDataRes=data.results;
+//                            定义一个新数组 接收天气信息
+                            var weatherDataInfo=[];
+//                            定义一个新数组 接收描述信息
+                            var msgDataDes=[];
+                            for(var i = 0 ; i< weaterDataRes.length;i++){
+                                weatherDataInfo=weaterDataRes[i].weather_data;
+                                msgDataDes=weaterDataRes[i].index;
+                            }
+//                            调用template()这个方法    1：模板id 2：{} 数据对象或集合
+                            var strHtml= template("templateId" , {weatherData:weatherDataInfo , msgDataDesList:msgDataDes})
+//                           把模板解析的字符串 渲染在页面上
+                            $(".wrapper .main").html(strHtml)
+                        },
+                        error:function(data){
+                            console.log(data)
+                        }
+                    })
+
+            })
+    
+    </script>
+</body>
+</html>
